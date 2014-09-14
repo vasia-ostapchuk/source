@@ -680,3 +680,16 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/index.php
 ---
+2014/09/14 21:42:30 [error] [php] Missing argument 1 for LoginForm::login(), called in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php on line 37 and defined (E:\ARCHIVE\goMusic\project\source\protected\models\LoginForm.php:61)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): LoginAction->runWithParams()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in E:\ARCHIVE\goMusic\project\source\protected\models\LoginForm.php (61)
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php (37)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)

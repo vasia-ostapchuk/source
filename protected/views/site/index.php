@@ -4,9 +4,9 @@ Empty Start page's
 <?php 
     $user = new User; 
     echo "<pre>"; 
-    var_dump($user); 
+    var_dump($user->findUserByUsername('ost.vas@mail.ru')->attributes); 
     echo "</pre>"; 
-    $user->sex_id=3;
+    /*$user->sex_id=3;
     $user->state_id=3;
     
     $user->save();
@@ -15,6 +15,9 @@ Empty Start page's
     
     echo "<pre>"; 
     var_dump($user); 
-    echo "</pre>"; 
+    echo "</pre>"; */
     
     ?>
+
+<br> 
+<a href="http://music.localhost/index.php?r=site/login" > Залогінуватись </a>

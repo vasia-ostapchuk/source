@@ -11,6 +11,11 @@
 <body>
 
     <div class="container" id="page">
+        <?php if(!Yii::app()->user->isGuest){ ?>
+        <p style="display: block; float: right; text-decoration: none;">
+            <a href="http://music.localhost/index.php?r=site/logout" >Logout(<?php echo Yii::app()->user->name; ?>)</a>
+        </p>
+        <?php }?>
         <div class="header">
                 <div class="logo">
                 </div>
