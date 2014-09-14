@@ -15,6 +15,7 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
+                'application.models.db.*',
 		'application.components.*',
 	),
     
@@ -39,7 +40,7 @@ return array(
 		
 		'db'=>array(
 			'class'=>'CDbConnection',
-                        'connectionString'=>'mysql:host=localhost;dbname=testdb',
+                        'connectionString'=>'mysql:host=localhost;dbname=gomusic',
                         'username'=>'root',
                         'password'=>'',
                         'charset'=>'utf8', // система кодування
