@@ -1,4 +1,4 @@
 
 Empty Start page's
 
-<?php $user = new User; error_log(var_dump($user)); ?>
+<?php $user = new User; echo "<pre>"; var_dump($user); echo "</pre>"; ?>
