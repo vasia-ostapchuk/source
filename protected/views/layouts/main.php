@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-        <link href="../../../css/style.css" rel="stylesheet" type="text/css"
+        <link href="../../../css/style.css" rel="stylesheet" type="text/css"></link>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
