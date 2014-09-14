@@ -4,17 +4,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-        
+        <link href="../../../css/style.css" rel="stylesheet" type="text/css"
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
 
     <div class="container" id="page">
-        <div id="header">
-                <div id="logo">
+        <div class="header">
+                <div class="logo">
                 </div>
-            <div></div>
         </div>
 
         <div id="content">            
