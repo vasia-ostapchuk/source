@@ -74,14 +74,6 @@ return array(
                         'google' => array(
                             'class' => 'GoogleOpenIDService',
                         ),
-                        'yandex' => array(
-                            'class' => 'YandexOpenIDService',
-                        ),
-                        'twitter' => array(
-                            'class' => 'TwitterOAuthService',
-                            'key' => '...',
-                            'secret' => '...',
-                        ),
                         'facebook' => array(
                             'class' => 'FacebookOAuthService',
                             'client_id' => '...',
@@ -89,11 +81,6 @@ return array(
                         ),
                         'vkontakte' => array(
                             'class' => 'VKontakteOAuthService',
-                            'client_id' => '...',
-                            'client_secret' => '...',
-                        ),
-                        'mailru' => array(
-                            'class' => 'MailruOAuthService',
                             'client_id' => '...',
                             'client_secret' => '...',
                         ),
