@@ -4,7 +4,7 @@ Empty Start page's
 <?php 
     $user = new User; 
     echo "<pre>"; 
-    var_dump($user->findUserByUsername('ost.vas@mail.ru')->attributes); 
+    var_dump($user->findUserByUsername('1')->attributes); 
     echo "</pre>"; 
     /*$user->sex_id=3;
     $user->state_id=3;
