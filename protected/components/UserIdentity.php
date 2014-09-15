@@ -27,7 +27,7 @@ class UserIdentity extends CUserIdentity
            // $users = 
             $users = User::model()->findUserByUsername($this->username);
             if($users == null){
-                $this->errorCode=  self::ERROR_USERNAME_INVALID;
+                $this->errorCode=self::ERROR_USERNAME_INVALID;
                 return !$this->errorCode;
             }
             $users = array($users->attributes['email']=>$users->attributes['password']);
