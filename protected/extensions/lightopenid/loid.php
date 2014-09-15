@@ -31,7 +31,7 @@ class loid extends CApplicationComponent
      */
     public function load($config = array())
     {
-	$openid = new LightOpenID('my-host.example.org');
+	$openid = new LightOpenID('vk.com');
 	if(!empty($config))
 	{
 	    foreach ($config as $key => $val)

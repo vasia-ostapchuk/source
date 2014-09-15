@@ -907,3 +907,19 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/login&service=vkontakte&redirect_uri=http%3A%2F%2Fmusic.localhost%2Findex.php%3Fr%3Dsite%2Flogin%26service%3Dvkontakte&js
 HTTP_REFERER=http://music.localhost/
 ---
+2014/09/15 17:07:16 [error] [exception.CException] exception 'CException' with message 'LoginAction and its behaviors do not have a method or closure named "redirect".' in D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(42): CComponent->__call('redirect', Array)
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(42): LoginAction->redirect(Array)
+#2 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#6 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/login&service=twitter&redirect_uri=http%3A%2F%2Fmusic.localhost%2Findex.php%3Fr%3Dsite%2Flogin%26service%3Dtwitter&js
+HTTP_REFERER=http://music.localhost/index.php?r=site/logout
+---
