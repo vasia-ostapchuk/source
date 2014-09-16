@@ -1014,3 +1014,320 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/login&service=vkontakte&redirect_uri=http%3A%2F%2Fmusic.localhost%2Findex.php%3Fr%3Dsite%2Flogin%26service%3Dvkontakte&js
 HTTP_REFERER=http://music.localhost/
 ---
+2014/09/15 19:51:49 [error] [php] include(MyOtherModel.php): failed to open stream: No such file or directory (E:\ARCHIVE\goMusic\project\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php(18): spl_autoload_call()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(126): require()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): SiteController->renderFile()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#5 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php(12): SiteController->render()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): IndexAction->run()
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): IndexAction->runWithParams()
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#11 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php (18)
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php (12)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)
+2014/09/15 19:52:48 [error] [php] Missing argument 2 for CHtml::listData(), called in E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php on line 18 and defined (E:\ARCHIVE\goMusic\project\yii\framework\web\helpers\CHtml.php:2073)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LogoutAction.php(18): SiteController->render()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LogoutAction->run()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): LogoutAction->runWithParams()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/logout
+in E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php (18)
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LogoutAction.php (18)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)
+2014/09/15 19:53:20 [error] [php] Missing argument 2 for CHtml::listData(), called in E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php on line 18 and defined (E:\ARCHIVE\goMusic\project\yii\framework\web\helpers\CHtml.php:2073)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LogoutAction.php(18): SiteController->render()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LogoutAction->run()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): LogoutAction->runWithParams()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/logout
+in E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php (18)
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LogoutAction.php (18)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)
+2014/09/16 17:54:52 [error] [exception.CException] exception 'CException' with message 'Property "FacebookOAuthService.redirect_uri" is not defined.' in E:\ARCHIVE\goMusic\project\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php(111): CComponent->__set('redirect_uri', 'music.localhost')
+#1 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(94): EAuthServiceBase->init(Object(EAuth), Array)
+#2 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(37): EAuth->getIdentity('facebook')
+#3 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthWidget.php(51): EAuth->getServices()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(147): EAuthWidget->init()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.eauth.EAuth...', Array)
+#6 E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php(9): CBaseController->widget('ext.eauth.EAuth...', Array)
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(126): require('E:\\ARCHIVE\\goMu...')
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\ARCHIVE\\goMu...', NULL, true)
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\ARCHIVE\\goMu...', NULL, true)
+#10 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#11 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php(12): CController->render('index')
+#12 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): IndexAction->run()
+#13 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#14 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(IndexAction))
+#15 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(IndexAction), Array)
+#16 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('')
+#17 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#18 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://music.localhost/index.php?r=site/logout
+---
+2014/09/16 17:55:01 [error] [exception.CException] exception 'CException' with message 'Property "FacebookOAuthService.redirect_uri" is not defined.' in E:\ARCHIVE\goMusic\project\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php(111): CComponent->__set('redirect_uri', 'music.localhost')
+#1 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(94): EAuthServiceBase->init(Object(EAuth), Array)
+#2 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(37): EAuth->getIdentity('facebook')
+#3 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthWidget.php(51): EAuth->getServices()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(147): EAuthWidget->init()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.eauth.EAuth...', Array)
+#6 E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php(9): CBaseController->widget('ext.eauth.EAuth...', Array)
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(126): require('E:\\ARCHIVE\\goMu...')
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\ARCHIVE\\goMu...', NULL, true)
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\ARCHIVE\\goMu...', NULL, true)
+#10 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#11 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LogoutAction.php(18): CController->render('index')
+#12 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LogoutAction->run()
+#13 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#14 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LogoutAction))
+#15 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LogoutAction), Array)
+#16 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('logout')
+#17 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/logout')
+#18 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=site/logout
+HTTP_REFERER=http://music.localhost/index.php
+---
+2014/09/16 17:55:03 [error] [exception.CException] exception 'CException' with message 'Property "FacebookOAuthService.redirect_uri" is not defined.' in E:\ARCHIVE\goMusic\project\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php(111): CComponent->__set('redirect_uri', 'music.localhost')
+#1 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(94): EAuthServiceBase->init(Object(EAuth), Array)
+#2 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(37): EAuth->getIdentity('facebook')
+#3 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthWidget.php(51): EAuth->getServices()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(147): EAuthWidget->init()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.eauth.EAuth...', Array)
+#6 E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php(9): CBaseController->widget('ext.eauth.EAuth...', Array)
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(126): require('E:\\ARCHIVE\\goMu...')
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\ARCHIVE\\goMu...', NULL, true)
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\ARCHIVE\\goMu...', NULL, true)
+#10 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#11 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php(12): CController->render('index')
+#12 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): IndexAction->run()
+#13 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#14 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(IndexAction))
+#15 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(IndexAction), Array)
+#16 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('')
+#17 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#18 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://music.localhost/index.php
+---
+2014/09/16 17:55:06 [error] [exception.CException] exception 'CException' with message 'Property "FacebookOAuthService.redirect_uri" is not defined.' in E:\ARCHIVE\goMusic\project\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php(111): CComponent->__set('redirect_uri', 'music.localhost')
+#1 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(94): EAuthServiceBase->init(Object(EAuth), Array)
+#2 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(37): EAuth->getIdentity('facebook')
+#3 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthWidget.php(51): EAuth->getServices()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(147): EAuthWidget->init()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.eauth.EAuth...', Array)
+#6 E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php(9): CBaseController->widget('ext.eauth.EAuth...', Array)
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(126): require('E:\\ARCHIVE\\goMu...')
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\ARCHIVE\\goMu...', NULL, true)
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\ARCHIVE\\goMu...', NULL, true)
+#10 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#11 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php(12): CController->render('index')
+#12 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): IndexAction->run()
+#13 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#14 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(IndexAction))
+#15 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(IndexAction), Array)
+#16 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('')
+#17 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#18 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php
+---
+2014/09/16 17:56:17 [error] [exception.CException] exception 'CException' with message 'Property "FacebookOAuthService.redirect_uri" is not defined.' in E:\ARCHIVE\goMusic\project\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php(111): CComponent->__set('redirect_uri', 'music.localhost')
+#1 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(94): EAuthServiceBase->init(Object(EAuth), Array)
+#2 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(37): EAuth->getIdentity('facebook')
+#3 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthWidget.php(51): EAuth->getServices()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(147): EAuthWidget->init()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.eauth.EAuth...', Array)
+#6 E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php(9): CBaseController->widget('ext.eauth.EAuth...', Array)
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(126): require('E:\\ARCHIVE\\goMu...')
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\ARCHIVE\\goMu...', NULL, true)
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\ARCHIVE\\goMu...', NULL, true)
+#10 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#11 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php(12): CController->render('index')
+#12 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): IndexAction->run()
+#13 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#14 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(IndexAction))
+#15 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(IndexAction), Array)
+#16 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('')
+#17 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#18 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php
+---
+2014/09/16 18:17:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logoutfacebook".' in E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(270): CController->missingAction('logoutfacebook')
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('logoutfacebook')
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/logoutface...')
+#3 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/logoutfacebook
+HTTP_REFERER=http://carcass.localhost/index.php?r=site/index
+---
+2014/09/16 18:19:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logoutfacebook".' in E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(270): CController->missingAction('logoutfacebook')
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('logoutfacebook')
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/logoutface...')
+#3 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/logoutfacebook
+HTTP_REFERER=http://carcass.localhost/
+---
+2014/09/16 18:24:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logoutfacebook".' in E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(270): CController->missingAction('logoutfacebook')
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('logoutfacebook')
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/logoutface...')
+#3 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/logoutfacebook
+HTTP_REFERER=http://carcass.localhost/
+---
+2014/09/16 18:42:58 [error] [php] include(ServiceUserIdentity.php): failed to open stream: No such file or directory (E:\ARCHIVE\goMusic\project\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php(27): spl_autoload_call()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): LoginAction->runWithParams()
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site%2Flogin&service=facebook&code=AQDUzM34bPtZ-cR6cnGU9ugaR9SebmTNK5mjvViWlclT7y-LHNTK-Kuz7pljwvWMfa7Jp6Xf3NhbaR6WQwrOEEuLEEB4y6cDS7Fha4sCVZ02jt_Ak8UZgrltquOoSeNW0YEG9jHgeFFo7ArTKHbQVogaN54CXkG5G0oMfItWEKqjzBdIKuXNTP-LnnYqVZFw2Mt3ua1uIkpeGJ7krTDio11CoSKb36evxUFjfAHmUXjEn9SYAvQQaOcLdcslFZMnSvpW_qheuCSM_Lq08K3oVz_NXbUTsCvceYQsUOSBOy2_Zlut3W5rjLL-i1q7y80zBNpjGltDiLVeSmznTio3o4ci
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php (27)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)
+2014/09/16 18:44:19 [error] [php] include(ServiceUserIdentity.php): failed to open stream: No such file or directory (E:\ARCHIVE\goMusic\project\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php(27): spl_autoload_call()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): LoginAction->runWithParams()
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login&service=facebook&redirect_uri=http%3A%2F%2Fmusic.localhost%2Findex.php%3Fr%3Dsite%2Flogin%26service%3Dfacebook&js
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php (27)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)
+2014/09/16 18:47:15 [error] [exception.CException] exception 'CException' with message 'Property "FacebookOAuthService.redirect_uri" is not defined.' in E:\ARCHIVE\goMusic\project\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php(111): CComponent->__set('redirect_uri', 'music.localhost')
+#1 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(94): EAuthServiceBase->init(Object(EAuth), Array)
+#2 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php(22): EAuth->getIdentity('facebook')
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#9 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=site/login&service=facebook&redirect_uri=http%3A%2F%2Fmusic.localhost%2Findex.php%3Fr%3Dsite%2Flogin%26service%3Dfacebook&js
+HTTP_REFERER=http://music.localhost/index.php
+---
+2014/09/16 18:49:52 [error] [php] include(ServiceUserIdentity.php): failed to open stream: No such file or directory (E:\ARCHIVE\goMusic\project\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php(27): spl_autoload_call()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): LoginAction->runWithParams()
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login&service=facebook&redirect_uri=http%3A%2F%2Fmusic.localhost%2Findex.php%3Fr%3Dsite%2Flogin%26service%3Dfacebook&js
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php (27)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)
+2014/09/16 19:20:38 [error] [exception.CException] exception 'CException' with message 'Property "GoogleOpenIDService.client_id" is not defined.' in E:\ARCHIVE\goMusic\project\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php(111): CComponent->__set('client_id', '1043733097488-u...')
+#1 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EOpenIDService.php(40): EAuthServiceBase->init(Object(EAuth), Array)
+#2 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(94): EOpenIDService->init(Object(EAuth), Array)
+#3 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuth.php(37): EAuth->getIdentity('google')
+#4 E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EAuthWidget.php(51): EAuth->getServices()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(147): EAuthWidget->init()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.eauth.EAuth...', Array)
+#7 E:\ARCHIVE\goMusic\project\source\protected\views\site\index.php(9): CBaseController->widget('ext.eauth.EAuth...', Array)
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(126): require('E:\\ARCHIVE\\goMu...')
+#9 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\ARCHIVE\\goMu...', NULL, true)
+#10 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\ARCHIVE\\goMu...', NULL, true)
+#11 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#12 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php(12): CController->render('index')
+#13 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): IndexAction->run()
+#14 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#15 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(IndexAction))
+#16 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(IndexAction), Array)
+#17 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('')
+#18 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/
+---
+2014/09/16 19:32:24 [error] [exception.EAuthException] exception 'EAuthException' with message 'Unknown SSL protocol error in connection to www.google.com:443 ' in E:\ARCHIVE\goMusic\project\source\protected\extensions\eauth\EOpenIDService.php:77
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\LoginAction.php(26): EOpenIDService->authenticate()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#2 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#7 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 E:\ARCHIVE\goMusic\project\source\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=site/login&service=google&redirect_uri=http://localhost/index.php?r%3Dsite/login%26service%3Dgoogle&js&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.op_endpoint=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fud&openid.response_nonce=2014-09-16T17%3A32%3A02Z3omyip6XD0KUKQ&openid.return_to=http%3A%2F%2Flocalhost%2Findex.php%3Fr%3Dsite%2Flogin%26service%3Dgoogle%26redirect_uri%3Dhttp%3A%2F%2Flocalhost%2Findex.php%3Fr%253Dsite%2Flogin%2526service%253Dgoogle%26js&openid.assoc_handle=1.AMlYA9UamtV-Rxd4ZnGkGo4me7Nm6s5mg-DF9pEjhmiXSdZk8lXdLX2_IJcQ3Hpv&openid.signed=op_endpoint%2Cclaimed_id%2Cidentity%2Creturn_to%2Cresponse_nonce%2Cassoc_handle%2Cns.ext1%2Cext1.mode%2Cext1.type.firstname%2Cext1.value.firstname&openid.sig=35CJfDYTUo0Sa6dVfM%2BDUFsI%2Bug%3D&openid.identity=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid%3Fid%3DAItOawnH7KMFm9RHoJ3L3ajVBreXu1Bk5nxucQU&openid.claimed_id=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid%3Fid%3DAItOawnH7KMFm9RHoJ3L3ajVBreXu1Bk5nxucQU&openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ext1.mode=fetch_response&openid.ext1.type.firstname=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&openid.ext1.value.firstname=%D0%92%D0%B0%D1%81%D1%8F
+HTTP_REFERER=http://localhost/index.php?r=site/logout
+---

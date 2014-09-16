@@ -5,7 +5,7 @@
             'options' => array(
                 'title' => 'Loging',
                 'autoOpen' => false,
-                'modal' => true,
+                'modal' => false,
                 'resizable'=> false,
                 'position'=> '{ my: "left top", at: "left bottom", of: button }',
             ),
@@ -13,17 +13,17 @@
 ?>
 <div class="form">
 <?php
-        $model = new LoginForm; 
-        $form = $this->beginWidget('CActiveForm', array(
-                    'id' => 'quick-form',
-                    'enableClientValidation' => true,
-                    'clientOptions' => array(
-                        'validateOnSubmit' => true,
-                    ),
-                    'htmlOptions'=>array('class'=>'form',),
-                    'action' => array('site/login'), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
-                )
-            );
+    $model = new LoginForm; 
+    $form = $this->beginWidget('CActiveForm', array(
+                'id' => 'quick-form',
+                'enableClientValidation' => true,
+                'clientOptions' => array(
+                    'validateOnSubmit' => true,
+                ),
+                'htmlOptions'=>array('class'=>'form',),
+                'action' => array('site/login'), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
+            )
+        );
 ?>
 <p class="note">Fields with <span class="required">*</span> are required.</p>
 <div class="row">
