@@ -30,7 +30,6 @@
                 <a href="">Registration</a>
             </div>
         </div>
-        <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'modalForm.php'); ?>
         <div id="content">            
             <?php echo $content; ?>
         </div>
