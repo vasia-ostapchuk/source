@@ -34,19 +34,26 @@ img {border: none;}
     border: 1px solid blue;
     text-align: center;
 }
-#content {
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+#content { 
     width: 1000px;
     margin: auto;
+    display: inline-block;
 }
 .filters {
     width: 250px;
     float: left;
     background-color: #298dcd;
+    //display: inline-block;
 }
 .events {
     width: 710px;
-    padding: 10px;
-    float: left;
+    //padding: 10px;
+    float: right;
+   // display: block;
     background-color: #60BF60;
 }
 .filters-label {
@@ -84,4 +91,7 @@ img {border: none;}
     height: 50px;
     margin: auto;
     background-color: #ccc;
+    color: white;
+    font-size: 25px;
+    text-align: center;
 }
