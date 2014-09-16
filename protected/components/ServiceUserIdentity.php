@@ -1,5 +1,5 @@
 <?php
-class SocialUserIdentity extends UserIdentity {
+class ServiceUserIdentity extends UserIdentity {
     const ERROR_NOT_AUTHENTICATED = 3;
 
     /**
