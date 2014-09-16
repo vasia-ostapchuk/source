@@ -19,7 +19,7 @@
         </p>
         <?php } else {?>
         <p style="display: block; float: right; padding: 0px 10px;">
-            <a href="#" onclick="$('#mydialog').dialog('open'); return false;" style="text-decoration: none;" > Login </a>
+            <a href="#" onclick="$('#loginModalForm').dialog('open'); return false;" style="text-decoration: none;" > Login </a>
         </p>
         <?php } ?>
         <div class="header">

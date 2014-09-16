@@ -1,5 +1,19 @@
+<!-- макет модального вікна форми логінування на сайті -->
+
+<?php $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id' => 'mydialog',
+            'options' => array(
+                'title' => 'Loging',
+                'autoOpen' => false,
+                'modal' => true,
+                'resizable'=> false,
+                'position'=> '{ my: "left top", at: "left bottom", of: button }',
+            ),
+        ));
+?>
 <div class="form">
 <?php
+        $model = new LoginForm; 
         $form = $this->beginWidget('CActiveForm', array(
                     'id' => 'quick-form',
                     'enableClientValidation' => true,
@@ -34,9 +48,11 @@
 </div>
 
 <div class="row buttons">
-        <?php echo CHtml::submitButton('Вхід'). "\n"; ?>
+        <?php echo CHtml::submitButton('Login'). "\n"; ?>
 </div>
+
 <?php   
     $this->endWidget();
+    $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
 </div>
