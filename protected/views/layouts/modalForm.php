@@ -11,7 +11,6 @@
             ),
         ));
 ?>
-<<<<<<< HEAD
 <!-- заголовок модального вікна
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
