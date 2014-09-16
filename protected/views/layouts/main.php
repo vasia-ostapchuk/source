@@ -23,13 +23,23 @@
         </p>
         <?php } ?>
         <div class="header">
-                <div class="logo">
-                </div>
+            <div class="logo">
+                
+            </div>
+            <div class="login-registration">
+                <a href="">Login</a>
+            </div>
+            <div class="login-registration">
+                <a href="">Registration</a>
+            </div>
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'modalForm.php'); ?>
         <div id="content">            
             <?php echo $content; ?>
         </div>
+    </div>
+    <div class="footer">
+            
     </div>
 </body>
 </html>

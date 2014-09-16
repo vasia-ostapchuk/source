@@ -16,10 +16,72 @@ img {border: none;}
 .header {
     width: 1000px;
     margin: auto;
+    height: 150px;
     background-color: red;
 }
 .logo {
     width: 40%;
-    height: 150px;
+    float: left;
+    height: 130px;
     background-color:#ff0;
+    margin: 10px 20px 10px 20px;
+}
+.login-registration {
+    line-height: 40px;
+    width: 100px;
+    float: right;
+    background-color: greenyellow;
+    border: 1px solid blue;
+    text-align: center;
+}
+#content {
+    width: 1000px;
+    margin: auto;
+}
+.filters {
+    width: 250px;
+    float: left;
+    background-color: #298dcd;
+}
+.events {
+    width: 710px;
+    padding: 10px;
+    float: left;
+    background-color: #60BF60;
+}
+.filters-label {
+    line-height: 30px;
+    margin-top: 20px;
+    background-color: #C9E0ED;
+    text-align: center;
+}
+.filter-country {
+    height: 200px;
+    background-color: #FF8080;
+}
+.price-scroll {
+    height: 100px;
+    background-color: #060;
+}
+.calendar {
+    height: 100px;
+    background-color: #555;
+}
+.events-sorting {
+    height: 25px;
+    margin: 20px;
+    background-color: #298;
+}
+.event{
+    width: 194px;
+    height: 120px;
+    margin: 20px;
+    background-color: #514721;
+    display: inline-block;
+}
+.footer {
+    width: 1000px;
+    height: 50px;
+    margin: auto;
+    background-color: #ccc;
 }
