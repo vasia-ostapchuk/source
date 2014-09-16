@@ -9,6 +9,7 @@ Empty Start page's
     $this->widget('ext.eauth.EAuthWidget', array('action' => 'site/login'));
     echo "---";
     ?>
+<br>
 <div class="filters">
     <div class="filters-label">
         Фільтри:
