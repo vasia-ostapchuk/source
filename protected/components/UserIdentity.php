@@ -30,7 +30,7 @@ class UserIdentity extends CUserIdentity
                 $this->errorCode=self::ERROR_USERNAME_INVALID;
                 return !$this->errorCode;
             }
-            $users = array($users->attributes['email']=>$users->attributes['password']);
+            $users = array($users->email=>$users->password);
             /*echo "<pre>"; var_dump($users); echo "</pre>";
             echo "<pre>"; var_dump($this); echo "</pre>";
             Yii::app()->end();*/

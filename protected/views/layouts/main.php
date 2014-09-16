@@ -13,23 +13,31 @@
 <body>
 
     <div class="container" id="page">
-        <?php if(!Yii::app()->user->isGuest){ ?>
-        <p style="display: block; float: right; text-decoration: none;">
-            <a href="http://music.localhost/index.php?r=site/logout" >Logout(<?php echo Yii::app()->user->name; ?>)</a>
-        </p>
-        <?php } else {?>
-        <p style="display: block; float: right; padding: 0px 10px;">
-            <a href="#" onclick="$('#loginModalForm').dialog('open'); return false;" style="text-decoration: none;" > Login </a>
-        </p>
-        <?php } ?>
         <div class="header">
-                <div class="logo">
-                </div>
+            <div class="logo">
+                
+            </div>
+            <div class="login-registration">
+                <?php if(!Yii::app()->user->isGuest){ ?>
+                <p style="display: block; float: right; text-decoration: none;">
+                    <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout" >Logout(<?php echo Yii::app()->user->name; ?>)</a>
+                </p>
+                <?php } else {?>
+                    <a href="#" onclick="$('#loginModalForm').dialog('open'); return false;" style="text-decoration: none;" > Login </a>
+                <?php } ?>
+            </div>
+            <div class="login-registration">
+                <a href="">Registration</a>
+            </div>
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'modalForm.php'); ?>
         <div id="content">            
             <?php echo $content; ?>
         </div>
+        <div class="footer">
+            то футер детка
+        </div>
     </div>
+    
 </body>
 </html>

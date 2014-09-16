@@ -25,14 +25,14 @@ return array(
     
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'Enter Your Password Here',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+		
 	),
 
 	// application components
@@ -73,11 +73,13 @@ return array(
                     'services' => array( // You can change the providers and their classes.
                         'google' => array(
                             'class' => 'GoogleOpenIDService',
+                            //'client_id'=>'1043733097488-u9256803gr737g6b7h1oj0ngc0s5f2m4.apps.googleusercontent.com',
+                            //'client_secret'=>'8eVvMO8HokmL8dgpjxsEIj2w',
                         ),
                         'facebook' => array(
                             'class' => 'FacebookOAuthService',
-                            'client_id' => '...',
-                            'client_secret' => '...',
+                            'client_id' => '778122978897966',
+                            'client_secret' => '93cdc457d91327e08f6fdc3e1f240ade',
                         ),
                         'vkontakte' => array(
                             'class' => 'VKontakteOAuthService',

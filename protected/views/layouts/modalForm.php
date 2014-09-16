@@ -5,12 +5,13 @@
             'options' => array(
                 'title' => 'Вхід на сайт',
                 'autoOpen' => false,
-                'modal' => true,
+                'modal' => false,
                 'resizable'=> false,
                 'position'=> '{ my: "left top", at: "left bottom", of: button }',
             ),
         ));
 ?>
+<<<<<<< HEAD
 <!-- заголовок модального вікна
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
@@ -18,8 +19,7 @@
     </div>-->
 <!-- тіло модального вікна, виводимо елементи форми -->
     <div class="modal-body">
-        <?php 
-
+        <?php
             $login = new LoginForm;
             $reg = new RegistrationForm;
 

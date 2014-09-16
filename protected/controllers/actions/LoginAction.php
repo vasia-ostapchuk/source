@@ -25,6 +25,7 @@ class LoginAction extends CAction {
 
             if ($authIdentity->authenticate()) {
                 $identity = new ServiceUserIdentity($authIdentity);
+                //$identity = new SocialUserIdentity($authIdentity);
 
                 // Успешный вход
                 if ($identity->authenticate()) {
