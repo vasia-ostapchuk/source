@@ -8,7 +8,11 @@
 class FilterForm extends CFormModel
 {
     public $country;
-    
+    public $sity;
+    public $style;
+    public $genre;
+
+
     public function rules()
     {
         return array();

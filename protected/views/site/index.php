@@ -23,8 +23,25 @@
     <div class="filter-country">
         <?php echo $form->labelEx($model,'country') . "\n"; ?>
         <?php echo $form->dropDownList($model,'country', array()). "\n"; ?>
-        <?php echo $form->error($model,'country'). "\n"; ?>
+        <?php echo $form->error($model,'country') . "\n"; ?>
     </div>
+    <div class="filter-sity">
+        <?php echo $form->labelEx($model,'sity') . "\n"; ?>
+        <?php echo $form->dropDownList($model,'sity', array()). "\n"; ?>
+        <?php echo $form->error($model,'sity') . "\n"; ?>
+    </div>
+    
+    <div class="filter-style">
+        <?php echo $form->labelEx($model,'style') . "\n"; ?>
+        <?php echo $form->dropDownList($model,'style', array()). "\n"; ?>
+        <?php echo $form->error($model,'style') . "\n"; ?>
+    </div>
+    <div class="filter-genre">
+        <?php echo $form->labelEx($model,'genre') . "\n"; ?>
+        <?php echo $form->dropDownList($model,'genre', array()). "\n"; ?>
+        <?php echo $form->error($model,'genre') . "\n"; ?>
+    </div>
+
     <div class="price-scroll">
         
     </div>

@@ -151,8 +151,24 @@ img {border: none;}
     text-align: center;
 }
 .filter-country {
-    height: 200px;
-    background-color: #FF8080;
+    padding-left: 20px;
+    line-height: 30px;
+    background-color: #FF3030;
+}
+.filter-sity {
+    padding-left: 20px;
+    line-height: 30px;
+    background-color: #FF5050;
+}
+.filter-style {
+    padding-left: 20px;
+    line-height: 30px;
+    background-color: #FF7070;
+}
+.filter-genre {
+    padding-left: 20px;
+    line-height: 30px;
+    background-color: #FFa0a0;
 }
 .price-scroll {
     height: 100px;
