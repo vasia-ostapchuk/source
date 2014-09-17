@@ -12,15 +12,18 @@
                         'validateOnType'=>false,
                     ),
                     'htmlOptions'=>array('class'=>'form',),
-                    'action' => array('site/login'), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
+                    'action' => array(''), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
                 )
             );
+        $model= new FilterForm;
 ?>
     <div class="filters-label">
         Фільтри:
     </div>
     <div class="filter-country">
-        
+        <?php echo $form->labelEx($model,'country') . "\n"; ?>
+        <?php echo $form->dropDownList($model,'country', array()). "\n"; ?>
+        <?php echo $form->error($model,'country'). "\n"; ?>
     </div>
     <div class="price-scroll">
         
