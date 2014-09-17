@@ -123,15 +123,45 @@ img {border: none;}
 }
 .events-sorting {
     height: 25px;
+    width: 687px;
     margin: 20px;
     background-color: #298;
 }
 .event{
     width: 200px;
-    height: 120px;
+    height: 300px;
     margin: 20px;
     background-color: #514721;
     display: inline-block;
+}
+.event span{
+    color: red;
+}
+.event a:hover{
+    color: yellow;
+}
+.pagination-link {
+    height: 25px;
+    width: 280px;
+    margin: 20px;
+   font-size: 18px;
+   font-weight: 700px;
+    float: right;
+   
+}
+.pagination-link li{
+    text-align: center;
+    padding: 10px 10px;
+    display: inline;
+  
+    line-height: 10px;
+}
+.pagination-link a{
+    text-decoration: none;
+    color: #FF8080;
+}
+.pagination-link a:hover{
+    text-decoration: underline;
 }
 .footer {
     width: 1000px;

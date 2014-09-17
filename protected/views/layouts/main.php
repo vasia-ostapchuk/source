@@ -46,6 +46,7 @@
         <div id="content">            
             <?php echo $content; ?>
         </div>
+      
         
         
         <div class="footer">
