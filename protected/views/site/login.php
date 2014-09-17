@@ -1,7 +1,8 @@
 <div class="form">
 <?php
         $form = $this->beginWidget('CActiveForm', array(
-                    'id' => 'quick-form',
+                    'id' => 'LoginForm',
+                    'enableAjaxValidation'=>true,
                     'enableClientValidation' => true,
                     'clientOptions' => array(
                         'validateOnSubmit' => true,
@@ -11,7 +12,7 @@
                 )
             );
 ?>
-<p class="note">Fields with <span class="required">*</span> are required.</p>
+<p class="note">Поля з <span class="required">*</span> є обов'язкові.</p>
 <div class="row">
     <?php echo $form->labelEx($model,'username') . "\n"; ?>
     <?php echo $form->textField($model,'username'). "\n"; ?>
@@ -22,9 +23,6 @@
     <?php echo $form->labelEx($model,'password'). "\n"; ?>
     <?php echo $form->passwordField($model,'password'). "\n"; ?>
     <?php echo $form->error($model,'password'). "\n"; ?>
-    <p class="hint">
-            <!--Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.-->
-    </p>
 </div>
 
 <div class="row rememberMe">

@@ -7,7 +7,7 @@
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Поля з <span class="required">*</span> є обов'язкові.</p>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>

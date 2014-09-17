@@ -25,8 +25,7 @@
         $this->widget('zii.widgets.jui.CJuiTabs', array(
             'tabs'=>array(
             'Вхід'=>$this->renderPartial('login',array('model'=>$login),true),
-            'Реєстрація'=>$this->renderPartial('registration',array('model'=>$reg),true),  
-            
+            'Реєстрація'=>$this->renderPartial('registration',array('model'=>$reg),true),
                 ),
             'options'=>array(
                 'collapsible'=>true,

@@ -25,7 +25,7 @@ class RegistrationForm extends CActiveRecord
     {
         return array(
             // Логин и пароль - обязательные поля
-            array('login, password', 'required'),
+            array('username, password', 'required'),
             // Длина логина должна быть в пределах от 5 до 30 символов
             array('login', 'length', 'min'=>5, 'max'=>30),
             // Логин должен соответствовать шаблону
@@ -55,10 +55,10 @@ class RegistrationForm extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'username' => 'Логин',
+            'username' => 'Логін',
             'password' => 'Пароль',
             'password_repeat' => 'Повторіть пароль',
-            'email' => 'e-mail',
+            'email' => 'Пошта',
         );
     }
 
