@@ -83,8 +83,8 @@ return array(
                         ),
                         'vkontakte' => array(
                             'class' => 'VKontakteOAuthService',
-                            'client_id' => '...',
-                            'client_secret' => '...',
+                            'client_id' => '4553978',
+                            'client_secret' => 'Z0iuX3QpiMCefwFKYmD3',
                         ),
                     ),
                 ),
