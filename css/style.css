@@ -134,6 +134,11 @@ img {border: none;}
     background-color: #514721;
     display: inline-block;
 }
+.event-photo {
+    width: 90px;
+    height: 90px;
+    float: left;
+}
 .event span{
     color: red;
 }
