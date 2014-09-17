@@ -4870,3 +4870,67 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/
 ---
+2014/09/17 13:54:31 [error] [application.extensions.eauth] Invalid response http code: 401.
+URL: https://api.vkontakte.ru/oauth/access_token?client_id=4553978&client_secret=Z0iuX3QpiMCefwFKYmD3&code=9a8c49fb13e06785fc
+Options: array (
+)
+Result: {"error":"invalid_grant","error_description":"redirect_uri is undefined."}
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php (253)
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php (108)
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php (61)
+2014/09/17 13:54:31 [error] [exception.EAuthException] exception 'EAuthException' with message 'Invalid response http code: 401.' in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php:254
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php(108): EAuthServiceBase->makeRequest('https://api.vko...')
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php(61): EOAuth2Service->getAccessToken('9a8c49fb13e0678...')
+#2 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(26): EOAuth2Service->authenticate()
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#6 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=site/login&service=vkontakte&code=9a8c49fb13e06785fc
+---
+2014/09/17 13:55:27 [error] [application.extensions.eauth] Invalid response http code: 401.
+URL: https://api.vkontakte.ru/oauth/access_token?client_id=4553978&client_secret=Z0iuX3QpiMCefwFKYmD3&code=223e9576b879b3fa41
+Options: array (
+)
+Result: {"error":"invalid_grant","error_description":"redirect_uri is undefined."}
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php (253)
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php (108)
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php (61)
+2014/09/17 13:55:27 [error] [exception.EAuthException] exception 'EAuthException' with message 'Invalid response http code: 401.' in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php:254
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php(108): EAuthServiceBase->makeRequest('https://api.vko...')
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php(61): EOAuth2Service->getAccessToken('223e9576b879b3f...')
+#2 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(26): EOAuth2Service->authenticate()
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#6 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=site/login&service=vkontakte&code=223e9576b879b3fa41
+---
+2014/09/17 14:04:35 [error] [exception.EAuthException] exception 'EAuthException' with message 'SSL certificate problem: self signed certificate in certificate chain' in D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EAuthServiceBase.php:269
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php(148): EAuthServiceBase->makeRequest('https://api.vk....')
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\extensions\eauth\EOAuth2Service.php(96): EOAuth2Service->getAccessToken('8c6c513564bf93b...')
+#2 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(26): EOAuth2Service->authenticate()
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#6 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=site/login&service=vkontakte&code=8c6c513564bf93bda1
+---
