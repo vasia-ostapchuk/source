@@ -172,10 +172,21 @@ img {border: none;}
 }
 .price-scroll {
     height: 100px;
-    background-color: #060;
+    background-color: #090;
+}
+.price-scroll h1 {
+    padding:5px 20px;
+    font: 16px/20px sans-serif;
+    color: #ccc;
+}
+.price-scroll .min {
+    width: 70px;
+    margin-left: 20px;
+    font-weight:bold;
+    margin-bottom: 15px;
 }
 .calendar {
-    height: 100px;
+    height: 210px;
     background-color: #555;
 }
 .events-sorting {
