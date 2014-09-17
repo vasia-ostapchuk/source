@@ -444,3 +444,105 @@ Stack trace:
 #21 {main}
 REQUEST_URI=/
 ---
+2014/09/17 18:25:06 [error] [php] reset() expects exactly 1 parameter, 0 given (D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php:55)
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\widgets\CActiveForm.php(920): LoginForm->validate()
+#3 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(52): validate()
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): LoginAction->runWithParams()
+#6 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php (55)
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php (52)
+in D:\Programs\Documents\GitHub\goMusic\project\source\index.php (13)
+2014/09/17 18:25:22 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "reset".' in D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php(55): CComponent->__call('reset', Array)
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php(55): LoginForm->reset()
+#2 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\widgets\CActiveForm.php(920): CModel->validate(NULL)
+#6 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(52): CActiveForm::validate(Object(LoginForm))
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#10 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#11 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://localhost/index.php?r=site/logout
+---
+2014/09/17 18:25:22 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "reset".' in D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php(55): CComponent->__call('reset', Array)
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php(55): LoginForm->reset()
+#2 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\widgets\CActiveForm.php(920): CModel->validate(NULL)
+#6 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(52): CActiveForm::validate(Object(LoginForm))
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#10 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#11 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://localhost/index.php?r=site/logout
+---
+2014/09/17 18:25:22 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "reset".' in D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php(55): CComponent->__call('reset', Array)
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\models\LoginForm.php(55): LoginForm->reset()
+#2 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\widgets\CActiveForm.php(920): CModel->validate(NULL)
+#6 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LoginAction.php(52): CActiveForm::validate(Object(LoginForm))
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LoginAction->run()
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): CController->runAction(Object(LoginAction))
+#10 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(LoginAction), Array)
+#11 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://localhost/index.php?r=site/logout
+---
+2014/09/17 18:31:32 [error] [php] Undefined variable: form (D:\Programs\Documents\GitHub\goMusic\project\source\protected\views\site\login.php:11)
+Stack trace:
+#0 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\Programs\Documents\GitHub\goMusic\project\source\protected\views\layouts\modalForm.php(27): SiteController->renderPartial()
+#2 D:\Programs\Documents\GitHub\goMusic\project\source\protected\views\layouts\main.php(40): require_once()
+#3 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CBaseController.php(126): require()
+#4 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(784): SiteController->renderFile()
+#6 D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\LogoutAction.php(18): SiteController->render()
+#7 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\actions\CAction.php(76): LogoutAction->run()
+#8 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(308): LogoutAction->runWithParams()
+#9 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#10 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#12 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 D:\Programs\Documents\GitHub\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\Programs\Documents\GitHub\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/logout
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\views\site\login.php (11)
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\views\layouts\modalForm.php (27)
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\views\layouts\main.php (40)
