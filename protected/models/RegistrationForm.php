@@ -2,7 +2,9 @@
 
 class RegistrationForm extends CActiveRecord
 {
-
+    // Сценарий регистрации
+    const SCENARIO_SIGNUP = 'signup';
+    
     // Повторный пароль нужно объявить, т.к. этого поля нет в БД
     public $password_repeat;
     public $username;
@@ -34,13 +36,13 @@ class RegistrationForm extends CActiveRecord
             // Длина пароля не менее 6 символов
             array('password', 'length', 'min'=>6, 'max'=>30),
             // Повторный пароль и почта обязательны для сценария регистрации
-            //array('password_repeat, email', 'required', 'on'=>self::SCENARIO_SIGNUP),
+            array('password_repeat, email', 'required', 'on'=>self::SCENARIO_SIGNUP),
             // Длина повторного пароля не менее 6 символов
             array('password_repeat', 'length', 'min'=>6, 'max'=>30),
             // Пароль должен совпадать с повторным паролем для сценария регистрации
-            //array('password', 'compare', 'compareAttribute'=>'password_repeat', 'on'=>self::SCENARIO_SIGNUP),
+            array('password', 'compare', 'compareAttribute'=>'password_repeat', 'on'=>self::SCENARIO_SIGNUP),
             // Почта проверяется на соответствие типу
-           // array('email', 'email', 'on'=>self::SCENARIO_SIGNUP),
+            array('email', 'email', 'on'=>self::SCENARIO_SIGNUP),
             // Почта должна быть в пределах от 6 до 50 символов
             array('email', 'length', 'min'=>6, 'max'=>50),
             // Почта должна быть уникальной

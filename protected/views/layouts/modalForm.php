@@ -30,7 +30,6 @@
                 ),
             'options'=>array(
                 'collapsible'=>true,
-                'selected'=>0,
             ),
         ));
         echo "<br> Аутентифікація через соціальні мережі <br>";
