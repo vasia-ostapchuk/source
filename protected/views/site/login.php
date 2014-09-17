@@ -3,9 +3,10 @@
         $form = $this->beginWidget('CActiveForm', array(
                     'id' => 'LoginForm',
                     'enableAjaxValidation'=>true,
-                    'enableClientValidation' => true,
                     'clientOptions' => array(
                         'validateOnSubmit' => true,
+                        'validateOnChange'=>false,
+                        'validateOnType'=>false,
                     ),
                     'htmlOptions'=>array('class'=>'form',),
                     'action' => array('site/login'), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
