@@ -38,6 +38,18 @@
         </div> 
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'modalForm.php'); ?>
+        <div class="navigator">
+            <div class="navigator-button">
+                <ul>
+                    <li><a href="">Афіша</a></li>
+                    <li><a href="">Інвестиції</a></li>
+                    <li><a href="">В процесі</a></li>
+                </ul>
+            </div>
+            <div class="navigator-search">
+        
+            </div>
+        </div>
         <div id="content">            
             <?php echo $content; ?>
         </div>

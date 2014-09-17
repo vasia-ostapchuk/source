@@ -17,18 +17,6 @@
         
     </div>
 </div>
-<div class="navigator">
-    <div class="navigator-button">
-        <ul>
-            <li><a href="">Афіша</a></li>
-            <li><a href="">Інвестиції</a></li>
-            <li><a href="">В процесі</a></li>
-        </ul>
-    </div>
-    <div class="navigator-search">
-        
-    </div>
-</div>
 <div class="events">
     <div class="events-sorting">
         
