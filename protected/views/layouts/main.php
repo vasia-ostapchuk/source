@@ -29,11 +29,20 @@
             <div class="login-registration">
                 <a href="">Registration</a>
             </div>
+            <div class="tab-menu"
+             <ul>
+                 <li><a href=""title="Афіша">Афіша </a></li>
+                 <li><a href=""title="Інвест.">Інвест./ </a></li>
+                 <li><a href=""title="В процесі">В процесі </a></li>
+            </ul>
+        </div> 
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'modalForm.php'); ?>
         <div id="content">            
             <?php echo $content; ?>
         </div>
+        
+        
         <div class="footer">
             то футер детка
         </div>
