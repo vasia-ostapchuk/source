@@ -40,7 +40,8 @@
                 </ul>
             </div>
             <div class="navigator-search">
-        
+        <form class="form-search" method="get" action="/search" target="_blank">
+<input type="text" name="q" placeholder="поиск" value=""/></form>
             </div>
         </div>
         <div id="content">            
