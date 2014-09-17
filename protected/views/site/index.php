@@ -2,6 +2,20 @@
 
 
 <div class="filters">
+    <?php
+        $form = $this->beginWidget('CActiveForm', array(
+                    'id' => 'FilterForm',
+                    'enableAjaxValidation'=>true,
+                    'clientOptions' => array(
+                        'validateOnSubmit' => true,
+                        'validateOnChange'=>false,
+                        'validateOnType'=>false,
+                    ),
+                    'htmlOptions'=>array('class'=>'form',),
+                    'action' => array('site/login'), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
+                )
+            );
+?>
     <div class="filters-label">
         Фільтри:
     </div>
@@ -14,6 +28,8 @@
     <div class="calendar">
         
     </div>
+    <?php   
+    $this->endWidget(); ?>
 </div>
 <div class="events">
     <div class="events-sorting">  
