@@ -4,7 +4,6 @@ class RegistrationForm extends CActiveRecord
 {
     // Сценарий регистрации
     const SCENARIO_SIGNUP = 'signup';
-    
     // Повторный пароль нужно объявить, т.к. этого поля нет в БД
     public $password_repeat;
     public $username;
