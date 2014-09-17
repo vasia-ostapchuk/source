@@ -71,10 +71,35 @@ img {border: none;}
     background-color: #298dcd;
     //display: inline-block;
 }
+.navigator {
+    width: 750px;
+    height:50px;
+    float:left;
+    background-color: #009;
+}
+.navigator-button {
+    background-color: #cd0a0a;
+    margin: 5px 0 0 10px; 
+    float:left;
+}
+.navigator-button li{
+    text-align: center;
+    padding: 10px 20px;
+    display: inline;
+    border: 1px solid #ff0;
+    line-height: 40px;
+}
+.navigator-search {
+    background-color:#000;
+    height: 30px;
+    width: 350px;
+    margin: 10px 0 0 70px;
+    float:left;
+}
 .events {
-    width: 710px;
+    width: 750px;
     //padding: 10px;
-    float: right;
+    float: left;
    // display: block;
     background-color: #60BF60;
 }
@@ -102,7 +127,7 @@ img {border: none;}
     background-color: #298;
 }
 .event{
-    width: 194px;
+    width: 200px;
     height: 120px;
     margin: 20px;
     background-color: #514721;
