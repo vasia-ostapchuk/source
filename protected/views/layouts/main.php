@@ -27,7 +27,7 @@
                 <?php } ?>
             </div>
             <div class="login-registration">
-                <a href="">Registration</a>
+                <a href="">Реєстрація</a>
             </div>
             <div class="tab-menu"
              <ul>
