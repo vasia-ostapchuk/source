@@ -15,6 +15,8 @@ class FilterForm extends CFormModel
 
     public function rules()
     {
-        return array();
+        return array(
+            array('country, sity, style, genre', 'filter')
+        );
     }
 }
