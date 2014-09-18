@@ -41,7 +41,8 @@ class SignupAction extends CAction {
                 //$user->save(false);
                 //$this->controller->redirect(Yii::app()->user->returnUrl);
                 //$this->redirect(array('site/login'));   
-                $this->redirect(backUrl);
+                //$this->redirect(backUrl);
+                //$this->createUrl('site/login');
             }
         }
 

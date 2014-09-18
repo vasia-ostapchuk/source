@@ -6167,3 +6167,15 @@ Stack trace:
 #19 {main}
 REQUEST_URI=/
 ---
+2014/09/18 14:31:10 [warning] [application] Не вдалося привласнити небезпечний атрибут "birthday" класу "RegistrationForm".
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\SignupAction.php (25)
+in D:\Programs\Documents\GitHub\goMusic\project\source\index.php (13)
+2014/09/18 14:31:10 [warning] [application] Не вдалося привласнити небезпечний атрибут "birthday" класу "RegistrationForm".
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\SignupAction.php (33)
+in D:\Programs\Documents\GitHub\goMusic\project\source\index.php (13)
+2014/09/18 14:31:53 [warning] [application] Не вдалося привласнити небезпечний атрибут "birthday" класу "RegistrationForm".
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\SignupAction.php (25)
+in D:\Programs\Documents\GitHub\goMusic\project\source\index.php (13)
+2014/09/18 14:31:53 [warning] [application] Не вдалося привласнити небезпечний атрибут "birthday" класу "RegistrationForm".
+in D:\Programs\Documents\GitHub\goMusic\project\source\protected\controllers\actions\SignupAction.php (33)
+in D:\Programs\Documents\GitHub\goMusic\project\source\index.php (13)
