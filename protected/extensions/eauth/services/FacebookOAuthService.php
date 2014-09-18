@@ -37,6 +37,13 @@ class FacebookOAuthService extends EOAuth2Service {
 		$this->attributes['id'] = $info->id;
 		$this->attributes['name'] = $info->name;
 		$this->attributes['url'] = $info->link;
+                $this->attributes['fist_name'] = $info->first_name;
+                $this->attributes['last_name'] = $info->last_name;
+                $this->attributes['gender'] = $info->gender;
+                /*echo "<pre>";
+                var_dump($info);
+                echo "</pre>";
+                Yii::app()->end();*/
 	}
 
 	protected function getCodeUrl($redirect_uri) {

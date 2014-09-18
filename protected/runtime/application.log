@@ -5834,3 +5834,20 @@ Stack trace:
 REQUEST_URI=/index.php?r=cjuislider/ajax&range1=405&range2=1730
 HTTP_REFERER=http://localhost/
 ---
+2014/09/18 10:22:04 [error] [php] var_export does not handle circular references (E:\ARCHIVE\goMusic\project\source\protected\views\layouts\main.php:66)
+Stack trace:
+#0 E:\ARCHIVE\goMusic\project\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(784): SiteController->renderFile()
+#2 E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php(12): SiteController->render()
+#3 E:\ARCHIVE\goMusic\project\yii\framework\web\actions\CAction.php(76): IndexAction->run()
+#4 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(308): IndexAction->runWithParams()
+#5 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 E:\ARCHIVE\goMusic\project\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 E:\ARCHIVE\goMusic\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\ARCHIVE\goMusic\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 E:\ARCHIVE\goMusic\project\source\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in E:\ARCHIVE\goMusic\project\source\protected\views\layouts\main.php (66)
+in E:\ARCHIVE\goMusic\project\source\protected\controllers\actions\IndexAction.php (12)
+in E:\ARCHIVE\goMusic\project\source\index.php (13)

@@ -26,11 +26,14 @@ class LoginAction extends CAction {
             if ($authIdentity->authenticate()) {
                 $identity = new ServiceUserIdentity($authIdentity);
                 //$identity = new SocialUserIdentity($authIdentity);
-
+                
                 // Успешный вход
                 if ($identity->authenticate()) {
                     Yii::app()->user->login($identity);
-
+                    /*echo "<pre>";
+                    var_dump($identity);
+                    echo "</pre>";
+                    Yii::app()->end();*/
                     // Специальный редирект с закрытием popup окна
                     $authIdentity->redirect();
                 }
