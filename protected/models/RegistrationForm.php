@@ -2,13 +2,15 @@
 
 class RegistrationForm extends CActiveRecord
 {
-    // Сценарий регистрации
-    const SCENARIO_SIGNUP = 'signup';
     // Повторный пароль нужно объявить, т.к. этого поля нет в БД
+    public $dtime_registration;
     public $password_repeat;
-    public $username;
+    public $first_name;
+    public $last_name;
     public $password;
     public $email;
+    public $birthday;
+    public $phone;
 
     public static function model($className = __CLASS__)
     {
@@ -25,29 +27,33 @@ class RegistrationForm extends CActiveRecord
     {
         return array(
             // Логин и пароль - обязательные поля
-            array('username, password', 'required'),
+            array('first_name, last_name, password', 'required'),
             // Длина логина должна быть в пределах от 5 до 30 символов
-            array('login', 'length', 'min'=>5, 'max'=>30),
+            array('first_name', 'length', 'min'=>5, 'max'=>30),
+            // Длина логина должна быть в пределах от 5 до 30 символов
+            array('last_name', 'length', 'min'=>5, 'max'=>30),
             // Логин должен соответствовать шаблону
-            array('login', 'match', 'pattern'=>'/^[A-z][\w]+$/'),
+            //array('login', 'match', 'pattern'=>'/^[A-z][\w]+$/'),
             // Логин должен быть уникальным
-            array('login', 'unique'),
+            //array('login', 'unique'),
             // Длина пароля не менее 6 символов
             array('password', 'length', 'min'=>6, 'max'=>30),
             // Повторный пароль и почта обязательны для сценария регистрации
-            array('password_repeat, email', 'required', 'on'=>self::SCENARIO_SIGNUP),
+            array('password_repeat, email', 'required'),
             // Длина повторного пароля не менее 6 символов
             array('password_repeat', 'length', 'min'=>6, 'max'=>30),
             // Пароль должен совпадать с повторным паролем для сценария регистрации
-            array('password', 'compare', 'compareAttribute'=>'password_repeat', 'on'=>self::SCENARIO_SIGNUP),
+            array('password', 'compare', 'compareAttribute'=>'password_repeat'),
             // Почта проверяется на соответствие типу
-            array('email', 'email', 'on'=>self::SCENARIO_SIGNUP),
+            array('email', 'email'),
             // Почта должна быть в пределах от 6 до 50 символов
             array('email', 'length', 'min'=>6, 'max'=>50),
             // Почта должна быть уникальной
-            array('email', 'unique'),
+            array('email', 'unique', 'message'=>'Користувач з такою поштою вже існує.'),
             // Почта должна быть написана в нижнем регистре
             array('email', 'filter', 'filter'=>'mb_strtolower'),
+            // унікальний телефон
+            array('phone', 'unique', 'message'=>'Користувач з таким телефоном вже існує.'),
         );
     }
 
@@ -55,10 +61,13 @@ class RegistrationForm extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'username' => 'Логін',
+            'first_name' => 'Ім`я',
+            'last_name' => 'Прізвище',
             'password' => 'Пароль',
             'password_repeat' => 'Повторіть пароль',
             'email' => 'Пошта',
+            'birthday' => 'Дата народження',
+            'phone' => 'Номер телефону',
         );
     }
 
@@ -80,9 +89,19 @@ class RegistrationForm extends CActiveRecord
 
         return false;
     }
-
     public function hashPassword($password)
     {
         return md5($password);
+    }
+    public function signup()
+    {
+        try 
+        {
+            $this->save();
+        } 
+        catch (Exception $e) 
+        {
+            $this->addError('phone',$e);
+        }
     }
 }

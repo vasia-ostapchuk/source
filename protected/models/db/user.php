@@ -11,7 +11,8 @@ class User extends CActiveRecord
         return 'user';
     }
     
-    public function findUserByUsername($username){
+    public function findUserByUsername($username)
+    {
         $criteria = new CDbCriteria;
         //$criteria->select='id,first_name,last_name,birthday,phone,email,password';
         $criteria->select='email,password';

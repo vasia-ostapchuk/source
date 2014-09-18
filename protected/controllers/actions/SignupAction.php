@@ -17,27 +17,35 @@ class SignupAction extends CAction {
     {
         // Создать модель и указать ей, что используется сценарий регистрации
         
-        $user = new User;
+        $model = new RegistrationForm;
 
+        // if it is ajax validation request
+        if(isset($_POST['ajax']) && $_POST['ajax']==='RegistrationForm')
+        {
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
+        }
+        
         // Если пришли данные для сохранения
-        if(isset($_POST['User']))
+        if(isset($_POST['RegistrationForm']))
         {
             // Безопасное присваивание значений атрибутам
-            $user->attributes = $_POST['User'];
+            $model->attributes = $_POST['RegistrationForm'];
 
             // Проверка данных
-            if($user->validate())
+            if($model->validate() && $model->signup())
             {
+                //$model->save();
                 // Сохранить полученные данные
                 // false нужен для того, чтобы не производить повторную проверку
-                $user->save(false);
-
-                // Перенаправить на список зарегестрированных пользователей
-                $this->redirect($this->createUrl('user/'));
+                //$user->save(false);
+                //$this->controller->redirect(Yii::app()->user->returnUrl);
+                //$this->redirect(array('site/login'));   
+                $this->redirect(backUrl);
             }
         }
 
-        // Вывести форму
-        $this->render('form_signup', array('form'=>$user));
+        // вивести форму
+        $this->controller->render('registration', array('model'=>$model));
     }
 }

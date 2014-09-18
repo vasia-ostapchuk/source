@@ -68,6 +68,7 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
     <div class="calendar">
 <?php
 $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+    'language'=>'uk',
     'name'=>'datepicker-month-year-menu',
     'flat'=>true,//remove to hide the datepicker
     'options'=>array(
@@ -138,4 +139,9 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                     <li><a href="">7</a></li>
                 </ul>
     </div>
+     <?php $pages=new CPagination(10); $pages->pageSize=10; $this->widget('CLinkPager',array(
+             'pages'=>$pages, 
+             'maxButtonCount' => 5, 
+             'header' => '<b>'.Yii::t("main", "Перейти к странице:").'</b><br><br>',
+     )); ?>
 </div>

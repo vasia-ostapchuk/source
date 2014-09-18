@@ -6,8 +6,16 @@
                 'title' => 'Вхід на сайт',
                 'autoOpen' => false,
                 'modal' => false,
+                'show'=>array(
+                    'effect'=>'blind',
+                    'duration'=>500,
+                ),
+                'hide'=>array(
+                    'effect'=>'blind',
+                    'duration'=>500,
+                ),
                 'resizable'=> false,
-                'position'=> '{ my: "left top", at: "left bottom", of: button }',
+                'position'=> '{ my: "right top", at: "left bottom", of: button }',
             ),
         ));
 ?>
