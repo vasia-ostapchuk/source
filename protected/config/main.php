@@ -51,7 +51,11 @@ return array(
                         'password'=>'',
                         'charset'=>'utf8', // система кодування
                         'emulatePrepare'=>true, // потрібно для деяких версій mysql 
-		),
+		        // включаем профайлер
+                        'enableProfiling'=>true,
+                        // показываем значения параметров
+                        'enableParamLogging' => true,
+                    ),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -61,8 +65,11 @@ return array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
 				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+				// направляем результаты профайлинга в ProfileLogRoute (отображается
+                                // внизу страницы)
+                                'class'=>'CProfileLogRoute',
+                                'levels'=>'profile',
+                                'enabled'=>true,
 				),
 			),
 		),

@@ -85,7 +85,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     ),
 )); ?>
     </div>
-    <?php   
+    <?php
     $this->endWidget(); ?>
 </div>
 <div class="events">
