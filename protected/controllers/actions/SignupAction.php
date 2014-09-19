@@ -11,7 +11,7 @@
  *
  * @author Mr White
  */
-class SignupAction extends CAction {
+class SignUpAction extends CAction {
     
     public function run()
     {
@@ -23,7 +23,7 @@ class SignupAction extends CAction {
         if(isset($_POST['ajax']) && $_POST['ajax']==='RegistrationForm')
         {
                 echo CActiveForm::validate($model);
-                Yii::app()->end();
+                Yii::app()->end();  
         }
         
         // Если пришли данные для сохранения
@@ -33,20 +33,17 @@ class SignupAction extends CAction {
             $model->attributes = $_POST['RegistrationForm'];
 
             // Проверка данных
-            if($model->validate() && $model->signup())
+            if($model->signUp())
             {
+                 //&& $model->validate()
                 //$model->save();
                 // Сохранить полученные данные
                 // false нужен для того, чтобы не производить повторную проверку
                 //$user->save(false);
-                //$this->controller->redirect(Yii::app()->user->returnUrl);
-                //$this->redirect(array('site/login'));   
-                //$this->redirect(backUrl);
-                //$this->createUrl('site/login');
             }
         }
-
         // вивести форму
-        $this->controller->render('registration', array('model'=>$model));
+       //$this->controller->redirect(Yii::app()->user->returnUrl);
+         $this->renderPartial('registration', array('model'=>$model));
     }
 }

@@ -27,11 +27,12 @@ class RegistrationForm extends CActiveRecord
     {
         return array(
             // Логин и пароль - обязательные поля
-            array('first_name, last_name, password', 'required'),
+            //array('first_name, last_name, password', 'required'),
+            array('email, phone, password', 'required'),
             // Длина логина должна быть в пределах от 5 до 30 символов
-            array('first_name', 'length', 'min'=>5, 'max'=>30),
+            //array('first_name', 'length', 'min'=>5, 'max'=>30),
             // Длина логина должна быть в пределах от 5 до 30 символов
-            array('last_name', 'length', 'min'=>5, 'max'=>30),
+            //array('last_name', 'length', 'min'=>5, 'max'=>30),
             // Логин должен соответствовать шаблону
             //array('login', 'match', 'pattern'=>'/^[A-z][\w]+$/'),
             // Логин должен быть уникальным
@@ -54,6 +55,8 @@ class RegistrationForm extends CActiveRecord
             array('email', 'filter', 'filter'=>'mb_strtolower'),
             // унікальний телефон
             array('phone', 'unique', 'message'=>'Користувач з таким телефоном вже існує.'),
+            // обробка дати народження
+            array('birthday', 'safe'),
         );
     }
 
@@ -83,25 +86,21 @@ class RegistrationForm extends CActiveRecord
                 // Хешировать пароль
                 $this->password = $this->hashPassword($this->password);
             }
-
+            error_log('true');
             return true;
          }
-
+        error_log('false');
         return false;
     }
     public function hashPassword($password)
     {
+        error_log('$password');
         return md5($password);
     }
-    public function signup()
-    {
-        try 
-        {
-            $this->save();
-        } 
-        catch (Exception $e) 
-        {
-            $this->addError('phone',$e);
-        }
+    public function signUp()
+    {     
+            if(!$this->save()){
+                print_r($this->getErrors());} 
+            return true;
     }
 }

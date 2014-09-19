@@ -11,7 +11,7 @@ class SiteController extends Controller
                         'error'=>'application.controllers.actions.ErrorAction',
                         'login'=>'application.controllers.actions.LoginAction',
                         'logout'=>'application.controllers.actions.LogoutAction',
-                        'signup'=>'application.controllers.actions.SignupAction',
+                        'signup'=>'application.controllers.actions.SignUpAction',
 		);
 	}
 }

@@ -11,71 +11,63 @@
         'action' => array('site/signup'),
 )); ?>
 
-	<p class="note">Поля з <span class="required">*</span> є обов'язкові.</p>
+<p class="note">Поля з <span class="required">*</span> є обов'язкові.</p>
 
-	<div class="row">
-            <?php echo $form->labelEx($model,'first_name'); ?>
-            <?php echo $form->textField($model,'first_name', array('placeholder'=>'Іван')); ?>
-            <?php echo $form->error($model,'first_name'); ?>
-	</div>
-        
-        <div class="row">
-            <?php echo $form->labelEx($model,'last_name'); ?>
-            <?php echo $form->textField($model,'last_name', array('placeholder'=>'Іванов')); ?>
-            <?php echo $form->error($model,'last_name'); ?>
-	</div>
+<div class="row">
+    <?php echo $form->textField($model,'email', array('placeholder'=>'* '.$model->getAttributeLabel('email')));  ?>
+    <?php echo $form->error($model,'email'); ?>
+</div>
 
-	<div class="row">
-            <?php echo $form->labelEx($model,'password'); ?>
-            <?php echo $form->passwordField($model,'password'); ?>
-            <?php echo $form->error($model,'password'); ?>
-	</div>
-        
-        <div class="row">
-            <?php echo $form->labelEx($model,'password_repeat'); ?>
-            <?php echo $form->passwordField($model,'password_repeat'); ?>
-            <?php echo $form->error($model,'password_repeat'); ?>
-	</div>
+<div class="row">
+    <?php echo $form->passwordField($model,'password', array('placeholder'=>'* '.$model->getAttributeLabel('password'))); ?>
+    <?php echo $form->error($model,'password'); ?>
+</div>
 
-	<div class="row">
-            <?php echo $form->labelEx($model,'email'); ?>
-            <?php echo $form->textField($model,'email', array('placeholder'=>'some@example.com')); ?>
-            <?php echo $form->error($model,'email'); ?>
-	</div>
-        
-        <div class="row">
-            <?php
-            echo $form->labelEx($model,'birthday');
-            $this->widget('zii.widgets.jui.CJuiDatePicker',array(
-                'language'=>'uk',
-                'id'=>'birthday',   
-                'name'=>'birthday',
-                'model' => $model,
-                'attribute' => 'birthday',
-                'value'=>date('d/m/Y'),
-                'options'=>array(
-                    'showButtonPanel'=>true,
-                    'dateFormat'=>'dd/mm/yy',
-                ),
-                'htmlOptions' => array(
-                    'placeholder'=>'dd/mm/yy'
-                ),
-            ));
-            ?>
-	</div>
-        
-        <div class="row">
-            <?php echo $form->labelEx($model,'phone'); ?>
-            <?php echo $form->textField($model,'phone', array('placeholder'=>'+380-XX-NNNNNNN')); ?>
-            <?php echo $form->error($model,'phone'); ?>
-            <p class="hint">
-            XX — XX — Код міста, Z — Код країни, NNNNNNN — Телефонний номер
-        </p>
-	</div>
+<div class="row">
+    <?php echo $form->passwordField($model,'password_repeat', array('placeholder'=>$model->getAttributeLabel('password_repeat'))); ?>
+    <?php echo $form->error($model,'password_repeat'); ?>
+</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Реєстрація'). "\n"; ?>
-	</div>
+<div class="row">
+    <?php
+    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+        'language'=>'uk',
+        'id'=>'birthday',   
+        'name'=>'birthday',
+        'model' => $model,
+        'attribute' => 'birthday',
+        'value'=>date('Y-m-d'),
+        'options'=>array(
+            'showButtonPanel'=>true,
+            'dateFormat'=>'yy-mm-dd',
+        ),
+        'htmlOptions' => array(
+            'placeholder'=>$model->getAttributeLabel('birthday')
+        ),
+    ));
+    ?>
+</div>
+
+<div class="row">
+    <?php echo $form->textField($model,'phone', array('placeholder'=>'* '.'+380-XX-NNNNNNN')); ?>
+    <?php echo $form->error($model,'phone'); ?>
+</div>
+
+<!--<div class="row buttons">
+        <?php //echo CHtml::submitButton('Реєстрація'). "\n"; ?>
+</div>-->
+<div class="row buttons">
+<?php
+    echo CHtml::ajaxSubmitButton ("Post",
+                array('site/signup'),
+                            array(
+                                'update' => '#post',
+                                //'success'=> $('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':0});,
+                            )
+    );
+
+  ?></div>
+
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->

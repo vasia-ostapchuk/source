@@ -63,7 +63,7 @@ class LoginAction extends CAction {
                 // validate user input and redirect to the previous page if valid
                 //$userModel = new User;
                 //echo "<pre>"; var_dump($model->attributes); echo "</pre>";                
-                if($model->validate() && $model->login())
+                if($model->validate() && $model->login());
                         $this->controller->redirect(Yii::app()->user->returnUrl);
         }
         // display the login form

@@ -23,11 +23,11 @@
                     <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout" >Logout(<?php echo Yii::app()->user->name; ?>)</a>
                 </p>
                 <?php } else {?>
-                    <a href="#" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':0}); return false;" style="text-decoration: none;" > Вхід </a>
+                    <a href="#" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':1}); return false;" style="text-decoration: none;" > Реєстрація </a>
                 <?php } ?>
             </div>
             <div class="login-registration">
-                <a href="#" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':1}); return false;" style="text-decoration: none;" > Реєстрація </a>
+                <a href="#" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':0}); return false;" style="text-decoration: none;" > Вхід </a>
             </div> 
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'modalForm.php'); ?>
