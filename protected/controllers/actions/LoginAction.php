@@ -52,7 +52,10 @@ class LoginAction extends CAction {
         // if it is ajax validation request
         if(isset($_POST['ajax']) && $_POST['ajax']==='LoginForm')
         {
-                echo CActiveForm::validate($model);
+                //echo CActiveForm::validate($model);
+                $error = CActiveForm::validate($model);
+                if($error!='[]')
+                    echo $error;
                 Yii::app()->end();
         }
 
@@ -63,10 +66,24 @@ class LoginAction extends CAction {
                 // validate user input and redirect to the previous page if valid
                 //$userModel = new User;
                 //echo "<pre>"; var_dump($model->attributes); echo "</pre>";                
-                if($model->validate() && $model->login());
-                        $this->controller->redirect(Yii::app()->user->returnUrl);
+                if($model->validate() && $model->login()) {
+                        //$this->controller->redirect(Yii::app()->user->returnUrl);
+                    echo CJSON::encode(array(
+                        'status'=>'success'
+                    ));
+                    Yii::app()->end();
+                }
+                else {
+                    /*echo CJSON::encode(array(
+                      'status'=>'error'
+                    ));*/
+                    $error = CActiveForm::validate($model);
+                            if($error!='[]')
+                                echo $error;
+                    Yii::app()->end();
+                }
         }
         // display the login form
-        $this->controller->render('login',array('model'=>$model));
+        //$this->controller->render('login',array('model'=>$model));
     }
 }

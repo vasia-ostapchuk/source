@@ -33,8 +33,32 @@
 </div>
 
 <div class="row buttons">
-        <?php echo CHtml::submitButton('Вхід'). "\n"; ?>
+        <?php //echo CHtml::submitButton('Вхід'). "\n"; ?>
 </div>
+<div class="row buttons">
+<?php
+    echo CHtml::ajaxSubmitButton ("Вхід",
+                array('/site/login'),
+                            array(
+                                'dataType'=>'json',
+                                'type' => 'post',
+                                'update' => '#LoginForm',
+                                'success'=>'function(data) {
+                                                if(data.status=="success") {
+                                                    $("#LoginForm")[0].reset();
+                                                    $("#loginModalForm").dialog("close");
+                                                }
+                                                 else {
+                                                    $.each(data, function(key, val) {
+                                                        $(".errorSummary, .errorMessage").hide();
+                                                        $("#LoginForm #"+key+"_em_").text(val);                                                    
+                                                        $("#LoginForm #"+key+"_em_").show();
+                                                    });
+                                                }
+                                            }',
+                            )
+    );
+  ?></div>
 <?php   
     $this->endWidget();
 ?>

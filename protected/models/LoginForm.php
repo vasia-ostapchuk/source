@@ -7,6 +7,7 @@
  */
 class LoginForm extends CFormModel
 {
+        private $hash = '$2a$10$dfda807d832b094184faeu1elwhtR2Xhtuvs3R9J1nfRGBCudCCzC';
 	public $username;
 	public $password;
 	public $rememberMe;
@@ -50,7 +51,8 @@ class LoginForm extends CFormModel
 	{
 		if(!$this->hasErrors())
 		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
+                            $full_salt = substr($this->hash, 0, 29);
+			$this->_identity=new UserIdentity($this->username,crypt($this->password, $full_salt));
 			if(!$this->_identity->authenticate())
                             $this->addError('password','Неправильний логін або пароль.');
                 }               
@@ -64,7 +66,8 @@ class LoginForm extends CFormModel
 	{
 		if($this->_identity===null)
 		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
+                    $full_salt = substr($this->hash, 0, 29);
+			$this->_identity=new UserIdentity($this->username,crypt($this->password, $full_salt));
 			$this->_identity->authenticate($userData);
 		}
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)

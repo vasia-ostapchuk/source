@@ -52,22 +52,36 @@
     <?php echo $form->textField($model,'phone', array('placeholder'=>'* '.'+380-XX-NNNNNNN')); ?>
     <?php echo $form->error($model,'phone'); ?>
 </div>
-
-<!--<div class="row buttons">
-        <?php //echo CHtml::submitButton('Реєстрація'). "\n"; ?>
-</div>-->
+<?php echo $form->dropDownList($model,'sex_id',array('чоловік','жінка'), array('placeholder'=>'Стать')); ?>
+<div class="row buttons">
+        <?php// echo CHtml::submitButton('Реєстрація'). "\n"; ?>
+</div>
 <div class="row buttons">
 <?php
-    echo CHtml::ajaxSubmitButton ("Post",
-                array('site/signup'),
+    echo CHtml::ajaxSubmitButton ("Реєстрація",
+                array('/site/signup'),
                             array(
-                                'update' => '#post',
-                                //'success'=> $('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':0});,
+                                'dataType'=>'json',
+                                'type' => 'post',
+                                'update' => '#RegistrationForm',
+                                'success'=>'function(data) {
+                                                if(data.status=="success") {
+                                                    $("#RegistrationForm")[0].reset();
+                                                    $("#loginModalForm").dialog("open");
+                                                    $("#loginModalForm").tabs({"selected":0});
+                                                }
+                                                 else {
+                                                     $.each(data, function(key, val) {
+                                                        $(".errorSummary, .errorMessage").hide();
+                                                        $("#RegistrationForm #"+key+"_em_").text(val);                                                    
+                                                        $("#RegistrationForm #"+key+"_em_").show();
+                                                    });
+                                                }
+                                            }',
                             )
     );
-
   ?></div>
 
 
-<?php $this->endWidget(); ?>
+<?php $this->endWidget(); /* $(".errorSummary, .errorMessage").hide();*/?> 
 </div><!-- form -->

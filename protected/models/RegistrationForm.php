@@ -11,6 +11,8 @@ class RegistrationForm extends CActiveRecord
     public $email;
     public $birthday;
     public $phone;
+    // сіль для паролю
+    private $hash = '$2a$10$dfda807d832b094184faeu1elwhtR2Xhtuvs3R9J1nfRGBCudCCzC';
 
     public static function model($className = __CLASS__)
     {
@@ -85,6 +87,11 @@ class RegistrationForm extends CActiveRecord
                 $this->dtime_registration = time();
                 // Хешировать пароль
                 $this->password = $this->hashPassword($this->password);
+                if($this->sex_id == 'чоловік')
+                    $this->sex_id = 2;
+                else
+                    $this->sex_id = 1;
+                $this->state_id = 4;
             }
             error_log('true');
             return true;
@@ -92,10 +99,10 @@ class RegistrationForm extends CActiveRecord
         error_log('false');
         return false;
     }
-    public function hashPassword($password)
+    public function hashPassword($password) //hash with salt and Blowfish encryption method
     {
-        error_log('$password');
-        return md5($password);
+        $full_salt = substr($this->hash, 0, 29);
+        return crypt($password, $full_salt);
     }
     public function signUp()
     {     
