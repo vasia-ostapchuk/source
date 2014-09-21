@@ -49,10 +49,10 @@ class LoginForm extends CFormModel
 	 */
 	public function authenticate($attribute,$params)
 	{
+
 		if(!$this->hasErrors())
 		{
-                            $full_salt = substr($this->hash, 0, 29);
-			$this->_identity=new UserIdentity($this->username,crypt($this->password, $full_salt));
+			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
                             $this->addError('password','Неправильний логін або пароль.');
                 }               
@@ -66,8 +66,7 @@ class LoginForm extends CFormModel
 	{
 		if($this->_identity===null)
 		{
-                    $full_salt = substr($this->hash, 0, 29);
-			$this->_identity=new UserIdentity($this->username,crypt($this->password, $full_salt));
+			$this->_identity=new UserIdentity($this->username,$this->password);
 			$this->_identity->authenticate($userData);
 		}
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)

@@ -47,6 +47,10 @@
                                                 if(data.status=="success") {
                                                     $("#LoginForm")[0].reset();
                                                     $("#loginModalForm").dialog("close");
+                                                    $("#login_button").hide();
+                                                    $("#reg_button").hide();
+                                                    $("#profile_button").show();
+                                                    $("#logout").show();
                                                 }
                                                  else {
                                                     $.each(data, function(key, val) {
