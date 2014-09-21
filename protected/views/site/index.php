@@ -71,6 +71,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     'language'=>'uk',
     'name'=>'datepicker-month-year-menu',
     'flat'=>true,//remove to hide the datepicker
+    'cssFile'=>'calendar-widget.css',
     'options'=>array(
 	    'dateFormat' => 'yy-mm-dd',
         'showAnim'=>'slide',//'slide','fold','slideDown','fadeIn','blind','bounce','clip','drop'

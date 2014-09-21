@@ -189,6 +189,9 @@ img {border: none;}
     height: 210px;
     background-color: #555;
 }
+.calendar #slider_range_slider {
+    
+}
 .events-sorting {
     height: 25px;
     width: 687px;
@@ -250,4 +253,9 @@ img {border: none;}
     color: white;
     font-size: 25px;
     text-align: center;
+}
+// віджети
+.calendar .ui-widget-content {
+    border: 2px solid #f00;
+    color: #ff5454;
 }
