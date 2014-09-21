@@ -78,16 +78,11 @@ img {border: none;}
     background-color: #009;
 }
 .navigator-button {
-    background-color: #cd0a0a;
     margin: 5px 0 0 10px; 
     float:left;
 }
 .navigator-button li{
-    text-align: center;
-    padding: 10px 20px;
     display: inline;
-    border: 1px solid #ff0;
-    line-height: 40px;
 }
 .navigator-search {
     
