@@ -11,7 +11,7 @@
  *
  * @author Mr White
  */
-class SignupAction extends CAction {
+class SignUpAction extends CAction {
     
     public function run()
     {
@@ -33,7 +33,7 @@ class SignupAction extends CAction {
             $model->attributes = $_POST['RegistrationForm'];
 
             // Проверка данных
-            if($model->validate() && $model->signup())
+            if($model->validate() && $model->signUp())
             {
                 //$model->save();
                 // Сохранить полученные данные

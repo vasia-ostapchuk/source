@@ -14,6 +14,8 @@
 
     <div class="container" id="page">
         <div class="header">
+            
+         
             <div class="logo">
                 
             </div>
@@ -41,7 +43,7 @@
             </div>
             <div class="navigator-search">
         <form class="form-search" method="get" action="/search" target="_blank">
-<input type="text" name="q" placeholder="поиск" value=""/></form>
+<input type="text" name="q" placeholder="пошук" value=""/></form>
             </div>
         </div>
         <div id="content">            

@@ -17,7 +17,7 @@ img {border: none;}
     width: 1000px;
     margin: auto;
     height: 150px;
-    background-color: red;
+    background-image: url(/images/header-menu.jpg) ;
 }
 .logo {
     width: 40%;
@@ -92,7 +92,7 @@ img {border: none;}
 .navigator-search {
     
     height: 30px;
-    margin: 10px 0 0 70px;
+    margin: 5px 0 0 70px;
     float:right;
 }
 .form-search {
@@ -106,7 +106,7 @@ img {border: none;}
 }
 
 .form-search input {
-  width: 60px;
+  width: 250px;
   height: 32px;
   line-height: 32px;
   font: 13px Helvetica, Arial, sans-serif; 
@@ -129,7 +129,7 @@ img {border: none;}
 }
 
 .form-search input:focus {
-  width: 160px;
+  width: 250px;
   box-shadow: inset 0 1px 1px #46575b, 0 1px 0 #FFF;
   color: #25464D;
   background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -moz-linear-gradient(#9CC2CA, #DFECEF);
@@ -193,7 +193,19 @@ img {border: none;}
     height: 25px;
     width: 687px;
     margin: 20px;
-    background-color: #298;
+   
+}
+.events-sorting span{
+    color: red;
+}
+.events-sorting li{
+    display: inline-block;
+    border: 1px solid #009;
+    text-align: center;
+    padding: 5px 10px;
+}
+.events-sorting a{
+    text-decoration: none;
 }
 .event{
     width: 200px;
@@ -201,24 +213,39 @@ img {border: none;}
     margin: 20px;
     background-color: #514721;
     display: inline-block;
-    border: 1px solid #06c;
-    
+    border: 3px solid #BCBCBC ;
+    color: #C9E0ED;
+    font-size: 14px ;
+    font-style: italic;
+    font-weight: 700;
+}
+.right{
+    float: right;
+   
 }
 .event-photo {
     width: 90px;
-    height: 90px;
+    height: 280px;
     float: left;
 }
 .event span{
     color: red;
+    font-size: 14px;
+    font-weight: 700;
 }
 .event a{
     text-decoration: none;
     color: graytext;
+    
 }
 .event a:hover{
     color: yellow;
 }
+.button{
+  
+  
+}
+
 .pagination-link {
     height: 25px;
     width: 280px;

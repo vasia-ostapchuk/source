@@ -93,7 +93,7 @@ class RegistrationForm extends CActiveRecord
     {
         return md5($password);
     }
-    public function signup()
+    public function signUp()
     {
         try 
         {
