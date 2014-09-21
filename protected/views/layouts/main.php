@@ -28,7 +28,7 @@
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'authentication.php'); ?>
         <div class="navigator">
-            <div >
+            <div class="navigator-button">
                 <ul>
                     <li>
                         <?php
@@ -62,7 +62,7 @@
                                 ),
                                 array('class'=>'button',
                                     'type' => 'submit',
-                                     'style'=>'float:left; left:40px; top:-11px;'
+                                     'style'=>'float:left; left:40px;'
                                 )
                             );
                         ?>                        
@@ -80,7 +80,7 @@
                                             }",
                                 ),
                             array('class'=>'button',
-                                 'style'=>'float:left; left:60px; top:-27px;'
+                                 'style'=>'float:left; left:60px;'
                                  )
                             );
                         ?> 
