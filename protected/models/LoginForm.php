@@ -7,6 +7,7 @@
  */
 class LoginForm extends CFormModel
 {
+        private $hash = '$2a$10$dfda807d832b094184faeu1elwhtR2Xhtuvs3R9J1nfRGBCudCCzC';
 	public $username;
 	public $password;
 	public $rememberMe;
@@ -48,6 +49,7 @@ class LoginForm extends CFormModel
 	 */
 	public function authenticate($attribute,$params)
 	{
+
 		if(!$this->hasErrors())
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);

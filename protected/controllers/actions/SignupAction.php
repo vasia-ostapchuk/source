@@ -22,7 +22,10 @@ class SignUpAction extends CAction {
         // if it is ajax validation request
         if(isset($_POST['ajax']) && $_POST['ajax']==='RegistrationForm')
         {
-                echo CActiveForm::validate($model);
+                //echo CActiveForm::validate($model);
+                $error = CActiveForm::validate($model);
+                if($error!='[]')
+                    echo $error;
                 Yii::app()->end();
         }
         
@@ -35,18 +38,23 @@ class SignUpAction extends CAction {
             // Проверка данных
             if($model->validate() && $model->signUp())
             {
-                //$model->save();
-                // Сохранить полученные данные
-                // false нужен для того, чтобы не производить повторную проверку
-                //$user->save(false);
-                //$this->controller->redirect(Yii::app()->user->returnUrl);
-                //$this->redirect(array('site/login'));   
-                //$this->redirect(backUrl);
-                //$this->createUrl('site/login');
+                echo CJSON::encode(array(
+                              'status'=>'success',
+                         ));
+                Yii::app()->end();
+            }
+            else {
+                /*echo CJSON::encode(array(
+                              'status'=>'error'
+                         ));*/
+                $error = CActiveForm::validate($model);
+                            if($error!='[]')
+                                echo $error;
+                    Yii::app()->end();
             }
         }
-
         // вивести форму
-        $this->controller->render('registration', array('model'=>$model));
+       //$this->controller->redirect(Yii::app()->user->returnUrl);
+         //$this->renderPartial('registration', array('model'=>$model));
     }
 }

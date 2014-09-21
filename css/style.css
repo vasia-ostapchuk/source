@@ -78,16 +78,11 @@ img {border: none;}
     background-color: #009;
 }
 .navigator-button {
-    background-color: #cd0a0a;
     margin: 5px 0 0 10px; 
     float:left;
 }
 .navigator-button li{
-    text-align: center;
-    padding: 10px 20px;
     display: inline;
-    border: 1px solid #ff0;
-    line-height: 40px;
 }
 .navigator-search {
     
@@ -189,6 +184,9 @@ img {border: none;}
     height: 210px;
     background-color: #555;
 }
+.calendar #slider_range_slider {
+    
+}
 .events-sorting {
     height: 25px;
     width: 687px;
@@ -277,4 +275,9 @@ img {border: none;}
     color: white;
     font-size: 25px;
     text-align: center;
+}
+// віджети
+.calendar .ui-widget-content {
+    border: 2px solid #f00;
+    color: #ff5454;
 }
