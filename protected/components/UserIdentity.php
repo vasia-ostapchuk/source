@@ -7,8 +7,6 @@
  */
 class UserIdentity extends CUserIdentity
 {
-        // сіль для паролю
-        private $hash = '$2a$10$dfda807d832b094184faeu1elwhtR2Xhtuvs3R9J1nfRGBCudCCzC';
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -27,7 +25,6 @@ class UserIdentity extends CUserIdentity
             );*/
             //$params=User::model()->find
            // $users = 
-            $this->password = $this->hashPassword($this->password);
             $users = User::model()->findUserByUsername($this->username);
             if($users == null){
                 $this->errorCode=self::ERROR_USERNAME_INVALID;
@@ -45,9 +42,4 @@ class UserIdentity extends CUserIdentity
                     $this->errorCode=self::ERROR_NONE;
             return !$this->errorCode;
 	}
-        public function hashPassword($password) //hash with salt and Blowfish encryption method
-        {
-            $full_salt = substr($this->hash, 0, 29);
-            return crypt($password, $full_salt);
-        }
 }

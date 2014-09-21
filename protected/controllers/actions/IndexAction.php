@@ -9,9 +9,6 @@
             'render',
             array('index'),
         );*/
-        $data = array();
-        $data["ajaxContent"] = $this->controller->renderPartial('poster',array(),true);
-        
-     $this->controller->render('index', $data);
+     $this->controller->render('index');
     }
  }

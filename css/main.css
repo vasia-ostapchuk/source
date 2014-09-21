@@ -266,26 +266,3 @@ div.search-form
 {
 	background: #80CFFF;
 }
-
-.button { 
-       position:relative;
-    top: 5px;
-    left: 360px;
-    padding: 12px 20px;
-    background: #474665;
-    font-size: 14px;
-    font-weight: bold;
-    color: #CBC9C9;
-    text-align: center;
-    cursor: pointer;
-    border: #2054F0;
-    border-radius: 7px;
-    font-family: Tahoma,Arial,sans-serif;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    background: 
-    -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
-    background: 
-    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
-
-    }

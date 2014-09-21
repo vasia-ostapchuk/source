@@ -17,74 +17,26 @@
             <div class="logo">
                 
             </div>
+            <div class="login-registration">
                 <?php if(!Yii::app()->user->isGuest){ ?>
-                    <input class="button" id="profile_button" type="button" value="профайл" onclick="" />
-                    <a id="logout" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout"  >Logout(<?php echo Yii::app()->user->name; ?>)</a> 
-
+                <p style="display: block; float: right; text-decoration: none;">
+                    <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout" >Logout(<?php echo Yii::app()->user->name; ?>)</a>
+                </p>
                 <?php } else {?>
-                    <input class="button" id="login_button" type="button" value="Вхід" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':0}); return false;" />
-                    <input class="button" id="reg_button" type="button" value="Реєстрація" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':1}); return false;" />  
+                    <a href="#" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':1}); return false;" style="text-decoration: none;" > Реєстрація </a>
                 <?php } ?>
+            </div>
+            <div class="login-registration">
+                <a href="#" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':0}); return false;" style="text-decoration: none;" > Вхід </a>
+            </div> 
         </div>
-        <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'authentication.php'); ?>
+        <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'modalForm.php'); ?>
         <div class="navigator">
-            <div >
+            <div class="navigator-button">
                 <ul>
-                    <li>
-                        <?php
-                            echo CHtml::ajaxButton('Афіша',  
-                            CController::createUrl('/site/ajax'),   
-                            array('dataType'=>'json',
-                                    'type' => 'post', 
-                                    'update' => '.events',
-                                    'data' => array ('id'=>'poster'),
-                                    'success'=>"function(data) {
-                                                $('.events').html(data);
-                                            }",
-                                ),
-                            array('class'=>'button',
-                                 'style'=>'float:left; left:20px;'
-                                 )
-                            );
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                            echo CHtml::ajaxButton('Інвестиції',  
-                                CController::createUrl('/site/ajax'),   
-                                array('dataType'=>'json',
-                                    'type' => 'post', 
-                                    'update' => '.events',
-                                    'data' => array ('id'=>'investment'),
-                                    'success'=>"function(data) {
-                                                $('.events').html(data);
-                                            }",
-                                ),
-                                array('class'=>'button',
-                                    'type' => 'submit',
-                                     'style'=>'float:left; left:40px; top:-11px;'
-                                )
-                            );
-                        ?>                        
-                    </li>
-                    <li>
-                        <?php
-                            echo CHtml::ajaxButton('В процесі',
-                            CController::createUrl('/site/ajax'),   
-                            array('dataType'=>'json',
-                                    'type' => 'post', 
-                                    'update' => '.events',
-                                    'data' => array ('id'=>'process'),
-                                    'success'=>"function(data) {
-                                                $('.events').html(data);
-                                            }",
-                                ),
-                            array('class'=>'button',
-                                 'style'=>'float:left; left:60px; top:-27px;'
-                                 )
-                            );
-                        ?> 
-                    </li>
+                    <li><a href="">Афіша</a></li>
+                    <li><a href="">Інвестиції</a></li>
+                    <li><a href="">В процесі</a></li>
                 </ul>
             </div>
             <div class="navigator-search">

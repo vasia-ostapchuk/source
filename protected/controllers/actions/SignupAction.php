@@ -39,7 +39,7 @@ class SignUpAction extends CAction {
             if($model->validate() && $model->signUp())
             {
                 echo CJSON::encode(array(
-                              'status'=>'success',
+                              'status'=>'success'
                          ));
                 Yii::app()->end();
             }
