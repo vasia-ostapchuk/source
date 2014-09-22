@@ -179,21 +179,22 @@ img {border: none;}
     color:#b00;
 }
 .price-scroll .min {
-    width: 70px;
+    width: 80px;
     margin-left: 20px;
     font-weight:bold;
     margin-bottom: 15px;
 }
 form .price-scroll #slider_range_slider.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
     width:210px;
-    height: 5px;
+    height: 6px;
     margin: auto;
     background: #FFa0a0;
 }
 form .price-scroll a.ui-slider-handle.ui-state-default.ui-corner-all {
     border: 1px solid #900;
-    width: 5px;
-    height: 12px;
+    width: 9px;
+    height: 14px;
+    margin: auto;
 }
 form .price-scroll .ui-state-default,.ui-widget-content.ui-state-default,.ui-widget-header.ui-state-default{
     background: #900;
