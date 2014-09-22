@@ -68,8 +68,7 @@ img {border: none;}
 .filters {
     width: 250px;
     float: left;
-    background-color: #298dcd;
-    //display: inline-block;
+    background-color: #FF5050;
 }
 .navigator {
     width: 750px;
@@ -145,34 +144,39 @@ img {border: none;}
     background-color: #C9E0ED;
     text-align: center;
 }
-.filter-country {
-    padding-left: 20px;
-    line-height: 30px;
-    background-color: #FF3030;
-}
-.filter-sity {
+         /*   .filter-country {
+                padding-left: 20px;
+                line-height: 30px;
+                background-color: #FF3030;
+            }
+            .filter-city {
+                padding-left: 20px;
+                line-height: 30px;
+                background-color: #FF5050;
+            }
+            .filter-style {
+                padding-left: 20px;
+                line-height: 30px;
+                background-color: #FF7070;
+            }
+            .filter-genre {
+                padding-left: 20px;
+                line-height: 30px;
+                background-color: #FFa0a0;
+            }*/
+.filter-label {
     padding-left: 20px;
     line-height: 30px;
     background-color: #FF5050;
-}
-.filter-style {
-    padding-left: 20px;
-    line-height: 30px;
-    background-color: #FF7070;
-}
-.filter-genre {
-    padding-left: 20px;
-    line-height: 30px;
-    background-color: #FFa0a0;
-}
+}         
 .price-scroll {
     height: 100px;
-    background-color: #090;
+    background-color:#EBEBEB;
 }
 .price-scroll h1 {
     padding:5px 20px;
     font: 16px/20px sans-serif;
-    color: #ccc;
+    color:#b00;
 }
 .price-scroll .min {
     width: 70px;
@@ -180,12 +184,27 @@ img {border: none;}
     font-weight:bold;
     margin-bottom: 15px;
 }
+form .price-scroll #slider_range_slider.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+    width:210px;
+    height: 5px;
+    margin: auto;
+    background: #FFa0a0;
+}
+form .price-scroll a.ui-slider-handle.ui-state-default.ui-corner-all {
+    border: 1px solid #900;
+    width: 5px;
+    height: 12px;
+}
+form .price-scroll .ui-state-default,.ui-widget-content.ui-state-default,.ui-widget-header.ui-state-default{
+    background: #900;
+}
+form .ui-widget-content {
+    border: none;
+    background-color: #FF9090;
+}
+
 .calendar {
     height: 210px;
-    background-color: #555;
-}
-.calendar #slider_range_slider {
-    
 }
 .events-sorting {
     height: 25px;
@@ -277,7 +296,37 @@ img {border: none;}
     text-align: center;
 }
 // віджети
-.calendar .ui-widget-content {
-    border: 2px solid #f00;
-    color: #ff5454;
+#FilterForm_country {
+    width: 100px;  
+}
+#FilterForm select {
+    width: 150px;
+    float: right;
+    margin: 5px 20px 0 0;
+}
+
+.calendar #datepicker-month-year-menu_container.widget-calendar.hasDatepicker select{
+   width: auto;
+}
+.calendar .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+    height: 34px;
+}
+.calendar .ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+    background: none;
+    width: 250px;
+    margin: -2px 0 0 -2px;
+    border-bottom: 4px #c00 dotted;
+}
+.calendar table.ui-datepicker-calendar {
+    background: #fff;
+}
+.calendar table.ui-datepicker-calendar thead{
+    background: #ff0;
+    color: #FF7070;
+}
+
+.calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-highlight.ui-state-active{
+    color: #ff0;
+    background: #a00;
+    font-weight: 700;
 }

@@ -8,7 +8,7 @@
 class FilterForm extends CFormModel
 {
     public $country;
-    public $sity;
+    public $city;
     public $style;
     public $genre;
 
@@ -16,7 +16,7 @@ class FilterForm extends CFormModel
     public function rules()
     {
         return array(
-            array('country, sity, style, genre', 'filter')
+            array('country, city, style, genre', 'filter')
         );
     }
 }
