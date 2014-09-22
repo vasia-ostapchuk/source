@@ -27,9 +27,17 @@
             return $arr;
         }
         
-        public function selectCity ()
+        public function selectCity ($nameContry=null)
         {
-            
+            if(!empty($nameContry))
+            {
+                $id=Location::model()->find('name=:name',array(':name'=>$nameContry))->id;
+                $criteria = new CDbCriteria;
+                $criteria->select='name';
+                $criteria->condition='parent_id=:parent_id';
+                $criteria->params=array(':parent_id'=>$id);
+                $result = Location::model()->findAll($criteria);
+            }
         }
     }
 
