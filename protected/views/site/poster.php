@@ -14,8 +14,8 @@
         <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
         <a href=""><br/>14.09.2014<br/>19.00
             <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
+        <div class="knopka01" >
+            <a href="">Купити</a>
         </div>    
     </div> 
     <div class="event">
@@ -24,8 +24,8 @@
         <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
         <a href=""><br/>14.09.2014<br/>19.00
             <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
+        <div class="knopka01" >
+            <a href="">Купити</a>
         </div>    
     </div> 
      <div class="event">
@@ -34,8 +34,28 @@
         <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
         <a href=""><br/>14.09.2014<br/>19.00
             <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>     
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+       <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>   
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
         </div>    
     </div> 
      <div class="event">
@@ -44,8 +64,8 @@
         <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
         <a href=""><br/>14.09.2014<br/>19.00
             <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
+        <div class="knopka01" >
+            <a href="">Купити</a>
         </div>    
     </div> 
      <div class="event">
@@ -54,8 +74,18 @@
         <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
         <a href=""><br/>14.09.2014<br/>19.00
             <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>     
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
         </div>    
     </div> 
      <div class="event">
@@ -64,38 +94,8 @@
         <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
         <a href=""><br/>14.09.2014<br/>19.00
             <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
-        </div>    
-    </div> 
-     <div class="event">
-        <span>Американський папа</span>
-        <br/>
-        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
-        <a href=""><br/>14.09.2014<br/>19.00
-            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
-        </div>    
-    </div> 
-     <div class="event">
-        <span>Американський папа</span>
-        <br/>
-        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
-        <a href=""><br/>14.09.2014<br/>19.00
-            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
-        </div>    
-    </div> 
-     <div class="event">
-        <span>Американський папа</span>
-        <br/>
-        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
-        <a href=""><br/>14.09.2014<br/>19.00
-            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
-        <div class="button1" >
-            <a href="">ttttt</a>
+        <div class="knopka01" >
+            <a href="">Купити</a>
         </div>    
     </div> 
     <div class="pagination-link">  
