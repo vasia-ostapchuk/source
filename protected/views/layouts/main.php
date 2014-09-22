@@ -14,6 +14,8 @@
 
     <div class="container" id="page">
         <div class="header">
+            
+         
             <div class="logo">
                 
             </div>
@@ -28,7 +30,7 @@
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'authentication.php'); ?>
         <div class="navigator">
-            <div >
+            <div class="navigator-button">
                 <ul>
                     <li>
                         <?php
@@ -62,7 +64,7 @@
                                 ),
                                 array('class'=>'button',
                                     'type' => 'submit',
-                                     'style'=>'float:left; left:40px; top:-11px;'
+                                     'style'=>'float:left; left:40px;'
                                 )
                             );
                         ?>                        
@@ -80,7 +82,7 @@
                                             }",
                                 ),
                             array('class'=>'button',
-                                 'style'=>'float:left; left:60px; top:-27px;'
+                                 'style'=>'float:left; left:60px;'
                                  )
                             );
                         ?> 
@@ -89,7 +91,7 @@
             </div>
             <div class="navigator-search">
         <form class="form-search" method="get" action="/search" target="_blank">
-<input type="text" name="q" placeholder="поиск" value=""/></form>
+<input type="text" name="q" placeholder="пошук" value=""/></form>
             </div>
         </div>
         <div id="content">            
@@ -102,7 +104,7 @@
             то футер детка
         </div>
         <?php 
-            echo "<pre>";
+            /*echo "<pre>";
             var_dump($_SESSION);
             echo "</pre>";
             
@@ -112,6 +114,11 @@
             
             echo "<pre>";
             var_export(Yii::app()->user);
+            echo "</pre>";*/
+            
+            $model = new Location;
+            echo "<pre>";
+            //var_export($model->select());
             echo "</pre>";
         ?>
     </div>

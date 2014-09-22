@@ -67,8 +67,8 @@ return array(
 				array(
 				// направляем результаты профайлинга в ProfileLogRoute (отображается
                                 // внизу страницы)
-                                'class'=>'CProfileLogRoute',
-                                'levels'=>'profile',
+                                'class'=>'CWebLogRoute',
+                                'levels'=>'trace, info, profile, error, warning',
                                 'enabled'=>true,
 				),
 			),

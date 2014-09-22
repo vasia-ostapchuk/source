@@ -20,23 +20,23 @@
     <div class="filters-label">
         Фільтри:
     </div>
-    <div class="filter-country">
+    <div class="filter-label">
         <?php echo $form->labelEx($model,'country') . "\n"; ?>
         <?php echo $form->dropDownList($model,'country', array()). "\n"; ?>
         <?php echo $form->error($model,'country') . "\n"; ?>
     </div>
-    <div class="filter-sity">
-        <?php echo $form->labelEx($model,'sity') . "\n"; ?>
-        <?php echo $form->dropDownList($model,'sity', array()). "\n"; ?>
-        <?php echo $form->error($model,'sity') . "\n"; ?>
+    <div class="filter-label">
+        <?php echo $form->labelEx($model,'city') . "\n"; ?>
+        <?php echo $form->dropDownList($model,'city', array()). "\n"; ?>
+        <?php echo $form->error($model,'city') . "\n"; ?>
     </div>
     
-    <div class="filter-style">
+    <div class="filter-label">
         <?php echo $form->labelEx($model,'style') . "\n"; ?>
         <?php echo $form->dropDownList($model,'style', array()). "\n"; ?>
         <?php echo $form->error($model,'style') . "\n"; ?>
     </div>
-    <div class="filter-genre">
+    <div class="filter-label">
         <?php echo $form->labelEx($model,'genre') . "\n"; ?>
         <?php echo $form->dropDownList($model,'genre', array()). "\n"; ?>
         <?php echo $form->error($model,'genre') . "\n"; ?>
@@ -45,14 +45,14 @@
     <div class="price-scroll">
         <h1>Квиткові ціни:</h1>
 <label for="min">Діапазон цін:</label>
-<input type="text" class="min" value="1050-2750" />
+<input type="text" class="min" value="1050-3750" />
 <?php
 $this->widget('zii.widgets.jui.CJuiSliderInput', array(
     'name'=>'slider_range',
      
     'event'=>'change',
     'options'=>array(
-        'values'=>array(1050,2750),// default selection
+        'values'=>array(1050,3750),// default selection
         'min'=>0, //minimum value for slider input
         'max'=>5000, // maximum value for slider input
         'animate'=>true,
@@ -71,7 +71,6 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     'language'=>'uk',
     'name'=>'datepicker-month-year-menu',
     'flat'=>true,//remove to hide the datepicker
-    'cssFile'=>'calendar-widget.css',
     'options'=>array(
 	    'dateFormat' => 'yy-mm-dd',
         'showAnim'=>'slide',//'slide','fold','slideDown','fadeIn','blind','bounce','clip','drop'
@@ -82,13 +81,13 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
         'maxDate' => '2099-12-31',      // maximum date
     ),
     'htmlOptions'=>array(
-        'style'=>''
+        'class'=>'widget-calendar'
     ),
 )); ?>
     </div>
-    <?php
+    <?php   
     $this->endWidget(); ?>
 </div>
 <div class="events">
-   <?php echo $ajaxContent; ?>
+<?php echo $ajaxContent; ?>
 </div>
