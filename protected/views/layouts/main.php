@@ -118,7 +118,8 @@
             
             $model = new Location;
             echo "<pre>";
-            //var_export($model->select());
+            //foreach 
+            var_dump($model->selectContry()->name);
             echo "</pre>";
         ?>
     </div>
