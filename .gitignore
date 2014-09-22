@@ -1,1 +1,4 @@
+protected/views/site/index.php
 protected/runtime/application.log
+/assets/
+index.php

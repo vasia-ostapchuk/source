@@ -18,10 +18,16 @@
             $criteria->select='name';
             $criteria->condition='parent_id=:parent_id';
             $criteria->params=array(':parent_id'=>'0');
-            return Location::model()->findAll($criteria);
+            $result = Location::model()->findAll($criteria);
+            $arr = array();
+            foreach ($result as $value)
+            {
+                $arr[] = $value->name;
+            }
+            return $arr;
         }
         
-        public function slectCity ()
+        public function selectCity ()
         {
             
         }

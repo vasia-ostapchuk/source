@@ -22,7 +22,7 @@
     </div>
     <div class="filter-label">
         <?php echo $form->labelEx($model,'country') . "\n"; ?>
-        <?php echo $form->dropDownList($model,'country', array()). "\n"; ?>
+        <?php echo $form->dropDownList($model,'country', $contry). "\n"; ?>
         <?php echo $form->error($model,'country') . "\n"; ?>
     </div>
     <div class="filter-label">
