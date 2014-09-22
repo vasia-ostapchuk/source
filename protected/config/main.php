@@ -36,7 +36,6 @@ return array(
 		),
 		
 	),
-
 	// application components
 	'components'=>array(
 		'user'=>array(

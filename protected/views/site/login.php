@@ -47,11 +47,7 @@
                                                 if(data.status=="success") {
                                                     $("#LoginForm")[0].reset();
                                                     $("#loginModalForm").dialog("close");
-                                                    $("#login_button").hide();
-                                                    $("#reg_button").hide();
-                                                    $("#profile_button").html();
-                                                    $("#logout").show();
-                                                    $("#logout").html(data.user);
+                                                    $(".user_reg_buttons").html(data.user_reg_buttons);
                                                 }
                                                  else {
                                                     $.each(data, function(key, val) {

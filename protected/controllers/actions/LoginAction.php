@@ -67,11 +67,11 @@ class LoginAction extends CAction {
                 //$userModel = new User;
                 //echo "<pre>"; var_dump($model->attributes); echo "</pre>";                
                 if($model->validate() && $model->login()) {
-                   $user = Yii::app()->session['userdata'] = array ('user_name' => Yii::app()->user->name);
+                   Yii::app()->session['userdata'] = array ('user_name' => Yii::app()->user->name);
                         //$this->controller->redirect(Yii::app()->user->returnUrl);
                     echo CJSON::encode(array(
                         'status'=>'success',
-                        'user'=>$user,
+                        'user_reg_buttons'=>$data['user_reg_buttons'] = $this->controller->renderPartial('user_reg_buttons',array(),true),
                     ));
                     Yii::app()->end();
                 }

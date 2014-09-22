@@ -5,7 +5,7 @@
     {
         
         $data = array();
-        $data["ajaxContent"] = $this->controller->renderPartial('poster',array(),true);
+        $data['ajaxContent'] = $this->controller->renderPartial('poster',array(),true);
         $model = new Location;
             /*echo "<pre>";
             //foreach 
