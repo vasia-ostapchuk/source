@@ -22,12 +22,20 @@
     </div>
     <div class="filter-label">
         <?php echo $form->labelEx($model,'country') . "\n"; ?>
-        <?php echo $form->dropDownList($model,'country', $contry). "\n"; ?>
+        <?php // echo $form->dropDownList($model,'country', $contry) . "\n"; ?>
+        <?php echo CHtml::dropDownList('country', '', $country,array(
+            'ajax'=>array(
+                'type'=>'POST',
+                'url'=>CController::createUrl('site/filter'),
+                'update'=>'#FilterForm_city',
+            ),
+        )); 
+        //CHtml::dropDownList($name, $select, $data, $htmlOptions)?>
         <?php echo $form->error($model,'country') . "\n"; ?>
     </div>
     <div class="filter-label">
         <?php echo $form->labelEx($model,'city') . "\n"; ?>
-        <?php echo $form->dropDownList($model,'city', array()). "\n"; ?>
+        <?php echo $form->dropDownList($model,'city', $city). "\n"; ?>
         <?php echo $form->error($model,'city') . "\n"; ?>
     </div>
     

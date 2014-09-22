@@ -12,7 +12,8 @@
             var_dump($model->selectContry());
             echo "</pre>";*/
             //Yii::app()->end();
-        $data['contry'] = $model->selectContry();
+        $data['country'] = $model->selectContry();
+        $data['city'] = array();
      $this->controller->render('index', $data);
     }
  }

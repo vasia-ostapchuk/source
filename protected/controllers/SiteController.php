@@ -13,6 +13,7 @@ class SiteController extends Controller
                         'logout'=>'application.controllers.actions.LogoutAction',
                         'signup'=>'application.controllers.actions.SignUpAction',
                         'ajax'=>'application.controllers.actions.AjaxAction',
+                        'filter'=>'application.controllers.actions.FilterAction',
 		);
 	}
 }

@@ -15,28 +15,33 @@
         public function selectContry ()
         {
             $criteria = new CDbCriteria;
-            $criteria->select='name';
+            $criteria->select='id,name';
             $criteria->condition='parent_id=:parent_id';
             $criteria->params=array(':parent_id'=>'0');
             $result = Location::model()->findAll($criteria);
-            $arr = array();
+            $data = array();
             foreach ($result as $value)
             {
-                $arr[] = $value->name;
+                $data[$value->id] = $value->name;
             }
-            return $arr;
+            return $data;
         }
         
-        public function selectCity ($nameContry=null)
+        public function selectCity ($id=false)
         {
-            if(!empty($nameContry))
+            if($id)
             {
-                $id=Location::model()->find('name=:name',array(':name'=>$nameContry))->id;
                 $criteria = new CDbCriteria;
-                $criteria->select='name';
-                $criteria->condition='parent_id=:parent_id';
-                $criteria->params=array(':parent_id'=>$id);
+                $criteria->select='id,name';
+                $criteria->condition='parent_id=:id';
+                $criteria->params=array(':id'=>$id);
                 $result = Location::model()->findAll($criteria);
+                $data = array();
+                foreach ($result as $value)
+                {
+                    $data[$value->id] = $value->name;
+                }
+                return $data;
             }
         }
     }
