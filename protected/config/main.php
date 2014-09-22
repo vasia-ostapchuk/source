@@ -43,15 +43,22 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		
+                'session' => array (
+                        'sessionName' => 'PHPSESSID',
+                        'class'=> 'CHttpSession',
+                        //'useTransparentSessionID'   =>($_POST['PHPSESSID']) ? true : false,
+                        'autoStart' => 'false',    
+                        'cookieMode' => 'allow',
+                        'timeout' => 300,
+                    ),
 		'db'=>array(
-			'class'=>'CDbConnection',
+                        'class'=>'CDbConnection',
                         'connectionString'=>'mysql:host=localhost;dbname=gomusic',
                         'username'=>'root',
                         'password'=>'',
                         'charset'=>'utf8', // система кодування
                         'emulatePrepare'=>true, // потрібно для деяких версій mysql 
-		        // включаем профайлер
+                        // включаем профайлер
                         'enableProfiling'=>true,
                         // показываем значения параметров
                         'enableParamLogging' => true,
@@ -68,7 +75,7 @@ return array(
 				// направляем результаты профайлинга в ProfileLogRoute (отображается
                                 // внизу страницы)
                                 'class'=>'CWebLogRoute',
-                                'levels'=>'trace, info, profile, error, warning',
+                                'levels'=>'trace, info, profile, error, warning, error, log, vardump',
                                 'enabled'=>true,
 				),
 			),

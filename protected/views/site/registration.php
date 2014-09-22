@@ -40,6 +40,9 @@
         'options'=>array(
             'showButtonPanel'=>true,
             'dateFormat'=>'yy-mm-dd',
+            'changeYear'=>true,
+            'changeMonth'=>true,
+            'yearRange'=>'1900:2099',
         ),
         'htmlOptions' => array(
             'placeholder'=>$model->getAttributeLabel('birthday')

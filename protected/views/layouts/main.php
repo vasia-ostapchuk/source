@@ -9,7 +9,8 @@
         <link href="../../../css/style.css" rel="stylesheet" type="text/css"></link>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
-
+     
+    
 <body>
 
     <div class="container" id="page">
@@ -19,13 +20,13 @@
             <div class="logo">
                 
             </div>
-                <?php if(!Yii::app()->user->isGuest){ ?>
+                <?php if(Yii::app()->session['userdata']){ ?>
                     <input class="button" id="profile_button" type="button" value="профайл" onclick="" />
-                    <a id="logout" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout"  >Logout(<?php echo Yii::app()->user->name; ?>)</a> 
-
+                    <h3><?php echo Yii::app()->user->name; ?></h3>
+                    <a id="logout" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout"  >вийти </a> 
                 <?php } else {?>
-                    <input class="button" id="login_button" type="button" value="Вхід" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':0}); return false;" />
-                    <input class="button" id="reg_button" type="button" value="Реєстрація" onclick="$('#loginModalForm').dialog('open'); $('#loginModalForm').tabs({'selected':1}); return false;" />  
+                    <input class="button" id="login_button" type="button" value="Вхід" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:0});" />
+                    <input class="button" id="reg_button" type="button" value="Реєстрація" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:1});" />
                 <?php } ?>
         </div>
         <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'authentication.php'); ?>

@@ -49,8 +49,9 @@
                                                     $("#loginModalForm").dialog("close");
                                                     $("#login_button").hide();
                                                     $("#reg_button").hide();
-                                                    $("#profile_button").show();
+                                                    $("#profile_button").html();
                                                     $("#logout").show();
+                                                    $("#logout").html(data.user);
                                                 }
                                                  else {
                                                     $.each(data, function(key, val) {
