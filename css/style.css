@@ -352,7 +352,13 @@ form .ui-widget-content {
 }
 
 .calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-highlight.ui-state-active{
-    color: #ff0;
-    background: #a00;
+    border: 1px solid #a00;
     font-weight: 700;
+}
+.calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-highlight{
+    font-weight: 700;
+    border: 1px solid #aa0;
+}
+.calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-active{
+    border: 1px solid #a00;
 }
