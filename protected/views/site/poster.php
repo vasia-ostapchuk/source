@@ -1,12 +1,16 @@
 <div class="events-sorting">
         <span>Сортувати по:</span>
-        <ul>
+        <!-- <ul>
             <li><a href="">даті</a></li>
              <li><a href="">популярності</a></li>
               <li><a href="">відвідуваності</a></li>
                <li><a href="">коментаріями</a></li>
-                <li><a href="">алфавіту</a></li>
-        </ul>
+                <li><a href="">алфавіту</a></li>  
+        </ul> -->
+        <nav>
+            <a href="">За датою</a>
+            <a href="">Популярне</a>
+        </nav>
     </div>
     <div class="event">
         <span>Американський папа</span>

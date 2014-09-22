@@ -207,7 +207,6 @@ form .ui-widget-content {
     height: 210px;
 }
 .events-sorting {
-    height: 25px;
     width: 687px;
     margin: 20px;
    
@@ -361,4 +360,17 @@ form .ui-widget-content {
 }
 .calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-active{
     border: 1px solid #a00;
+}
+.events-sorting span {
+    width:60%;
+    float: left;
+    padding: 5px;
+}
+.events-sorting nav {
+    border: 1px #000 solid;
+    padding: 5px;
+}
+.events-sorting nav a{
+    padding: 6px 30px;
+    border-left: 1px solid #000;
 }
