@@ -104,7 +104,7 @@
             то футер детка
         </div>
         <?php 
-            echo "<pre>";
+            /*echo "<pre>";
             var_dump($_SESSION);
             echo "</pre>";
             
@@ -114,6 +114,11 @@
             
             echo "<pre>";
             var_export(Yii::app()->user);
+            echo "</pre>";*/
+            
+            $model = new Location;
+            echo "<pre>";
+            var_export($model->select());
             echo "</pre>";
         ?>
     </div>
