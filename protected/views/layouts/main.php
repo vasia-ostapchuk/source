@@ -118,7 +118,7 @@
             
             $model = new Location;
             echo "<pre>";
-            var_export($model->select());
+            //var_export($model->select());
             echo "</pre>";
         ?>
     </div>
