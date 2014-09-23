@@ -98,6 +98,17 @@
         
         <div class="footer">
             то футер детка
+            <?php 
+                //$location=Yii::app()->geoip->lookupLocation('209.85.135.104'); -- google
+                $location=Yii::app()->geoip->lookupLocation('178.212.111.36'); 
+                /*echo "<pre>";
+                print_r($location);
+                echo "</pre>";*/
+                echo "<br>";
+                echo "Country: " . $location->countryName . "<br>";
+                echo "Region: " . $location->regionName . "<br>";
+                echo "City: " . $location->city . "<br>";
+            ?>
         </div>
         <?php 
             /*echo "<pre>";

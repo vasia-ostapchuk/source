@@ -23,6 +23,7 @@ return array(
                 'ext.eoauth.lib.*', 
                 'ext.lightopenid.*',
                 'ext.eauth.services.*',  // }
+                'ext.geoip.*',
 	),
     
 	'modules'=>array(
@@ -67,6 +68,14 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
+                'geoip' => array(
+                        'class' => 'ext.geoip.CGeoIP',
+                        // specify filename location for the corresponding database
+                    //$_SERVER['DOCUMENT_ROOT'].'/protected/data/GeoIP.dat';
+                        'filename' =>$_SERVER['DOCUMENT_ROOT'] . '/protected/data/GeoLiteCity.dat',
+                        // Choose MEMORY_CACHE or STANDARD mode
+                        'mode' => 'STANDARD',
+                ),
 		'log'=>array( // тре розібратися що то таке 
 			'class'=>'CLogRouter',
 			'routes'=>array(

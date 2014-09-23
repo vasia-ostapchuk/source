@@ -26,7 +26,7 @@
         <?php echo CHtml::dropDownList('country', '', $country,array(
             'ajax'=>array(
                 'type'=>'POST',
-                'url'=>CController::createUrl('site/filter'),
+                'url'=>CController::createUrl('site/filtercountry'),
                 'update'=>'#FilterForm_city',
             ),
         )); 
@@ -41,12 +41,28 @@
     
     <div class="filter-label">
         <?php echo $form->labelEx($model,'style') . "\n"; ?>
-        <?php echo $form->dropDownList($model,'style', array()). "\n"; ?>
+        <?php //echo $form->dropDownList($model,'style', $style). "\n"; ?>
+        <?php echo CHtml::dropDownList('style', '', $style,array(
+            'ajax'=>array(
+                'type'=>'POST',
+                'url'=>CController::createUrl('site/filterstyle'),
+                //'update'=>'#'.CHtml::activeId($model,'genre'),
+                'update'=>'#genre',
+            ),
+        )); ?>
         <?php echo $form->error($model,'style') . "\n"; ?>
     </div>
     <div class="filter-label">
         <?php echo $form->labelEx($model,'genre') . "\n"; ?>
-        <?php echo $form->dropDownList($model,'genre', array()). "\n"; ?>
+        <?php //echo $form->dropDownList($model,'genre', $genre). "\n"; ?>
+        <?php echo CHtml::dropDownList('genre', '', $genre,array(
+            'ajax'=>array(
+                'type'=>'POST',
+                'url'=>CController::createUrl('site/filtergenre'),
+                //'update'=>'#'.CHtml::activeId($model,'genre'),
+                'update'=>'#style',
+            ),
+        )); ?>
         <?php echo $form->error($model,'genre') . "\n"; ?>
     </div>
 
