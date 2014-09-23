@@ -28,12 +28,9 @@ class LoginAction extends CAction {
                 //$identity = new SocialUserIdentity($authIdentity);
                 
                 // Успешный вход
-                if ($identity->authenticate()) {
+                if ($identity->authenticate()) {   
                     Yii::app()->user->login($identity);
-                    /*echo "<pre>";
-                    var_dump($identity);
-                    echo "</pre>";
-                    Yii::app()->end();*/
+                    Yii::app()->session['userdata'] = array ('user_name' => Yii::app()->user->name);
                     // Специальный редирект с закрытием popup окна
                     $authIdentity->redirect();
                 }
@@ -61,7 +58,7 @@ class LoginAction extends CAction {
 
         // collect user input data
         if(isset($_POST['LoginForm']))
-        {
+        {           
                 $model->attributes=$_POST['LoginForm'];
                 // validate user input and redirect to the previous page if valid
                 //$userModel = new User;
@@ -76,9 +73,6 @@ class LoginAction extends CAction {
                     Yii::app()->end();
                 }
                 else {
-                    /*echo CJSON::encode(array(
-                      'status'=>'error'
-                    ));*/
                     $error = CActiveForm::validate($model);
                             if($error!='[]')
                                 echo $error;

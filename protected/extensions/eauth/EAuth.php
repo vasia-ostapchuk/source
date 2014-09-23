@@ -162,7 +162,7 @@ class EAuth extends CApplicationComponent {
 				'url' => CHtml::normalizeUrl($url),
 				'redirect' => $jsRedirect,
 				'view' => $this->redirectView,
-				'params' => $params
+				'params' => $params,
 			)
 		);
 		$widget->init();

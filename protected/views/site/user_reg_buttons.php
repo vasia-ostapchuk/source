@@ -5,4 +5,11 @@
 <?php } else {?>
     <input class="button" id="login_button" type="button" value="Вхід" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:0});" />
     <input class="button" id="reg_button" type="button" value="Реєстрація" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:1});" />
-<?php }?>
+<?php } ?>
+
+<!--<select name="language_selector" id="language_selector">
+    <option value=""><img src="images/flags" alt="альтернативный текст">мова</option>
+    <option value="1">первая </option>
+    <option value="13">44444444</option>
+    <option value="16">33333333</option>
+</select>-->
