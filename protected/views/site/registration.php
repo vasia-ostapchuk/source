@@ -30,7 +30,7 @@
 
 <div class="row">
     <?php
-    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+    /*$this->widget('zii.widgets.jui.CJuiDatePicker',array(
         'language'=>'uk',
         'id'=>'birthday',   
         'name'=>'birthday',
@@ -47,15 +47,15 @@
         'htmlOptions' => array(
             'placeholder'=>$model->getAttributeLabel('birthday')
         ),
-    ));
+    ));*/
     ?>
 </div>
 
-<div class="row">
-    <?php echo $form->textField($model,'phone', array('placeholder'=>'* '.'+380-XX-NNNNNNN')); ?>
-    <?php echo $form->error($model,'phone'); ?>
-</div>
-<?php echo $form->dropDownList($model,'sex_id',array('чоловік','жінка'), array('placeholder'=>'Стать')); ?>
+<!--<div class="row">
+    <?php/* echo $form->textField($model,'phone', array('placeholder'=>'* '.'+380-XX-NNNNNNN'));*/ ?>
+    <?php// echo $form->error($model,'phone'); ?>
+</div>-->
+<?php //echo $form->dropDownList($model,'sex_id',array('чоловік','жінка'), array('placeholder'=>'Стать')); ?>
 <div class="row buttons">
         <?php// echo CHtml::submitButton('Реєстрація'). "\n"; ?>
 </div>
