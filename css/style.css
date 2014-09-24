@@ -464,6 +464,55 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
     border: none;
 }
 
+#language_selector {
+    position: relative;
+    bottom:5px;
+    text-transform: uppercase;
+    width:115px;
+    padding:5px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    //-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    //-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+   //box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #474665;
+    color:#CBC9C9;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+#language_selector > option:nth-child(1) {
+    text-align:left;
+}
+#language_selector:hover > #language_selector-option {
+display: block;
+}
+
+#language_label {
+        position: relative;
+        top:8px;
+        left:120px;
+        float:right;
+}
+#language_label:after {
+    content:'>';
+    font:12px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:2px;
+    padding:0 0 2px;
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    pointer-events:none;
+}
 .user_reg_buttons h3{
     color: white;
 }
