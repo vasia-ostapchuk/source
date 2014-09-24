@@ -87,16 +87,9 @@ class RegistrationForm extends CActiveRecord
                 $this->dtime_registration = time();
                 // Хешировать пароль
                 $this->password = $this->hashPassword($this->password);
-                if($this->sex_id == 'чоловік')
-                    $this->sex_id = 2;
-                else
-                    $this->sex_id = 1;
-                $this->state_id = 4;
             }
-            error_log('true');
             return true;
          }
-        error_log('false');
         return false;
     }
     public function hashPassword($password) //hash with salt and Blowfish encryption method

@@ -44,9 +44,6 @@ class SignUpAction extends CAction {
                 Yii::app()->end();
             }
             else {
-                /*echo CJSON::encode(array(
-                              'status'=>'error'
-                         ));*/
                 $error = CActiveForm::validate($model);
                             if($error!='[]')
                                 echo $error;
