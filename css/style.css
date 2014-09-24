@@ -247,6 +247,7 @@ form .ui-widget-content {
 }
 .events-sorting a{
     text-decoration: none;
+    text-align: center;
 }
 .event{
     width: 200px;
@@ -462,33 +463,33 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 .calendar a.ui-datepicker-prev.ui-corner-all{
     height: 34px;
 }
-
-.events-sorting span {
-    width:330px;
+.sorting {
+    width: 80%;
     float: left;
-    color: red;
-    padding-left: 5px;
-    line-height: 30px;
-}
-.events-sorting .sorting {
     border: 1px #000 solid;
-    width: 557px;
-    float: left;
-    margin-bottom: 15px;
 }
-.events-sorting .sorting a{
-    padding: 8px 22px;
-    border-left: 1px solid #000;
-    line-height: 30px;
+.sorting tr span {
+    color: red;
+}
+.sorting td {
+    line-height: 20px;
+}
+.sorting td:first-child{
+    text-align: left;
+    padding-left: 5px;
+    width:50%;
+}
+.sorting a{
+    border-left: 1px #000 solid;
+    padding: 4px 37px;
 }
 .events-sorting .TandL {
     border: 1px #000 solid;
-    float: left;
-    margin-left: 30px;
-    line-height: 30px;
+    float: right;
+    line-height: 24px;
 }
 .events-sorting .TandL a{
-    padding: 7px 24px;
+    padding: 4px 23px;
     border-left: 1px #000 solid;
 }
 .events-sorting .TandL a:first-child{

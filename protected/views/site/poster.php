@@ -1,14 +1,16 @@
 <div class="events-sorting">
-                <div class="sorting">
-            <span>Сортувати по:</span>
-            <a href="">За датою</a>
-            <a href="">Популярне</a>
-        </div>
+        <table class="sorting">
+            <tr>
+                <td><span>Сортувати по:</span></td>
+                <td><a href="">За датою</a></td>
+                <td><a href="">Популярне</a></td>
+            </tr>
+        </table>
         <div class="TandL">
             <a href="">T</a>
-            <a href="">L</a>
+            <a href="">L</a> 
         </div>
-    </div>
+</div>
 <?php foreach($parameters as $value){ ?>
 <div class="event">
 <div class="title">
