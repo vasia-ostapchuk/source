@@ -108,6 +108,13 @@
                 echo "Country: " . $location->countryName . "<br>";
                 echo "Region: " . $location->regionName . "<br>";
                 echo "City: " . $location->city . "<br>";
+                echo "<pre>";
+                Yii::app()->session->add('variable1','Hello');
+                var_dump($_SESSION);
+                echo "</pre>";
+                echo "<pre>";
+                var_dump($_COOKIE);
+                echo "</pre>";
             ?>
         </div>
         <?php 

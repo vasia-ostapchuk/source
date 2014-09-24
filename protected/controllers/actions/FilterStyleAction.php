@@ -14,9 +14,12 @@
 class FilterStyleAction extends CAction{
     public function run()
     {
-        if(isset($_POST['style']))
+        if(Yii::app()->request->getPost('style'))
             {
-                $data= Style::model()->selectGenre($_POST['style']);
+                Filter::setStyleId(Yii::app()->request->getPost('style'));
+                $data= Style::model()->selectGenre(Filter::getStyleId());
+                Filter::setGenreId(current(array_keys($data)));
+                error_log(print_r($_SESSION['filter'],true));
                 foreach ($data as $key=> $value) {
                     echo CHtml::tag('option', array('value' => $key), CHtml::encode($value), true) . "\n";
                 }

@@ -6,6 +6,7 @@ class SiteController extends Controller
 	
 	public function actions()
 	{
+            Yii::app()->session->open();
 		return array(
                         'index'=>'application.controllers.actions.IndexAction',
                         'error'=>'application.controllers.actions.ErrorAction',
@@ -15,7 +16,8 @@ class SiteController extends Controller
                         'ajax'=>'application.controllers.actions.AjaxAction',
                         'filtercountry'=>'application.controllers.actions.FilterCountryAction',
                         'filterstyle'=>'application.controllers.actions.FilterStyleAction',
-                        'filtergenre'=>'application.controllers.actions.FilterGenreAction'
+                        'filtergenre'=>'application.controllers.actions.FilterGenreAction',
+                        'filtercity'=>'application.controllers.actions.FilterCityAction',
 		);
 	}
 }

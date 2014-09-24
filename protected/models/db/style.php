@@ -55,6 +55,22 @@ class Style extends CActiveRecord{
         }
     }
     
+    public function selectStyleAllParameters(){
+        
+        $connect=Yii::app()->db;
+        $comand=$connect->createCommand('SELECT s2.id as id, s1.name as name, s1.id as style_id  FROM style s1, style s2 WHERE s1.id=s2.parent_id ORDER BY name');
+        $dataReader=$comand->query();
+        $dataReader->bindColumn(1, $genreId);
+        $dataReader->bindColumn(2, $styleName);
+        $dataReader->bindColumn(3, $styleId);
+        $data=array();
+        while ($dataReader->read()!==FALSE)
+        {
+            $data[$genreId] = array('name'=>$styleName,'style_id'=>$styleId);
+        }
+        return $data;
+    }
+    
     public function selectGenre($parentId=false){
         if($parentId){
             $result = Style::model()->findAll('parent_id=:parent_id',array(':parent_id'=>(int)$parentId));

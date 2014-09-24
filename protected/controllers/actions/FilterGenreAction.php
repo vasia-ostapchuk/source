@@ -16,9 +16,19 @@ class FilterGenreAction extends CAction {
     {
         if(Yii::app()->request->getPost('genre'))
             {
-                $data= Style::model()->selectStyle(Yii::app()->request->getPost('genre'));
+                Filter::setGenreId(Yii::app()->request->getPost('genre'));
+                $data= Style::model()->selectStyleAllParameters();
+                error_log(print_r($data,true));
+                $name='';
+                echo CHtml::tag('option', array('value'=>$data[Filter::getGenreId()]['style_id'], 'selected'=>true), CHtml::encode($data[Filter::getGenreId()]['name']), true) . "\n";
+                $nameStyle=$data[Filter::getGenreId()]['name'];
+                error_log($nameStyle);
+                Filter::setStyleId($data[Filter::getGenreId()]['style_id']);
+                error_log(Filter::getStyleId());
                 foreach ($data as $key=> $value) {
-                    echo CHtml::tag('option', array('value' => $key), CHtml::encode($value), true) . "\n";
+                    if($name == $value['name'] || $nameStyle==$value['name']) continue;
+                    echo CHtml::tag('option', array('value'=>$value['style_id']), CHtml::encode($value['name']), true) . "\n";
+                    $name=$value['name'];
                 }
             }
     }
