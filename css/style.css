@@ -201,7 +201,7 @@ form .price-scroll a.ui-slider-handle.ui-state-default.ui-corner-all {
     border: 1px solid #900;
     width: 9px;
     height: 14px;
-    margin: auto;
+    margin: 0 -6px;
 }
 form .price-scroll .ui-state-default,.ui-widget-content.ui-state-default,.ui-widget-header.ui-state-default{
     background: #900;

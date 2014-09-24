@@ -68,20 +68,19 @@
 
     <div class="price-scroll">
         <h1>Квиткові ціни:</h1>
-<input type="text" class="min" value="1050" />
-<input type="text" class="max" value="1050-3750" />
+<input type="text" class="min" value="1000" />
+<input type="text" class="max" value="4000" />
 <?php
 $this->widget('zii.widgets.jui.CJuiSliderInput', array(
     'name'=>'slider_range',
-     
     'event'=>'change',
     'options'=>array(
-        'values'=>array(1050,3750),// default selection
+        'values'=>array(1000,4000),// default selection
         'min'=>0, //minimum value for slider input
         'max'=>5000, // maximum value for slider input
         'animate'=>true,
         // on slider change event 
-        'slide'=>'js:function(event,ui){$(".price-scroll .min").val(ui.values[0]+\'-\'+ui.values[1]);}', 'js:function(event,ui){$(".price-scroll .max").val(ui.values[0]+\'-\'+ui.values[1]);}',
+        'slide'=>'js:function(event,ui){$(".price-scroll .min").val(ui.values[0]);$(".price-scroll .max").val(ui.values[1]);}',
     ),
     // slider css options
     'htmlOptions'=>array(
