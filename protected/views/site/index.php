@@ -125,13 +125,21 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
         'max'=>5000, // maximum value for slider input
         'animate'=>true,
         // on slider change event 
-        'slide'=>'js:function(event,ui){$(".price-scroll .min").val(ui.values[0]);$(".price-scroll .max").val(ui.values[1]);}',
-    ),
+        'slide'=>'js:function(event,ui){'
+            . 'if(ui.values[0] > ui.values[1]) {'
+                . 'var intersect = ui.values[1];'
+                . 'ui.values[1] = ui.values[0];'
+                . 'ui.values[0] = intersect;'
+            . '}'
+            . '$(".price-scroll .min").val(ui.values[0]);'
+            . '$(".price-scroll .max").val(ui.values[1]);'
+            
+        . '}',
     // slider css options
     'htmlOptions'=>array(
         'style'=>''
     ),
-)); ?>
+))); ?>
     </div>
     <div class="calendar">
 <?php
