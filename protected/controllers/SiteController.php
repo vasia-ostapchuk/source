@@ -14,6 +14,7 @@ class SiteController extends Controller
                         'logout'=>'application.controllers.actions.LogoutAction',
                         'signup'=>'application.controllers.actions.SignUpAction',
                         'ajax'=>'application.controllers.actions.AjaxAction',
+                        'search'=>'application.controllers.actions.SearchAction',
                         'filtercountry'=>'application.controllers.actions.FilterCountryAction',
                         'filterstyle'=>'application.controllers.actions.FilterStyleAction',
                         'filtergenre'=>'application.controllers.actions.FilterGenreAction',

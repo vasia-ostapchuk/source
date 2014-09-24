@@ -85,10 +85,32 @@
                     </li>
                 </ul>
             </div>
-            <div class="navigator-search">
-        <form class="form-search" method="get" action="site/search" target="_blank">
-<input type="text" name="q" placeholder="пошук" value=""/></form>
-            </div>
+<div class="navigator-search">
+    <form class="form-search" method="post" action="index.php?r=site/search">
+        <input type="search" name="search" placeholder="пошук" value=""/>
+        <input id="link" type="hidden" name ="id" value="google" />
+        <input type="submit" value=""/>
+    </form>
+    <script>  
+        $(document).ready(function(){
+            $('.form-search').submit(function(e){
+            e.preventDefault();
+            var m_method=$(this).attr('method');
+            var m_action=$(this).attr('action');
+            var m_data=$(this).serialize();
+                $.ajax({
+                    type: m_method,
+                    url: m_action,
+                    data: m_data,
+                    dataType: "json",
+                    success: function(data){
+                        $('.events').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+</div>
         </div>
         <div id="content">            
             <?php echo $content; ?>

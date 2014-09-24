@@ -90,47 +90,71 @@ img {border: none;}
     float:right;
 }
 .form-search {
-  display: inline-block;
-  background: -moz-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
-  background: -ms-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
-  background: -o-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
-  background: -webkit-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
-  border-radius: 5px;
-  padding: 4px;
+    margin: 0px 5px;
+    width: 350px; /* Ширина поля с кнопкой */
+    border: none; /* Убираем рамку */
+    min-height: 36px; /* Минимальная высота */
+    min-width: 300px;
+    overflow: hidden;
 }
+.form-search> input[type="submit"] {
+    vertical-align: middle; /* Выравнивание по середине */
+    width: 30px; /* Ширина кнопки */
+    height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+    background: none;
+    background-image: url(/images/search.png);
+    position: relative;
+    cursor: pointer;
+    margin: -5px 0px 0px -3px;
+    top:-30px;
+}
+.form-search> input[type="search"] {
+    
+    border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari*/
+    -moz-box-sizing: border-box;  
+    box-sizing: border-box; 
+    vertical-align: middle; /* Выравнивание по середине */
+    width: 350px;
+    height: 39px;
+    padding: 0px 0px 0px 28px;
+    line-height: 36px;
+    //background: #EEE;  
+    background: linear-gradient(to top, #E5E2E2, #DFDBDB);
+    font-family: Tahoma,sans-serif;
+    font-size: 16px;
+    color:#6E7074;
+    text-shadow: 0 1px 0 #FFF;
+    border-radius: 4px;
+}
+  /* Placeholder
+  -----------------------------------------------------*/
+    .form-search input::-webkit-input-placeholder {
+        font-family: Tahoma,sans-serif;
+       margin:0px -30px;
+       font-size: 16px;
+       color:#6E7074;
+       font-weight: normal;
+    }
+     
+    .form-search input:-moz-placeholder {
+        font-family: Tahoma,sans-serif;
+        margin:0px -30px;
+        font-size: 16px;
+        color:#6E7074;
+        font-weight: normal;
+    }
+     
+    .form-search input:-ms-input-placeholder {
+        font-family: Tahoma,sans-serif;
+        margin:0px -30px;
+        font-size: 16px;
+        color:#6E7074;
+        font-weight: normal;
+    } 
 
-.form-search input {
-  width: 250px;
-  height: 32px;
-  line-height: 32px;
-  font: 13px Helvetica, Arial, sans-serif; 
-  color:#6E7074;
-  text-shadow: 0 1px 0 #FFF;
-  -moz-transition: all .2s ease-out;
-  -webkit-transition: all .2s ease-out;
-  -o-transition: all .2s ease-out;
-  transition: all .2s ease-out;  
-  padding: 0 30px 0 30px; 
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -moz-linear-gradient(#BCBCBC, #EBEBEB);
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -ms-linear-gradient(#BCBCBC, #EBEBEB);
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -o-linear-gradient(#BCBCBC, #EBEBEB);
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -webkit-linear-gradient(#BCBCBC, #EBEBEB); 
-  background-repeat: no-repeat; 
- 
-  border: 1px solid #747474;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 1px #575555, 0 1px 0 #FFF; 
-}
-
-.form-search input:focus {
-  width: 250px;
-  box-shadow: inset 0 1px 1px #46575b, 0 1px 0 #FFF;
-  color: #25464D;
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -moz-linear-gradient(#9CC2CA, #DFECEF);
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -ms-linear-gradient(#9CC2CA, #DFECEF);
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -o-linear-gradient(#9CC2CA, #DFECEF);
-  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -webkit-linear-gradient(#9CC2CA, #DFECEF);
-}
 .events {
     width: 750px;
     //padding: 10px;
