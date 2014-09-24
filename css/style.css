@@ -332,7 +332,6 @@ form .ui-widget-content {
     font-family: Tahoma,Arial,sans-serif;
 float: bottom;  
       position: relative;
-  
 background: linear-gradient(to left, rgba(0,0,0,.3), rgba(0,0,0,.0) 50%, rgba(0,0,0,.3)), linear-gradient(#8F1528, #FE1728, #D7314A);  
 box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px, #000 0 10px 15px -10px; 
   transition: 0.2s
