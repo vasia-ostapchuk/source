@@ -17,7 +17,7 @@
             <a href="">T</a>
             <a href="">L</a>
         </div>
-
+<div class="event">
 <div class="title">
             Американський папа
         </div>
@@ -137,8 +137,7 @@
                     <li><a href="">7</a></li>
                 </ul>
     </div>
-    <?php echo $test1; ?>
-     <?php $pages=new CPagination(10); $pages->pageSize=10; $this->widget('CLinkPager',array(
+    <?php $pages=new CPagination(10); $pages->pageSize=10; $this->widget('CLinkPager',array(
              'pages'=>$pages, 
              'maxButtonCount' => 5, 
              'header' => '<b>'.Yii::t("main", "Перейти к странице:").'</b><br><br>',
