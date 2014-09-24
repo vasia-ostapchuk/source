@@ -30,7 +30,7 @@ class RegistrationForm extends CActiveRecord
         return array(
             // Логин и пароль - обязательные поля
             //array('first_name, last_name, password', 'required'),
-            array('email, phone, password', 'required'),
+            array('email, password', 'required'),
             // Длина логина должна быть в пределах от 5 до 30 символов
             //array('first_name', 'length', 'min'=>5, 'max'=>30),
             // Длина логина должна быть в пределах от 5 до 30 символов
@@ -56,9 +56,9 @@ class RegistrationForm extends CActiveRecord
             // Почта должна быть написана в нижнем регистре
             array('email', 'filter', 'filter'=>'mb_strtolower'),
             // унікальний телефон
-            array('phone', 'unique', 'message'=>'Користувач з таким телефоном вже існує.'),
+            //array('phone', 'unique', 'message'=>'Користувач з таким телефоном вже існує.'),
             // обробка дати народження
-            array('birthday', 'safe'),
+            //array('birthday', 'safe'),
         );
     }
 
