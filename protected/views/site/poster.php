@@ -39,120 +39,21 @@
             <a href="">T</a>
             <a href="">L</a>
         </div>
+<?php foreach($parameters as $value){ ?>
 <div class="event">
 <div class="title">
-            Американський папа
+            <?php echo $value['title']; ?>
         </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
+    <div class="event-photo"><img src="<?php echo $value['image']; ?>" style="max-width: 105px;"> </div>
+        <div class="date"><a href=""><?php echo $value['date'];?></a> </div>
+        <div class="time"> <a href=""><?php echo $value['time'];?></a> </div>
+        <div class="city"><a href=""><?php echo $value['address'];?></a> </div>
+        <div class="price"><a href=""><?php echo $value['price'];?></a> </div>
         <div class="buy"> <a href="">buy</a> </div>
           
     </div> 
->>>>>>> origin/master
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
-<<<<<<< HEAD
-    
-=======
+<?php } ?>
 
->>>>>>> origin/master
     <div class="pagination-link">  
         <ul>
                     <li><a href="">1</a></li>

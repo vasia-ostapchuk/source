@@ -25,7 +25,7 @@ class Events {
         1=>array(
             'title'=>'Guf',
             'style'=>'R&B',
-            'address'=>'Sambir, street XXX',
+            'address'=>'street X',
             'price'=>'10$',
             'date'=>'2014-10-02',
             'time'=>'21:00:00',
