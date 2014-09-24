@@ -427,7 +427,7 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
    width: auto;
 }
 .calendar .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
-    height: 34px;
+    height: 33px;
 }
 .calendar .ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
     background: none;
@@ -438,11 +438,6 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 .calendar table.ui-datepicker-calendar {
     background: #fff;
 }
-.calendar table.ui-datepicker-calendar thead{
-    background: #ff0;
-    color: #FF7070;
-}
-
 .calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-highlight.ui-state-active{
     border: 1px solid #a00;
     font-weight: 700;
@@ -454,7 +449,18 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 .calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-active{
     border: 1px solid #a00;
 }
-
+.calendar th.ui-datepicker-week-end{
+    color: #f00;
+}
+.calendar .ui-datepicker-week-end a.ui-state-default{      //числа вихідних червоним кольором
+    color: #f00;
+}
+.calendar a.ui-datepicker-next.ui-corner-all{
+    height: 34px;
+}
+.calendar a.ui-datepicker-prev.ui-corner-all{
+    height: 34px;
+}
 
 .events-sorting span {
     width:330px;
