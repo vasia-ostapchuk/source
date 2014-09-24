@@ -452,7 +452,8 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 .calendar th.ui-datepicker-week-end{
     color: #f00;
 }
-.calendar .ui-datepicker-week-end a.ui-state-default{      //числа вихідних червоним кольором
+/*числа вихідних червоним кольором*/
+.calendar td.ui-datepicker-week-end a.ui-state-default {
     color: #f00;
 }
 .calendar a.ui-datepicker-next.ui-corner-all{
