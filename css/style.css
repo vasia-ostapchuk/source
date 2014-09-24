@@ -455,6 +455,8 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 .calendar table.ui-datepicker-calendar a.ui-state-default.ui-state-active{
     border: 1px solid #a00;
 }
+
+
 .events-sorting span {
     width:330px;
     float: left;
@@ -485,6 +487,9 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 .events-sorting .TandL a:first-child{
     border: none;
 }
+
+
+
 
 #language_selector {
     position: relative;

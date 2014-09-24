@@ -1,35 +1,3 @@
-<div class="events-sorting">
-        
-        <!-- <ul>
-            <li><a href="">даті</a></li>
-             <li><a href="">популярності</a></li>
-              <li><a href="">відвідуваності</a></li>
-               <li><a href="">коментаріями</a></li>
-                <li><a href="">алфавіту</a></li>  
-        </ul> -->
-
-        <nav>
-            <?php /*echo CHtml::ajaxButton('Інвестиції',  
-                CController::createUrl('/site/ajax'),   
-                array('dataType'=>'json',
-                    'type' => 'post', 
-                    'update' => '.events',
-                    'data' => array ('id'=>'investment'),
-                    'success'=>"function(data) {
-                                $('.events').html(data);
-                            }",
-                ),
-                array('class'=>'button',
-                    'type' => 'submit',
-                     'style'=>'float:left; left:40px;'
-                )
-            );*/?>
-            <a href="">Популярне</a>
-            <a href="">Популярне</a>
-        </nav>
-    </div>          
-
-
         <div class="sorting">
             <span>Сортувати по:</span>
             <a href="">За датою</a>
