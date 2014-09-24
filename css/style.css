@@ -90,7 +90,6 @@ img {border: none;}
     float:right;
 }
 .form-search {
-    margin: 0px 5px;
     width: 350px; /* Ширина поля с кнопкой */
     border: none; /* Убираем рамку */
     min-height: 36px; /* Минимальная высота */
