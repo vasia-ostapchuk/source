@@ -7,9 +7,15 @@
             var_dump($_POST);
             echo "</pre>";
             Yii::app()->end();*/
-            if(isset($_POST['country']))
+            if(Yii::app()->request->getPost('country'))
             {
-                $data=Location::model()->selectCity($_POST['country']);
+                Filter::setCountryId(Yii::app()->request->getPost('country'));
+                $data=Location::model()->selectCity(Filter::getCountryId());
+                Filter::setCityId(current(array_keys($data)));
+                //echo "<pre>";
+                //error_log(print_r($_SESSION,true));
+                //echo "</pre>";
+                //Yii::app()->end();
                 foreach ($data as $key=> $value) {
                     echo CHtml::tag('option', array('value' => $key), CHtml::encode($value), true);
                 }

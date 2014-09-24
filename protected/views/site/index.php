@@ -23,53 +23,102 @@
     <div class="filter-label">
         <?php echo $form->labelEx($model,'country') . "\n"; ?>
         <?php // echo $form->dropDownList($model,'country', $contry) . "\n"; ?>
-        <?php echo CHtml::dropDownList('country', '', $country,array(
-            'ajax'=>array(
-                'type'=>'POST',
-                'url'=>CController::createUrl('site/filtercountry'),
-                'update'=>'#FilterForm_city',
-            ),
-        )); 
-        //CHtml::dropDownList($name, $select, $data, $htmlOptions)?>
+        <?php 
+            if(Filter::getCountryId()) 
+            {
+                $options[Filter::getCountryId()]=array('selected'=>true);
+            } else {
+                $options = null;
+            }
+            echo CHtml::dropDownList('country', '', $country,array(
+                'ajax'=>array(
+                    'type'=>'POST',
+                    'url'=>CController::createUrl('site/filtercountry'),
+                    'update'=>'#city',
+                ),
+                'options' => $options,
+            )); 
+        //CHtml::dropDownList($name, $select, $data, $htmlOptions)
+            $options = null;
+        ?>
         <?php echo $form->error($model,'country') . "\n"; ?>
     </div>
     <div class="filter-label">
         <?php echo $form->labelEx($model,'city') . "\n"; ?>
-        <?php echo $form->dropDownList($model,'city', $city). "\n"; ?>
+        <?php //echo $form->dropDownList($model,'city', $city). "\n"; ?>
+        <?php 
+            if(Filter::getCityId()) 
+            {
+                $options[Filter::getCityId()]=array('selected'=>true);
+            } else {
+                $options = null;
+            }
+            echo CHtml::dropDownList('city', '', $city,array(
+                'ajax'=>array(
+                    'type'=>'POST',
+                    'url'=>CController::createUrl('site/filtercity'),
+                ),
+                'options' => $options,
+            )); 
+        //CHtml::dropDownList($name, $select, $data, $htmlOptions)
+            $options = null;
+        ?>
         <?php echo $form->error($model,'city') . "\n"; ?>
     </div>
     
     <div class="filter-label">
         <?php echo $form->labelEx($model,'style') . "\n"; ?>
         <?php //echo $form->dropDownList($model,'style', $style). "\n"; ?>
-        <?php echo CHtml::dropDownList('style', '', $style,array(
-            'ajax'=>array(
-                'type'=>'POST',
-                'url'=>CController::createUrl('site/filterstyle'),
-                //'update'=>'#'.CHtml::activeId($model,'genre'),
-                'update'=>'#genre',
-            ),
-        )); ?>
+        <?php 
+            if(Filter::getStyleId()) 
+            {
+                $options[Filter::getStyleId()]=array('selected'=>true);
+            } else {
+                $options = null;
+            }
+            echo CHtml::dropDownList('style', '', $style,array(
+                'ajax'=>array(
+                    'type'=>'POST',
+                    'url'=>CController::createUrl('site/filterstyle'),
+                    //'update'=>'#'.CHtml::activeId($model,'genre'),
+                    'update'=>'#genre',
+                ),
+                'options' => $options,
+            )); 
+            $options = null;
+        ?>
         <?php echo $form->error($model,'style') . "\n"; ?>
     </div>
     <div class="filter-label">
         <?php echo $form->labelEx($model,'genre') . "\n"; ?>
         <?php //echo $form->dropDownList($model,'genre', $genre). "\n"; ?>
-        <?php echo CHtml::dropDownList('genre', '', $genre,array(
-            'ajax'=>array(
-                'type'=>'POST',
-                'url'=>CController::createUrl('site/filtergenre'),
-                //'update'=>'#'.CHtml::activeId($model,'genre'),
-                'update'=>'#style',
-            ),
-        )); ?>
+        <?php 
+            if(Filter::getGenreId()) 
+            {
+                $options[Filter::getGenreId()]=array('selected'=>true);
+            } else {
+                $options = null;
+            }
+            echo CHtml::dropDownList('genre', '', $genre,array(
+                'ajax'=>array(
+                    'type'=>'POST',
+                    'url'=>CController::createUrl('site/filtergenre'),
+                    //'update'=>'#'.CHtml::activeId($model,'genre'),
+                    'update'=>'#style',
+                ),
+                'options' => $options,
+            )); 
+            $options = null;
+        ?>
         <?php echo $form->error($model,'genre') . "\n"; ?>
     </div>
 
     <div class="price-scroll">
         <h1>Квиткові ціни:</h1>
+
 <input type="text" class="min" value="1000" />
 <input type="text" class="max" value="4000" />
+
 <?php
 $this->widget('zii.widgets.jui.CJuiSliderInput', array(
     'name'=>'slider_range',
@@ -80,7 +129,9 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
         'max'=>5000, // maximum value for slider input
         'animate'=>true,
         // on slider change event 
+
         'slide'=>'js:function(event,ui){$(".price-scroll .min").val(ui.values[0]);$(".price-scroll .max").val(ui.values[1]);}',
+
     ),
     // slider css options
     'htmlOptions'=>array(
@@ -111,6 +162,15 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     <?php   
     $this->endWidget(); ?>
 </div>
+
+<script>
+    $(document).ready(function(){
+            $('.widget-calendar').select(function(e){
+                e.preventExtensions();
+            });
+        });
+</script>
+
 <div class="events">
 <?php echo $ajaxContent; ?>
 </div>
