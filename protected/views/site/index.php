@@ -1,6 +1,3 @@
-
-
-
 <div class="filters">
     <?php
         $form = $this->beginWidget('CActiveForm', array(
@@ -115,8 +112,8 @@
 
     <div class="price-scroll">
         <h1>Квиткові ціни:</h1>
-<label for="min">Діапазон цін:</label>
-<input type="text" class="min" value="1050-3750" />
++<input type="text" class="min" value="1050" />
++<input type="text" class="max" value="1050-3750" />
 <?php
 $this->widget('zii.widgets.jui.CJuiSliderInput', array(
     'name'=>'slider_range',
@@ -128,7 +125,7 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
         'max'=>5000, // maximum value for slider input
         'animate'=>true,
         // on slider change event 
-        'slide'=>'js:function(event,ui){$(".price-scroll .min").val(ui.values[0]+\'-\'+ui.values[1]);}',
+        'slide'=>'js:function(event,ui){$(".price-scroll .min").val(ui.values[0]);$(".price-scroll .max").val(ui.values[1]);}',
     ),
     // slider css options
     'htmlOptions'=>array(
