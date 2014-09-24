@@ -159,6 +159,15 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     <?php   
     $this->endWidget(); ?>
 </div>
+
+<script>
+    $(document).ready(function(){
+            $('.widget-calendar').select(function(e){
+                e.preventExtensions();
+            });
+        });
+</script>
+
 <div class="events">
 <?php echo $ajaxContent; ?>
 </div>
