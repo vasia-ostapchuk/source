@@ -19,7 +19,7 @@ class Filter extends CHttpSession {
 
     public static function getCountryId()
     {
-        return $_SESSION['filter']['country_id'];
+        return isset($_SESSION['filter']['country_id'])? $_SESSION['filter']['country_id'] : FALSE;
     }
     
     public static function setCityId($id){
@@ -28,7 +28,7 @@ class Filter extends CHttpSession {
 
     public static function getCityId()
     {
-        return $_SESSION['filter']['city_id'];
+        return isset($_SESSION['filter']['city_id'])? $_SESSION['filter']['city_id'] : FALSE;
     }
     public static function setStyleId($id){
         $_SESSION['filter']['style_id']=$id;
@@ -36,7 +36,7 @@ class Filter extends CHttpSession {
 
     public static function getStyleId()
     {
-        return $_SESSION['filter']['style_id'];
+        return isset($_SESSION['filter']['style_id'])? $_SESSION['filter']['style_id'] : FALSE;
     }
     public static function setGenreId($id){
         $_SESSION['filter']['genre_id']=$id;
@@ -44,6 +44,6 @@ class Filter extends CHttpSession {
 
     public static function getGenreId()
     {
-        return $_SESSION['filter']['genre_id'];
+        return isset($_SESSION['filter']['genre_id'])? $_SESSION['filter']['genre_id'] : FALSE;
     }
 }
