@@ -149,8 +149,15 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
         'maxDate' => '2099-12-31',      // maximum date
     ),
     'htmlOptions'=>array(
-        'class'=>'widget-calendar'
-    ),
+        'class'=>'widget-calendar',
+        'onChange'=>CHtml::ajax(array(
+                'id'=>'calendar',
+                'type'=>'POST',
+                'url'=>Yii::app()->createUrl('site/ajax'),
+                'update'=>'.widget-calendar',
+                'data'=>array('one'=>'two'),
+                )),  
+        ),
 )); ?>
     </div>
     <?php   
