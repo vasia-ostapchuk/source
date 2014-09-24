@@ -7,7 +7,7 @@
                <li><a href="">коментаріями</a></li>
                 <li><a href="">алфавіту</a></li>  
         </ul> -->
-<<<<<<< HEAD
+
         <nav>
             <?php /*echo CHtml::ajaxButton('Інвестиції',  
                 CController::createUrl('/site/ajax'),   
@@ -28,7 +28,7 @@
             <a href="">Популярне</a>
         </nav>
     </div>          
-=======
+
 
         <div class="sorting">
             <span>Сортувати по:</span>
