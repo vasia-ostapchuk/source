@@ -90,9 +90,6 @@ img {border: none;}
     float:right;
 }
 .form-search {
-    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari*/
-    -moz-box-sizing: border-box;  
-    box-sizing: border-box; 
     margin: 0px 5px;
     width: 350px; /* Ширина поля с кнопкой */
     border: none; /* Убираем рамку */
@@ -101,9 +98,6 @@ img {border: none;}
     overflow: hidden;
 }
 .form-search> input[type="submit"] {
-    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari*/
-    -moz-box-sizing: border-box;  
-    box-sizing: border-box; 
     vertical-align: middle; /* Выравнивание по середине */
     width: 30px; /* Ширина кнопки */
     height: 30px; /* Высота кнопки */
