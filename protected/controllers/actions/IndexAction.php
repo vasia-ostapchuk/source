@@ -5,7 +5,7 @@
     {
         
         $data = array();
-        $data['ajaxContent'] = $this->controller->renderPartial('poster',array(),true);
+        $data['ajaxContent'] = $this->controller->renderPartial('poster',array('parameters'=>Events::$even),true);
         $location=new Location;
         $style=new Style;
             /*echo "<pre>";

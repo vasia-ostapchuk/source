@@ -241,8 +241,8 @@ form .ui-widget-content {
    
 }
 .event-photo {
-    width: 90px;
-    height: 280px;
+    max-width:90px;
+    //height: 280px;
     float: left;
 }
 .event span{
@@ -374,4 +374,8 @@ form .ui-widget-content {
 .events-sorting nav a{
     padding: 6px 30px;
     border-left: 1px solid #000;
+}
+
+.user_reg_buttons h3{
+    color: white;
 }
