@@ -28,6 +28,7 @@
     </div>
     <?php for($i=0;$i<count($parameters);$i++) { ?>
     <div class="event">
+<<<<<<< HEAD
         <span><?php echo $parameters[$i]['title']; ?></span>
         <br/>
         <img class="event-photo" src="<?php echo $parameters[$i]['image']; ?>">
@@ -118,6 +119,116 @@
             <a href="">Купити</a>
         </div>    
     </div> -->
+=======
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div> 
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+ <div class="event">
+        <div class="title">
+            Американський папа
+        </div>
+        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
+        <div class="date"><a href="">Date</a> </div>
+        <div class="time"> <a href="">time</a> </div>
+        <div class="city"><a href="">city</a> </div>
+        <div class="price"><a href="">price</a> </div>
+        <div class="buy"> <a href="">buy</a> </div>
+          
+    </div>
+    
+>>>>>>> origin/master
     <div class="pagination-link">  
         <ul>
                     <li><a href="">1</a></li>

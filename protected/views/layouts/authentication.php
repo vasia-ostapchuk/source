@@ -36,7 +36,7 @@
             'Реєстрація'=>$this->renderPartial('registration',array('model'=>$reg),true),
                 ),
             'options'=>array(
-                'collapsible'=>true,
+                'collapsible'=>false,
                 'selected' => 2,
             ),
         ));

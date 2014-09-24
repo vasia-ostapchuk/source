@@ -228,7 +228,7 @@ form .ui-widget-content {
     width: 200px;
     height: 300px;
     margin: 20px;
-    background-color: #514721;
+    background-color: whitesmoke;
     display: inline-block;
     border: 3px solid #BCBCBC ;
     color: #C9E0ED;
@@ -240,53 +240,127 @@ form .ui-widget-content {
     float: right;
    
 }
+.title {
+    width: 200px;
+    height: 40px;
+    border-bottom: 1px solid #777;
+    
+    background: window;
+    font-size: 14px;
+    color: #FF5050;
+    text-align: center;
+    font-family: Tahoma,Arial,sans-serif;
+}
 .event-photo {
+<<<<<<< HEAD
     max-width:90px;
     //height: 280px;
+=======
+    width: 110px;
+    height: 260px;
+>>>>>>> origin/master
     float: left;
-}
-.event span{
-    color: red;
-    font-size: 14px;
-    font-weight: 700;
-}
-.event a{
-    text-decoration: none;
-    color: graytext;
+    border:1px solid #900;
     
 }
-.event a:hover{
-    color: yellow;
+.date{
+    width: 90px;
+    height: 30px;
+   margin: 0 0 0 110px;
+   border-bottom: 1px solid #900;
+     
+    background: wheat;
+    font-size: 14px;
+    color: #CBC9C9;
+    text-align: center;
+    font-family: Tahoma,Arial,sans-serif;
 }
-.knopka01 {
-  display: inline-block;
-  width: 100px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  text-align: center;
+.date a{
+    text-decoration: none;
+    color: red;
+}
+.time{
+    width: 90px;
+    height: 30px;
+    margin: 0 0 0 110px;
+
+     border-bottom: 1px solid #900;
+     
+    background: wheat;
+    font-size: 14px;
+    color: #CBC9C9;
+    text-align: center;
+    font-family: Tahoma,Arial,sans-serif;
+}
+.time a{
+    text-decoration: none;
+    color: red;
+}
+.city{
+    width: 90px;
+    height: 30px;
+   margin: 0 0 0 110px;
+  border-bottom: 1px solid #900;
+     border-bottom: 1px solid #900;
+     
+    background:wheat;
+    font-size: 14px;
+    color: #CBC9C9;
+    text-align: center;
+    font-family: Tahoma,Arial,sans-serif;
+}
+.city a{
+    text-decoration: none;
+    color: red;
+}
+.price{
+    width: 90px;
+    height: 30px;
+    margin: 0 0 0 110px;
+     border-bottom: 1px solid #900;
+     
+    background: wheat;
+    font-size: 14px;
+    color: #CBC9C9;
+    text-align: center;
+    font-family: Tahoma,Arial,sans-serif;
+}
+.price a{
+    text-decoration: none;
+    color: red;
+}
+.buy {
+     width: 87px;
+    height: 30px;
+   margin: 103px 0 0 113px;
+   text-align: center;
+    font-family: Tahoma,Arial,sans-serif;
+float: bottom;  
+      position: relative;
+background: linear-gradient(to left, rgba(0,0,0,.3), rgba(0,0,0,.0) 50%, rgba(0,0,0,.3)), linear-gradient(#8F1528, #FE1728, #D7314A);  
+box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px, #000 0 10px 15px -10px; 
+  transition: 0.2s
+}
+.buy a{
+    text-decoration: none;
+    font-weight: bold;
+  color: white;
   text-decoration: none;
-  text-shadow: 0 1px rgba(255,255,255,.2), 0 -1px rgba(0,0,0,.8);
-  outline: none;
-  border: none;
-  border-radius: 100px;
-  background: rgb(28,107,114) radial-gradient(150% 100% at 50% 5px, rgba(255,255,255,.2), rgba(0,0,0,0));
-  box-shadow: inset rgba(0,0,0,.6) 0 -2px 5px, inset rgba(252,255,255,.7) 0 2px 5px, rgba(0,0,0,.8) 0 2px 5px -1px;
-  color: rgb(0,79,86);
+  text-shadow: 0 -1px 1px #cc5500;
   user-select: none;
-} 
-.knopka01:hover {
-  color: rgb(0,59,66);
-  cursor: pointer;
+  
+  outline: none;
+  border-radius: 1px;
+  background-size: 100% 100%, auto;
+  background-position: 50% 50%;
 }
-.knopka01:active {
-  padding-bottom: 1px;
-  box-shadow:
-   inset rgba(0,0,0,1) 0 1px 3px,
-   inset rgba(0,0,0,.6) 0 -2px 5px,
-   inset rgba(252,255,255,.7) 0 2px 5px,
-   0 1px rgba(255,255,255,.08);
-  color: rgb(128,207,214);
+.buy:hover {
+  background-size: 140% 100%, auto;
+}
+.buy:active {
+  top: 1px;
+  color: #ffdead;
+  box-shadow: inset #ebab00 0 -1px 1px, inset 0 1px 1px #ffbf00, #cc7722 0 0 0 1px, 0 10px 10px -9px #000;
 }
 
 .pagination-link {
