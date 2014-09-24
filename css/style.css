@@ -109,7 +109,6 @@ img {border: none;}
     top:-30px;
  }
 .form-search> input[type="search"] {
-    
     border: none; /* Убираем рамку */
     outline: none; /* Убираем свечение в Chrome и Safari */
     -webkit-appearance: none; /* Убираем рамку в Chrome и Safari*/
