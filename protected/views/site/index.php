@@ -120,7 +120,7 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
      
     'event'=>'change',
     'options'=>array(
-        'values'=>array(1050,3750),// default selection
+        'values'=>array(0,5000),// default selection
         'min'=>0, //minimum value for slider input
         'max'=>5000, // maximum value for slider input
         'animate'=>true,
