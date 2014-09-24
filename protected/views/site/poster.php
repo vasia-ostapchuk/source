@@ -13,114 +13,95 @@
         </nav>
     </div>
     <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>    
     </div> 
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
- <div class="event">
-        <div class="title">
-            Американський папа
-        </div>
-        <div class="event-photo"><img src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg" width="110" height="260"> </div>
-        <div class="date"><a href="">Date</a> </div>
-        <div class="time"> <a href="">time</a> </div>
-        <div class="city"><a href="">city</a> </div>
-        <div class="price"><a href="">price</a> </div>
-        <div class="buy"> <a href="">buy</a> </div>
-          
-    </div>
-    
+    <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>    
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>     
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+       <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>   
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>    
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>    
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>     
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>    
+    </div> 
+     <div class="event">
+        <span>Американський папа</span>
+        <br/>
+        <img class="event-photo" src="http://s3.dotua.org/fsua_items/cover/00/34/68/2/00346841.jpg">
+        <a href=""><br/>14.09.2014<br/>19.00
+            <br/>Львів<br/>шансон,романс<br/>150-500</a> 
+        <div class="knopka01" >
+            <a href="">Купити</a>
+        </div>    
+    </div> 
     <div class="pagination-link">  
         <ul>
                     <li><a href="">1</a></li>
