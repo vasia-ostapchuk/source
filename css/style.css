@@ -90,6 +90,7 @@ img {border: none;}
     float:right;
 }
 .form-search {
+    margin: 0px 5px;
     width: 350px; /* Ширина поля с кнопкой */
     border: none; /* Убираем рамку */
     min-height: 36px; /* Минимальная высота */
@@ -108,52 +109,16 @@ img {border: none;}
     margin: -5px 0px 0px -3px;
     top:-30px;
 }
-.form-search> input[type="search"] {
-    
-    border: none; /* Убираем рамку */
-    outline: none; /* Убираем свечение в Chrome и Safari */
-    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari*/
-    -moz-box-sizing: border-box;  
-    box-sizing: border-box; 
-    vertical-align: middle; /* Выравнивание по середине */
-    width: 350px;
-    height: 39px;
-    padding: 0px 0px 0px 28px;
-    line-height: 36px;
-    //background: #EEE;  
-    background: linear-gradient(to top, #E5E2E2, #DFDBDB);
-    font-family: Tahoma,sans-serif;
-    font-size: 16px;
-    color:#6E7074;
-    text-shadow: 0 1px 0 #FFF;
-    border-radius: 4px;
-}
-  /* Placeholder
-  -----------------------------------------------------*/
-    .form-search input::-webkit-input-placeholder {
-        font-family: Tahoma,sans-serif;
-       margin:0px -30px;
-       font-size: 16px;
-       color:#6E7074;
-       font-weight: normal;
-    }
-     
-    .form-search input:-moz-placeholder {
-        font-family: Tahoma,sans-serif;
-        margin:0px -30px;
-        font-size: 16px;
-        color:#6E7074;
-        font-weight: normal;
-    }
-     
-    .form-search input:-ms-input-placeholder {
-        font-family: Tahoma,sans-serif;
-        margin:0px -30px;
-        font-size: 16px;
-        color:#6E7074;
-        font-weight: normal;
-    } 
 
+.form-search input:focus {
+  width: 250px;
+  box-shadow: inset 0 1px 1px #46575b, 0 1px 0 #FFF;
+  color: #25464D;
+  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -moz-linear-gradient(#9CC2CA, #DFECEF);
+  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -ms-linear-gradient(#9CC2CA, #DFECEF);
+  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -o-linear-gradient(#9CC2CA, #DFECEF);
+  background-image: url("http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s1600/search.png"), -webkit-linear-gradient(#9CC2CA, #DFECEF);
+}
 .events {
     width: 750px;
     //padding: 10px;
@@ -224,7 +189,7 @@ form .price-scroll a.ui-slider-handle.ui-state-default.ui-corner-all {
     border: 1px solid #900;
     width: 9px;
     height: 14px;
-    margin: auto;
+    margin: 0 -6px;
 }
 form .price-scroll .ui-state-default,.ui-widget-content.ui-state-default,.ui-widget-header.ui-state-default{
     background: #900;
@@ -278,13 +243,8 @@ form .ui-widget-content {
     font-family: Tahoma,Arial,sans-serif;
 }
 .event-photo {
-
-    max-width:90px;
-    //height: 280px;
-
-   // width: 110px;
-   // height: 260px;
-
+    width: 110px;
+    height: 260px;
     float: left;
     border:1px solid #900;
     
