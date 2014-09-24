@@ -178,9 +178,16 @@ img {border: none;}
     font: 16px/20px sans-serif;
     color:#b00;
 }
+.price-scroll input{
+    margin: 15px 20px;
+}
 .price-scroll .min {
     width: 80px;
-    margin-left: 20px;
+    font-weight:bold;
+    margin-bottom: 15px;
+}
+.price-scroll .max {
+    width: 80px;
     font-weight:bold;
     margin-bottom: 15px;
 }
@@ -208,12 +215,8 @@ form .ui-widget-content {
     height: 210px;
 }
 .events-sorting {
-    width: 687px;
     margin: 20px;
    
-}
-.events-sorting span{
-    color: red;
 }
 .events-sorting li{
     display: inline-block;
@@ -227,7 +230,7 @@ form .ui-widget-content {
 .event{
     width: 200px;
     height: 300px;
-    margin: 20px;
+    margin: 14px;
     background-color: #514721;
     display: inline-block;
     border: 3px solid #BCBCBC ;
@@ -363,15 +366,32 @@ form .ui-widget-content {
     border: 1px solid #a00;
 }
 .events-sorting span {
-    width:60%;
+    width:330px;
     float: left;
+    color: red;
     padding: 5px;
 }
-.events-sorting nav {
+.events-sorting .sorting {
     border: 1px #000 solid;
-    padding: 5px;
+    width: 557px;
+    float: left;
+    margin-bottom: 15px;
 }
-.events-sorting nav a{
-    padding: 6px 30px;
+.events-sorting .sorting a{
+    padding: 7px 22px;
     border-left: 1px solid #000;
+    line-height: 30px;
+}
+.events-sorting .TandL {
+    border: 1px #000 solid;
+    float: left;
+    margin-left: 30px;
+    line-height: 30px;
+}
+.events-sorting .TandL a{
+    padding: 7px 25px;
+    border-left: 1px #000 solid;
+}
+.events-sorting .TandL a:first-child{
+    border: none;
 }

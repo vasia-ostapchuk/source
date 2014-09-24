@@ -1,5 +1,5 @@
 <div class="events-sorting">
-        <span>Сортувати по:</span>
+        
         <!-- <ul>
             <li><a href="">даті</a></li>
              <li><a href="">популярності</a></li>
@@ -7,11 +7,15 @@
                <li><a href="">коментаріями</a></li>
                 <li><a href="">алфавіту</a></li>  
         </ul> -->
-        <nav>
+        <div class="sorting">
+            <span>Сортувати по:</span>
             <a href="">За датою</a>
             <a href="">Популярне</a>
-        </nav>
-    </div>
+        </div>
+        <div class="TandL">
+            <a href="">T</a>
+            <a href="">L</a>
+        </div>
     <div class="event">
         <span>Американський папа</span>
         <br/>
