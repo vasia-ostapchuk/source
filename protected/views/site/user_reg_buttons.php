@@ -1,3 +1,12 @@
+
+<label id="language_label">    
+<?php echo CHtml::dropDownList('language_selector', 'language_selector', 
+            array('eu' => 'English', 'uk' => 'Українська', 'pl' => 'Polski'),
+            array('class' => 'language')
+        );
+?>
+</label>
+
 <?php if(Yii::app()->session['userdata']){ ?>
     <input class="button" id="profile_button" type="button" value="профайл" onclick="" />
     <h3><?php echo Yii::app()->user->name; ?></h3>
@@ -7,9 +16,3 @@
     <input class="button" id="reg_button" type="button" value="Реєстрація" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:1});" />
 <?php } ?>
 
-<!--<select name="language_selector" id="language_selector">
-    <option value=""><img src="images/flags" alt="альтернативный текст">мова</option>
-    <option value="1">первая </option>
-    <option value="13">44444444</option>
-    <option value="16">33333333</option>
-</select>-->

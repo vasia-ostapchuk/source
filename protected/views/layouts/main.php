@@ -86,7 +86,7 @@
                 </ul>
             </div>
             <div class="navigator-search">
-        <form class="form-search" method="get" action="/search" target="_blank">
+        <form class="form-search" method="get" action="site/search" target="_blank">
 <input type="text" name="q" placeholder="пошук" value=""/></form>
             </div>
         </div>
