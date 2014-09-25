@@ -120,6 +120,9 @@
         
         <div class="footer">
             то футер детка
+            <br/>
+            <a href="<?php echo Yii::app()->createUrl('filter/test'); ?>">Click me</a>
+            <br/>
             <?php 
                 //$location=Yii::app()->geoip->lookupLocation('209.85.135.104'); -- google
                 $location=Yii::app()->geoip->lookupLocation('178.212.111.36'); 
