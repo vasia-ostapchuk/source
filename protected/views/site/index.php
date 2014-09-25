@@ -155,33 +155,20 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
         'yearRange'=>'2000:2099',
         'minDate' => '2000-01-01',      // minimum date
         'maxDate' => '2099-12-31',      // maximum date
-        'ajax'=>array(
-                'dataType'=>'json',
-                'id'=>'calendar',
-                'type'=>'POST',
-                'url'=>Yii::app()->createUrl('site/ajax'),
-                'update'=>'.widget-calendar',
-                'data'=>array('one'=>'two'),
-                ),
+        'onSelect'=>"js:function(dateText){"
+                            . "var date={one:dateText, id:'calendar'};"
+                            . "$.ajax({"
+                                    . " type: 'POST',"
+                                    . " data:  date,"
+                                    . " url:  'index.php?r=site/ajax',"
+                                    . " success: function(data){"
+                                    . "             alert(data);"
+                                    . "}"
+                                . "});"
+                        . "}",
     ),
     'htmlOptions'=>array(
         'class'=>'widget-calendar',
-        /*'ajax'=>array(
-                'dataType'=>'json',
-                'id'=>'calendar',
-                'type'=>'POST',
-                'url'=>Yii::app()->createUrl('site/ajax'),
-                'update'=>'.widget-calendar',
-                'data'=>array('one'=>'two'),
-                ),*/
-        /*'click'=>CHtml::ajax(array(
-                'dataType'=>'json',
-                'id'=>'calendar',
-                'type'=>'POST',
-                'url'=>Yii::app()->createUrl('site/ajax'),
-                'update'=>'.widget-calendar',
-                'data'=>array('one'=>'two'),
-                )), */
         ),
 )); ?>
     </div>
