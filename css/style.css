@@ -274,6 +274,7 @@ form .ui-widget-content {
     font-size: 14px;
     color: #FF5050;
     text-align: center;
+    line-height: 3em;
     font-family: Tahoma,Arial,sans-serif;
 }
 .event-photo {
@@ -288,7 +289,7 @@ form .ui-widget-content {
     height: 30px;
    margin: 0 0 0 110px;
    border-bottom: 1px solid #900;
-     
+     line-height: 2em;
     background: wheat;
     font-size: 14px;
     color: #CBC9C9;
@@ -303,7 +304,7 @@ form .ui-widget-content {
     width: 90px;
     height: 30px;
     margin: 0 0 0 110px;
-
+line-height: 2em;
      border-bottom: 1px solid #900;
      
     background: wheat;
@@ -322,7 +323,7 @@ form .ui-widget-content {
    margin: 0 0 0 110px;
   border-bottom: 1px solid #900;
      border-bottom: 1px solid #900;
-     
+     line-height: 2em;
     background:wheat;
     font-size: 14px;
     color: #CBC9C9;
@@ -338,7 +339,7 @@ form .ui-widget-content {
     height: 30px;
     margin: 0 0 0 110px;
      border-bottom: 1px solid #900;
-     
+     line-height: 2em;
     background: wheat;
     font-size: 14px;
     color: #CBC9C9;
@@ -355,7 +356,8 @@ form .ui-widget-content {
    margin: 103px 0 0 113px;
    text-align: center;
     font-family: Tahoma,Arial,sans-serif;
-float: bottom;  
+float: bottom;
+line-height: 2em;
       position: relative;
 background: linear-gradient(to left, rgba(0,0,0,.3), rgba(0,0,0,.0) 50%, rgba(0,0,0,.3)), linear-gradient(#8F1528, #FE1728, #D7314A);  
 box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px, #000 0 10px 15px -10px; 
