@@ -27,9 +27,7 @@ CREATE TABLE IF NOT EXISTS `advertisement` (
   CONSTRAINT `fk_advertisement_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.advertisement: ~0 rows (approximately)
-/*!40000 ALTER TABLE `advertisement` DISABLE KEYS */;
-/*!40000 ALTER TABLE `advertisement` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.budget
@@ -41,15 +39,13 @@ CREATE TABLE IF NOT EXISTS `budget` (
   `report_id` int(11) NOT NULL,
   `state` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `fk_budget_type1_idx` (`type_id`),
-  KEY `fk_budget_report1_idx` (`report_id`),
+  KEY `fk_budget_type1` (`type_id`),
+  KEY `fk_budget_report1` (`report_id`),
   CONSTRAINT `fk_budget_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_budget_report1` FOREIGN KEY (`report_id`) REFERENCES `report` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.budget: ~0 rows (approximately)
-/*!40000 ALTER TABLE `budget` DISABLE KEYS */;
-/*!40000 ALTER TABLE `budget` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.event
@@ -62,24 +58,25 @@ CREATE TABLE IF NOT EXISTS `event` (
   `process_id` int(11) NOT NULL,
   `state_id` int(11) NOT NULL,
   `money_id` int(11) NOT NULL,
+  `location_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_event_type1_idx` (`type_id`),
   KEY `fk_event_type3_idx` (`state_id`),
-  KEY `fk_event_budget1_idx` (`budget_id`),
-  KEY `fk_event_money1_idx` (`money_id`),
-  KEY `fk_event_organizer1_idx` (`organizer_id`),
-  KEY `fk_event_process1_idx` (`process_id`),
+  KEY `fk_event_budget1` (`budget_id`),
+  KEY `fk_event_money1` (`money_id`),
+  KEY `fk_event_organizer1` (`organizer_id`),
+  KEY `fk_event_process1` (`process_id`),
+  KEY `fk_event_location1_idx` (`location_id`),
   CONSTRAINT `fk_event_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_type3` FOREIGN KEY (`state_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_budget1` FOREIGN KEY (`budget_id`) REFERENCES `budget` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_money1` FOREIGN KEY (`money_id`) REFERENCES `money` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_organizer1` FOREIGN KEY (`organizer_id`) REFERENCES `organizer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_event_process1` FOREIGN KEY (`process_id`) REFERENCES `process` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_event_process1` FOREIGN KEY (`process_id`) REFERENCES `process` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_event_location1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.event: ~0 rows (approximately)
-/*!40000 ALTER TABLE `event` DISABLE KEYS */;
-/*!40000 ALTER TABLE `event` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.event_singer
@@ -92,9 +89,7 @@ CREATE TABLE IF NOT EXISTS `event_singer` (
   CONSTRAINT `fk_concert_singer_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.event_singer: ~0 rows (approximately)
-/*!40000 ALTER TABLE `event_singer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `event_singer` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.image
@@ -109,9 +104,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   CONSTRAINT `fk_image_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.image: ~0 rows (approximately)
-/*!40000 ALTER TABLE `image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `image` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.info_event
@@ -124,13 +117,11 @@ CREATE TABLE IF NOT EXISTS `info_event` (
   `count` int(11) DEFAULT NULL,
   `free` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_info_event_type1_idx` (`type_id`),
+  KEY `fk_info_event_type1` (`type_id`),
   CONSTRAINT `fk_info_event_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.info_event: ~0 rows (approximately)
-/*!40000 ALTER TABLE `info_event` DISABLE KEYS */;
-/*!40000 ALTER TABLE `info_event` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.language
@@ -140,9 +131,7 @@ CREATE TABLE IF NOT EXISTS `language` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.language: ~0 rows (approximately)
-/*!40000 ALTER TABLE `language` DISABLE KEYS */;
-/*!40000 ALTER TABLE `language` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.location
@@ -151,20 +140,9 @@ CREATE TABLE IF NOT EXISTS `location` (
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.location: ~8 rows (approximately)
-/*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` (`id`, `name`, `parent_id`) VALUES
-	(1, 'Украіна', 0),
-	(2, 'Львів', 1),
-	(3, 'Київ', 1),
-	(4, 'Польша', 0),
-	(5, 'Варшава', 4),
-	(6, 'Люблін', 4),
-	(7, 'Хелм', 4),
-	(8, 'USA', 0);
-/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.login
@@ -173,29 +151,25 @@ CREATE TABLE IF NOT EXISTS `login` (
   `user_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_login_type1_idx` (`type_id`),
+  KEY `fk_login_type1` (`type_id`),
   CONSTRAINT `fk_social_login_user1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_login_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.login: ~0 rows (approximately)
-/*!40000 ALTER TABLE `login` DISABLE KEYS */;
-/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.member
 CREATE TABLE IF NOT EXISTS `member` (
   `event_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  KEY `fk_member_event1_idx` (`event_id`),
-  KEY `fk_member_user1_idx` (`user_id`),
+  KEY `fk_member_event1` (`event_id`),
+  KEY `fk_member_user1` (`user_id`),
   CONSTRAINT `fk_member_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_member_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.member: ~0 rows (approximately)
-/*!40000 ALTER TABLE `member` DISABLE KEYS */;
-/*!40000 ALTER TABLE `member` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.money
@@ -205,15 +179,13 @@ CREATE TABLE IF NOT EXISTS `money` (
   `summ` decimal(2,0) NOT NULL,
   `way_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_money_user1_idx` (`user_id`),
-  KEY `fk_money_type1_idx` (`way_id`),
+  KEY `fk_money_user1` (`user_id`),
+  KEY `fk_money_type1` (`way_id`),
   CONSTRAINT `fk_money_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_money_type1` FOREIGN KEY (`way_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.money: ~0 rows (approximately)
-/*!40000 ALTER TABLE `money` DISABLE KEYS */;
-/*!40000 ALTER TABLE `money` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.operator
@@ -223,9 +195,7 @@ CREATE TABLE IF NOT EXISTS `operator` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.operator: ~0 rows (approximately)
-/*!40000 ALTER TABLE `operator` DISABLE KEYS */;
-/*!40000 ALTER TABLE `operator` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.organizer
@@ -235,13 +205,11 @@ CREATE TABLE IF NOT EXISTS `organizer` (
   `rating` int(11) NOT NULL,
   `state` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `fk_organizer_user1_idx` (`user_id`),
+  KEY `fk_organizer_user1` (`user_id`),
   CONSTRAINT `fk_organizer_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.organizer: ~0 rows (approximately)
-/*!40000 ALTER TABLE `organizer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `organizer` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.permission
@@ -253,9 +221,7 @@ CREATE TABLE IF NOT EXISTS `permission` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.permission: ~0 rows (approximately)
-/*!40000 ALTER TABLE `permission` DISABLE KEYS */;
-/*!40000 ALTER TABLE `permission` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.process
@@ -267,9 +233,7 @@ CREATE TABLE IF NOT EXISTS `process` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.process: ~0 rows (approximately)
-/*!40000 ALTER TABLE `process` DISABLE KEYS */;
-/*!40000 ALTER TABLE `process` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.report
@@ -278,13 +242,11 @@ CREATE TABLE IF NOT EXISTS `report` (
   `type_id` int(11) DEFAULT NULL,
   `state` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_report_type1_idx` (`type_id`),
+  KEY `fk_report_type1` (`type_id`),
   CONSTRAINT `fk_report_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.report: ~0 rows (approximately)
-/*!40000 ALTER TABLE `report` DISABLE KEYS */;
-/*!40000 ALTER TABLE `report` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.report_file
@@ -295,13 +257,11 @@ CREATE TABLE IF NOT EXISTS `report_file` (
   `organizer_id` int(11) DEFAULT NULL,
   `original_file` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_report_budget1_idx` (`budget_id`),
+  KEY `fk_report_budget1` (`budget_id`),
   CONSTRAINT `fk_report_budget1` FOREIGN KEY (`budget_id`) REFERENCES `budget` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.report_file: ~0 rows (approximately)
-/*!40000 ALTER TABLE `report_file` DISABLE KEYS */;
-/*!40000 ALTER TABLE `report_file` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.role
@@ -313,9 +273,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.role: ~0 rows (approximately)
-/*!40000 ALTER TABLE `role` DISABLE KEYS */;
-/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.singer
@@ -327,13 +285,11 @@ CREATE TABLE IF NOT EXISTS `singer` (
   `image_id` int(11) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_singer_user1_idx` (`user_id`),
+  KEY `fk_singer_user1` (`user_id`),
   CONSTRAINT `fk_singer_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.singer: ~0 rows (approximately)
-/*!40000 ALTER TABLE `singer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `singer` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.singer_style
@@ -346,9 +302,7 @@ CREATE TABLE IF NOT EXISTS `singer_style` (
   CONSTRAINT `fk_singer_style_singer1` FOREIGN KEY (`singer_id`) REFERENCES `singer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.singer_style: ~0 rows (approximately)
-/*!40000 ALTER TABLE `singer_style` DISABLE KEYS */;
-/*!40000 ALTER TABLE `singer_style` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.static_text
@@ -358,9 +312,7 @@ CREATE TABLE IF NOT EXISTS `static_text` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.static_text: ~0 rows (approximately)
-/*!40000 ALTER TABLE `static_text` DISABLE KEYS */;
-/*!40000 ALTER TABLE `static_text` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.style
@@ -369,21 +321,9 @@ CREATE TABLE IF NOT EXISTS `style` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.style: ~9 rows (approximately)
-/*!40000 ALTER TABLE `style` DISABLE KEYS */;
-INSERT INTO `style` (`id`, `name`, `parent_id`) VALUES
-	(1, 'Рок', 0),
-	(2, 'Реп', 0),
-	(3, 'Поп', 0),
-	(4, 'інді-рок', 1),
-	(5, 'Індастріал-метал', 1),
-	(6, 'Пост-рок', 1),
-	(7, 'R&B', 2),
-	(8, 'Евроденс', 3),
-	(9, 'Данс-поп', 3);
-/*!40000 ALTER TABLE `style` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.ticket
@@ -399,18 +339,16 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   `seat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `qrcode` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_bought_ticket_user1_idx` (`user_id`),
-  KEY `fk_bought_ticket_operator1_idx` (`operator_id`),
-  KEY `fk_ticket_info_event1_idx` (`info_event_id`),
+  KEY `fk_bought_ticket_user1` (`user_id`),
+  KEY `fk_bought_ticket_operator1` (`operator_id`),
+  KEY `fk_ticket_info_event1` (`info_event_id`),
   CONSTRAINT `fk_bought_ticket_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_bought_ticket_operator1` FOREIGN KEY (`operator_id`) REFERENCES `operator` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_ticket_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_ticket_info_event1` FOREIGN KEY (`info_event_id`) REFERENCES `info_event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.ticket: ~0 rows (approximately)
-/*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.translation
@@ -420,15 +358,14 @@ CREATE TABLE IF NOT EXISTS `translation` (
   `column` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `row_id` int(11) NOT NULL,
   `lan_id` int(11) NOT NULL,
+  `translate` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `item_UNIQUE` (`table`),
-  KEY `fk_translation_language1_idx` (`lan_id`),
+  KEY `fk_translation_language1` (`lan_id`),
   CONSTRAINT `fk_translation_language1` FOREIGN KEY (`lan_id`) REFERENCES `language` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.translation: ~0 rows (approximately)
-/*!40000 ALTER TABLE `translation` DISABLE KEYS */;
-/*!40000 ALTER TABLE `translation` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.type
@@ -437,21 +374,16 @@ CREATE TABLE IF NOT EXISTS `type` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.type: ~2 rows (approximately)
-/*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` (`id`, `name`, `alias`) VALUES
-	(1, 'man', 'sex_id'),
-	(2, 'woman', 'sex_id');
-/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) COLLATE utf8_unicode_ci,
-  `password` varchar(255) COLLATE utf8_unicode_ci,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `birthday` datetime DEFAULT NULL,
@@ -467,11 +399,9 @@ CREATE TABLE IF NOT EXISTS `user` (
   CONSTRAINT `fk_user_location1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_type1` FOREIGN KEY (`sex_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_type2` FOREIGN KEY (`state_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.user: ~0 rows (approximately)
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+-- Data exporting was unselected.
 
 
 -- Dumping structure for table gomusic.user_role
@@ -480,15 +410,13 @@ CREATE TABLE IF NOT EXISTS `user_role` (
   `user_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_user_role_user1_idx` (`user_id`),
-  KEY `fk_user_role_role1_idx` (`role_id`),
+  KEY `fk_user_role_user1` (`user_id`),
+  KEY `fk_user_role_role1` (`role_id`),
   CONSTRAINT `fk_user_role_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_role_role1` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table gomusic.user_role: ~0 rows (approximately)
-/*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
+-- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

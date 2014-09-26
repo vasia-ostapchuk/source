@@ -498,14 +498,11 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
     border: none;
 }
 
-
-
-
 #language_selector {
     position: relative;
     bottom:5px;
     text-transform: uppercase;
-    width:115px;
+    width:45px;
     padding:5px;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
@@ -533,7 +530,6 @@ display: block;
 #language_label {
         position: relative;
         top:8px;
-        left:120px;
         float:right;
 }
 #language_label:after {
@@ -546,10 +542,57 @@ display: block;
     transform:rotate(90deg);
     right:8px; top:2px;
     padding:0 0 2px;
-    border-bottom:1px solid #ddd;
     position:absolute;
     pointer-events:none;
 }
-.user_reg_buttons h3{
-    color: white;
+
+#profile_button {
+        position: relative;
+    bottom:12px;
+    left:4px;
+    width:auto;
+    padding: 12px 20px;
+    float: left;
+    right:50px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    border: #2054F0;
+    border-radius: 7px;
+    font-family: Tahoma,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+   background: #474665;
+    background: 
+    -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
+    background: 
+    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+    color:#CBC9C9;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+#profile_label {
+        position: relative;
+        top:16px;
+    float: right;
+    right:10px;
+}
+#profile_label:after {
+    content:'>';
+    font:12px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:2px;
+    padding:0 0 2px;
+    position:absolute;
+    pointer-events:none;
 }

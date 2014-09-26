@@ -290,7 +290,8 @@ div.search-form
     }
     #logout{
         position:relative;
-    left: 360px;
+    left: 420px;
+    top:50px;
     padding: 12px 20px;
     background: #474665;
     font-size: 14px;

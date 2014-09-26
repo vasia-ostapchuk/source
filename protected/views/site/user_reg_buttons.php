@@ -1,16 +1,21 @@
-
-<label id="language_label">    
+<label id="language_label"> 
 <?php echo CHtml::dropDownList('language_selector', 'language_selector', 
-            array('eu' => 'English', 'uk' => 'Українська', 'pl' => 'Polski'),
+            array('eu' => 'eu', 'uk' => 'uk', 'pl' => 'pl'),
             array('class' => 'language')
         );
 ?>
 </label>
 
 <?php if(Yii::app()->session['userdata']){ ?>
-    <input class="button" id="profile_button" type="button" value="профайл" onclick="" />
-    <h3><?php echo Yii::app()->user->name; ?></h3>
-    <a id="logout" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout"  >вийти </a> 
+<label id="profile_label">   
+    <?php echo CHtml::dropDownList('profile_button', 'user_name', 
+                array('user_name'=>Yii::app()->user->name, 'tranlate' => 'tranlate', 'other' => 'other'),
+                array('id'=>"profile_button")
+            );
+    ?>
+</label>
+    <!--<input class="button" id="profile_button" type="button" value="<?php echo Yii::app()->user->name; ?>" onclick="" />-->
+    <br><a id="logout" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout"  >вийти </a> <br>
 <?php } else {?>
     <input class="button" id="login_button" type="button" value="Вхід" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:0});" />
     <input class="button" id="reg_button" type="button" value="Реєстрація" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:1});" />
