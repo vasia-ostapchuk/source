@@ -88,4 +88,14 @@
             Filter::setPriceMax(Yii::app()->request->getPost('price_max'));
             Filter::setPriceMin(Yii::app()->request->getPost('price_min'));
         }
+        
+        public function actionSortByDate(){
+            Filter::setSortByDate(TRUE);
+            Filter::setSortByPopularity(FALSE);
+        }
+        
+        public function actionSortByPopularity(){
+            Filter::setSortByDate(FALSE);
+            Filter::setSortByPopularity(TRUE);
+        }
     }

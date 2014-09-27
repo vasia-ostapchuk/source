@@ -63,7 +63,12 @@ class Filter extends CHttpSession {
     public static function getCalendarDate()
     {
         //return isset($_SESSION['filter']['genre_id'])? $_SESSION['filter']['genre_id'] : FALSE;
-        return isset(Yii::app()->session['calendar_date'])? Yii::app()->session['calendar_date']:FALSE;
+        //return isset(Yii::app()->session['calendar_date'])? Yii::app()->session['calendar_date']:FALSE;
+        if(isset(Yii::app()->session['calendar_date'])){
+            return Yii::app()->session['calendar_date'];   
+        } else {
+            return date('Y-m-d');
+        }
     }
     
     public static function setPriceMax($priceMax){
@@ -93,5 +98,27 @@ class Filter extends CHttpSession {
             isset(Yii::app()->session['price_min'])? Yii::app()->session['price_min']:0,
             isset(Yii::app()->session['price_max'])? Yii::app()->session['price_max']:0,
         );
+    }
+    
+    public static function setSortByDate($value=false){
+        //$_SESSION['filter']['genre_id']=$id;
+        Yii::app()->session['sort_by_date']=$value;
+    }
+
+    public static function getSortByDate()
+    {
+        //return isset($_SESSION['filter']['genre_id'])? $_SESSION['filter']['genre_id'] : FALSE;
+        return isset(Yii::app()->session['sort_by_date'])? Yii::app()->session['sort_by_date']:FALSE;
+    }
+    
+    public static function setSortByPopularity($value=false){
+        //$_SESSION['filter']['genre_id']=$id;
+        Yii::app()->session['sort_by_popularity']=$value;
+    }
+
+    public static function getSortByPopularity()
+    {
+        //return isset($_SESSION['filter']['genre_id'])? $_SESSION['filter']['genre_id'] : FALSE;
+        return isset(Yii::app()->session['sort_by_popularity'])? Yii::app()->session['sort_by_popularity']:FALSE;
     }
 }

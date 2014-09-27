@@ -2,8 +2,58 @@
         <table class="sorting">
             <tr>
                 <td><span>Сортувати по:</span></td>
-                <td><a href="">За датою</a></td>
-                <td><a href="">Популярне</a></td>
+                <td>
+                    <a id="sortbydate" href="#">За датою</a>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $("#sortbydate").click(function(e){
+                                //e.preventDefault();
+                                $.ajax({
+                                    type: "POST",
+                                    url: "index.php?r=filter/sortbydate",
+                                    success: function(){
+                                        var jdata = {id:"poster"};
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "index.php?r=site/ajax",
+                                            dataType: "json",
+                                            data: jdata,                                            
+                                            success: function(data){
+                                                $('.events').html(data);
+                                            }
+                                        });
+                                    }
+                                });
+                                return false;
+                            });
+                        });
+                    </script>
+                </td>
+                <td><a id="sortbypopularity" href="#">Популярне</a>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $("#sortbypopularity").click(function(e){
+                                $.ajax({
+                                    type: "POST",
+                                    url: "index.php?r=filter/sortbypopularity",
+                                    success: function(){
+                                        var jdata = {id:"poster"};
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "index.php?r=site/ajax",
+                                            dataType: "json",
+                                            data: jdata,                                            
+                                            success: function(data){
+                                                $(".events").html(data);
+                                            }
+                                        });
+                                    }
+                                });
+                                return false;
+                            });
+                        });
+                    </script>
+                </td>
             </tr>
         </table>
         <div class="TandL">

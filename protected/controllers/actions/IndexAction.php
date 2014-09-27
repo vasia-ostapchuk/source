@@ -5,7 +5,13 @@
     {
         //Filter::initialization();
         $data = array();
-        $data['ajaxContent'] = $this->controller->renderPartial('poster',array('parameters'=>Events::$even),true);
+        $event = Events::$even;
+        if(Filter::getSortByDate()){
+            usort($event, "Events::sortByDate");
+        } elseif(Filter::getSortByPopularity()) {
+            usort($event, "Events::sortByPopularity");
+        }
+        $data['ajaxContent'] = $this->controller->renderPartial('poster',array('parameters'=>$event),true);
         $location=new Location;
         $style=new Style;
         

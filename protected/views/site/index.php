@@ -1,3 +1,17 @@
+<script type='text/javascript'>
+    function findPoster(){
+        var jdata = {id:"poster"};
+        $.ajax({
+            url: 'index.php?r=site/ajax',
+            dataType: "json",
+            data: jdata,
+            type: 'POST',
+            success: function(html){
+                    $(".events").html(html);
+                    }
+            });
+    };
+</script>
 <div class="filters">
     <?php
         $form = $this->beginWidget('CActiveForm', array(
@@ -34,7 +48,7 @@
                     //'update'=>'#city',
                     'success'=>'function(html){'
                                 . 'jQuery("#city").html(html);'
-                                . '/*alert("1");*/'
+                                . 'findPoster();'                                 
                             . '}',
                 ),
                 'options' => $options,
@@ -60,7 +74,8 @@
                     'url'=>CController::createUrl('filter/city'),
                     'success'=>'function(){'
                                 . '/*jQuery("#city").html(html);*/'
-                                . '/*alert("1");*/'
+                                . 'var jdata = {id:"poster"};'
+                                . 'findPoster();'   
                             . '}',
                 ),
                 'options' => $options,
@@ -89,7 +104,7 @@
                     //'update'=>'#genre',
                     'success'=>'function(html){'
                                 . 'jQuery("#genre").html(html);'
-                                . ''
+                                . 'findPoster();'   
                             . '}',
                 ),
                 'options' => $options,
@@ -116,7 +131,7 @@
                     //'update'=>'#style',
                     'success'=>'function(html){'
                                 . 'jQuery("#style").html(html);'
-                                . ''
+                                . 'findPoster();'   
                             . '}',
                 ),
                 'options' => $options,
@@ -139,16 +154,7 @@
                    'type' => 'POST',
                    //'data' => array('id'=>'investment'),
                    'success'=>'function() {'
-                                . 'var jdata = {id:"poster"};'
-                                . '$.ajax({'
-                                        . 'url: "' . Yii::app()->createUrl('site/ajax') . '",'
-                                        . 'dataType: "json",'
-                                        . 'data: jdata,'
-                                        . 'type: "POST",'
-                                        . 'success: function(html){'
-                                                . '$(".events").html(html);'
-                                                . '}'
-                                        . '});'                           
+                                . 'findPoster();'                             
                                .'}',
                )
         );
@@ -184,7 +190,7 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
 $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     'language'=>'uk',
     'name'=>'datepicker-month-year-menu',
-    'value'=>  Filter::getCalendarDate(),
+    'value'=>Filter::getCalendarDate(),
     'flat'=>true,//remove to hide the datepicker
     'options'=>array(
 	    'dateFormat' => 'yy-mm-dd',
@@ -201,17 +207,8 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                                     . " data:  date,"
                                     . " url:  'index.php?r=filter/calendar',"
                                     . " success: function(){"
-                                    . "             var jdata = {id:'poster'};"
-                                    . "             $.ajax({"
-                                    . "                     url: '" . Yii::app()->createUrl('site/ajax') . "',"
-                                    . "                     dataType: 'json',"
-                                    . "                     type: 'POST',"
-                                    . "                     data: jdata,"
-                                    . "                     success: function(html){"
-                                    . "                                 $('.events').html(html);"
-                                    . "                                 }" 
-                                    . "                     });"
-                                    . "             }"
+                                    . " findSort();"   
+                                    . "}"
                                 . "});"
                         . "}",
     ),

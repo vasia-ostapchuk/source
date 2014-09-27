@@ -20,7 +20,8 @@ class Events {
             'price'=>'120',
             'date'=>'2014-11-01',
             'time'=>'20:00:00',
-            'image'=>'https://upload.wikimedia.org/wikipedia/commons/1/13/Basta_and_Guf_at_Green_Theatre_100721.jpg'
+            'image'=>'https://upload.wikimedia.org/wikipedia/commons/1/13/Basta_and_Guf_at_Green_Theatre_100721.jpg',
+            'popularity'=>10,
         ),
         1=>array(
             'title'=>'Guf',
@@ -29,7 +30,8 @@ class Events {
             'price'=>'10$',
             'date'=>'2014-10-02',
             'time'=>'21:00:00',
-            'image'=>'http://nirvana.fm:9001/download/FFUhKVFdN9UJMyrgITrwmIfk_Z6_7BNKeg164Y7VR9AUVUEmvfiODYw21WZzbHwIFFXMr6OPw0U-3cDf5TsLDxRV-yEVXlJMHKCOFT7v2G_gX_jdLuNVaZmriyQ/Guf_n_50_cent-Ice_Baby.jpg',
+            'image'=>'http://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Guf2.jpg/220px-Guf2.jpg',
+            'popularity'=>1,
         ),
         2=>array(
             'title'=>'Guf',
@@ -38,7 +40,8 @@ class Events {
             'price'=>'20$',
             'date'=>'2014-10-11',
             'time'=>'19:00:00',
-            'image'=>'http://nirvana.fm:9001/download/FFUhKVFdN9UJMyrgITrwmIfk_Z6_7BNKeg164Y7VR9AUVUEmvfiODYw21WZzbHwIFFXMr6OPw0U-3cDf5TsLDxRV-yEVXlJMHKCOFT7v2G_gX_jdLuNVaZmriyQ/Guf_n_50_cent-Ice_Baby.jpg',
+            'image'=>'http://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Guf2.jpg/220px-Guf2.jpg',
+            'popularity'=>14,
         ),
         3=>array(
             'title'=>'Guf',
@@ -47,7 +50,8 @@ class Events {
             'price'=>'50$',
             'date'=>'2014-09-27',
             'time'=>'21:00:00',
-            'image'=>'http://nirvana.fm:9001/download/FFUhKVFdN9UJMyrgITrwmIfk_Z6_7BNKeg164Y7VR9AUVUEmvfiODYw21WZzbHwIFFXMr6OPw0U-3cDf5TsLDxRV-yEVXlJMHKCOFT7v2G_gX_jdLuNVaZmriyQ/Guf_n_50_cent-Ice_Baby.jpg',
+            'image'=>'http://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Guf2.jpg/220px-Guf2.jpg',
+            'popularity'=>15,
         ),
         4=>array(
             'title'=>'Madonna',
@@ -57,6 +61,7 @@ class Events {
             'date'=>'2014-09-30',
             'time'=>'22:30:00',
             'image'=>'https://lh5.googleusercontent.com/hcnOcT_OE8PC0J8Lkmd32CVge0xlj6kEBamKlrOxr6by=s552-no',
+            'popularity'=>40,
         ),
         5=>array(
             'title'=>'Madonna',
@@ -66,6 +71,7 @@ class Events {
             'date'=>'2014-10-04',
             'time'=>'21:30:00',
             'image'=>'https://lh6.googleusercontent.com/-zWt8QpFbthg/T4WhP8THgzI/AAAAAAAANvE/Kwcv0tIscJs/s552-no/app-promo.jpg',
+            'popularity'=>31,
         ),
         6=>array(
             'title'=>'T-killah',
@@ -75,6 +81,17 @@ class Events {
             'date'=>'2014-10-07',
             'time'=>'',
             'image'=>'http://cs616725.vk.me/v616725799/1569c/nbLCEJUZOvc.jpg',
+            'popularity'=>15,
         ),
     );
+    
+    public static function sortByDate($a,$b){
+        if ($a['date'] > $b['date'])
+            return 1;
+    }
+    
+    public static function sortByPopularity($a,$b){
+        if ($a['popularity'] < $b['popularity'])
+            return 1;
+    }
 }
