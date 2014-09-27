@@ -269,7 +269,8 @@ div.search-form
 
 .button { 
        position:relative;
-    left: 360px;
+    left: 320px;
+    top : 5px;
     padding: 12px 20px;
     background: #474665;
     font-size: 14px;
@@ -291,7 +292,7 @@ div.search-form
     #logout{
         position:relative;
     left: 420px;
-    top:50px;
+   top:2px;
     padding: 12px 20px;
     background: #474665;
     font-size: 14px;
@@ -308,7 +309,32 @@ div.search-form
     -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
     background: 
     -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+    
+    
     }
     #logout{
         text-decoration: none;
     }
+    #profile_button{
+        position:relative;
+    left: 300px;
+ 
+    padding: 12px 20px;
+    background: #474665;
+    font-size: 14px;
+    font-weight: bold;
+    color: #CBC9C9;
+    text-align: center;
+    cursor: pointer;
+    border: #2054F0;
+    border-radius: 7px;
+    font-family: Tahoma,Arial,sans-serif;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    background: 
+    -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
+    background: 
+    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+        
+    }
+    

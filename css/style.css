@@ -500,7 +500,9 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 
 #language_selector {
     position: relative;
+    top:-3px;
     bottom:5px;
+    height: 37px;
     text-transform: uppercase;
     width:45px;
     padding:5px;
@@ -522,6 +524,7 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
 }
 #language_selector > option:nth-child(1) {
     text-align:left;
+    
 }
 #language_selector:hover > #language_selector-option {
 display: block;
@@ -529,7 +532,7 @@ display: block;
 
 #language_label {
         position: relative;
-        top:8px;
+        top:10px;
         float:right;
 }
 #language_label:after {
@@ -581,7 +584,7 @@ display: block;
         position: relative;
         top:16px;
     float: right;
-    right:10px;
+    right:100px;
 }
 #profile_label:after {
     content:'>';
