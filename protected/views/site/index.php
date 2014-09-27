@@ -207,7 +207,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                                     . " data:  date,"
                                     . " url:  'index.php?r=filter/calendar',"
                                     . " success: function(){"
-                                    . " findSort();"   
+                                    . " findPoster();"   
                                     . "}"
                                 . "});"
                         . "}",
