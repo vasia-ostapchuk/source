@@ -121,7 +121,25 @@
         <div class="footer">
             то футер детка
             <br/>
-            <a href="<?php echo Yii::app()->createUrl('filter/test'); ?>">Click me</a>
+            <a id="click-me" href="#">Click me</a>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $('#click-me').click(function(e){
+                            //alert('city is change ');
+                            e.preventDefault();
+                            var rdata = {id:'process'};
+                            $.ajax({
+                                type: 'POST',
+                                url: 'index.php?r=site/ajax',
+                                data: rdata,
+                                dataType: 'json',
+                                success: function(data){
+                                    $('.events').html(data);
+                                }
+                            });
+                        });
+                    });
+                </script>
             <br/>
             <?php 
                 //$location=Yii::app()->geoip->lookupLocation('209.85.135.104'); -- google
@@ -134,7 +152,6 @@
                 echo "Region: " . $location->regionName . "<br>";
                 echo "City: " . $location->city . "<br>";
                 echo "<pre>";
-                Yii::app()->session->add('variable1','Hello');
                 var_dump($_SESSION);
                 echo "</pre>";
                 echo "<pre>";

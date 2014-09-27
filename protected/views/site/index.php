@@ -25,13 +25,17 @@
             {
                 $options[Filter::getCountryId()]=array('selected'=>true);
             } else {
-                $options = null;
+                $options[0] = array('selected'=>true);
             }
             echo CHtml::dropDownList('country', '', $country,array(
                 'ajax'=>array(
                     'type'=>'POST',
-                    'url'=>CController::createUrl('site/filtercountry'),
-                    'update'=>'#city',
+                    'url'=>CController::createUrl('filter/country'),
+                    //'update'=>'#city',
+                    'success'=>'function(html){'
+                                . 'jQuery("#city").html(html);'
+                                . '/*alert("1");*/'
+                            . '}',
                 ),
                 'options' => $options,
             )); 
@@ -48,12 +52,16 @@
             {
                 $options[Filter::getCityId()]=array('selected'=>true);
             } else {
-                $options = null;
+                $options[0] = array('selected'=>true);
             }
             echo CHtml::dropDownList('city', '', $city,array(
                 'ajax'=>array(
                     'type'=>'POST',
-                    'url'=>CController::createUrl('site/filtercity'),
+                    'url'=>CController::createUrl('filter/city'),
+                    'success'=>'function(){'
+                                . '/*jQuery("#city").html(html);*/'
+                                . '/*alert("1");*/'
+                            . '}',
                 ),
                 'options' => $options,
             )); 
@@ -62,7 +70,7 @@
         ?>
         <?php echo $form->error($model,'city') . "\n"; ?>
     </div>
-    
+
     <div class="filter-label">
         <?php echo $form->labelEx($model,'style') . "\n"; ?>
         <?php //echo $form->dropDownList($model,'style', $style). "\n"; ?>
@@ -71,14 +79,18 @@
             {
                 $options[Filter::getStyleId()]=array('selected'=>true);
             } else {
-                $options = null;
+                $options[0] = array('selected'=>true);
             }
             echo CHtml::dropDownList('style', '', $style,array(
                 'ajax'=>array(
                     'type'=>'POST',
-                    'url'=>CController::createUrl('site/filterstyle'),
+                    'url'=>CController::createUrl('filter/style'),
                     //'update'=>'#'.CHtml::activeId($model,'genre'),
-                    'update'=>'#genre',
+                    //'update'=>'#genre',
+                    'success'=>'function(html){'
+                                . 'jQuery("#genre").html(html);'
+                                . ''
+                            . '}',
                 ),
                 'options' => $options,
             )); 
@@ -94,14 +106,18 @@
             {
                 $options[Filter::getGenreId()]=array('selected'=>true);
             } else {
-                $options = null;
+                $options[0] = array('selected'=>true);
             }
             echo CHtml::dropDownList('genre', '', $genre,array(
                 'ajax'=>array(
                     'type'=>'POST',
-                    'url'=>CController::createUrl('site/filtergenre'),
+                    'url'=>CController::createUrl('filter/genre'),
                     //'update'=>'#'.CHtml::activeId($model,'genre'),
-                    'update'=>'#style',
+                    //'update'=>'#style',
+                    'success'=>'function(html){'
+                                . 'jQuery("#style").html(html);'
+                                . ''
+                            . '}',
                 ),
                 'options' => $options,
             )); 
@@ -111,16 +127,39 @@
     </div>
 
     <div class="price-scroll">
-        <h1>Квиткові ціни:</h1>
-<input type="text" class="min" value="0" />
-<input type="text" class="max" value="5000" />
+        <h1>Квиткові ціни:</h1> 
+        
+        <input type="text" class="min" name="price_min" value="<?php echo Filter::getPriceMin(); ?>" />
+        <input type="text" class="max" name="price_max" value="<?php echo Filter::getPriceMax(); ?>" />
+<?php
+   echo CHtml::ajaxSubmitButton ("OK",
+               array('/filter/price'),
+               array(
+                   //'dataType'=>'json',
+                   'type' => 'POST',
+                   //'data' => array('id'=>'investment'),
+                   'success'=>'function() {'
+                                . 'var jdata = {id:"poster"};'
+                                . '$.ajax({'
+                                        . 'url: "' . Yii::app()->createUrl('site/ajax') . '",'
+                                        . 'dataType: "json",'
+                                        . 'data: jdata,'
+                                        . 'type: "POST",'
+                                        . 'success: function(html){'
+                                                . '$(".events").html(html);'
+                                                . '}'
+                                        . '});'                           
+                               .'}',
+               )
+        );
+ ?>
 <?php
 $this->widget('zii.widgets.jui.CJuiSliderInput', array(
     'name'=>'slider_range',
      
     'event'=>'change',
     'options'=>array(
-        'values'=>array(0,5000),// default selection
+        'values'=>Filter::getPrice(),// default selection
         'min'=>0, //minimum value for slider input
         'max'=>5000, // maximum value for slider input
         'animate'=>true,
@@ -133,7 +172,6 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
             . '}'
             . '$(".price-scroll .min").val(ui.values[0]);'
             . '$(".price-scroll .max").val(ui.values[1]);'
-            
         . '}',
     // slider css options
     'htmlOptions'=>array(
@@ -146,6 +184,7 @@ $this->widget('zii.widgets.jui.CJuiSliderInput', array(
 $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     'language'=>'uk',
     'name'=>'datepicker-month-year-menu',
+    'value'=>  Filter::getCalendarDate(),
     'flat'=>true,//remove to hide the datepicker
     'options'=>array(
 	    'dateFormat' => 'yy-mm-dd',
@@ -156,14 +195,23 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
         'minDate' => '2000-01-01',      // minimum date
         'maxDate' => '2099-12-31',      // maximum date
         'onSelect'=>"js:function(dateText){"
-                            . "var date={one:dateText, id:'calendar'};"
+                            . "var date={date:dateText, id:'calendar'};"
                             . "$.ajax({"
                                     . " type: 'POST',"
                                     . " data:  date,"
-                                    . " url:  'index.php?r=site/ajax',"
-                                    . " success: function(data){"
-                                    . "             alert(data);"
-                                    . "}"
+                                    . " url:  'index.php?r=filter/calendar',"
+                                    . " success: function(){"
+                                    . "             var jdata = {id:'poster'};"
+                                    . "             $.ajax({"
+                                    . "                     url: '" . Yii::app()->createUrl('site/ajax') . "',"
+                                    . "                     dataType: 'json',"
+                                    . "                     type: 'POST',"
+                                    . "                     data: jdata,"
+                                    . "                     success: function(html){"
+                                    . "                                 $('.events').html(html);"
+                                    . "                                 }" 
+                                    . "                     });"
+                                    . "             }"
                                 . "});"
                         . "}",
     ),
@@ -172,17 +220,10 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
         ),
 )); ?>
     </div>
+    <div id="bottom-block" style="background: #777; color: #FFF;"></div>
     <?php   
     $this->endWidget(); ?>
 </div>
-
-<script>
-    $(document).ready(function(){
-            $('.widget-calendar').select(function(e){
-                e.preventExtensions();
-            });
-        });
-</script>
 
 <div class="events">
 <?php echo $ajaxContent; ?>

@@ -20,6 +20,7 @@
             $criteria->params=array(':parent_id'=>'0');
             $result = Location::model()->findAll($criteria);
             $data = array();
+            $data[0]='All country';
             foreach ($result as $value)
             {
                 $data[$value->id] = $value->name;
@@ -37,11 +38,14 @@
                 $criteria->params=array(':id'=>$id);
                 $result = Location::model()->findAll($criteria);
                 $data = array();
+                $data[0]='All city';
                 foreach ($result as $value)
                 {
                     $data[$value->id] = $value->name;
                 }
                 return $data;
+            } else {
+                return array(0=>'All city');
             }
         }
     }

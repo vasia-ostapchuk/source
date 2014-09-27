@@ -39,6 +39,7 @@ class Style extends CActiveRecord{
             $dataReader->bindColumn(1, $styleId);
             $dataReader->bindColumn(2, $styleName);
             $data=array();
+            $data[0]='All style';
             while ($dataReader->read()!==FALSE)
             {
                 $data[$styleId] = $styleName;
@@ -47,6 +48,7 @@ class Style extends CActiveRecord{
         }else{
             $result = Style::model()->findAll('parent_id=:parent_id',array(':parent_id'=>(int)0));
             $data=array();
+            $data[0]='All style';
             foreach ($result as $value)
             {
                 $data[$value->id] =$value->name;
@@ -64,6 +66,7 @@ class Style extends CActiveRecord{
         $dataReader->bindColumn(2, $styleName);
         $dataReader->bindColumn(3, $styleId);
         $data=array();
+        $data[0]=array('name'=>'All style', 'style_id'=>0);
         while ($dataReader->read()!==FALSE)
         {
             $data[$genreId] = array('name'=>$styleName,'style_id'=>$styleId);
@@ -78,6 +81,7 @@ class Style extends CActiveRecord{
             $result = Style::model()->findAll('parent_id!=:parent_id',array(':parent_id'=>(int)0));
         }
         $data=array();
+        $data[0]='All genre';
         foreach ($result as $value)
         {
             $data[$value->id] =$value->name;

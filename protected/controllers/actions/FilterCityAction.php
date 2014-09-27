@@ -11,7 +11,7 @@
  *
  * @author Mr White
  */
-class FilterCityAction extends CAction {
+class FilterCityAction1 extends CAction {
     public function run(){
         if(Yii::app()->request->getPost('city'))
             {

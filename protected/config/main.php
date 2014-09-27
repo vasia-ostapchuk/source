@@ -47,7 +47,7 @@ return array(
                         'sessionName' => 'PHPSESSID',
                         'class'=> 'CHttpSession',
                         //'useTransparentSessionID'   =>($_POST['PHPSESSID']) ? true : false,
-                        'autoStart' => 'false',    
+                        'autoStart' => 'true',    
                         'cookieMode' => 'allow',
                         'timeout' => 300,
                     ),
