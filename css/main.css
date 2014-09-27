@@ -270,7 +270,7 @@ div.search-form
 .button { 
        position:relative;
     left: 320px;
-    top : 5px;
+    
     padding: 12px 20px;
     background: #474665;
     font-size: 14px;
@@ -291,7 +291,7 @@ div.search-form
     }
     #logout{
         position:relative;
-    left: 420px;
+    left: 425px;
    top:2px;
     padding: 12px 20px;
     background: #474665;
@@ -310,7 +310,7 @@ div.search-form
     background: 
     -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
     
-    
+   
     }
     #logout{
         text-decoration: none;
@@ -337,4 +337,9 @@ div.search-form
     -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
         
     }
-    
+    #reg_button{
+        top: 5px;
+    }
+    #login_button{
+        top:5px;
+    }
