@@ -1,4 +1,4 @@
-<label id="language_label"> 
+<label id="language_label" title="мови"> 
 <?php echo CHtml::dropDownList('language_selector', 'language_selector', 
             array('eu ' => 'eu', 'uk' => 'uk', 'pl' => 'pl'),
             array('class' => 'language')

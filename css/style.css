@@ -532,7 +532,7 @@ display: block;
 
 #language_label {
         position: relative;
-        top:10px;
+        top:9px;
         float:right;
 }
 #language_label:after {
@@ -543,7 +543,8 @@ display: block;
     -moz-transform:rotate(90deg);
     -ms-transform:rotate(90deg);
     transform:rotate(90deg);
-    right:8px; top:2px;
+    right:8px; 
+    top:6px;
     padding:0 0 2px;
     position:absolute;
     pointer-events:none;
