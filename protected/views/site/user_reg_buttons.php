@@ -1,6 +1,6 @@
 <label id="language_label"> 
 <?php echo CHtml::dropDownList('language_selector', 'language_selector', 
-            array('eu' => 'eu', 'uk' => 'uk', 'pl' => 'pl'),
+            array('eu ' => 'eu', 'uk' => 'uk', 'pl' => 'pl'),
             array('class' => 'language')
         );
 ?>
