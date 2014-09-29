@@ -582,8 +582,8 @@ display: block;
 }
 
 #profile_label {
-        position: relative;
-        top:16px;
+    position: relative;
+    top:18px;
     float: right;
     right:100px;
 }

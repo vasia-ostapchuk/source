@@ -24,7 +24,7 @@
             <?php echo $this->renderPartial('user_reg_buttons',array(),true); ?>
             </div>
         </div>
-        <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'authentication.php'); ?>
+        <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'ModalWindows.php'); ?> <!--підключаєм файл з модальними вікнами ../layouts/filename-->
         <div class="navigator">
             <div class="navigator-button">
                 <ul>

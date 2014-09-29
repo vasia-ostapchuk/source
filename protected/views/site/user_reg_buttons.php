@@ -7,15 +7,10 @@
 </label>
 
 <?php if(Yii::app()->session['userdata']){ ?>
-<label id="profile_label">   
-    <?php echo CHtml::dropDownList('profile_button', 'user_name', 
-                array('user_name'=>Yii::app()->user->name, 'tranlate' => 'tranlate', 'other' => 'other'),
-                array('id'=>"profile_button")
-            );
-    ?>
+<label id="profile_label">  
+<input class="button" id="profile_button" type="button" value="<?php echo Yii::app()->user->name; ?>" onclick="$('#ProfileMenu').dialog('open');" />   
 </label>
-    <!--<input class="button" id="profile_button" type="button" value="<?php echo Yii::app()->user->name; ?>" onclick="" />-->
-    <br><a id="logout" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout"  >вийти </a> <br>
+    <br><a id="logout" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?r=site/logout"  >вийти </a>
 <?php } else {?>
     <input class="button" id="login_button" type="button" value="Вхід" title="Вхід" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:0});" />
     <input class="button" id="reg_button" type="button" value="Реєстрація" title="Реєстрація" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:1});" />
