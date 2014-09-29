@@ -1,20 +1,10 @@
-<?php $this->widget('zii.widgets.CMenu', array(
-'encodeLabel'=>false,
-'items'=>array(
-array(
-'label'=>'<img src="/images/ua.jpg" />', 
-'url'=>array('site/index'),
-),
-array( 
-'label'=>'<img src="/images/pl.jpg" />', 
-'url'=>array('site/index'),
-),
-array(
-'label'=>'<img src="/images/en.jpg" />', 
-'url'=>array('site/index'),
-),
-),
-)); ?>
+<label id="language_label" title="мови"> 
+<?php echo CHtml::dropDownList('language_selector', 'language_selector', 
+            array('eu ' => CHtml::image(Yii::app()->request->baseUrl.'/img/pl.png, 'uk' => 'uk', 'pl' => 'pl'),
+            array('class' => 'language')
+        );
+?>
+</label>
 
 <?php if(Yii::app()->session['userdata']){ ?>
 <label id="profile_label">  
