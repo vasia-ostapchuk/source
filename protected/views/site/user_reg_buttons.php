@@ -1,6 +1,6 @@
 <label id="language_label" title="мови"> 
 <?php echo CHtml::dropDownList('language_selector', 'language_selector', 
-            array('eu ' => CHtml::image(Yii::app()->request->baseUrl.'/img/pl.png, 'uk' => 'uk', 'pl' => 'pl'),
+            array('eu ' => CHtml::image(Yii::app()->request->baseUrl.'/img/pl.png'), 'uk' => 'uk', 'pl' => 'pl'),
             array('class' => 'language')
         );
 ?>
