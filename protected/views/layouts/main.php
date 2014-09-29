@@ -92,8 +92,17 @@
         <input type="submit" value=""/>
     </form>
     <script>  
-        $(document).ready(function(){
-            $('.form-search').submit(function(e){
+        $(document).ready(function(){ //відбувається після завантаження сторінки
+
+            /*if($("#ProfileMenu").dialog().focusout()) {
+                $(document).click(function(event) { //автоматичне закриття діалогових вікон
+                  if ($(event.target).closest('#ProfileMenu').length  || $(event.target).closest('#ProfileMenu').length) return;
+                  $('#ProfileMenu').dialog('close');
+                  event.stopPropagation();
+                });
+            }*/
+            
+            $('.form-search').submit(function(e){ //обробка форми пошуку
             e.preventDefault();
             var m_method=$(this).attr('method');
             var m_action=$(this).attr('action');
@@ -102,7 +111,7 @@
                     type: m_method,
                     url: m_action,
                     data: m_data,
-                    dataType: "json",
+                    dataType: 'json',
                     success: function(data){
                         $('.events').html(data);
                     }
