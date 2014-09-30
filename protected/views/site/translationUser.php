@@ -17,8 +17,8 @@
              <button>EN</button>
              <button>UA</button>
              <button>PL</button>
-             <button>Пошку</button>
-             
+             <button>Пошук</button>
+             <input>
          </div>
          <div class="sorting">
              <span>Сортувати:</span>
@@ -26,22 +26,32 @@
              <button>Алфавітом</button>
          </div>
          <div class="translator">
-             <div class="">
-                 <input class="Eng_word">
-                 <input class="Translate">
+             <div class="field">
+                 <input class="eng_word">
+                 <input class="translate">
                  <button>Ok</button>
              </div>
-             <div class="">
-                 <input class="Eng_word">
-                 <input class="Translate">
+             <div class="field">
+                 <input class="eng_word">
+                 <input class="translate">
                  <button>Ok</button>
              </div>
-             <div class="">
-                 <input class="Eng_word">
-                 <input class="Translate">
+             <div class="field">
+                 <input class="eng_word">
+                 <input class="translate">
                  <button>Ok</button>
              </div>
          </div>
-         
+         <div class="pagination-link">  
+            <ul>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+            </ul>
+         </div>
      </article>
  </div>

@@ -627,25 +627,28 @@ padding: 1px; width: 24px;}
 #nav li.jshover li.jshover ul {display: block;} 
 
 .translation_user aside{
+    background-color: #900;
     width: 248px;
     float: left;
     border: 1px solid #000;
 }
 .translation_user aside button{
-    display: block;
     width: 100%;
 }
 .translation_user article{
+    background-color: #c00;
     width: 748px;
     float: left;
     border: 1px solid #000;
 }
-.translation_user .sorting{
-    line-height: 35px;
-    width: 100%;
+.translation_user article .language_buttons{
+    margin: 0 10px;
+    border: 1px #000 solid;    
 }
-.translation_user .translator{
-    height: 150px;
+.translation_user article .sorting{
+    line-height: 35px;
+    margin: 10px 10px 25px 10px;
+    width: 97%;
 }
 .translation_user button{
     height: 35px;
@@ -653,7 +656,7 @@ padding: 1px; width: 24px;}
 .translation_user article .language_buttons button{
     width: 40px;
 }
-.translation_user article .language_buttons button:last-child{
+.translation_user article .language_buttons button:nth-last-child(2){
     margin-left:  200px;
     width: 80px;
 }
@@ -663,4 +666,27 @@ padding: 1px; width: 24px;}
 }
 .translation_user article .sorting span{
     padding-left: 5px;
+}
+.translation_user article .translator{
+    border: 1px #000 solid;
+    margin: 65px 11px 10px 10px;
+    
+}
+.translation_user article .translator button{
+    width: 70px;
+}
+.translator input{
+    width: 37%
+}
+.translator input.eng_word{
+    height: 30px;
+    margin: 10px 0 10px 20px;
+}
+.translator input.translate{
+    height: 30px;
+    margin: 10px 30px;
+}
+.translation_user article .translator .field{
+    border: 1px #000 solid;
+    margin: 20px 10px;
 }
