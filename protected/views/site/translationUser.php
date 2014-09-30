@@ -18,7 +18,7 @@
              <button>UA</button>
              <button>PL</button>
              <button>Пошук</button>
-             <input>
+             <span>місце на мову</span>
          </div>
          <div class="sorting">
              <span>Сортувати:</span>
