@@ -614,7 +614,7 @@ display: block;
 #nav li.uz {float: left; position: relative;background: none;}  
 #nav a {text-decoration: none; display: block; width: 24px; height:24px; padding-top: 0px;}  
 #nav a:hover { color: #fffffff;}  
-#nav li:hover,  
+#nav li:hover{}  
 #nav li.jshover {}  
 #nav li ul {display: none; position: absolute; background: url(/horizmenubg.png);  
 padding: 1px; width: 24px;}  
