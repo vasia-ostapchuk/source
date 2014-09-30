@@ -31,7 +31,7 @@ class SiteController extends CController
     public function actionAdministration()
     {
             $this->layout ='//layouts/chapters/Administration';  
-        $this->render('investment');
+        $this->render('administration');
         
     }
 }
