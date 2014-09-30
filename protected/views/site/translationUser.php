@@ -13,7 +13,7 @@
          </form>
      </aside>
      <article>
-         <div>
+         <div class="language_buttons">
              <button>EN</button>
              <button>UA</button>
              <button>PL</button>
@@ -21,17 +21,25 @@
              
          </div>
          <div class="sorting">
-             
+             <span>Сортувати:</span>
+             <button>Алфавітом</button>
+             <button>Останніми змінами</button>
          </div>
-         <div class="">
+         <div class="translator">
              <div class="">
-                 
+                 <input class="Eng_word">
+                 <input class="Translate">
+                 <button>Ok</button>
              </div>
              <div class="">
-                 
+                 <input class="Eng_word">
+                 <input class="Translate">
+                 <button>Ok</button>
              </div>
              <div class="">
-                 
+                 <input class="Eng_word">
+                 <input class="Translate">
+                 <button>Ok</button>
              </div>
          </div>
          

@@ -626,3 +626,22 @@ padding: 1px; width: 24px;}
 #nav li:hover li:hover ul,  
 #nav li.jshover li.jshover ul {display: block;} 
 
+.translation_user aside{
+    width: 248px;
+    float: left;
+    border: 1px solid #000;
+}
+.translation_user aside button{
+    display: block;
+}
+.translation_user article{
+    width: 748px;
+    float: left;
+    border: 1px solid #000;
+}
+.translation_user .sorting{
+    width: 100%;
+}
+.translation_user .translator{
+    height: 100px;
+}
