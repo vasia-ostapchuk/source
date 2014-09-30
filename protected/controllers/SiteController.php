@@ -2,7 +2,8 @@
 
 class SiteController extends CController
 {
-    public $layout='//layouts/chapters/Main';
+    //public $layout='//layouts/chapters/Main';
+    public $layout='//layouts/main';
 	
 	public function actions()
 	{
@@ -24,14 +25,14 @@ class SiteController extends CController
         
         public function actionTranslate()
     {
-            $this->layout ='//layouts/chapters/DynamicTranslation';
-        $this->render('investment');
-        
+            //$this->render('investment');
+           // $this->layout ='//layouts/chapters/DynamicTranslation';
+        echo CJSON::encode($this->renderPartial('investment',array(),true));
     }  
     public function actionAdministration()
     {
-            $this->layout ='//layouts/chapters/Administration';  
-        $this->render('administration');
+            //$this->layout ='//layouts/chapters/Administration';  
+        echo CJSON::encode($this->renderPartial('administration',array(),true));
         
     }
 }

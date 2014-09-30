@@ -12,6 +12,7 @@
             usort($event, "Events::sortByPopularity");
         }
         $data['ajaxContent'] = $this->controller->renderPartial('poster',array('parameters'=>$event),true);
+        $data['main_menu'] = $this->controller->renderPartial('main_menu',array(),true);
         $location=new Location;
         $style=new Style;
         

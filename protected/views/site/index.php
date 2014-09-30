@@ -1,3 +1,6 @@
+<div class="main_menu">
+    <?php echo $main_menu; ?>
+</div>
 <script type='text/javascript'>
     function findPoster(){
         var jdata = {id:"poster"};
@@ -27,7 +30,7 @@
                 )
             );
         $model= new FilterForm;
-?>
+    ?>
     <div class="filters-label">
         Фільтри:
     </div>

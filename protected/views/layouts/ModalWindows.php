@@ -62,7 +62,25 @@
                     'resizable'=> false,
                 ),
             ));
-echo '<br>'; echo CHtml::link('Translation',array('site/translate'));
-echo '<br>'; echo CHtml::link('Administration',array('site/administration'));
+echo '<br>'; echo CHtml::ajaxlink('Translation',
+                    CController::createUrl('/site/translate'),   
+                    array('dataType'=>'json',
+                            'type' => 'post',
+                            'success'=>"function(data) {
+                                $('#ProfileMenu').dialog('close');
+                                        $('#content').html(data);
+                                    }",
+                        )
+                    );
+echo '<br>'; echo CHtml::ajaxlink('Administration',
+                    CController::createUrl('/site/administration'),   
+                    array('dataType'=>'json',
+                            'type' => 'post',
+                            'success'=>"function(data) {
+                                $('#ProfileMenu').dialog('close');
+                                        $('#content').html(data);
+                                    }",
+                        )
+                    );
     $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
