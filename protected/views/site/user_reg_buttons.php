@@ -1,6 +1,6 @@
 <label id="language_label" title="мови"> 
 <?php echo CHtml::dropDownList('language_selector', 'language_selector', 
-            array('eu ' => CHtml::image(Yii::app()->request->baseUrl.'/images/pl.png/'), 'uk' => 'uk', 'pl' => 'pl'),
+            array('eu ' => 'eu', 'uk' => 'uk', 'pl' => 'pl'),
             array('class' => 'language')
         );
 ?>
@@ -14,4 +14,5 @@
 <?php } else {?>
     <input class="button" id="login_button" type="button" value="Вхід" title="Вхід" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:0});" />
     <input class="button" id="reg_button" type="button" value="Реєстрація" title="Реєстрація" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:1});" />
-<?php } ?>
+<?php } 
+

@@ -600,3 +600,29 @@ display: block;
     position:absolute;
     pointer-events:none;
 }
+.lan{
+    width: 24px;
+    float: left;
+    height: 24px;
+   
+    margin: 5px 5px 5px 5px;
+}
+
+#nav, #nav ul {list-style: none; margin: 0px ; padding: 0; float: left; width: 100%;}  
+#nav li {float: left; color: #ffffff;}  
+#nav li a {color: #ffffff; padding-top: 5px;}  
+#nav li.uz {float: left; position: relative;background: none;}  
+#nav a {text-decoration: none; display: block; width: 24px; height:24px; padding-top: 0px;}  
+#nav a:hover { color: #fffffff;}  
+#nav li:hover,  
+#nav li.jshover {}  
+#nav li ul {display: none; position: absolute; background: url(/horizmenubg.png);  
+padding: 1px; width: 24px;}  
+#nav li li a {width: 24px; background: none;}  
+#nav li:hover ul,  
+#nav li.jshover ul {display: block;}  
+#nav li:hover li ul,  
+ 
+#nav li:hover li:hover ul,  
+#nav li.jshover li.jshover ul {display: block;} 
+
