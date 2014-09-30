@@ -10,13 +10,10 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
      
-    
-<body>
 
+<body>    
     <div class="container" id="page">
         <div class="header">
-            
-         
             <div class="logo">
                 
             </div>
@@ -24,7 +21,6 @@
               <ul id="nav">  
  
                   <li><a href=""title="ua"><img src="../../../images/ua.jpg" /></a>  
-                     
 <ul>  
     
     <li class="uz"><a href=""title="pl"><img src="../../../images/pl.jpg" /></a> </li>  
@@ -34,109 +30,12 @@
             <div class="user_reg_buttons">
             <?php echo $this->renderPartial('user_reg_buttons',array(),true); ?>
             </div>
+            <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'ModalWindows.php'); ?> <!--підключаєм файл з модальними вікнами ../layouts/filename-->
         </div>
-        <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'ModalWindows.php'); ?> <!--підключаєм файл з модальними вікнами ../layouts/filename-->
-        <div class="navigator">
-            <div class="navigator-button">
-                <ul>
-                    <li>
-                        <?php
-                            echo CHtml::ajaxButton('Афіша',  
-                            CController::createUrl('/site/ajax'),   
-                            array('dataType'=>'json',
-                                    'type' => 'post', 
-                                    'update' => '.events',
-                                    'data' => array ('id'=>'poster'),
-                                    'success'=>"function(data) {
-                                                $('.events').html(data);
-                                            }",
-                                ),
-                            array('class'=>'button',
-                                 'style'=>'float:left; left:20px;'
-                                 )
-                            );
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                            echo CHtml::ajaxButton('Інвестиції',  
-                                CController::createUrl('/site/ajax'),   
-                                array('dataType'=>'json',
-                                    'type' => 'post', 
-                                    'update' => '.events',
-                                    'data' => array ('id'=>'investment'),
-                                    'success'=>"function(data) {
-                                                $('.events').html(data);
-                                            }",
-                                ),
-                                array('class'=>'button',
-                                    'type' => 'submit',
-                                     'style'=>'float:left; left:40px;'
-                                )
-                            );
-                        ?>                        
-                    </li>
-                    <li>
-                        <?php
-                            echo CHtml::ajaxButton('В процесі',
-                            CController::createUrl('/site/ajax'),   
-                            array('dataType'=>'json',
-                                    'type' => 'post', 
-                                    'update' => '.events',
-                                    'data' => array ('id'=>'process'),
-                                    'success'=>"function(data) {
-                                                $('.events').html(data);
-                                            }",
-                                ),
-                            array('class'=>'button',
-                                 'style'=>'float:left; left:60px;'
-                                 )
-                            );
-                        ?> 
-                    </li>
-                </ul>
-            </div>
-<div class="navigator-search">
-    <form class="form-search" method="post" action="index.php?r=site/search">
-        <input type="search" name="search" placeholder="пошук" value=""/>
-        <input id="link" type="hidden" name ="id" value="google" />
-        <input type="submit" value=""/>
-    </form>
-    <script>  
-        $(document).ready(function(){ //відбувається після завантаження сторінки
-
-            /*if($("#ProfileMenu").dialog().focusout()) {
-                $(document).click(function(event) { //автоматичне закриття діалогових вікон
-                  if ($(event.target).closest('#ProfileMenu').length  || $(event.target).closest('#ProfileMenu').length) return;
-                  $('#ProfileMenu').dialog('close');
-                  event.stopPropagation();
-                });
-            }*/
-            
-            $('.form-search').submit(function(e){ //обробка форми пошуку
-            e.preventDefault();
-            var m_method=$(this).attr('method');
-            var m_action=$(this).attr('action');
-            var m_data=$(this).serialize();
-                $.ajax({
-                    type: m_method,
-                    url: m_action,
-                    data: m_data,
-                    dataType: 'json',
-                    success: function(data){
-                        $('.events').html(data);
-                    }
-                });
-            });
-        });
-    </script>
-</div>
-        </div>
+        
         <div id="content">            
             <?php echo $content; ?>
         </div>
-      
-        
         
         <div class="footer">
             то футер детка
@@ -162,11 +61,11 @@
                 </script>
             <br/>
             <?php 
-                //$location=Yii::app()->geoip->lookupLocation('209.85.135.104');// -- google
-                $location=Yii::app()->geoip->lookupLocation('178.212.111.36'); 
-                /*echo "<pre>";
+                $location=Yii::app()->geoip->lookupLocation('209.85.135.104');// -- google
+                //$location=Yii::app()->geoip->lookupLocation('178.212.111.36'); 
+                echo "<pre>";
                 print_r($location);
-                echo "</pre>";*/
+                echo "</pre>";
                 echo "<br>";
                 echo "Country: " . $location->countryName . "<br>";
                 echo "Region: " . $location->regionName . "<br>";
@@ -180,7 +79,7 @@
             ?>
         </div>
         <?php 
-            /*echo "<pre>";
+            echo "<pre>";
             var_dump($_SESSION);
             echo "</pre>";
             
@@ -190,7 +89,7 @@
             
             echo "<pre>";
             var_export(Yii::app()->user);
-            echo "</pre>";*/
+            echo "</pre>";
             
             $model = new Location;
             echo "<pre>";

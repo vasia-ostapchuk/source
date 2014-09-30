@@ -62,7 +62,7 @@
                     'resizable'=> false,
                 ),
             ));
-echo '<br>'; echo CHtml::link('Translation',array('controller/action'));
-echo '<br>'; echo CHtml::link('Administration',array('controller/action'));
+echo '<br>'; echo CHtml::link('Translation',array('site/translate'));
+echo '<br>'; echo CHtml::link('Administration',array('site/administration'));
     $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>

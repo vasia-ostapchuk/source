@@ -2,7 +2,7 @@
 
 class SiteController extends CController
 {
-    //public $layout = '//layouts/main';
+    public $layout='//layouts/chapters/Main';
 	
 	public function actions()
 	{
@@ -21,4 +21,17 @@ class SiteController extends CController
                         'filtercity'=>'application.controllers.actions.FilterCityAction',*/
 		);
 	}
+        
+        public function actionTranslate()
+    {
+            $this->layout ='//layouts/chapters/DynamicTranslation';
+        $this->render('investment');
+        
+    }  
+    public function actionAdministration()
+    {
+            $this->layout ='//layouts/chapters/Administration';  
+        $this->render('investment');
+        
+    }
 }
