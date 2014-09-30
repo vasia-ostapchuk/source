@@ -27,7 +27,7 @@ class SiteController extends CController
     {
             //$this->render('investment');
            // $this->layout ='//layouts/chapters/DynamicTranslation';
-        echo CJSON::encode($this->renderPartial('investment',array(),true));
+        echo CJSON::encode($this->renderPartial('translationUser',array(),true));
     }  
     public function actionAdministration()
     {
