@@ -22,8 +22,8 @@
          </div>
          <div class="sorting">
              <span>Сортувати:</span>
-             <button>Алфавітом</button>
              <button>Останніми змінами</button>
+             <button>Алфавітом</button>
          </div>
          <div class="translator">
              <div class="">

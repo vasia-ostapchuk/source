@@ -613,7 +613,7 @@ display: block;
 #nav li a {color: #ffffff; padding-top: 5px;}  
 #nav li.uz {float: left; position: relative;background: none;}  
 #nav a {text-decoration: none; display: block; width: 24px; height:24px; padding-top: 0px;}  
-#nav a:hover { color: #fffffff;}  
+#nav a:hover { color: #ffffff;}  
 #nav li:hover,  
 #nav li.jshover {}  
 #nav li ul {display: none; position: absolute; background: url(/horizmenubg.png);  
@@ -633,6 +633,7 @@ padding: 1px; width: 24px;}
 }
 .translation_user aside button{
     display: block;
+    width: 100%;
 }
 .translation_user article{
     width: 748px;
@@ -640,8 +641,26 @@ padding: 1px; width: 24px;}
     border: 1px solid #000;
 }
 .translation_user .sorting{
+    line-height: 35px;
     width: 100%;
 }
 .translation_user .translator{
-    height: 100px;
+    height: 150px;
+}
+.translation_user button{
+    height: 35px;
+}
+.translation_user article .language_buttons button{
+    width: 40px;
+}
+.translation_user article .language_buttons button:last-child{
+    margin-left:  200px;
+    width: 80px;
+}
+.translation_user article .sorting button{
+    float: right;
+    width: 190px;
+}
+.translation_user article .sorting span{
+    padding-left: 5px;
 }
