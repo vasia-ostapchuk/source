@@ -86,11 +86,13 @@ class Events {
     );
     
     public static function sortByDate($a,$b){
+        //error_log(1);
         if ($a['date'] > $b['date'])
             return 1;
     }
     
     public static function sortByPopularity($a,$b){
+        //error_log(2);
         if ($a['popularity'] < $b['popularity'])
             return 1;
     }

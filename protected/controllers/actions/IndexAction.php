@@ -4,6 +4,7 @@
     public function run()
     {
         //Filter::initialization();
+        //error_log(print_r(Yii::app()->basePath,true));
         $data = array();
         $event = Events::$even;
         if(Filter::getSortByDate()){
@@ -11,6 +12,7 @@
         } elseif(Filter::getSortByPopularity()) {
             usort($event, "Events::sortByPopularity");
         }
+        //error_log(print_r($this->controller->getViewFile('poster'),true));
         $data['ajaxContent'] = $this->controller->renderPartial('poster',array('parameters'=>$event),true);
         $data['main_menu'] = $this->controller->renderPartial('main_menu',array(),true);
         $location=new Location;

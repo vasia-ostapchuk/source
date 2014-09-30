@@ -11,17 +11,9 @@
                                 $.ajax({
                                     type: "POST",
                                     url: "index.php?r=filter/sortbydate",
-                                    success: function(){
-                                        var jdata = {id:"poster"};
-                                        $.ajax({
-                                            type: "POST",
-                                            url: "index.php?r=site/ajax",
-                                            dataType: "json",
-                                            data: jdata,                                            
-                                            success: function(data){
-                                                $('.events').html(data);
-                                            }
-                                        });
+                                    success: function(jdata){
+                                        var data = $.parseJSON(jdata);
+                                        $(".events").html(data.ajaxData);
                                     }
                                 });
                                 return false;
@@ -36,17 +28,9 @@
                                 $.ajax({
                                     type: "POST",
                                     url: "index.php?r=filter/sortbypopularity",
-                                    success: function(){
-                                        var jdata = {id:"poster"};
-                                        $.ajax({
-                                            type: "POST",
-                                            url: "index.php?r=site/ajax",
-                                            dataType: "json",
-                                            data: jdata,                                            
-                                            success: function(data){
-                                                $(".events").html(data);
-                                            }
-                                        });
+                                    success: function(jdata){
+                                        var data = $.parseJSON(jdata);
+                                        $(".events").html(data.ajaxData);
                                     }
                                 });
                                 return false;

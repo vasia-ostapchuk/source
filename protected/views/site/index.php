@@ -14,6 +14,10 @@
                     }
             });
     };
+    
+    function printPoster(html){
+        
+    }
 </script>
 <div class="filters">
     <?php
@@ -49,9 +53,9 @@
                     'type'=>'POST',
                     'url'=>CController::createUrl('filter/country'),
                     //'update'=>'#city',
-                    'success'=>'function(html){'
-                                . 'jQuery("#city").html(html);'
-                                . 'findPoster();'                                 
+                    'success'=>'function(jdata){'
+                                . 'var data = $.parseJSON(jdata);'
+                                . 'jQuery("#city").html(data.data);'                          
                             . '}',
                 ),
                 'options' => $options,
@@ -77,8 +81,6 @@
                     'url'=>CController::createUrl('filter/city'),
                     'success'=>'function(){'
                                 . '/*jQuery("#city").html(html);*/'
-                                . 'var jdata = {id:"poster"};'
-                                . 'findPoster();'   
                             . '}',
                 ),
                 'options' => $options,
@@ -105,9 +107,9 @@
                     'url'=>CController::createUrl('filter/style'),
                     //'update'=>'#'.CHtml::activeId($model,'genre'),
                     //'update'=>'#genre',
-                    'success'=>'function(html){'
-                                . 'jQuery("#genre").html(html);'
-                                . 'findPoster();'   
+                    'success'=>'function(jdata){'
+                                . 'var data = $.parseJSON(jdata);'
+                                . 'jQuery("#genre").html(data.data);'
                             . '}',
                 ),
                 'options' => $options,
@@ -132,9 +134,9 @@
                     'url'=>CController::createUrl('filter/genre'),
                     //'update'=>'#'.CHtml::activeId($model,'genre'),
                     //'update'=>'#style',
-                    'success'=>'function(html){'
-                                . 'jQuery("#style").html(html);'
-                                . 'findPoster();'   
+                    'success'=>'function(jdata){'
+                                . 'var data = $.parseJSON(jdata);'
+                                . 'jQuery("#style").html(data.data);' 
                             . '}',
                 ),
                 'options' => $options,
@@ -156,8 +158,7 @@
                    //'dataType'=>'json',
                    'type' => 'POST',
                    //'data' => array('id'=>'investment'),
-                   'success'=>'function() {'
-                                . 'findPoster();'                             
+                   'success'=>'function() {'                           
                                .'}',
                )
         );
@@ -209,8 +210,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                                     . " type: 'POST',"
                                     . " data:  date,"
                                     . " url:  'index.php?r=filter/calendar',"
-                                    . " success: function(){"
-                                    . " findPoster();"   
+                                    . " success: function(){" 
                                     . "}"
                                 . "});"
                         . "}",
