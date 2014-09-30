@@ -1,10 +1,4 @@
-<label id="language_label" title="мови"> 
-<?php echo CHtml::dropDownList('language_selector', 'language_selector', 
-            array('eu ' => 'eu', 'uk' => 'uk', 'pl' => 'pl'),
-            array('class' => 'language')
-        );
-?>
-</label>
+
 
 <?php if(Yii::app()->session['userdata']){ ?>
 <label id="profile_label">  
