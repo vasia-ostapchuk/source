@@ -1,5 +1,4 @@
 <?php
-
     class Location extends CActiveRecord
     {
         public static function model($className=__CLASS__)
@@ -48,5 +47,15 @@
                 return array(0=>'All city');
             }
         }
+        public function selectAll ()
+        {
+            $criteria = new CDbCriteria;
+            $criteria->select='id,name';
+            $result = Location::model()->findAll($criteria);
+            foreach ($result as $value)
+            {
+                $data[$value->id] = $value->name;
+            }
+            return $data;
+        }
     }
-

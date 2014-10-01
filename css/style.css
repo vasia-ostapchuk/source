@@ -616,7 +616,7 @@ display: block;
 #nav a:hover { color: #ffffff;}  
 #nav li:hover{}  
 #nav li.jshover {}  
-#nav li ul {display: none; position: absolute; background: url(/horizmenubg.png);  
+#nav li ul {display: none; position: absolute; //background: url(/horizmenubg.png);  
 padding: 1px; width: 24px;}  
 #nav li li a {width: 24px; background: none;}  
 #nav li:hover ul,  
@@ -682,7 +682,7 @@ padding: 1px; width: 24px;}
     height: 30px;
     margin: 10px 0 10px 20px;
 }
-.translator input.translate{
+.translator input.translated{
     height: 30px;
     margin: 10px 30px;
 }

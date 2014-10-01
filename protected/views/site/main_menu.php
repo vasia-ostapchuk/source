@@ -14,7 +14,8 @@
                                     }",
                         ),
                     array('class'=>'button',
-                         'style'=>'float:left; left:20px;'
+                         'style'=>'float:left; left:20px;',
+                        'id'=>'show-poster'
                          )
                     );
                 ?>
@@ -33,7 +34,8 @@
                         ),
                         array('class'=>'button',
                             'type' => 'submit',
-                             'style'=>'float:left; left:40px;'
+                             'style'=>'float:left; left:40px;',
+                        'id'=>'show-investment'
                         )
                     );
                 ?>                        
@@ -51,7 +53,8 @@
                                     }",
                         ),
                     array('class'=>'button',
-                         'style'=>'float:left; left:60px;'
+                         'style'=>'float:left; left:60px;',
+                        'id'=>'show-process'
                          )
                     );
                 ?> 

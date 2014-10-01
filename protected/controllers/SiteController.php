@@ -23,16 +23,22 @@ class SiteController extends CController
 		);
 	}
         
-        public function actionTranslate()
+    public function actionTranslate()
     {
-            //$this->render('investment');
-           // $this->layout ='//layouts/chapters/DynamicTranslation';
-        echo CJSON::encode($this->renderPartial('translationUser',array(),true));
+        if(Yii::app()->request->getPost('name')) {
+            $action = Yii::app()->request->getPost('name');
+        }
+        else 
+            $action = 'location';
+        if($action=='location')
+            $row=Location::model()->selectAll();
+        echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row),true));
+            //Yii::app()->end();
     }  
     public function actionAdministration()
     {
             //$this->layout ='//layouts/chapters/Administration';  
         echo CJSON::encode($this->renderPartial('administration',array(),true));
-        
+        Yii::app()->end();
     }
 }
