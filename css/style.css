@@ -250,9 +250,9 @@ form .ui-widget-content {
     text-align: center;
 }
 .event{
-    width: 200px;
-    height: 300px;
-    margin: 14px;
+    width: 235px;
+    height: 250px;
+    margin: 4px;
     background-color:#ffdead;
     display: inline-block;
     border: 3px solid #BCBCBC ;
@@ -266,7 +266,7 @@ form .ui-widget-content {
    
 }
 .title {
-    width: 200px;
+    width: 235px;
     height: 40px;
     border-bottom: 1px solid #777;
     
@@ -279,15 +279,15 @@ form .ui-widget-content {
 }
 .event-photo {
     width: 110px;
-    height: 260px;
+    height: 207px;
     float: left;
     border:1px solid #900;
     
 }
 .date{
-    width: 90px;
+    width: 124px;
     height: 30px;
-   margin: 0 0 0 110px;
+   margin: 0 0 0 111px;
    border-bottom: 1px solid #900;
      line-height: 2em;
     background: wheat;
@@ -301,9 +301,9 @@ form .ui-widget-content {
     color: red;
 }
 .time{
-    width: 90px;
+    width: 124px;
     height: 30px;
-    margin: 0 0 0 110px;
+    margin: 0 0 0 111px;
 line-height: 2em;
      border-bottom: 1px solid #900;
      
@@ -318,9 +318,9 @@ line-height: 2em;
     color: red;
 }
 .city{
-    width: 90px;
+    width: 124px;
     height: 30px;
-   margin: 0 0 0 110px;
+   margin: 0 0 0 111px;
   border-bottom: 1px solid #900;
      border-bottom: 1px solid #900;
      line-height: 2em;
@@ -335,9 +335,9 @@ line-height: 2em;
     color: red;
 }
 .price{
-    width: 90px;
+    width: 124px;
     height: 30px;
-    margin: 0 0 0 110px;
+    margin: 0 0 0 111px;
      border-bottom: 1px solid #900;
      line-height: 2em;
     background: wheat;
@@ -353,7 +353,7 @@ line-height: 2em;
 .buy {
      width: 87px;
     height: 30px;
-   margin: 103px 0 0 113px;
+   margin: 45px 0 0 130px;
    text-align: center;
     font-family: Tahoma,Arial,sans-serif;
 float: bottom;
