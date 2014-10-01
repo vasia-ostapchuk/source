@@ -5,8 +5,10 @@ class SiteController extends CController
     //public $layout='//layouts/chapters/Main';
     public $layout='//layouts/main';
 	
+    
 	public function actions()
 	{
+                
             //Yii::app()->session->open();
 		return array(
                         'index'=>'application.controllers.actions.IndexAction',
@@ -24,7 +26,17 @@ class SiteController extends CController
 	}
         
     public function actionTranslate()
-    {
+    {   
+        if (Yii::app()->request->isAjaxRequest) {
+		Yii::app()->getClientScript()->scriptMap = array(
+			'jquery.js' => false,
+			'jquery.min.js' => false,
+			'jquery-ui.min.js' => false,
+			'jquery.ba-bbq.js'=>false,
+			'jquery.yiigridview.js'=>false,
+		);
+	}
+        
         if(Yii::app()->request->getPost('name')) {
             $action = Yii::app()->request->getPost('name');
         }
@@ -32,7 +44,7 @@ class SiteController extends CController
             $action = 'location';
         if($action=='location')
             $row=Location::model()->selectAll();
-        echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row),true));
+        echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row),true, true));
             //Yii::app()->end();
     }  
     public function actionAdministration()
