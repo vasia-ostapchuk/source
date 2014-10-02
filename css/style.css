@@ -624,7 +624,7 @@ padding: 1px; width: 24px;}
     height: 35px;
 }
 .translation_user aside{
-    background-color: #900;
+    background-color: #FF5050;
     width: 248px;
     float: left;
     border: 1px solid #000;
@@ -633,7 +633,7 @@ padding: 1px; width: 24px;}
     width: 100%;
 }
 .translation_user article{
-    background-color: #c00;
+    background-color: #60BF60;
     width: 748px;
     float: left;
     border: 1px solid #000;
@@ -669,10 +669,14 @@ padding: 1px; width: 24px;}
     margin: 10px 10px 25px 10px;
     width: 97%;
 }
-
-.translation_user article .sorting button{
+.translation_user article .sorting li{
+    text-align: center;
+    display: inline;
+}
+.translation_user article .sorting a{
     float: right;
-    width: 190px;
+    width: 150px;
+    padding: 0;
 }
 .translation_user article .sorting span{
     padding-left: 5px;

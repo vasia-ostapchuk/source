@@ -104,8 +104,8 @@
          </div>
          <div class="sorting">
              <span>Сортувати:</span>
-             <button>Останніми змінами</button>
-             <button>Алфавітом</button>
+             <li><a href="">Останніми змінами</a></li>
+             <li><a href="">Алфавітом</a></li>
          </div>
          <div class="translator">    
              <form id="translation_form" method='post'>
