@@ -54,11 +54,53 @@
      </aside>
      <article>
          <div class="language_buttons">
-             <button>EN</button>
-             <button>UA</button>
-             <button>PL</button>
-             <button>Пошук</button>
-             <span>місце на мову</span>
+             <a href="">EN</a>
+             <a href="">UA</a>
+             <a href="">PL</a>
+             <div class="lan">
+              <ul id="nav">  
+ 
+                  <li><a href=""title="ua"><img src="../../../images/ua.jpg" /></a>  
+<ul>  
+    <li class="uz"><a href=""title="pl"><img src="../../../images/pl.jpg" /></a> </li>  
+    <li class="uz"><a href=""title="en"><img src="../../../images/en.jpg" /></a> </li>  
+            </div>
+             <div class="navigator-search">
+        <form class="form-search" method="post" action="index.php?r=site/search">
+            <input type="search" name="search" placeholder="пошук" value=""/>
+            <input id="link" type="hidden" name ="id" value="google" />
+            <input type="submit" value=""/>
+        </form>
+        <script>  
+            $(document).ready(function(){ //відбувається після завантаження сторінки
+
+                /*if($("#ProfileMenu").dialog().focusout()) {
+                    $(document).click(function(event) { //автоматичне закриття діалогових вікон
+                      if ($(event.target).closest('#ProfileMenu').length  || $(event.target).closest('#ProfileMenu').length) return;
+                      $('#ProfileMenu').dialog('close');
+                      event.stopPropagation();
+                    });
+                }*/
+
+                $('.form-search').submit(function(e){ //обробка форми пошуку
+                e.preventDefault();
+                var m_method=$(this).attr('method');
+                var m_action=$(this).attr('action');
+                var m_data=$(this).serialize();
+                    $.ajax({
+                        type: m_method,
+                        url: m_action,
+                        data: m_data,
+                        dataType: 'json',
+                        success: function(data){
+                            $('.events').html(data);
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
+             
          </div>
          <div class="sorting">
              <span>Сортувати:</span>

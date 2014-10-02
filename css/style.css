@@ -83,18 +83,13 @@ img {border: none;}
 .navigator-button li{
     display: inline;
 }
-.navigator-search {
-    
-    height: 30px;
+.navigator-search {    
+    height: 40px;
     margin: 5px 0 0 64px;
     float:right;
 }
 .form-search {
     width: 350px; /* Ширина поля с кнопкой */
-    border: none; /* Убираем рамку */
-    min-height: 36px; /* Минимальная высота */
-    min-width: 300px;
-    overflow: hidden;
 }
 .form-search> input[type="submit"] {
     vertical-align: middle; /* Выравнивание по середине */
@@ -625,7 +620,9 @@ padding: 1px; width: 24px;}
  
 #nav li:hover li:hover ul,  
 #nav li.jshover li.jshover ul {display: block;} 
-
+.translation_user button{
+    height: 35px;
+}
 .translation_user aside{
     background-color: #900;
     width: 248px;
@@ -643,23 +640,36 @@ padding: 1px; width: 24px;}
 }
 .translation_user article .language_buttons{
     margin: 0 10px;
-    border: 1px #000 solid;    
+    border: 1px #000 solid;
+    height: 40px;
+}
+.translation_user article .language_buttons a{
+    padding: 12px 17px;
+    border-right: 1px #000 solid;
+    line-height: 40px;
+}
+.translation_user article .language_buttons .navigator-search{
+    margin: 0px;
+}
+.translation_user article .language_buttons .lan a{
+    border:none;
+    padding: 3px;
+}
+.translation_user article .language_buttons .lan{
+    margin-right: 250px;
+}
+.translation_user article form.form-search{
+    width: 150px;
+}
+.translation_user article form.form-search input[type="search"]{
+    width: 150px;
 }
 .translation_user article .sorting{
     line-height: 35px;
     margin: 10px 10px 25px 10px;
     width: 97%;
 }
-.translation_user button{
-    height: 35px;
-}
-.translation_user article .language_buttons button{
-    width: 40px;
-}
-.translation_user article .language_buttons button:nth-last-child(2){
-    margin-left:  200px;
-    width: 80px;
-}
+
 .translation_user article .sorting button{
     float: right;
     width: 190px;
