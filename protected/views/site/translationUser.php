@@ -90,7 +90,7 @@
             <div>
                 <legend>Стрічка для перекладу</legend>
             </div>
-        <?php
+            <?php
                 $form=$this->beginWidget('CActiveForm', array(
                     'id'=>'TranslateForm',
                     'enableAjaxValidation'=>false,
@@ -102,33 +102,14 @@
                     'htmlOptions'=>array('class'=>'form'),
                     'action' => array('site/translate'),
                 ));
-        ?>
-                <?php echo CHtml::textField('row',$word, array('class'=>'eng_word'));  ?>
-                <?php echo CHtml::textField('translate','', array('placeholder'=>'translate','class'=>'translated'));  ?>
-            <?php
+                echo CHtml::textField('row',$word, array('class'=>'eng_word'));
+                echo CHtml::textField('translate','', array('placeholder'=>'translate','class'=>'translated'));
                 echo CHtml::hiddenField('row_id',$id);
                 echo CHtml::hiddenField('lan_id',2);
+                 $this->endWidget();
             ?>
-        <?php
-                $this->endWidget();
-        ?>
-                </fieldset>
-        <?php
-            }
-        ?>
-         
-     <!--<form id="translation_form" method='post'>
-        <?php//  ?>
-            <fieldset class="field">
-                <div>
-                    <legend>Стрічка для перекладу</legend>
-                </div>
-                <input class="eng_word" name="eng_word" value="<?php// echo $word; ?>" >
-                <input class="translated" value="<?php //echo $id; ?>">
-                <button id="translate-button" type="submit">Ok</button>
-            </fieldset>
-        <?php //} ?>
-    </form>-->
+        </fieldset>
+             <?php } ?>
     </div>
         <div class="pagination-link">  
             <ul>
