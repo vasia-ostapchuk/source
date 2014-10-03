@@ -10,34 +10,35 @@
 <button id="123">Тест</button>
 <?php
                 //3 неробочі кнопки
-                echo CHtml::ajaxButton('Сутності',  
+                echo CHtml::ajaxButton('Сутності',
                     CController::createUrl('/site/translate'),
                     array('dataType'=>'json',
                             'type' => 'post', 
                             'data' => array ('name'=>'table'),
                             'success'=>"function(data) {
-                                        //$('#content').html(data);
+                                        $('#content').html(data);
                                     }",
                         ),
                     array('style'=>'height: 30px; width:250px; left:0px;',
-                        'id'=>'translate-table'
+                        'id'=>'translate-table',
+                        'live' => false
                          )
                 );
-                echo CHtml::ajaxButton('Локейшени',  
+                echo CHtml::ajaxButton('Локейшени',
                     CController::createUrl('/site/translate'),   
                     array('dataType'=>'json',
                             'type' => 'post',
                             'data' => array ('name'=>'location'),
                             'success'=>"function(data) {
-                                alert(data);
-                                        //$('#content').html(data);
+                                        $('#content').html(data);
                                     }",
                         ),
                     array( 'style'=>'height: 30px; width:250px; left:0px;',
-                        'id'=>'translate-location'
+                        'id'=>'translate-location',
+                        'live' => false
                          )
                 );
-                echo CHtml::ajaxButton('Типи',  
+                echo CHtml::ajaxButton('Типи',
                     CController::createUrl('/site/translate'),
                     array('dataType'=>'json',
                             'type' => 'post', 
@@ -47,7 +48,8 @@
                                     }",
                         ),
                     array( 'style'=>'height: 30px; width:250px; left:0px;',
-                        'id'=>'translate-type'
+                        'id'=>'translate-type',
+                        'live' => false
                          )
                 );
             ?>

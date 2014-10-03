@@ -32,6 +32,7 @@ class SiteController extends CController
 			'jquery.js' => false,
 			'jquery.min.js' => false,
 			'jquery-ui.min.js' => false,
+                        'jquery-ui.css' => false,
 			'jquery.ba-bbq.js'=>false,
 			'jquery.yiigridview.js'=>false,
 		);
@@ -45,7 +46,7 @@ class SiteController extends CController
         if($action=='location')
             $row=Location::model()->selectAll();
         echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row),true, true));
-            //Yii::app()->end();
+           // Yii::app()->end();
     }  
     public function actionAdministration()
     {
