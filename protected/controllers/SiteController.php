@@ -27,6 +27,7 @@ class SiteController extends CController
         
     public function actionTranslate()
     {   
+        CHtml::$liveEvents = false;
         if (Yii::app()->request->isAjaxRequest) {
 		Yii::app()->getClientScript()->scriptMap = array(
 			'jquery.js' => false,
@@ -37,16 +38,26 @@ class SiteController extends CController
 			'jquery.yiigridview.js'=>false,
 		);
 	}
-        
+        $model = new TranslationForm;
+
         if(Yii::app()->request->getPost('name')) {
-            $action = Yii::app()->request->getPost('name');
+            $action = Yii::app()->request->getPost('name');    
+            //$model->row_id= Yii::app()->request->getPost('row_id');
+            //$model->lan_id= Yii::app()->request->getPost('lan_id');    
         }
-        else 
+        else {
             $action = 'location';
-        if($action=='location')
-            $row=Location::model()->selectAll();
-        echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row),true, true));
-           // Yii::app()->end();
+        }
+        //$model->table= $action;
+        /*switch ($action) {
+            case 'location':
+            $model->column= 'name';
+            break;
+        }*/
+        $dbmodel = ucfirst($action);
+        $row = $dbmodel::model()->selectAll();
+        echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model),true, true));
+            //Yii::app()->end();
     }  
     public function actionAdministration()
     {
