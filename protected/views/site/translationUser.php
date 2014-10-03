@@ -84,7 +84,13 @@
      </div>
      <div class="translator">   
         <?php
-            if($row) foreach ($row as $id=>$word) {
+            if($row) {
+        ?>
+        <div>
+            <h1>Переклад сутності: <?php echo $parameters['table']; ?>-><?php echo $parameters['column']; ?></h1>
+        </div>
+        <?php
+            foreach ($row as $id=>$word) {
         ?>
         <fieldset class="field">
             <div>
@@ -92,12 +98,13 @@
             </div>
             <?php
                 $form=$this->beginWidget('CActiveForm', array(
-                    'id'=>'TranslateForm',
+                    'id'=>'TranslateForm'.$id,
                     'enableAjaxValidation'=>false,
                     'clientOptions'=>array(
                         'validateOnSubmit' => true,
                         'validateOnChange'=>false,
                         'validateOnType'=>false,
+                        //'onSubmit'=>"js:function(){alert('yyehhh');}"
                     ),
                     'htmlOptions'=>array('class'=>'form'),
                     'action' => array('site/translate'),
@@ -106,10 +113,23 @@
                 echo CHtml::textField('translate','', array('placeholder'=>'translate','class'=>'translated'));
                 echo CHtml::hiddenField('row_id',$id);
                 echo CHtml::hiddenField('lan_id',2);
+                
+    echo CHtml::ajaxSubmitButton ("ОК",
+                array('/site/translate'),
+                            array(
+                                'dataType'=>'json',
+                                'type' => 'post',
+                                'success'=>"function(data) {
+                                                alert('OK');
+                                            }",
+                            ),
+                            array('id'=>'translate-button')
+    );               
+                
                  $this->endWidget();
             ?>
         </fieldset>
-             <?php } ?>
+             <?php } } ?>
     </div>
         <div class="pagination-link">  
             <ul>

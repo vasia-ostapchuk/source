@@ -40,6 +40,12 @@ class SiteController extends CController
 	}
         $model = new TranslationForm;
 
+        if(Yii::app()->request->getPost('row_id')) {
+            $model->all();
+            error_log('sdff');
+        }
+        
+        
         if(Yii::app()->request->getPost('name')) {
             $action = Yii::app()->request->getPost('name');    
             //$model->row_id= Yii::app()->request->getPost('row_id');
@@ -48,15 +54,16 @@ class SiteController extends CController
         else {
             $action = 'location';
         }
-        //$model->table= $action;
-        /*switch ($action) {
+        $model->table= $action;
+        switch ($action) {
             case 'location':
             $model->column= 'name';
             break;
-        }*/
+        }
         $dbmodel = ucfirst($action);
         $row = $dbmodel::model()->selectAll();
-        echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model),true, true));
+        $parameters=array('table'=>$model->table, 'column'=>$model->column);
+        echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model,'parameters'=>$parameters),true, true));
             //Yii::app()->end();
     }  
     public function actionAdministration()

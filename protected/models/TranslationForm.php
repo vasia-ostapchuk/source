@@ -33,5 +33,10 @@ class TranslationForm extends CFormModel
             'translate' => 'Переклад',
         );
     }
-
+    public function all()
+    {
+        $translation = new Translation;
+        $translation->attributes=$this->attributes;
+        $translation->Save();
+    }
 }
