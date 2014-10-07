@@ -47,7 +47,7 @@
                     'type' => 'post',
                     'data' => array (
                         'lan'=>'en',
-                        'table'=>'location',
+                        'table'=>$parameters['table'],
                     ),
                     'success'=>"function(data) {
                                 $('#content').html(data);
@@ -62,7 +62,7 @@
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('lan'=>'ua',
-                        //'table'=>$parameters['table'],
+                        'table'=>$parameters['table'],
                     ),
                     'success'=>"function(data) {
                                 $('#content').html(data);
@@ -77,7 +77,7 @@
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('lan'=>'pl',
-                       // 'table'=>$parameters['table'],
+                        'table'=>$parameters['table'],
                     ),
                     'success'=>"function(data) {
                                 $('#content').html(data);
