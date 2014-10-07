@@ -59,10 +59,7 @@ class LoginAction extends CAction {
         // collect user input data
         if(isset($_POST['LoginForm']))
         {           
-                $model->attributes=$_POST['LoginForm'];
-                // validate user input and redirect to the previous page if valid
-                //$userModel = new User;
-                //echo "<pre>"; var_dump($model->attributes); echo "</pre>";                
+                $model->attributes=$_POST['LoginForm'];        
                 if($model->validate() && $model->login()) {
                    Yii::app()->session['userdata'] = array ('user_name' => Yii::app()->user->name);
                         //$this->controller->redirect(Yii::app()->user->returnUrl);

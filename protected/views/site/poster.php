@@ -50,7 +50,7 @@
 <div class="title">
             <?php echo $value['title']; ?>
         </div>
-    <div class="event-photo"><img src="<?php echo $value['image']; ?>" style="max-width: 105px;"> </div>
+    <div class="event-photo"><img src="<?php echo $value['image']; ?>" style="max-width: 110px;height: 209px;"> </div>
         <div class="date"><a href=""><?php echo $value['date'];?></a> </div>
         <div class="time"> <a href=""><?php echo $value['time'];?></a> </div>
         <div class="city"><a href=""><?php echo $value['address'];?></a> </div>

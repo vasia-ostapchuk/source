@@ -37,5 +37,6 @@
             Filter::setGenreId(current(array_keys($data['genre'])));
         
         $this->controller->render('index', $data);
+        //$this->controller->render('translationUser', array('row'=>0));
     }
  }
