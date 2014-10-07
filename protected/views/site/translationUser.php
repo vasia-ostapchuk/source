@@ -12,7 +12,7 @@
             CController::createUrl('/site/translate'),   
             array('dataType'=>'json',
                     'type' => 'post',
-                    'data' => array ('name'=>'location'),
+                    'data' => array ('table'=>'location'),
                     'success'=>"function(data) {
                                 $('#content').html(data);
                             }",
@@ -26,7 +26,7 @@
             CController::createUrl('/site/translate'),
             array('dataType'=>'json',
                     'type' => 'post', 
-                    'data' => array ('name'=>'type'),
+                    'data' => array ('table'=>'type'),
                     'success'=>"function(data) {
                                 $('#content').html(data);
                             }",
@@ -45,7 +45,10 @@
             CController::createUrl('/site/translate'),   
             array('dataType'=>'json',
                     'type' => 'post',
-                    'data' => array ('lan'=>'en'),
+                    'data' => array (
+                        'lan'=>'en',
+                        'table'=>'location',
+                    ),
                     'success'=>"function(data) {
                                 $('#content').html(data);
                             }",
@@ -58,7 +61,9 @@
             CController::createUrl('/site/translate'),   
             array('dataType'=>'json',
                     'type' => 'post',
-                    'data' => array ('lan'=>'ua'),
+                    'data' => array ('lan'=>'ua',
+                        //'table'=>$parameters['table'],
+                    ),
                     'success'=>"function(data) {
                                 $('#content').html(data);
                             }",
@@ -71,7 +76,9 @@
             CController::createUrl('/site/translate'),   
             array('dataType'=>'json',
                     'type' => 'post',
-                    'data' => array ('lan'=>'pl'),
+                    'data' => array ('lan'=>'pl',
+                       // 'table'=>$parameters['table'],
+                    ),
                     'success'=>"function(data) {
                                 $('#content').html(data);
                             }",
@@ -156,13 +163,14 @@
                         array(
                             'type' => 'post',
                             'data' => array(
+                                'table'=>$parameters['table'],
                                 'row' => "js:$('#row$id').val()",
                                 'translate' =>"js:$('#translate$id').val()",
                                 'row_id' => $id,
                                 'lan_id' => '2',
                             ),
                             'success'=>"function(data) {
-                                            alert(data.status);
+                                            //alert(data);
                                         }",
                         ),
                         array('id'=>'translate-button_'.$id)

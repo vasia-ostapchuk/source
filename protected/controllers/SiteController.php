@@ -39,14 +39,14 @@ class SiteController extends CController
 		);
 	}
         $model = new Translation;
-        if(Yii::app()->request->getPost('name')) {
-            $action = Yii::app()->request->getPost('name'); 
+        if(Yii::app()->request->getPost('table')) {
+            $table = Yii::app()->request->getPost('table'); 
         }
         else {
-            $action = 'location';
+            $table = 'location';
         }  
-        $model->table= $action;
-        switch ($action) {
+        $model->table= $table;
+        switch ($table) {
             case 'location':
                 $model->column= 'name';
             break;
@@ -59,7 +59,7 @@ class SiteController extends CController
             $model->row_id= Yii::app()->request->getPost('row_id');
             $model->lan_id= Yii::app()->request->getPost('lan_id');
             $model->translate= Yii::app()->request->getPost('translate');            
-            if($model->validate() && $model->Add($is_new))
+            if($model->validate() && $model->Add())
             {
                 echo CJSON::encode(array(
                               'status'=>'success',
@@ -79,11 +79,12 @@ class SiteController extends CController
             $language = Yii::app()->request->getPost('lan');
         }
         if($language == 'uk') {
-            $dbmodel = ucfirst($action);
+            $dbmodel = ucfirst($table);
             $row = $dbmodel::model()->selectAll();  
         }
         else {
-            $row = Translation::model()->select($model->table, $model->column, $language);
+            $lan_id = Language::model()->selectLanId($language);
+            $row = Translation::model()->select($model->table, $model->column, 2);
         }
         $parameters=array('table'=>$model->table, 'column'=>$model->column);
         echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model,'parameters'=>$parameters),true, true));

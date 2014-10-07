@@ -41,11 +41,10 @@ class Translation extends CActiveRecord
     {
         $criteria = new CDbCriteria;
         $criteria->select='row_id, lan_id, translate';
-        $criteria->condition='table=:table, column=:column, lan_id=:lan_id';
-        $criteria->params=array(':table'=>$table);
-        $criteria->params=array(':column'=>$column);
-        $criteria->params=array(':lan_id'=>$lan_id);
-        $result = Location::model()->findAll($criteria);
+        $criteria->condition="'table'=:table AND 'column'=:column AND 'lan_id'=:lan_id";
+        $criteria->params=array(':table'=>$table, ':column'=>$column, ':lan_id'=>'2');
+        $result = Translation::model()->findAll($criteria);
+        $data = array();
         foreach ($result as $value)
         {
             error_log($value->id);
@@ -56,18 +55,18 @@ class Translation extends CActiveRecord
     }
     public function Add()
     {       
-        $exist = $this->findByAttributes(array('row_id'=>$this->row_id));
-        if(!$exist) {
+        /*$exist = $this->findByAttributes(array('row_id'=>$this->row_id));
+        if(!$exist) {*/
             if(!$this->save()){
                 print_r($this->getErrors());} 
             return true;
-        }
+        /*}
         else {
             $this->setIsNewRecord(FALSE)  ;
             error_log($this->translate);
             if(!$this->update($this->attributes)){
                 print_r($this->getErrors());} 
             return true;
-        }
+        }*/
     }
 }

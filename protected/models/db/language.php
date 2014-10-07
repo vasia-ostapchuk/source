@@ -17,6 +17,8 @@
             $criteria->select='id';
             $criteria->condition='name=:name';
             $criteria->params=array(':name'=>$name);
-            return Location::model()->find($criteria);
+            $result = Language::model()->find($criteria);
+            print_r($result);
+            //return $result;
         }
     }
