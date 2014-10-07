@@ -343,3 +343,153 @@ div.search-form
     #login_button{
         top:5px;
     }
+    .singer_page{
+	width:998px;
+	height:600px;
+	display:block;
+        border: 1px solid #264409;
+	
+	
+	}
+	
+	.singer_poster{
+	width:250px;
+	height: 240px;
+	margin-left:10px;
+        margin-top: 10px;
+	float: left;
+         border: 1px solid #264409;
+	
+	}
+	.singer_name{
+	float:left;
+	margin-left:10px;
+        margin-top: 10px;
+	width:231px;
+	height:30px;
+	 border: 1px solid #264409;
+	}
+	.singer_style{
+	float:left;
+	margin-left: -233px;
+	margin-top: 50px;
+	width:230px;
+	height:201px;
+	 border: 1px solid #264409;
+	}
+	
+	.singer_description{
+	width:491px;
+	height: 240px;
+	float: left;
+	margin-left: -494px;
+	margin-top: 265px;
+	 border: 1px solid #264409;
+        }
+	
+	.singer_site{
+	float:left;
+	
+	width:350px;
+	height:30px;
+	margin-left: -494px;
+	margin-top: 518px;
+	 border: 1px solid #264409;
+        }
+	
+	.singer_right_block{
+	width:250px;
+	height: 545px;
+	margin-right:10px;
+        margin-top: 10px;
+        padding:5px 8px 5px 8px;
+	float: right;
+	 border: 1px solid #264409;
+         text-align: center;
+line-height: 2.5em;
+        }
+	.singer_video{
+	width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:20px;
+	 border: 1px solid #264409;
+         text-align: center;
+line-height: 2.5em;
+	}
+	
+	.q1{
+	width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:5px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;}
+	
+	.q2{
+	width:250px;
+	height: 40px;
+	margin-right:10px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;}
+	
+	.singer_album{width:250px;
+	height: 40px;
+	margin-right:20px;
+	margin-bottom:20px;
+	margin-top:15px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;}
+	
+	.q11{
+	width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:5px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;}
+	
+	.q22{width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:20px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;}
+	
+	.singer_repertyar{width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:20px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;}
+	
+	.singer_song1{width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:5px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;}
+	
+	.singer_song2{width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:5px;
+	 border: 1px solid #264409;
+        text-align: center;
+line-height: 2.5em;
+        }
+	
+	.singer_song3{width:250px;
+	height: 40px;
+	margin-right:10px;
+	margin-bottom:5px;
+        text-align: center;
+        line-height: 2.5em;
+	 border: 1px solid #264409;}
