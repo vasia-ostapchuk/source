@@ -28,7 +28,7 @@
             </div>
              
             <div class="user_reg_buttons">
-            <?php echo $this->renderPartial('user_reg_buttons',array(),true); ?>
+            <?php echo $this->renderPartial('application.views.site.user_reg_buttons',array(),true); ?>
             </div>
             <?php require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'ModalWindows.php'); ?> <!--підключаєм файл з модальними вікнами ../layouts/filename-->
         </div>
@@ -61,7 +61,7 @@
                 </script>
             <br/>
             <?php 
-                $location=Yii::app()->geoip->lookupLocation('209.85.135.104');// -- google
+                /*$location=Yii::app()->geoip->lookupLocation('209.85.135.104');// -- google
                 //$location=Yii::app()->geoip->lookupLocation('178.212.111.36'); 
                 echo "<pre>";
                 print_r($location);
@@ -75,11 +75,11 @@
                 echo "</pre>";
                 echo "<pre>";
                 var_dump($_COOKIE);
-                echo "</pre>";
+                echo "</pre>";*/
             ?>
         </div>
         <?php 
-            echo "<pre>";
+            /*echo "<pre>";
             var_dump($_SESSION);
             echo "</pre>";
             
@@ -95,7 +95,7 @@
             echo "<pre>";
             //foreach 
             //error_log(var_dump($model->selectContry()->name));
-            echo "</pre>";
+            echo "</pre>";*/
         ?>
     </div>
     

@@ -16,6 +16,7 @@ class SiteController extends CController
                         'signup'=>'application.controllers.actions.SignUpAction',
                         'ajax'=>'application.controllers.actions.AjaxAction',
                         'search'=>'application.controllers.actions.SearchAction',
+                        'administration'=>'application.controllers.actions.AdministrationAction',
                         /*'filtercountry'=>'application.controllers.actions.FilterCountryAction',
                         'filterstyle'=>'application.controllers.actions.FilterStyleAction',
                         'filtergenre'=>'application.controllers.actions.FilterGenreAction',

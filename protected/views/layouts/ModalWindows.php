@@ -26,8 +26,8 @@
 
         $this->widget('zii.widgets.jui.CJuiTabs', array(
             'tabs'=>array(
-            'Вхід'=>$this->renderPartial('login',array('model'=>$login),true),
-            'Реєстрація'=>$this->renderPartial('registration',array('model'=>$reg),true),
+            'Вхід'=>$this->renderPartial('application.views.site.login',array('model'=>$login),true),
+            'Реєстрація'=>$this->renderPartial('application.views.site.registration',array('model'=>$reg),true),
                 ),
             'options'=>array(
                 'collapsible'=>false,
@@ -73,7 +73,7 @@ echo '<br>'; echo CHtml::ajaxlink('Translation',
                         )
                     );
 echo '<br>'; echo CHtml::ajaxlink('Administration',
-                    CController::createUrl('/site/administration'),   
+                    CController::createUrl('/admin/index'),   
                     array('dataType'=>'json',
                             'type' => 'post',
                             'success'=>"function(data) {
