@@ -82,5 +82,15 @@ echo '<br>'; echo CHtml::ajaxlink('Administration',
                                     }",
                         )
                     );
+echo '<br>'; echo CHtml::ajaxlink('artist',
+                    CController::createUrl('/site/artist'),   
+                    array('dataType'=>'json',
+                            'type' => 'post',
+                            'success'=>"function(data) {
+                                $('#ProfileMenu').dialog('close');
+                                        $('#content').html(data);
+                                    }",
+                        )
+                    );
     $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>

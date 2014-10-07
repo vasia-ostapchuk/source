@@ -96,4 +96,10 @@ class SiteController extends CController
         echo CJSON::encode($this->renderPartial('administration',array(),true));
         Yii::app()->end();
     }
+    public function actionArtist()
+    {
+            //$this->layout ='//layouts/chapters/Administration';  
+        echo CJSON::encode($this->renderPartial('artist',array(),true));
+        Yii::app()->end();
+    }
 }
