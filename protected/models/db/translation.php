@@ -62,8 +62,7 @@ class Translation extends CActiveRecord
         /*}
         else {
             $this->setIsNewRecord(FALSE)  ;
-            error_log($this->translate);
-            if(!$this->update($this->attributes)){
+            if(!$this->update()){
                 print_r($this->getErrors());} 
             return true;
         }*/
