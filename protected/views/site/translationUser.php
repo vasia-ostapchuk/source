@@ -40,9 +40,47 @@
 </aside>
 <article>
     <div class="language_buttons">
-        <a href="">EN</a>
-        <a href="">UA</a>
-        <a href="">PL</a>
+            <?php
+        echo CHtml::ajaxlink('EN',
+            CController::createUrl('/site/translate'),   
+            array('dataType'=>'json',
+                    'type' => 'post',
+                    'data' => array ('lan'=>'en'),
+                    'success'=>"function(data) {
+                                $('#content').html(data);
+                            }",
+                ),
+            array( 'style'=>'height: 30px; width:250px; left:0px;',
+                'id'=>'translate-language_en',
+                 )
+        );
+        echo CHtml::ajaxlink('UA',
+            CController::createUrl('/site/translate'),   
+            array('dataType'=>'json',
+                    'type' => 'post',
+                    'data' => array ('lan'=>'ua'),
+                    'success'=>"function(data) {
+                                $('#content').html(data);
+                            }",
+                ),
+            array( 'style'=>'height: 30px; width:250px; left:0px;',
+                'id'=>'translate-language_ua',
+                 )
+        );
+        echo CHtml::ajaxlink('PL',
+            CController::createUrl('/site/translate'),   
+            array('dataType'=>'json',
+                    'type' => 'post',
+                    'data' => array ('lan'=>'pl'),
+                    'success'=>"function(data) {
+                                $('#content').html(data);
+                            }",
+                ),
+            array( 'style'=>'height: 30px; width:250px; left:0px;',
+                'id'=>'translate-language_pl',
+                 )
+        );
+        ?>
         <div class="lan">
             <ul id="nav">  
             <li><a href=""title="ua"><img src="../../../images/ua.jpg" /></a>  
@@ -98,40 +136,43 @@
             </div>
             <?php
                 $form=$this->beginWidget('CActiveForm', array(
-                    'id'=>'TranslateForm'.$id,
+                    'id'=>'TranslateForm_'.$id,
                     'enableAjaxValidation'=>false,
                     'clientOptions'=>array(
                         'validateOnSubmit' => true,
                         'validateOnChange'=>false,
                         'validateOnType'=>false,
-                        //'onSubmit'=>"js:function(){alert('yyehhh');}"
                     ),
-                    'htmlOptions'=>array('class'=>'form'),
+                    'htmlOptions'=>array('class'=>'form', 'onsubmit'=>"js:function(){alert('submit_form');}"),
                     'action' => array('site/translate'),
                 ));
-                echo CHtml::textField('row',$word, array('class'=>'eng_word'));
-                echo CHtml::textField('translate','', array('placeholder'=>'translate','class'=>'translated'));
-                echo CHtml::hiddenField('row_id',$id);
-                echo CHtml::hiddenField('lan_id',2);
+                echo CHtml::textField('row'.$id,$word, array('class'=>'eng_word'));
+                echo CHtml::textField('translate'.$id,'', array('placeholder'=>'translate','class'=>'translated'));
+                echo CHtml::hiddenField('row_id'.$id,$id);
+                echo CHtml::hiddenField('lan_id'.$id,2);
                 
-    echo CHtml::ajaxSubmitButton ("ОК",
-                array('/site/translate'),
-                            array(
-                                'dataType'=>'json',
-                                'type' => 'post',
-                                'success'=>"function(data) {
-                                                alert('OK');
-                                            }",
+                echo CHtml::ajaxSubmitButton ("ОК",
+                    array('/site/translate'),
+                        array(
+                            'type' => 'post',
+                            'data' => array(
+                                'row' => "js:$('#row$id').val()",
+                                'translate' =>"js:$('#translate$id').val()",
+                                'row_id' => $id,
+                                'lan_id' => '2',
                             ),
-                            array('id'=>'translate-button')
-    );               
-                
+                            'success'=>"function(data) {
+                                            alert(data.status);
+                                        }",
+                        ),
+                        array('id'=>'translate-button_'.$id)
+                );
                  $this->endWidget();
             ?>
         </fieldset>
              <?php } } ?>
     </div>
-        <div class="pagination-link">  
+        <div class="pagination-link">
             <ul>
                 <li><a href="">1</a></li>
                 <li><a href="">2</a></li>

@@ -38,34 +38,57 @@ class SiteController extends CController
 			'jquery.yiigridview.js'=>false,
 		);
 	}
-        $model = new TranslationForm;
-
-        if(Yii::app()->request->getPost('row_id')) {
-            $model->all();
-            error_log('sdff');
-        }
-        
-        
+        $model = new Translation;
         if(Yii::app()->request->getPost('name')) {
-            $action = Yii::app()->request->getPost('name');    
-            //$model->row_id= Yii::app()->request->getPost('row_id');
-            //$model->lan_id= Yii::app()->request->getPost('lan_id');    
+            $action = Yii::app()->request->getPost('name'); 
         }
         else {
             $action = 'location';
-        }
+        }  
         $model->table= $action;
         switch ($action) {
             case 'location':
-            $model->column= 'name';
+                $model->column= 'name';
+            break;
+            case 'type':
+                $model->column= 'name';
             break;
         }
-        $dbmodel = ucfirst($action);
-        $row = $dbmodel::model()->selectAll();
+        if(Yii::app()->request->getPost('row_id')) {
+            $is_new = Yii::app()->request->getPost('is_new');
+            $model->row_id= Yii::app()->request->getPost('row_id');
+            $model->lan_id= Yii::app()->request->getPost('lan_id');
+            $model->translate= Yii::app()->request->getPost('translate');            
+            if($model->validate() && $model->Add($is_new))
+            {
+                echo CJSON::encode(array(
+                              'status'=>'success',
+                         ));
+            }
+            else {
+                echo CJSON::encode(array(
+                              'status'=>'error',
+                         ));
+            }
+            Yii::app()->end();
+        }
+        if(!Yii::app()->request->getPost('lan')) {
+            $language = 'uk';
+        }
+        else {
+            $language = Yii::app()->request->getPost('lan');
+        }
+        if($language == 'uk') {
+            $dbmodel = ucfirst($action);
+            $row = $dbmodel::model()->selectAll();  
+        }
+        else {
+            $row = Translation::model()->select($model->table, $model->column, $language);
+        }
         $parameters=array('table'=>$model->table, 'column'=>$model->column);
         echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model,'parameters'=>$parameters),true, true));
-            //Yii::app()->end();
-    }  
+        Yii::app()->end();
+    }
     public function actionAdministration()
     {
             //$this->layout ='//layouts/chapters/Administration';  
