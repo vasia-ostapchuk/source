@@ -84,7 +84,7 @@ class SiteController extends CController
         }
         else {
             $lan_id = Language::model()->selectLanId($language);
-            $row = Translation::model()->select($model->table, $model->column, 2);
+            $row = Translation::model()->select($model->table, $model->column, $lan_id->id);
         }
         $parameters=array('table'=>$model->table, 'column'=>$model->column);
         echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model,'parameters'=>$parameters),true, true));

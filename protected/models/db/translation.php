@@ -40,17 +40,16 @@ class Translation extends CActiveRecord
     public function select($table, $column, $lan_id)
     {
         $criteria = new CDbCriteria;
-        $criteria->select='row_id, lan_id, translate';
-        $criteria->condition="'table'=:table AND 'column'=:column AND 'lan_id'=:lan_id";
-        $criteria->params=array(':table'=>$table, ':column'=>$column, ':lan_id'=>'2');
+        $criteria->select='id, translate';
+        $criteria->condition='table=:table AND column=:column AND lan_id=:lan_id';
+        $criteria->params=array(':table'=>$table, ':column'=>$column, ':lan_id'=>$lan_id);
         $result = Translation::model()->findAll($criteria);
         $data = array();
         foreach ($result as $value)
         {
-            error_log($value->id);
-            error_log($value->name);
-            $data[$value->id] = $value->name;
+            $data[$value->id] = $value->translate;
         }
+        //error_log(var_dump($data));
         return $data;
     }
     public function Add()
