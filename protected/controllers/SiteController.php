@@ -46,13 +46,13 @@ class SiteController extends CController
         else {
             $table = 'location';
         }  
-        $model->table= $table;
+        $model->object= $table;
         switch ($table) {
             case 'location':
-                $model->column= 'name';
+                $model->subject = 'name';
             break;
             case 'type':
-                $model->column= 'name';
+                $model->subject = 'name';
             break;
         }
         if(Yii::app()->request->getPost('row_id')) {
@@ -85,9 +85,9 @@ class SiteController extends CController
         }
         else {
             $lan_id = Language::model()->selectLanId($language);
-            $row = Translation::model()->select($model->table, $model->column, $lan_id->id);
+            $row = Translation::model()->select($model->object, $model->subject, $lan_id->id);
         }
-        $parameters=array('table'=>$model->table, 'column'=>$model->column);
+        $parameters=array('table'=>$model->object, 'column'=>$model->subject);
         echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model,'parameters'=>$parameters),true, true));
         Yii::app()->end();
     }

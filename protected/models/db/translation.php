@@ -2,8 +2,8 @@
 
 class Translation extends CActiveRecord
 {
-    public $table;
-    public $column;
+    public $object;
+    public $subject;
     public $row_id;
     public $lan_id;
     public $translate;
@@ -22,7 +22,7 @@ class Translation extends CActiveRecord
     public function rules()
     {
         return array(
-            array('table, column, row_id, lan_id, translate', 'required'),
+            array('object, subject, row_id, lan_id, translate', 'required'),
         );
     }
 
@@ -30,8 +30,8 @@ class Translation extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'table' => 'Таблиця',
-            'column' => 'Колонка',
+            'object' => 'Таблиця',
+            'subject' => 'Колонка',
             'row' => 'стрічка',
             'translate' => 'Переклад',
         );
@@ -41,8 +41,8 @@ class Translation extends CActiveRecord
     {
         $criteria = new CDbCriteria;
         $criteria->select='id, translate';
-        $criteria->condition='table=:table AND column=:column AND lan_id=:lan_id';
-        $criteria->params=array(':table'=>$table, ':column'=>$column, ':lan_id'=>$lan_id);
+        $criteria->condition='object=:object AND subject=:subject AND lan_id=:lan_id';
+        $criteria->params=array(':object'=>$table, ':subject'=>$column, ':lan_id'=>$lan_id);
         $result = Translation::model()->findAll($criteria);
         $data = array();
         foreach ($result as $value)
