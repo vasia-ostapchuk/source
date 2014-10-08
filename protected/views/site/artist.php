@@ -19,7 +19,8 @@ array(
                     <?php echo CHtml::textField('Text', 'В розробці',
     array('disabled'=>'disabled','class'=>'description_poster')); ?>
                 </div>
-		<div class="singer_site">  сайт  </div>
+		<div class="singer_site"> <?php echo CHtml::textField('Text', 'Сайт',
+    array('disabled'=>'disabled','class'=>'site_singer')); ?>  </div>
     </div>
 		<div class="singer_right_block">   
                     <div class="singer_video">  <a href=" " >video</a> </div>

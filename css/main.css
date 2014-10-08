@@ -535,4 +535,10 @@ line-height: 3em;
             background-color: azure;
             text-align: center
         }
-        
+        .site_singer{
+              width: 238px;
+            height: 28px;
+            color: red;
+            background-color: azure;
+            text-align: center; 
+        }
