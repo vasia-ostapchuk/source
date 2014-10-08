@@ -47,23 +47,24 @@ class SiteController extends CController
             $table = 'location';
         }  
         $model->object= $table;
-        switch ($table) {
-            case 'location':
-                $model->subject = 'name';
-            break;
-            case 'type':
-                $model->subject = 'name';
-            break;
-        }
+        
         if(Yii::app()->request->getPost('row_id')) {
-            $is_new = Yii::app()->request->getPost('is_new');
+
+                $exist = $model->findByPk(Yii::app()->request->getPost('tr_id'));
+                if($exist) {
+                    $model = $exist;
+                }
+            $model->subject= Yii::app()->request->getPost('subject');
             $model->row_id= Yii::app()->request->getPost('row_id');
             $model->lan_id= Yii::app()->request->getPost('lan_id');
-            $model->translate= Yii::app()->request->getPost('translate');            
-            if($model->validate() && $model->Add())
+            $model->translate= Yii::app()->request->getPost('translate'); 
+            
+            if($lastId = $model->Add())
             {
+             
                 echo CJSON::encode(array(
                               'status'=>'success',
+                              'tr_id' =>$lastId
                          ));
             }
             else {
@@ -73,21 +74,21 @@ class SiteController extends CController
             }
             Yii::app()->end();
         }
-        if(!Yii::app()->request->getPost('lan')) {
-            $language = 'uk';
+  
+        
+        $lan_id = 2;
+        $dbmodel = ucfirst($table);
+        $row = $dbmodel::model()->selectAll();  
+        $translateRow = Translation::model()->select($model->object, $row['subject'][0], $lan_id);
+        
+        
+        foreach($row as $k=>$r) {
+            $row[$k]['translate'] = isset($translateRow[$k]) ? $translateRow[$k]['translate'] : '';
+            $row[$k]['translate_id'] = isset($translateRow[$k]) ? $translateRow[$k]['id'] : '';
         }
-        else {
-            $language = Yii::app()->request->getPost('lan');
-        }
-        if($language == 'uk') {
-            $dbmodel = ucfirst($table);
-            $row = $dbmodel::model()->selectAll();  
-        }
-        else {
-            $lan_id = Language::model()->selectLanId($language);
-            $row = Translation::model()->select($model->object, $model->subject, $lan_id->id);
-        }
-        $parameters=array('table'=>$model->object, 'column'=>$model->subject);
+        
+        $parameters=array('table'=>$model->object, 'column'=>$row['subject'][0]);
+        
         echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model,'parameters'=>$parameters),true, true));
         Yii::app()->end();
     }

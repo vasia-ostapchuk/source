@@ -135,49 +135,54 @@
             <h1>Переклад сутності: <?php echo $parameters['table']; ?>-><?php echo $parameters['column']; ?></h1>
         </div>
         <?php
-            foreach ($row as $id=>$word) {
+            
+            foreach ($row as $id=>$value) {
+            $tr_id = $value['translate_id'];    
         ?>
-        <fieldset class="field">
-            <div>
-                <legend>Стрічка для перекладу</legend>
-            </div>
-            <?php
-                $form=$this->beginWidget('CActiveForm', array(
-                    'id'=>'TranslateForm_'.$id,
-                    'enableAjaxValidation'=>false,
-                    'clientOptions'=>array(
-                        'validateOnSubmit' => true,
-                        'validateOnChange'=>false,
-                        'validateOnType'=>false,
-                    ),
-                    'htmlOptions'=>array('class'=>'form', 'onsubmit'=>"js:function(){alert('submit_form');}"),
-                    'action' => array('site/translate'),
-                ));
-                echo CHtml::textField('row'.$id,$word, array('class'=>'eng_word'));
-                echo CHtml::textField('translate'.$id,'', array('placeholder'=>'translate','class'=>'translated'));
-                echo CHtml::hiddenField('row_id'.$id,$id);
-                echo CHtml::hiddenField('lan_id'.$id,2);
-                
-                echo CHtml::ajaxSubmitButton ("ОК",
-                    array('/site/translate'),
-                        array(
-                            'type' => 'post',
-                            'data' => array(
-                                'table'=>$parameters['table'],
-                                'row' => "js:$('#row$id').val()",
-                                'translate' =>"js:$('#translate$id').val()",
-                                'row_id' => $id,
-                                'lan_id' => '2',
-                            ),
-                            'success'=>"function(data) {
-                                            //alert(data);
-                                        }",
+            <fieldset class="field">
+                <div>
+                    <legend>Стрічка для перекладу</legend>
+                </div>
+                <?php
+                    $form=$this->beginWidget('CActiveForm', array(
+                        'id'=>'TranslateForm_'.$id,
+                        'enableAjaxValidation'=>false,
+                        'clientOptions'=>array(
+                            'validateOnSubmit' => true,
+                            'validateOnChange'=>false,
+                            'validateOnType'=>false,
                         ),
-                        array('id'=>'translate-button_'.$id)
-                );
-                 $this->endWidget();
-            ?>
-        </fieldset>
+                        'htmlOptions'=>array('class'=>'form', 'onsubmit'=>"js:function(){alert('submit_form');}"),
+                        'action' => array('site/translate'),
+                    ));
+                    echo CHtml::textField('row_'.$id, $value['name'], array('class'=>'eng_word'));
+                    echo CHtml::textField('translate_'.$tr_id, $value['translate'], array('placeholder'=>'translate','class'=>'translated'));
+                    echo CHtml::hiddenField('tr_id_'.$id, $tr_id);
+
+                    
+                    echo CHtml::ajaxSubmitButton ("ОК",
+                        array('/site/translate'),
+                            array(
+                                'type' => 'post',
+                                'dataType'=>'json',
+                                'data' => array(
+                                    'table'=>$parameters['table'],
+                                    'row' => "js:$('#row_$id').val()",
+                                    'translate' =>"js:$('#translate_$tr_id').val()",
+                                    'row_id' => $id,
+                                    'tr_id' => "js:$('#tr_id_$id').val()",
+                                    'subject' => $row['subject'][0],
+                                    'lan_id' => '2',
+                                ),
+                                'success'=>"function(data) {
+                                    $('#tr_id_$id').val(data.tr_id);
+                                }",
+                            ),
+                            array('id'=>'translate-button_'.$id)
+                    );
+                     $this->endWidget();
+                ?>
+            </fieldset>
              <?php } } ?>
     </div>
         <div class="pagination-link">

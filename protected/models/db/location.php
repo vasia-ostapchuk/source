@@ -52,10 +52,12 @@
             $criteria = new CDbCriteria;
             $criteria->select='id,name';
             $result = Location::model()->findAll($criteria);
+            
             foreach ($result as $value)
             {
-                $data[$value->id] = $value->name;
+                $data[$value->id]['name'] = $value->name;
             }
+            $data['subject'] = array('name');
             return $data;
         }
     }
