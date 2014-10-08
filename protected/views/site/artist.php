@@ -6,9 +6,19 @@ array(
 'class'=>'poster_singer',
 )); ?>           
                 </div>
-    <div class="singer_name">  назва  </div>
-		<div class="singer_style">   стиль </div>
-		<div class="singer_description">  опис  </div>
+    <div class="singer_name">  
+
+   <?php echo CHtml::textField('Text', 'Друга ріка',
+    array('disabled'=>'disabled','class'=>'name_poster')); ?>
+
+  </div>
+		<div class="singer_style"> 
+       
+                </div>
+		<div class="singer_description"> 
+                    <?php echo CHtml::textField('Text', 'В розробці',
+    array('disabled'=>'disabled','class'=>'description_poster')); ?>
+                </div>
 		<div class="singer_site">  сайт  </div>
     </div>
 		<div class="singer_right_block">   

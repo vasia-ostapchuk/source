@@ -522,3 +522,17 @@ line-height: 3em;
             max-width: 240px;
             
         }
+        .name_poster{
+            width: 398px;
+            height: 28px;
+            background-color: azure;
+            text-align: center;
+        }
+        .description_poster{
+            width: 670px;
+            height: 238px;
+            color: red;
+            background-color: azure;
+            text-align: center
+        }
+        
