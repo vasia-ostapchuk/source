@@ -704,3 +704,40 @@ padding: 1px; width: 24px;}
     border: 1px #000 solid;
     margin: 20px 10px;
 }
+.event-link{
+    width: 998px;
+    border: 1px #000 solid;
+    line-height: 40px;
+}
+.event-link a{
+    padding: 20px;
+}
+.event-link li{
+    width: 48%;
+    display: inline-block;
+    text-align: center;
+}
+.event-link li:first-child{
+    border-right: 1px #000 solid;
+    padding-right: 19px;
+}
+.eventsUsers{
+    border: 1px #000 solid;
+}
+.eventsUsers .checkbox{
+    width: 998px;
+    line-height: 40px;
+    border-top: 1px #000 solid;
+    margin-top: 40px;
+}
+.eventsUsers input#checkbox{
+    float: left;
+    margin: 14px 20px;
+}
+.eventsUsers .user-data{
+    height: 50px;
+    border-top: 1px #000 solid;
+}
+.eventsUsers .user-data .avatar{
+    max-width: 50px;
+}
