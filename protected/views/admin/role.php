@@ -11,7 +11,23 @@
                 <option value="0">None</option>
             </select>
             <div class="invisible">&nbsp;</div>
-            <input class="button-perm" type="submit" value="Perm">
+           <!-- <input class="button-perm" type="submit" value="Perm">
+            <input class="button-del" type="submit" value="Del"> -->
+            <?php echo CHtml::ajaxButton('Права',
+                CController::createUrl('/admin/ajax'),   
+                    array('dataType'=>'json',
+                            'type' => 'post',
+                            'data' => array ('view'=>'role_perssimision'),
+                            'success'=>"function(data) {
+                                        $('#content-admin').html(data);
+                                    }",
+                        ),
+                    array( 'style'=>'height: 35px; width:50px; margin: 0;',
+                        'id'=>'role_perssimision-bnt'.$i,
+                        //'live' => false
+                         )
+                ); 
+            ?>
             <input class="button-del" type="submit" value="Del">
         </form>
         <?php } ?>

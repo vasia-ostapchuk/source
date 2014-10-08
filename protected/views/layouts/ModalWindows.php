@@ -73,9 +73,10 @@ echo '<br>'; echo CHtml::ajaxlink('Translation',
                         )
                     );
 echo '<br>'; echo CHtml::ajaxlink('Administration',
-                    CController::createUrl('/admin/index'),   
+                    CController::createUrl('/admin/ajax'),   
                     array('dataType'=>'json',
                             'type' => 'post',
+                            'data' => array('view' => 'index'),
                             'success'=>"function(data) {
                                 $('#ProfileMenu').dialog('close');
                                         $('#content').html(data);

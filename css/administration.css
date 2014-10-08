@@ -22,7 +22,7 @@ and open the template in the editor.
     height: 50px;
 }
 
-.administration #content{
+.administration #content-admin{
     float: left;
     width: 750px;
 }
@@ -161,6 +161,27 @@ and open the template in the editor.
 }
 /*-------------------------------------------------------------------------*/
 
+.administration #users-role-list{
+    //float: left;
+    border: 1px blue solid;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.administration #users-role-list .users-role-check{
+    //float: left;
+    border: 1px red solid;
+    //width: 95%;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12pt;
+    color: #666;
+}
+
+/*-------------------------------------------------------------------------*/
 .administration #role-perssimision-list{
     //float: left;
     border: 1px blue solid;
