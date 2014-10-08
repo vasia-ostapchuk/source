@@ -40,4 +40,9 @@ class SiteController extends CController
         echo CJSON::encode($this->renderPartial('artist',array(),true));
         Yii::app()->end();
     }
+    public function actionEvent()
+    {
+        echo CJSON::encode($this->renderPartial('event',  array(),true));
+        Yii::app()->end();
+    }
 }
