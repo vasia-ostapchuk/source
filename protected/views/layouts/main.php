@@ -39,7 +39,7 @@
         </div>
         
         <div class="footer">
-            то футер детка
+            <h1 style="text-align:center;">FOOTER</h1>
             <br/>
             <a id="click-me" href="#">Click me</a>
                 <script type="text/javascript">
