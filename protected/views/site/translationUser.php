@@ -154,7 +154,7 @@
                             'validateOnChange'=>false,
                             'validateOnType'=>false,
                         ),
-                        'htmlOptions'=>array('class'=>'form'),
+                        'htmlOptions'=>array('class'=>'form', 'onsubmit'=>'return aa()'),
                         'action' => array('site/translate'),
                     ));
                     echo CHtml::textField('row_'.$id, $value['name'], array('class'=>'eng_word'));
@@ -202,8 +202,11 @@
 </div>
         <script>  
             $(document).ready(function(){
-                
-                function findPoster(){
+                function aa(){
+                alert('ss');
+                return false;
+               }
+                function TranslateSubmit(){
                     var jdata = {id:"poster"};
                     $.ajax({
                         url: 'index.php?r=site/ajax',

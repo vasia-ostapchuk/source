@@ -24,4 +24,10 @@ class Type extends CActiveRecord
         $data['subject'] = array('name');
         return $data;
     }
+    public function Add()
+    {       
+        if(!$this->save()){
+            print_r($this->getErrors());} 
+        return $this->id;
+    }
 }

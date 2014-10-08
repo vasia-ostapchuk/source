@@ -60,4 +60,10 @@
             $data['subject'] = array('name');
             return $data;
         }
+        public function Add($attributes=false)
+        {       
+            if(!$this->save()){
+                print_r($this->getErrors());} 
+            return $this->id;
+        }
     }
