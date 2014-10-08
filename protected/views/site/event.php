@@ -16,6 +16,23 @@
                 'class'=>'avatar',
             )); ?>           
         </div>
-        <span class='user-name'></span>
+        <span class='user-name'>
+            <?php echo CHtml::textField('Text', 'Прізвище та Ім\'я', 
+                array('disabled'=>true
+            )); ?>
+        </span>
+    </div>
+    <div class="user-data">
+        <div class="avatar">
+            <?php echo CHtml::image('../../../images/testAvatar.jpg','назва',
+                array(
+                'class'=>'avatar',
+            )); ?>           
+        </div>
+        <span class='user-name'>
+            <?php echo CHtml::textField('Text', 'Прізвище та Ім\'я', 
+                array('disabled'=>true
+            )); ?>
+        </span>
     </div>
 </div>

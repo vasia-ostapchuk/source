@@ -735,9 +735,16 @@ padding: 1px; width: 24px;}
     margin: 14px 20px;
 }
 .eventsUsers .user-data{
-    height: 50px;
+    line-height: 60px;
     border-top: 1px #000 solid;
 }
 .eventsUsers .user-data .avatar{
-    max-width: 50px;
+    max-width: 60px;
+    float: left;
+    margin-right: 25px;
+}
+.eventsUsers .user-data .user-name input#Text{
+    line-height: 54px;
+    width:90%;
+    text-align:  center;
 }
