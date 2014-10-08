@@ -19,11 +19,12 @@
             </div>
             <div class="lan">
               <ul id="nav">  
- 
                   <li><a href=""title="ua"><img src="../../../images/ua.jpg" /></a>  
-<ul>  
-    <li class="uz"><a href=""title="pl"><img src="../../../images/pl.jpg" /></a> </li>  
-    <li class="uz"><a href=""title="en"><img src="../../../images/en.jpg" /></a> </li>  
+                    <ul>  
+                        <li class="uz"><a href=""title="pl"><img src="../../../images/pl.jpg" /></a> </li>  
+                        <li class="uz"><a href=""title="en"><img src="../../../images/en.jpg" /></a> </li>  
+                    </ul>
+              </ul>
             </div>
              
             <div class="user_reg_buttons">
