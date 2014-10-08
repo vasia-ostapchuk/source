@@ -351,10 +351,16 @@ div.search-form
 	text-align: center;
         line-height: 2.5em;
 	}
-	
+        .singer_left_block{
+            float: left;
+            width: 500px;
+            width: 695px;
+            margin: 10px;
+            border: 1px solid #264409;
+        }
 	.singer_poster{
-	width:250px;
-	height: 240px;
+	width:240px;
+	height: 339px;
 	margin-left:10px;
         margin-top: 10px;
 	float: left;
@@ -365,9 +371,9 @@ line-height: 2.5em;
 	}
 	.singer_name{
 	float:left;
-	margin-left:10px;
+	margin-left:30px;
         margin-top: 10px;
-	width:231px;
+	width:400px;
 	height:30px;
 	 border: 1px solid #264409;
          text-align: center;
@@ -375,21 +381,20 @@ line-height: 2.5em;
 	}
 	.singer_style{
 	float:left;
-	margin-left: -233px;
-	margin-top: 50px;
-	width:230px;
-	height:201px;
+	margin-left: 30px;
+	margin-top: 35px;
+	width:400px;
+	height:272px;
 	 border: 1px solid #264409;
          text-align: center;
 line-height: 2.5em;
 	}
 	
 	.singer_description{
-	width:491px;
+	width:673px;
 	height: 240px;
 	float: left;
-	margin-left: -494px;
-	margin-top: 265px;
+	margin:35px 10px 30px 10px;
 	 border: 1px solid #264409;
          text-align: center;
 line-height: 2.5em;
@@ -397,11 +402,9 @@ line-height: 2.5em;
 	
 	.singer_site{
 	float:left;
-	
-	width:350px;
+	width:240px;
 	height:30px;
-	margin-left: -494px;
-	margin-top: 518px;
+        margin: 10px 0 20px 10px;
 	 border: 1px solid #264409;
          text-align: center;
 line-height: 2.5em;
@@ -427,7 +430,9 @@ line-height: 2.5em;
          text-align: center;
 line-height: 2.5em;
 	}
-	
+        .singer_video a{
+            text-decoration: none;
+        }
 	.q1{
 	width:250px;
 	height: 160px;
@@ -457,7 +462,9 @@ line-height: 2.5em;
         text-align: center;
 line-height: 2.5em;
         }
-	
+        .singer_album a{
+              text-decoration: none;
+        }
 	.q11{
 	width:250px;
 	height: 168px;
@@ -484,14 +491,16 @@ line-height: 2.5em;
 	 border: 1px solid #264409;
         text-align: center;
 line-height: 2.5em;}
-	
+        .singer_repertyar a{
+              text-decoration: none;
+        }
 	.singer_song1{width:250px;
 	height: 40px;
 	margin-right:10px;
 	margin-bottom:5px;
 	 border: 1px solid #264409;
         text-align: center;
-line-height: 2.5em;}
+line-height: 3em;}
 	
 	.singer_song2{width:250px;
 	height: 40px;
@@ -499,7 +508,7 @@ line-height: 2.5em;}
 	margin-bottom:5px;
 	 border: 1px solid #264409;
         text-align: center;
-line-height: 2.5em;
+line-height: 3em;
         }
 	
 	.singer_song3{width:250px;
@@ -507,5 +516,9 @@ line-height: 2.5em;
 	margin-right:10px;
 	margin-bottom:5px;
         text-align: center;
-        line-height: 2.5em;
+        line-height: 3em;
 	 border: 1px solid #264409;}
+        .poster_singer{
+            max-width: 240px;
+            
+        }
