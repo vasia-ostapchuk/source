@@ -9,7 +9,7 @@
     <p>Сутності</p>
     <?php
         echo CHtml::ajaxButton('Локейшени',
-            CController::createUrl('/site/translate'),   
+            CController::createUrl('/site/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('table'=>'location'),
@@ -23,7 +23,7 @@
                  )
         );
         echo CHtml::ajaxButton('Типи',
-            CController::createUrl('/site/translate'),
+            CController::createUrl('/site/viewtranslate'),
             array('dataType'=>'json',
                     'type' => 'post', 
                     'data' => array ('table'=>'type'),
@@ -42,7 +42,7 @@
     <div class="language_buttons">
             <?php
         echo CHtml::ajaxlink('EN',
-            CController::createUrl('/site/translate'),   
+            CController::createUrl('/site/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array (
@@ -58,7 +58,7 @@
                  )
         );
         echo CHtml::ajaxlink('UA',
-            CController::createUrl('/site/translate'),   
+            CController::createUrl('/site/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('lan'=>'ua',
@@ -73,7 +73,7 @@
                  )
         );
         echo CHtml::ajaxlink('PL',
-            CController::createUrl('/site/translate'),   
+            CController::createUrl('/site/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('lan'=>'pl',
