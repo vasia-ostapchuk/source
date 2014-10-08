@@ -63,7 +63,7 @@
                 ),
             ));
 echo '<br>'; echo CHtml::ajaxlink('Translation',
-                    CController::createUrl('/site/translate'),   
+                    CController::createUrl('/site/viewtranslate'),   
                     array('dataType'=>'json',
                             'type' => 'post',
                             'success'=>"function(data) {

@@ -136,7 +136,6 @@
             <h1>Переклад сутності: <?php echo $parameters['table']; ?>-><?php echo $parameters['column']; ?></h1>
         </div>
         <?php
-            error_log(var_export($row,1));
             foreach ($row as $id=>$value) {
                 if(is_numeric($id)) {
             $tr_id = $value['translate_id']; 
@@ -155,7 +154,7 @@
                             'validateOnChange'=>false,
                             'validateOnType'=>false,
                         ),
-                        'htmlOptions'=>array('class'=>'form', 'onsubmit'=>"js:function(){alert('submit_form');}"),
+                        'htmlOptions'=>array('class'=>'form'),
                         'action' => array('site/translate'),
                     ));
                     echo CHtml::textField('row_'.$id, $value['name'], array('class'=>'eng_word'));
@@ -203,6 +202,20 @@
 </div>
         <script>  
             $(document).ready(function(){
+                
+                function findPoster(){
+                    var jdata = {id:"poster"};
+                    $.ajax({
+                        url: 'index.php?r=site/ajax',
+                        dataType: "json",
+                        data: jdata,
+                        type: 'POST',
+                        success: function(html){
+                                $(".events").html(html);
+                                }
+                        });
+                };
+                
                 $('#translation_form').submit(function(e){
                     e.preventDefault();
                     var m_data=$(this).serialize();
