@@ -130,14 +130,17 @@
      <div class="translator">   
         <?php
             if($row) {
+                                
         ?>
         <div>
             <h1>Переклад сутності: <?php echo $parameters['table']; ?>-><?php echo $parameters['column']; ?></h1>
         </div>
         <?php
-            
+            error_log(var_export($row,1));
             foreach ($row as $id=>$value) {
-            $tr_id = $value['translate_id'];    
+                if(is_numeric($id)) {
+            $tr_id = $value['translate_id']; 
+            
         ?>
             <fieldset class="field">
                 <div>
@@ -183,7 +186,7 @@
                      $this->endWidget();
                 ?>
             </fieldset>
-             <?php } } ?>
+            <?php } } }?>
     </div>
         <div class="pagination-link">
             <ul>

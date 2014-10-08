@@ -80,15 +80,14 @@ class SiteController extends CController
         $dbmodel = ucfirst($table);
         $row = $dbmodel::model()->selectAll();  
         $translateRow = Translation::model()->select($model->object, $row['subject'][0], $lan_id);
-        
-        
+
         foreach($row as $k=>$r) {
             $row[$k]['translate'] = isset($translateRow[$k]) ? $translateRow[$k]['translate'] : '';
             $row[$k]['translate_id'] = isset($translateRow[$k]) ? $translateRow[$k]['id'] : '';
         }
         
+        // error_log(var_export($row,1));
         $parameters=array('table'=>$model->object, 'column'=>$row['subject'][0]);
-        
         echo CJSON::encode($this->renderPartial('translationUser',array('row'=>$row,'model'=>$model,'parameters'=>$parameters),true, true));
         Yii::app()->end();
     }
