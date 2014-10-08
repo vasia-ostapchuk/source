@@ -1,5 +1,5 @@
 <div class="singer_page">
-		<div class="singer_poster"> gfgf  </div>
+		<div class="singer_poster"> aa </div>
 		<div class="singer_name">  назва  </div>
 		<div class="singer_style">   стиль </div>
 		<div class="singer_description">  опис  </div>
