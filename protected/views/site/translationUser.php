@@ -150,6 +150,9 @@
                     echo CHtml::textField('row_'.$id, $value['name'], array('class'=>'eng_word'));
                     echo CHtml::textField('translate_'.$id, $value['translate'], array('placeholder'=>'translate','class'=>'translated'));
                     echo CHtml::hiddenField('tr_id_'.$id, $tr_id);
+                    echo CHtml::hiddenField('row_copy_'.$id, $value['name']);
+                    echo CHtml::hiddenField('translate_copy_'.$id, $value['translate']);
+                    //echo CHtml::hiddenField('rows_copy_'.$id, $value['name'].'***'.$value['translate']);
                 ?>
             </fieldset>
             <?php } } }?>
@@ -189,29 +192,23 @@
         function submitTranslate(id, field){
             var tdata = {
                 table:'<?=$table?>',
-                row: $('#row_'+id).val(),
-                translate: $('#translate_'+id).val(),
-                row_id: id,
-                tr_id: $('#tr_id_'+id).val(),
-                subject: '<?=$column?>',
-                lan_id: '<?=$lan_id?>',
+                column: '<?=$column?>',
+                row: $('#row_'+id).val(), 
+                row_id: id
             };
-            /*getID() {
-                return id;
-            }*/
-            //console.log('<?//=$row['js:getID();']['name']?>');
-            if(tdata[field] == '') {
+            if(field == 'translate') {
+                tdata['translate'] = $('#translate_'+id).val(),
+                tdata['tr_id'] = $('#tr_id_'+id).val(),
+                tdata['lan_id'] = '<?=$lan_id?>'
+            }
+            if(!tdata[field]) {
                 addBorder('#'+field+'_'+id,'red');
-                return;    
+                return;
             }
-            //tdata['translate']
-            /*if(tdata['row'] != ) {
-                tdata.push({
-                    value: "FirstVal",
-                });
+            if(tdata[field] == $('#'+field+'_copy_'+id).val()) {
+                addBorder('#'+field+'_'+id,'red');
+                return; 
             }
-            else
-                return;*/
             if($('#'+field+'_'+id).attr('style'))
                 $('#'+field+'_'+id).removeAttr('style');
             $.ajax({
@@ -220,10 +217,13 @@
                 data: tdata,
                 type: 'POST',
                 success: function(data){
-                    $('#tr_id_'+id).val(data.tr_id);
+                    $('#'+field+'_copy_'+id).val($('#'+field+'_'+id).val());
+                    if(data.tr_id)
+                        $('#tr_id_'+id).val(data.tr_id);
                     addBorder('#'+field+'_'+id,'green');
                 },
-                error: function(data){
+                error: function(xhr){
+                    alert(xhr.responseText);
                     addBorder('#'+field+'_'+id,'red');
                 }
                 });

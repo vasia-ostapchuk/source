@@ -2,47 +2,52 @@
 class TranslateAction extends CAction {
     
     public function run()
-    { 
-        $model = new Translation;
-
-        /*if(Yii::app()->request->getPost('new_parent') == true) {
-            $table = ucfirst(Yii::app()->request->getPost('table'));
-                $translate = new $table;
-            $row_id= Yii::app()->request->getPost('row_id');
-            $row = Yii::app()->request->getPost('row');
-            $subject = Yii::app()->request->getPost('subject');
-            $exist = $translate->findByAttributes(array('id'=>$row_id,$subject=>$row));
-            if ($exist) {
-                $translate = $exist;
+    {
+        if(Yii::app()->request->getPost('translate')) { //переклади в таблиці translation
+            $model = new Translation;
+            $model->object = Yii::app()->request->getPost('table');
+            $exist = $model->findByPk(Yii::app()->request->getPost('tr_id'));
+            if($exist) {
+                $model = $exist;
             }
-                $translate->$subject=Yii::app()->request->getPost('row');
-                $translate->Add();
-        }*/
-        
-        $model->object = Yii::app()->request->getPost('table');
-
-        $exist = $model->findByPk(Yii::app()->request->getPost('tr_id'));
-        if($exist) {
-            $model = $exist;
+            $model->subject= Yii::app()->request->getPost('column');
+            $model->row_id= Yii::app()->request->getPost('row_id');
+            $model->lan_id= Yii::app()->request->getPost('lan_id');
+            $model->translate= Yii::app()->request->getPost('translate'); 
+            if($lastId = $model->Add())
+            {
+                echo CJSON::encode(array(
+                      'status'=>'success',
+                      'tr_id' =>$lastId
+                ));
+                Yii::app()->end();
+            }
         }
-        $model->subject= Yii::app()->request->getPost('subject');
-        $model->row_id= Yii::app()->request->getPost('row_id');
-        $model->lan_id= Yii::app()->request->getPost('lan_id');
-        $model->translate= Yii::app()->request->getPost('translate'); 
-
-        if($lastId = $model->Add())
-        {
-
-            echo CJSON::encode(array(
-                          'status'=>'success',
-                          'tr_id' =>$lastId
-                     ));
+        else { //перекладаєм оригінальний текст
+            $table = ucfirst(Yii::app()->request->getPost('table'));
+            
+            $object = new $table;
+            
+            $subject = Yii::app()->request->getPost('column');
+            $object->setAttribute($subject,Yii::app()->request->getPost('row'));
+            error_log(var_export($object->name,1));
+            $exist = $object->findByPk(Yii::app()->request->getPost('row_id'));
+            //$exist = $object->findByAttributes(array('id'=>$row_id,$subject=>$row));
+            if ($exist) {
+                $object = $exist;
+            }
+            $object->$subject=Yii::app()->request->getPost('row');
+            if($object->Add())
+            {
+                echo CJSON::encode(array(
+                  'status'=>'success',
+                ));
+                Yii::app()->end();
+            }
         }
-        else {
-            echo CJSON::encode(array(
-                          'status'=>'error',
-                     ));
-        }
+        echo CJSON::encode(array( //помилка запису
+            'status'=>'error',
+        ));
         Yii::app()->end();
     }
 }
