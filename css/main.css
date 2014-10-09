@@ -369,6 +369,12 @@ div.search-form
 line-height: 2.5em;
 	
 	}
+        .name_poster{
+            width: 398px;
+            height: 28px;
+            background-color: azure;
+            text-align: center;
+        }
 	.singer_name{
 	float:left;
 	margin-left:30px;
@@ -386,10 +392,19 @@ line-height: 2.5em;
 	width:400px;
 	height:272px;
 	 border: 1px solid #264409;
-         text-align: center;
 line-height: 2.5em;
 	}
-	
+        .singer_style ul{
+            list-style-type: square;
+            float: left;
+            padding-left: 20px;
+            color: #D7314A;
+        }
+        .style_singer{
+            color:red;
+            font-size: 200%;
+            top:5px;
+        }
 	.singer_description{
 	width:673px;
 	height: 240px;
@@ -399,12 +414,27 @@ line-height: 2.5em;
          text-align: center;
 line-height: 2.5em;
         }
+        .description_singer{
+            width: 670px;
+            height: 238px;
+            font-size: 14px;
+    font-weight: bold;
+    color:#D7314A;
+        }
 	
 	.singer_site{
 	float:left;
 	width:240px;
 	height:30px;
         margin: 10px 0 20px 10px;
+	 border: 1px solid #264409;
+         text-align: center;
+line-height: 2.5em;
+        }
+        .site_singer{
+            float:left;
+	width:238px;
+	height:28px;
 	 border: 1px solid #264409;
          text-align: center;
 line-height: 2.5em;
@@ -522,23 +552,8 @@ line-height: 3em;
             max-width: 240px;
             
         }
-        .name_poster{
-            width: 398px;
-            height: 28px;
-            background-color: azure;
-            text-align: center;
-        }
-        .description_poster{
-            width: 670px;
-            height: 238px;
-            color: red;
-            background-color: azure;
-            text-align: center
-        }
-        .site_singer{
-              width: 238px;
-            height: 28px;
-            color: red;
-            background-color: azure;
-            text-align: center; 
-        }
+        
+        
+        
+        
+        

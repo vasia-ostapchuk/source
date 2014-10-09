@@ -13,14 +13,26 @@ array(
 
   </div>
 		<div class="singer_style"> 
-       
+                    <p><span class="style_singer">Стилі</span></p>
+                    <ul>
+                        <li>Джаз</li>
+                        <li>Блюз</li>
+                        <li>Реп</li>
+                        <li>Поп</li>
+                    </ul>
                 </div>
 		<div class="singer_description"> 
-                    <?php echo CHtml::textField('Text', 'В розробці',
-    array('disabled'=>'disabled','class'=>'description_poster')); ?>
+                    <form name="myform" action="index.php" method="post">
+
+                        <textarea name="mybox" cols="75" rows="5" wrap="hard" class="description_singer">
+Групу заснували Віктор Скуратовський, Валерій Харчишин та Олександр Барановський 1995 року. Перші репетиції групи, який отримав назву «Second River», проходили в приміщенні Житомирського педадогічного інституту, де й відбувся їх перший виступ. У 1998 році, під час підготовки до фестивалю «Червона рута—1999» назву було змінено на «Друга Ріка».
+</textarea>
                 </div>
-		<div class="singer_site"> <?php echo CHtml::textField('Text', 'Сайт',
-    array('disabled'=>'disabled','class'=>'site_singer')); ?>  </div>
+		<div class="singer_site"> 
+                <?php echo CHtml::textField('Text', 'Сайт',
+    array('disabled'=>'disabled','class'=>'site_singer')); ?>
+
+                </div>
     </div>
 		<div class="singer_right_block">   
                     <div class="singer_video">  <a href=" " >video</a> </div>
