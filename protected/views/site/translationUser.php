@@ -217,10 +217,15 @@
                 data: tdata,
                 type: 'POST',
                 success: function(data){
-                    $('#'+field+'_copy_'+id).val($('#'+field+'_'+id).val());
-                    if(data.tr_id)
-                        $('#tr_id_'+id).val(data.tr_id);
-                    addBorder('#'+field+'_'+id,'green');
+                    if(data.status == 'error') {
+                        addBorder('#'+field+'_'+id,'red');
+                    }
+                    else {
+                        $('#'+field+'_copy_'+id).val($('#'+field+'_'+id).val());
+                        if(data.tr_id)
+                            $('#tr_id_'+id).val(data.tr_id);
+                        addBorder('#'+field+'_'+id,'green');
+                    }
                 },
                 error: function(xhr){
                     alert(xhr.responseText);

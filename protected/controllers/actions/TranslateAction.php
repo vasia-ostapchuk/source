@@ -6,11 +6,21 @@ class TranslateAction extends CAction {
         if(Yii::app()->request->getPost('translate')) { //переклади в таблиці translation
             $model = new Translation;
             $model->object = Yii::app()->request->getPost('table');
+            $row = Yii::app()->request->getPost('translate');
+            $subject = Yii::app()->request->getPost('column');
             $exist = $model->findByPk(Yii::app()->request->getPost('tr_id'));
             if($exist) {
+                $compare = $model->findByAttributes(array('translate'=>$row));
+                if ($compare) {
+                    error_log('error_compare_1');
+                    echo CJSON::encode(array( //співпадіння стрічок
+                    'status'=>'error',
+                    ));
+                    Yii::app()->end();
+                }
                 $model = $exist;
             }
-            $model->subject= Yii::app()->request->getPost('column');
+            $model->subject= $subject;
             $model->row_id= Yii::app()->request->getPost('row_id');
             $model->lan_id= Yii::app()->request->getPost('lan_id');
             $model->translate= Yii::app()->request->getPost('translate'); 
@@ -30,12 +40,23 @@ class TranslateAction extends CAction {
             
             $subject = Yii::app()->request->getPost('column');
             $row = Yii::app()->request->getPost('row');
+            $row_id = Yii::app()->request->getPost('row_id');
             $object->setAttribute($subject, $row);
-            $exist = $object->findByAttributes(array('id'=>$row_id,$subject=>$row));
+            $exist = $object->findByPk($row_id);
             if ($exist) {
+                $compare = $object->findByAttributes(array($subject=>$row));
+                if ($compare) {
+                    error_log('error_compare');
+                    echo CJSON::encode(array( //співпадіння стрічок
+                    'status'=>'error',
+                    ));
+                    Yii::app()->end();
+                }
+                error_log('norm');
                 $object = $exist;
             }
             else {
+                error_log('error_new');
                 echo CJSON::encode(array( //стрічка не може бути новою
                 'status'=>'error',
                 ));
