@@ -29,12 +29,16 @@ class TranslateAction extends CAction {
             $object = new $table;
             
             $subject = Yii::app()->request->getPost('column');
-            $object->setAttribute($subject,Yii::app()->request->getPost('row'));
-            error_log(var_export($object->name,1));
-            $exist = $object->findByPk(Yii::app()->request->getPost('row_id'));
-            //$exist = $object->findByAttributes(array('id'=>$row_id,$subject=>$row));
+            $row = Yii::app()->request->getPost('row');
+            $object->setAttribute($subject, $row);
+            $exist = $object->findByAttributes(array('id'=>$row_id,$subject=>$row));
             if ($exist) {
                 $object = $exist;
+            }
+            else {
+                echo CJSON::encode(array( //стрічка не може бути новою
+                'status'=>'error',
+                ));
             }
             $object->$subject=Yii::app()->request->getPost('row');
             if($object->Add())
