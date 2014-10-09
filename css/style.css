@@ -704,6 +704,22 @@ padding: 1px; width: 24px;}
     border: 1px #000 solid;
     margin: 20px 10px;
 }
+
+.userProgress{
+    width: 400px;
+    
+}
+div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable{
+    width: 400px;
+    outline: 0px none;
+    z-index: 1003;
+    position: absolute;
+    height: auto;
+    top: 0px;
+    left: 521px;
+    display: block;
+}
+//---------------------
 .event-link{
     width: 998px;
     border: 1px #000 solid;

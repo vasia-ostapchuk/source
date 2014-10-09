@@ -98,10 +98,64 @@ echo '<br>'; echo CHtml::ajaxlink('event',
                     array('dataType'=>'json',
                             'type' => 'post',
                             'success'=>"function(data) {
-                                $('#ProfileMenu').dialog('close');
+                                $('#event').dialog('open'); return false;
                                         $('#content').html(data);
                                     }",
                         )
                     );
     $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
+
+<!-- модель модального вікна форми event -->
+
+<div class="userProgress">
+    <?php
+    $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+        'id'=>'event',
+        'options'=>array(
+            'title'=>'Dialog box',
+            'autoOpen'=>false,
+        ),
+        'htmlOptions'=>array('class'=>'user-progress')
+    )); ?>
+        <div class="event-link">
+            <li><?php echo CHtml::link('Підписані', array('controller/action')); ?></li>
+            <li><?php echo CHtml::link('Друзі', array('controller/action')); ?></li>
+        </div>
+        <div class="eventsUsers">
+            <div class="checkbox">
+                <?php echo CHtml::CheckBox('checkbox',false, array (
+                    'value'=>'on',
+                )); ?>
+                <span>Купили квиток</span>
+            </div>
+            <div class="user-data">
+                <div class="avatar">
+                    <?php echo CHtml::image('../../../images/testAvatar.jpg','назва',
+                        array(
+                        'class'=>'avatar',
+                    )); ?>           
+                </div>
+                <span class='user-name'>
+                    <?php echo CHtml::textField('Text', 'Прізвище та Ім\'я', 
+                        array('disabled'=>true
+                    )); ?>
+                </span>
+            </div>
+            <div class="user-data">
+                <div class="avatar">
+                    <?php echo CHtml::image('../../../images/testAvatar.jpg','назва',
+                        array(
+                        'class'=>'avatar',
+                    )); ?>           
+                </div>
+                <span class='user-name'>
+                    <?php echo CHtml::textField('Text', 'Прізвище та Ім\'я', 
+                        array('disabled'=>true
+                    )); ?>
+                </span>
+            </div>
+        </div>
+    <?php $this->endWidget('zii.widgets.jui.CJuiDialog');
+    ?>
+</div>
