@@ -356,7 +356,10 @@ div.search-form
             width: 500px;
             width: 695px;
             margin: 10px;
-            border: 1px solid #264409;
+          
+        }
+        .singer_right_block a:hover{
+            color: red;
         }
 	.singer_poster{
 	width:240px;

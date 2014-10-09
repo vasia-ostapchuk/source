@@ -1,6 +1,7 @@
 <div class="singer_page">
     <div class="singer_left_block">
-		<div class="singer_poster">
+        <a href="">		</a>
+            <div class="singer_poster">
                 <?php echo CHtml::image('../../../images/2poster.jpg','назва',
 array(
 'class'=>'poster_singer',
