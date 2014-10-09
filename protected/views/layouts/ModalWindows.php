@@ -98,7 +98,17 @@ echo '<br>'; echo CHtml::ajaxlink('event',
                     array('dataType'=>'json',
                             'type' => 'post',
                             'success'=>"function(data) {
-                                $('#event').dialog('open'); return false;
+                                $('#ProfileMenu').dialog('close');
+                                        $('#content').html(data);
+                                    }",
+                        )
+                    );
+echo '<br>'; echo CHtml::ajaxlink('eventUserProgress',
+                    CController::createUrl('/site/eventUserProgress'),   
+                    array('dataType'=>'json',
+                            'type' => 'post',
+                            'success'=>"function(data) {
+                                $('#ProfileMenu').dialog('close');
                                         $('#content').html(data);
                                     }",
                         )
@@ -110,7 +120,7 @@ echo '<br>'; echo CHtml::ajaxlink('event',
 
 <?php
 $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
-    'id'=>'event',
+    'id'=>'eventUserProgress',
     'options'=>array(
         'title'=>'Dialog box',
         'autoOpen'=>false,
