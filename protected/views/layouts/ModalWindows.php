@@ -118,8 +118,10 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
     'htmlOptions'=>array('class'=>'user-progress')
 )); ?>
     <div class="event-link">
-        <li><?php echo CHtml::link('Підписані', array('controller/action')); ?></li>
-        <li><?php echo CHtml::link('Друзі', array('controller/action')); ?></li>
+        <ul>
+            <li><?php echo CHtml::link('Підписані', array('controller/action')); ?></li>
+            <li><?php echo CHtml::link('Друзі', array('controller/action')); ?></li>
+        </ul>
     </div>
     <div class="eventsUsers">
         <div class="checkbox">
