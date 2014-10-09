@@ -38,13 +38,36 @@ class AdminController extends CController{
 	}
         
         $view = Yii::app()->request->getPost('view');
-        if($view == 'index'){
-            //$this->redirect(array('admin/index'));  
-            $ajaxContent=$this->renderPartial('perssimision',array(),true);
+        if($view == 'index'){ // переше завантаження сторінки адміністрування
+            
+            // завантаження прав зазамовчуванням тому підтягуємо дані із таблиці permission
+            $obj = new Permission;
+            $data = $obj->selectAll();
+            $ajaxContent=$this->renderPartial('permission',array('data'=>$data),true);
             echo CJSON::encode($this->renderPartial($view,array('ajaxContent'=>$ajaxContent),true,true));
             Yii::app()->end();
+            
         }elseif(!empty($view)){
-            echo CJSON::encode($this->renderPartial($view,array(),true,true));
+            $data = array();
+            switch ($view){
+                case 'permission':
+                    $obj = new Permission;
+                    $action = Yii::app()->request->getPost('action');
+                    if(!empty($action) && $action == 'delete-permission'){                        
+                        $obj->deleteById(Yii::app()->request->getPost('id'));
+                    } elseif(!empty($action) && $action == 'add-permission'){
+                        //error_log('request: '.print_r(Yii::app()->request->getPost('AddPermissionForm'),true));
+                        $postData = Yii::app()->request->getPost('AddPermissionForm');
+                        $obj->module = $postData['module'];
+                        $obj->action = $postData['action'];
+                        $obj->alias = $postData['alias'];
+                        $obj->add();
+                    }
+                    $obj = new Permission;
+                    $data = $obj->selectAll();
+                    break;
+            }
+            echo CJSON::encode($this->renderPartial($view,array('data'=>$data),true,true));
             Yii::app()->end();
         } else {
             echo CJSON::encode(array('text'=>'hi','val'=>1));

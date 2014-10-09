@@ -17,7 +17,7 @@
                 CController::createUrl('/admin/ajax'),   
                     array('dataType'=>'json',
                             'type' => 'post',
-                            'data' => array ('view'=>'role_perssimision'),
+                            'data' => array ('view'=>'role_permission'),
                             'success'=>"function(data) {
                                         $('#content-admin').html(data);
                                     }",
