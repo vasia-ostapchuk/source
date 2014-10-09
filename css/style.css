@@ -721,7 +721,7 @@ div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizabl
 }
 //---------------------
 .event-link{
-    width: 998px;
+    width: 270px;
     border: 1px #000 solid;
     line-height: 40px;
 }
@@ -730,18 +730,19 @@ div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizabl
 }
 .event-link li{
     width: 48%;
+    height: 40px;
     display: inline-block;
     text-align: center;
 }
 .event-link li:first-child{
     border-right: 1px #000 solid;
-    padding-right: 19px;
+    padding-right: 4px;
 }
 .eventsUsers{
     border: 1px #000 solid;
 }
 .eventsUsers .checkbox{
-    width: 998px;
+    width: 268px;
     line-height: 40px;
     border-top: 1px #000 solid;
     margin-top: 40px;
@@ -763,4 +764,7 @@ div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizabl
     line-height: 54px;
     width:90%;
     text-align:  center;
+}
+#event{
+    width: 400px;
 }
