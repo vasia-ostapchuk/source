@@ -12,7 +12,6 @@ class TranslateAction extends CAction {
             if($exist) {
                 $compare = $model->findByAttributes(array('translate'=>$row));
                 if ($compare) {
-                    error_log('error_compare_1');
                     echo CJSON::encode(array( //співпадіння стрічок
                     'status'=>'error',
                     ));
@@ -46,17 +45,14 @@ class TranslateAction extends CAction {
             if ($exist) {
                 $compare = $object->findByAttributes(array($subject=>$row));
                 if ($compare) {
-                    error_log('error_compare');
                     echo CJSON::encode(array( //співпадіння стрічок
                     'status'=>'error',
                     ));
                     Yii::app()->end();
                 }
-                error_log('norm');
                 $object = $exist;
             }
             else {
-                error_log('error_new');
                 echo CJSON::encode(array( //стрічка не може бути новою
                 'status'=>'error',
                 ));
