@@ -174,37 +174,46 @@
             if(e.keyCode == 13) {
                 var full_id = $(e.target).attr("id");
                 var id = full_id;
+                var field = 'translate';
                 if(full_id.search('row') != -1) {
                     id = full_id.substr(4);
+                    field = 'row';
                 }
                 else {
-                    id = full_id.substr(10);                            
+                    id = full_id.substr(10);
                 }
-                submitTranslate(id);
+                submitTranslate(id, field);
             }
         });
 
-        function submitTranslate(id){
+        function submitTranslate(id, field){
             var tdata = {
-                table:'<?php echo $table; ?>',
+                table:'<?=$table?>',
                 row: $('#row_'+id).val(),
                 translate: $('#translate_'+id).val(),
                 row_id: id,
                 tr_id: $('#tr_id_'+id).val(),
-                subject: '<?php echo $column; ?>',
-                lan_id: 2
+                subject: '<?=$column?>',
+                lan_id: '<?=$lan_id?>',
             };
-            //console.log(tdata['row']);
-            /*if(tdata['row'] == '') {
-                redBorder('#row_'+id);
-                return;    
+            /*getID() {
+                return id;
             }*/
-            if(tdata['translate'] == '') {
-                redBorder('#translate_'+id);
+            //console.log('<?//=$row['js:getID();']['name']?>');
+            if(tdata[field] == '') {
+                addBorder('#'+field+'_'+id,'red');
                 return;    
             }
-            if($('#translate_'+id).attr('box-shadow') || $('#translate_'+id).attr('webkit-box-shadow') || $('#translate_'+id).attr('moz-box-shadow'))
-                $('#translate_'+id).removeAttr('style');//.removeAttr('webkit-box-shadow').removeAttr('moz-box-shadow');
+            //tdata['translate']
+            /*if(tdata['row'] != ) {
+                tdata.push({
+                    value: "FirstVal",
+                });
+            }
+            else
+                return;*/
+            if($('#'+field+'_'+id).attr('style'))
+                $('#'+field+'_'+id).removeAttr('style');
             $.ajax({
                 url: 'index.php?r=site/translate',
                 dataType: 'json',
@@ -212,13 +221,25 @@
                 type: 'POST',
                 success: function(data){
                     $('#tr_id_'+id).val(data.tr_id);
+                    addBorder('#'+field+'_'+id,'green');
+                },
+                error: function(data){
+                    addBorder('#'+field+'_'+id,'red');
                 }
                 });
         };
-        function redBorder(selector) {
-            $(selector).css('box-shadow','0 0 15px rgba(255, 0, 0, 1)');
-            $(selector).css('-webkit-box-shadow','0 0 15px rgba(255, 0, 0, 1)');
-            $(selector).css('-moz-box-shadow','0 0 15px rgba(255, 0, 0, 1)');
+        function addBorder(selector, color) {
+            switch (color) {
+                case (color = 'red'):
+                    color = '0 0 15px rgba(255, 60, 0, 1)';
+                    break;
+                case (color = 'green'):
+                    color = '0 0 15px rgba(0, 255, 60, 1)';
+                    break;
+            }
+            $(selector).css('box-shadow',color);
+            $(selector).css('-webkit-box-shadow',color);
+            $(selector).css('-moz-box-shadow',color);
         }
     });
 </script>

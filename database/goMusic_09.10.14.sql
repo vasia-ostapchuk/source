@@ -41,8 +41,8 @@ CREATE TABLE IF NOT EXISTS `budget` (
   PRIMARY KEY (`id`),
   KEY `fk_budget_type1` (`type_id`),
   KEY `fk_budget_report1` (`report_id`),
-  CONSTRAINT `fk_budget_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_budget_report1` FOREIGN KEY (`report_id`) REFERENCES `report` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_budget_report1` FOREIGN KEY (`report_id`) REFERENCES `report` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_budget_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -67,13 +67,13 @@ CREATE TABLE IF NOT EXISTS `event` (
   KEY `fk_event_organizer1` (`organizer_id`),
   KEY `fk_event_process1` (`process_id`),
   KEY `fk_event_location1_idx` (`location_id`),
-  CONSTRAINT `fk_event_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_event_type3` FOREIGN KEY (`state_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_budget1` FOREIGN KEY (`budget_id`) REFERENCES `budget` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_event_location1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_money1` FOREIGN KEY (`money_id`) REFERENCES `money` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_organizer1` FOREIGN KEY (`organizer_id`) REFERENCES `organizer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_event_process1` FOREIGN KEY (`process_id`) REFERENCES `process` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_event_location1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_event_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_event_type3` FOREIGN KEY (`state_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -85,8 +85,8 @@ CREATE TABLE IF NOT EXISTS `event_singer` (
   `singer_id` int(11) NOT NULL,
   PRIMARY KEY (`event_id`,`singer_id`),
   KEY `fk_concert_singer_singer1_idx` (`singer_id`),
-  CONSTRAINT `fk_concert_singer_singer1` FOREIGN KEY (`singer_id`) REFERENCES `singer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_concert_singer_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_concert_singer_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_concert_singer_singer1` FOREIGN KEY (`singer_id`) REFERENCES `singer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -116,8 +116,11 @@ CREATE TABLE IF NOT EXISTS `info_event` (
   `max_price` decimal(2,0) DEFAULT NULL,
   `count` int(11) DEFAULT NULL,
   `free` int(11) DEFAULT NULL,
+  `event_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_info_event_type1` (`type_id`),
+  KEY `fk_info_event_event1` (`event_id`),
+  CONSTRAINT `fk_info_event_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_info_event_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -152,8 +155,8 @@ CREATE TABLE IF NOT EXISTS `login` (
   `type_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_login_type1` (`type_id`),
-  CONSTRAINT `fk_social_login_user1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_login_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_login_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_social_login_user1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -163,9 +166,12 @@ CREATE TABLE IF NOT EXISTS `login` (
 CREATE TABLE IF NOT EXISTS `member` (
   `event_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `type_id` int(11) NOT NULL,
   KEY `fk_member_event1` (`event_id`),
   KEY `fk_member_user1` (`user_id`),
+  KEY `fk_member_type1` (`type_id`),
   CONSTRAINT `fk_member_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_member_type1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_member_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -181,8 +187,8 @@ CREATE TABLE IF NOT EXISTS `money` (
   PRIMARY KEY (`id`),
   KEY `fk_money_user1` (`user_id`),
   KEY `fk_money_type1` (`way_id`),
-  CONSTRAINT `fk_money_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_money_type1` FOREIGN KEY (`way_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_money_type1` FOREIGN KEY (`way_id`) REFERENCES `type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_money_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -215,9 +221,9 @@ CREATE TABLE IF NOT EXISTS `organizer` (
 -- Dumping structure for table gomusic.permission
 CREATE TABLE IF NOT EXISTS `permission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `module` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `action` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -231,6 +237,24 @@ CREATE TABLE IF NOT EXISTS `process` (
   `step` int(11) NOT NULL DEFAULT '1',
   `state` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Data exporting was unselected.
+
+
+-- Dumping structure for table gomusic.repertoire
+CREATE TABLE IF NOT EXISTS `repertoire` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `type_id` int(11) NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `link` text COLLATE utf8_unicode_ci,
+  `singer_id` int(11) NOT NULL,
+  `image_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_repertoire_singer1` (`singer_id`),
+  CONSTRAINT `fk_repertoire_singer1` FOREIGN KEY (`singer_id`) REFERENCES `singer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -298,18 +322,8 @@ CREATE TABLE IF NOT EXISTS `singer_style` (
   `style_id` int(11) NOT NULL,
   PRIMARY KEY (`singer_id`,`style_id`),
   KEY `fk_singer_style_style1_idx` (`style_id`),
-  CONSTRAINT `fk_singer_style_style1` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_singer_style_singer1` FOREIGN KEY (`singer_id`) REFERENCES `singer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- Data exporting was unselected.
-
-
--- Dumping structure for table gomusic.static_text
-CREATE TABLE IF NOT EXISTS `static_text` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  CONSTRAINT `fk_singer_style_singer1` FOREIGN KEY (`singer_id`) REFERENCES `singer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_singer_style_style1` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -342,10 +356,10 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   KEY `fk_bought_ticket_user1` (`user_id`),
   KEY `fk_bought_ticket_operator1` (`operator_id`),
   KEY `fk_ticket_info_event1` (`info_event_id`),
-  CONSTRAINT `fk_bought_ticket_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_bought_ticket_operator1` FOREIGN KEY (`operator_id`) REFERENCES `operator` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ticket_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ticket_info_event1` FOREIGN KEY (`info_event_id`) REFERENCES `info_event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_bought_ticket_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ticket_info_event1` FOREIGN KEY (`info_event_id`) REFERENCES `info_event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ticket_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.
@@ -354,13 +368,14 @@ CREATE TABLE IF NOT EXISTS `ticket` (
 -- Dumping structure for table gomusic.translation
 CREATE TABLE IF NOT EXISTS `translation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `table` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `column` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `object` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `row_id` int(11) NOT NULL,
   `lan_id` int(11) NOT NULL,
   `translate` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `item_UNIQUE` (`table`),
+  UNIQUE KEY `object_subject_row_id_lan_id` (`object`,`subject`,`row_id`,`lan_id`),
   KEY `fk_translation_language1` (`lan_id`),
   CONSTRAINT `fk_translation_language1` FOREIGN KEY (`lan_id`) REFERENCES `language` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -388,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `birthday` datetime DEFAULT NULL,
   `phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `location_id` int(11) DEFAULT '3',
+  `location_id` int(11) DEFAULT NULL,
   `sex_id` int(11) NOT NULL DEFAULT '1',
   `state_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
@@ -412,8 +427,8 @@ CREATE TABLE IF NOT EXISTS `user_role` (
   PRIMARY KEY (`id`),
   KEY `fk_user_role_user1` (`user_id`),
   KEY `fk_user_role_role1` (`role_id`),
-  CONSTRAINT `fk_user_role_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_role_role1` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_user_role_role1` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_role_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Data exporting was unselected.

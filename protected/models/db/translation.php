@@ -7,6 +7,7 @@ class Translation extends CActiveRecord
     public $row_id;
     public $lan_id;
     public $translate;
+    //public $update_time;
 
     public static function model($className = __CLASS__)
     {
@@ -37,6 +38,11 @@ class Translation extends CActiveRecord
         );
     }
     
+    /*public function beforeSave()
+    {
+            //$this->update_time=date('Y-m-d h:m:s', time());
+    }*/
+    
     public function select($table, $column, $lan_id)
     {
         $criteria = new CDbCriteria;
@@ -56,8 +62,8 @@ class Translation extends CActiveRecord
     public function Add()
     {       
             if(!$this->save()){
-                print_r($this->getErrors());} 
-            
+                print_r($this->getErrors());}
+                //print_r($this->update_time);
             return $this->id;
     }
 }

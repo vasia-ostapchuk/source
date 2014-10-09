@@ -36,7 +36,7 @@ class ViewTranslateAction extends CAction {
             $row[$k]['translate'] = isset($translateRow[$k]) ? $translateRow[$k]['translate'] : '';
             $row[$k]['translate_id'] = isset($translateRow[$k]) ? $translateRow[$k]['id'] : '';
         }
-        echo CJSON::encode($this->controller->renderPartial('translationUser',array('row'=>$row,'table'=>$table, 'column'=>$row['subject'][0]),true, true));
+        echo CJSON::encode($this->controller->renderPartial('translationUser',array('row'=>$row,'table'=>$table, 'column'=>$row['subject'][0], 'lan_id'=>$lan_id),true, true));
         Yii::app()->end();
     }
 }
