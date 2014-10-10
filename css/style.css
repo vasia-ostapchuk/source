@@ -245,7 +245,7 @@ form .ui-widget-content {
     text-align: center;
 }
 .event{
-    width: 235px;
+    width: 233px;
     height: 250px;
     margin: 4px;
     background-color:#ffdead;
@@ -744,10 +744,12 @@ div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizabl
 .eventsUsers{
     border: 1px #000 solid;
 }
-.eventsUsers .checkbox{
+.checkbox{
     width: 100%;
     line-height: 40px;
     border-top: 1px #000 solid;
+}
+.eventsUsers .checkbox{
     margin-top: 40px;
 }
 .eventsUsers input#checkbox{
@@ -768,6 +770,62 @@ div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizabl
     width:70%;
     text-align:  center;
 }
-#event{
-    width: 400px;
+aside{
+    width: 250px;
+    float: left;
+    background-color: #FF5050;
+}
+article{
+    width: 748px;
+    border: 1px #000 solid;
+    float:left;
+}
+aside form#FilterForm.form .checkbox input#checkbox{
+    margin-left: 20px; 
+}
+.current-events{
+    border-bottom: 1px #000 solid;
+}
+.current-events .event{
+    height: 120px;
+    margin: 20px 3px;
+}
+.status-event{
+    margin: auto;
+    width: 98%;
+    line-height: 30px;
+    text-align: center;
+    border: 1px #000 solid;
+}
+article .singer_name{
+    width: 200px;
+    border: 1px #000 solid;
+}
+article .singer_name input#Text.name_poster{
+    width: 200px;
+    line-height: 30px;
+    border: none;
+}
+.page-link{
+    float: left;
+    border: 1px #000 solid;
+    width:200px;
+    line-height: 30px;
+    margin: 30px;
+    text-align: center;
+}
+article .singer_left_block{
+    border: 1px #000 solid;
+    width:515px;
+}
+article .singer_left_block .singer_style{
+    margin-top: 0;
+    width: 200px;
+    height: 215px;
+}
+article .bottons{
+    width:190px;
+    height: 340px;
+    float: left;
+    
 }
