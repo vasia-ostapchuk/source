@@ -799,6 +799,7 @@ aside form#FilterForm.form .checkbox input#checkbox{
 }
 article .singer_name{
     width: 200px;
+    margin-left: 20px;
     border: 1px #000 solid;
 }
 article .singer_name input#Text.name_poster{
@@ -811,21 +812,38 @@ article .singer_name input#Text.name_poster{
     border: 1px #000 solid;
     width:200px;
     line-height: 30px;
-    margin: 30px;
+    margin: 20px;
     text-align: center;
 }
 article .singer_left_block{
     border: 1px #000 solid;
-    width:515px;
+    width: 67%;
+    
 }
 article .singer_left_block .singer_style{
-    margin-top: 0;
+    margin: 0 0 0 20px;
     width: 200px;
-    height: 215px;
+    height: 235px;
 }
-article .bottons{
-    width:190px;
+article .singer_left_block .singer_description{
+    width: 462px;
+    height: auto;
+    margin: 10px;
+}
+article .singer_left_block .singer_description textarea.description_singer{
+    width: 460px;
+    height: 160px;
+}
+article .buttons{
+    width: 26%;
     height: 340px;
-    float: left;
-    
+    float: right;
+    border:1px #000 solid;
+    margin: 10px;
+    text-align: center;
+}
+.buttons input#button{
+    width:80%;
+    height: 35px;
+    margin-top: 10px;
 }

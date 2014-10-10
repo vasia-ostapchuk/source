@@ -111,8 +111,61 @@
                 <li>Поп</li>
             </ul>
         </div>
+        <div class="singer_description"> 
+            <form name="myform" action="index.php" method="post">
+
+                <textarea name="mybox" cols="75" rows="5" wrap="hard" class="description_singer">
+                    Групу заснували Віктор Скуратовський, Валерій Харчишин та Олександр Барановський 1995 року. Перші репетиції групи, який отримав назву «Second River», проходили в приміщенні Житомирського педадогічного інституту, де й відбувся їх перший виступ. У 1998 році, під час підготовки до фестивалю «Червона рута—1999» назву було змінено на «Друга Ріка».
+                </textarea>
+        </div>
+        <div class="singer_site"> 
+            <?php echo CHtml::textField('Text', 'Сайт',
+                 array('disabled'=>'disabled','class'=>'site_singer')); ?>
+
+        </div>
     </div>
     <div class="buttons">
+        <?php
+        $form = $this->beginWidget('CActiveForm', array(
+                    'id' => 'ButtonForm',
+                    'enableAjaxValidation'=>true,
+                    'clientOptions' => array(
+                        'validateOnSubmit' => true,
+                        'validateOnChange'=>false,
+                        'validateOnType'=>false,
+                    ),
+                    'htmlOptions'=>array('class'=>'form',),
+                    'action' => array(''), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
+                )
+            );
+        $model= new FilterForm;
         
+        echo CHtml::button('Запит',
+                    array(
+                        'id'=>'button',
+                        'title'=>"",
+                        'onclick'=>""
+                        ));
+        echo '<br>'; echo CHtml::button('Підписати',
+                    array(
+                        'id'=>'button',
+                        'title'=>"",
+                        'onclick'=>""
+                        ));
+        echo '<br>'; echo CHtml::button('Розказати',
+                    array(
+                        'id'=>'button',
+                        'title'=>"",
+                        'onclick'=>""
+                        ));
+        echo '<br>'; echo CHtml::button('Інвестувати',
+                    array(
+                        'id'=>'button',
+                        'title'=>"",
+                        'onclick'=>""
+                        ));
+        
+        
+        $this->endWidget(); ?>
     </div>
 </article>
