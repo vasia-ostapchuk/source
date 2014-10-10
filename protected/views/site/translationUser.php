@@ -205,15 +205,15 @@
 
         function submitTranslate(id, field){
             var tdata = {
-                table:'<?=$table?>',
-                column: '<?=$column?>',
+                table:'<?php echo $table; ?>',
+                column: '<?php echo $column; ?>',
                 row: $('#row_'+id).val(), 
                 row_id: id
             };
             if(field == 'translate') {
                 tdata['translate'] = $('#translate_'+id).val(),
                 tdata['tr_id'] = $('#tr_id_'+id).val(),
-                tdata['lan_id'] = '<?=$lan_id?>'
+                tdata['lan_id'] = '<?php echo $lan_id; ?>'
             }
             if(!tdata[field]) {
                 addBorder('#'+field+'_'+id,'red');
