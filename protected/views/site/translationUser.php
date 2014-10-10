@@ -173,7 +173,8 @@
 <script>  
     $(document).ready(function(){
 
-        $('.field').on('keypress', function(e) {
+        /*$('.field').on('keypress', function(e) {
+            //alert('0');
             if(e.keyCode == 13) {
                 var full_id = $(e.target).attr("id");
                 var id = full_id;
@@ -187,6 +188,19 @@
                 }
                 submitTranslate(id, field);
             }
+        });*/
+        $( ".field input:text" ).change(function(e) {
+            var full_id = $(e.target).attr("id");
+            var id = full_id;
+            var field = 'translate';
+            if(full_id.search('row') != -1) {
+                id = full_id.substr(4);
+                field = 'row';
+            }
+            else {
+                id = full_id.substr(10);
+            }
+            submitTranslate(id, field);
         });
 
         function submitTranslate(id, field){
@@ -206,6 +220,7 @@
                 return;
             }
             if(tdata[field] == $('#'+field+'_copy_'+id).val()) {
+                alert('2');
                 addBorder('#'+field+'_'+id,'red');
                 return; 
             }
