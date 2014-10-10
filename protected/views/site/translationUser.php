@@ -220,7 +220,6 @@
                 return;
             }
             if(tdata[field] == $('#'+field+'_copy_'+id).val()) {
-                alert('2');
                 addBorder('#'+field+'_'+id,'red');
                 return; 
             }
