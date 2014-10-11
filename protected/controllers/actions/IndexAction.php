@@ -35,7 +35,7 @@
         $data['genre']=$style->selectGenre(Filter::getStyleId());
         if(!Filter::getGenreId())
             Filter::setGenreId(current(array_keys($data['genre'])));
-        
+        $data['model']= new  FilterForm;
         $this->controller->render('index', $data);
         //$this->controller->render('translationUser', array('row'=>0));
     }

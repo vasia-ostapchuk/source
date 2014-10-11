@@ -134,6 +134,7 @@
             //$responce['adata']=  $this->
             //error_log(print_r($this->getViewFile('poster'),true));
             //error_log(print_r($this->getViewPath(),true));
+            $responce['model']= new FilterForm;
             $responce['ajaxData']=$this->renderPartial('poster',array('parameters'=>$event),true);
             echo CJSON::encode($responce);
         }

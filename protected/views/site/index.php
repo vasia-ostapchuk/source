@@ -33,7 +33,6 @@
                     'action' => array(''), // когда форма показывается и в других контроллерах, не только 'site', то я в каждый из этих контроллеров вставил actionQuick, a здесь указал — array('quick'); почему-то не получается с array('//site/quick')
                 )
             );
-        $model= new FilterForm;
     ?>
     <div class="filters-label">
         Фільтри:

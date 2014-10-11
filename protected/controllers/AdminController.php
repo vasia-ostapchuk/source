@@ -63,6 +63,8 @@ class AdminController extends CController{
                         $obj->alias = $postData['alias'];
                         $obj->add();
                     }
+                    $role = new Role;
+                    $one = $role->selectAll();
                     $obj = new Permission;
                     $data = $obj->selectAll();
                     break;
