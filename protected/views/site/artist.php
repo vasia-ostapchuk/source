@@ -1,16 +1,18 @@
+
 <div class="singer_page">
+  
     <div class="singer_left_block">
         <a href="">		</a>
             <div class="singer_poster">
                 <?php echo CHtml::image('../../../images/2poster.jpg','назва',
 array(
-'class'=>'poster_singer',
+'class'=>'poster_singer','onclick'=>"", 'title'=>"Постер Друга ріка"
 )); ?>           
                 </div>
     <div class="singer_name">  
 
-   <?php echo CHtml::textField('Text', 'Друга ріка',
-    array('disabled'=>'disabled','class'=>'name_poster')); ?>
+   <?php echo CHtml::TextField('Text', 'Друга ріка',
+    array('disabled'=>'disabled','class'=>'name_poster','class'=>'singer_name')); ?>
 
   </div>
 		<div class="singer_style"> 
@@ -30,10 +32,11 @@ array(
 </textarea>
                 </div>
 		<div class="singer_site"> 
-                <?php echo CHtml::textField('Text', 'Сайт',
+                <?php echo CHtml::TextField('Text', 'Сайт',
     array('disabled'=>'disabled','class'=>'site_singer')); ?>
 
                 </div>
+         
     </div>
 		<div class="singer_right_block">   
                     <div class="singer_video">  <a href=" " >video</a> </div>
