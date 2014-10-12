@@ -1,35 +1,44 @@
 <div id="role-perssimision-list">
-    <?php for($i=0;$i<10;$i++) { ?>
-    <div class="role-perssimision-check">
-        <!--<input id="check<?//php echo $i; ?>" type="checkbox" value="<?//php echo ($i+1); ?>" onchange="">-->
-        <?php echo CHtml::checkBox('recommenderType_'.$i, true, array(
-                'ajax' => array(
-                        'type'=>'POST', //request type
-                        'url'=>  CController::createUrl('admin/ajax'),
-                        'dataType'=>'json',
-                        'data' => array('view'=>''),
-                        'success' =>"function(jdata){
-                                /*var data = jQuery.parseJSON(jdata);*/
-                                /*alert(jdata.text);*/
-                                if($(this).is('checked')) 
-                                    $(this).removeAttr('checked');
-                                else 
-                                    $(this).attr('checked','checked');
-                                jQuery(this).prop('checked', true);
-                                return false;
-                        }",
-                        'error'=>'function (xhr, ajaxOptions, thrownError){
-                                alert(xhr.statusText);
-                                alert(thrownError);}',
-                ),
-                'onchange' => "alert(1);",
-                'prompt' => Yii::t('app','- select -'),
-                'id' => 'check'.$i,
-            )); 
+    <?php if(isset($data)) ?>
+        <?php /* */ 
+            foreach ($data as $value){ ?>
+            <div class="role-perssimision-check">
+            <?php 
+                echo CHtml::checkBox('premission'.$value['premId'], $value['check'], array(
+                    'ajax' => array(
+                            'type'=>'POST', //request type
+                            'url'=>  CController::createUrl('admin/ajax'),
+                            'dataType'=>'json',
+                            'data' => array(
+                                'view'=>'role_permission',
+                                'action'=>'change-role',
+                                'id'=>$value['id'],
+                                'permissionId'=>$value['premId'],
+                                'change'=>'js:function(e){ if($("#check'.$value['premId'].'").is(":checked")) return 1; else return 2;}',
+                            ),
+                            'before' => 'alert(1);',
+                            'success' =>'function(jdata){
+                                    /*var data = jQuery.parseJSON(jdata);*/
+                                    /*alert(jdata.text);*/
+                                    if($("#check'.$value['premId'].'").is(":checked"))
+                                        $("#check'.$value['premId'].'").attr("checked", false);
+                                    else
+                                        $("#check'.$value['premId'].'").attr("checked", true);
+                                    return false;
+                            }',
+                            'error'=>'function (xhr, ajaxOptions, thrownError){
+                                    alert(xhr.statusText);
+                                    alert(thrownError);}',
+                    ),
+                    //'onchange' => 'alert(1); return false;",
+                    'prompt' => Yii::t('app','- select -'),
+                    'id' => 'check'.$value['premId'],
+                )); 
+        
         ?>
-        <label for="check<?php echo $i; ?>">Perssimision <?php echo $i; ?></label>
-    </div>
-    <?php } ?>
+        <label for="check<?php echo $value['premId']; ?>"><?php echo $value['alias']; ?></label>
+        </div>
+        <?php } ?>
     
     <div class="pagination-link">  
         <ul>

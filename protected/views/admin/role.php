@@ -1,14 +1,17 @@
 <div id="content-role">    
     <div id="add-role">
-            <button>Add</button>
+            <button onclick="$('#addRoleModalForm').dialog('open');">Add</button>
     </div>
     <div id="role">
-        <?php for($i=0;$i<7;$i++) { ?>
+        <?php if(isset($data)) ?>
+        <?php foreach ($data as $roleId => $value) { ?>
         <form class="role-form">
-            <input type="text" value="alias">
-            <input type="text" value="module">
+            <input type="text" value="<?php echo $value['alias']; ?>">
+            <input type="text" value="<?php echo $value['module']; ?>">
             <select id="perssimisions-list">
-                <option value="0">None</option>
+                <?php if(!empty($value['permissions'])) foreach ($value['permissions'] as $key => $val){ ?>
+                    <option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+                <?php } ?>
             </select>
             <div class="invisible">&nbsp;</div>
            <!-- <input class="button-perm" type="submit" value="Perm">
@@ -17,18 +20,33 @@
                 CController::createUrl('/admin/ajax'),   
                     array('dataType'=>'json',
                             'type' => 'post',
-                            'data' => array ('view'=>'role_permission'),
+                            'data' => array ('view'=>'role_permission','id'=>$roleId),
                             'success'=>"function(data) {
                                         $('#content-admin').html(data);
                                     }",
                         ),
                     array( 'style'=>'height: 35px; width:50px; margin: 0;',
-                        'id'=>'role_perssimision-bnt'.$i,
+                        'id'=>'role_perssimision-bnt'.$value['id'],
                         //'live' => false
                          )
                 ); 
             ?>
-            <input class="button-del" type="submit" value="Del">
+            
+            <?php echo CHtml::ajaxButton('Del',
+                CController::createUrl('/admin/ajax'),   
+                    array('dataType'=>'json',
+                            'type' => 'post',
+                            'data' => array ('view'=>'role','action'=>'delete-role','id'=>$roleId),
+                            'success'=>"function(data) {
+                                        $('#content-admin').html(data);
+                                    }",
+                        ),
+                    array( 'style'=>'height: 35px; width:30px; margin: 0;',
+                        'id'=>'role_delete-bnt'.$value['id'],
+                        //'live' => false
+                         )
+                ); 
+            ?>
         </form>
         <?php } ?>
     </div>
