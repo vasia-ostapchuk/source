@@ -4,15 +4,17 @@
     <div class="singer_left_block">
         <a href="">		</a>
             <div class="singer_poster">
+               
                 <?php echo CHtml::image('../../../images/2poster.jpg','назва',
 array(
-'class'=>'poster_singer','onclick'=>"", 'title'=>"Постер Друга ріка"
-)); ?>           
+'class'=>'poster_singer','onclick'=>"", 'title'=>"Постер Друга ріка" 
+                        )); ?>         
+                
                 </div>
     <div class="singer_name">  
 
    <?php echo CHtml::TextField('Text', 'Друга ріка',
-    array('disabled'=>'disabled','class'=>'name_poster','class'=>'singer_name')); ?>
+    array('class'=>'name_poster','class'=>'singer_name')); ?>
 
   </div>
 		<div class="singer_style"> 
@@ -27,7 +29,7 @@ array(
 		<div class="singer_description"> 
                     <form name="myform" action="index.php" method="post">
 
-                        <textarea name="mybox" cols="75" rows="5" wrap="hard" class="description_singer">
+                        <textarea name="mybox"  class="description_singer">
 Групу заснували Віктор Скуратовський, Валерій Харчишин та Олександр Барановський 1995 року. Перші репетиції групи, який отримав назву «Second River», проходили в приміщенні Житомирського педадогічного інституту, де й відбувся їх перший виступ. У 1998 році, під час підготовки до фестивалю «Червона рута—1999» назву було змінено на «Друга Ріка».
 </textarea>
                 </div>

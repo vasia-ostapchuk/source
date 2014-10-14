@@ -372,16 +372,27 @@ div.search-form
         line-height: 2.5em;
    
 	}
-        .singer_poster :hover{
-            color: red;
-            border: 5px solid #8a1f11;
-        }
+      
         .name_poster{
             width: 398px;
             height: 28px;
             background-color: azure;
             text-align: center;
         }
+             .link_test
+        {
+          position:relative;
+            }
+        
+        .title
+        {
+          display:none; height:100px; width:200px; background:#fffed2; border:1px solid #838231; padding:5px; position:absolute;
+          margin-left:120px; top:5px; z-index:100;
+            }
+        .index1
+        {
+          position:absolute; height:5px; width:10px; background:red; left:-5px;
+            }
 	.singer_name{
 	float:left;
 	margin-left:14px;
@@ -391,10 +402,7 @@ div.search-form
         text-align: center;
         line-height: 2.5em;
 	}
-        .singer_name :hover{
- 
-         border: 5px solid #8a1f11;   
-        }
+        
 	.singer_style{
 	float:left;
 	margin-left: 30px;
@@ -404,9 +412,7 @@ div.search-form
 	 border: 1px solid #264409;
         line-height: 2.5em;
 	}
-        .singer_style:hover{
-            border: 3px solid #8a1f11;
-        }
+        
         .singer_style ul{
             list-style-type: square;
             float: left;
@@ -427,9 +433,7 @@ div.search-form
          text-align: center;
         line-height: 2.5em;
         }
-        .singer_description:hover{
-            border: 5px solid #8a1f11;
-        }
+        
         .description_singer{
             width: 670px;
             height: 238px;
@@ -448,9 +452,7 @@ div.search-form
          text-align: center;
         line-height: 2.5em;
         }
-        .singer_site:hover{
-            border: 5px solid #8a1f11; 
-        }
+        
         .site_singer{
             float:left;
 	width:238px;
@@ -471,8 +473,9 @@ div.search-form
          text-align: center;
         line-height: 2.5em;
         }
-        .singer_right_block:hover{
-            border: 3px solid #8a1f11;
+        
+        textarea {
+        resize: none;;
         }
 	.singer_video{
 	width:250px;
