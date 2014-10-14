@@ -9,10 +9,12 @@
     $(".link_test").mouseout
     (function(){
     $("#title_for_first_link").fadeOut();
+    });
+   
 
     });
-    });
 </script>
+
 
 <div class="singer_page">
   
@@ -25,43 +27,45 @@
                     'class'=>'link_test poster_singer', 'title'=>"Постер Друга ріка" 
                         )); ?>         
                 
-                </div>
+             </div>
     <div class="singer_name">  
-    <div id="title_for_first_link" class="title1">
-        <div class="index1">
+            <div id="title_for_first_link" class="title1">
+                    <div class="index1">
             
             <a href=""><img  src="../../../images/arrow.jpg"style="max-width: 15px;margin-right: 10px"/>Завантажити нове фото </a>
-        </div>
+                            </div>
             
-    </div>
-   <?php echo CHtml::TextField('Text', 'Друга ріка',
-    array('class'=>'name_poster','class'=>'singer_name')); ?>
+                                    </div>
+                <?php echo CHtml::TextField('Text', 'Друга ріка',
+                     array('class'=>'name_poster','class'=>'singer_name')); ?>
 
-  </div>
-		<div class="singer_style"> 
+    </div>
+    
+            <div class="singer_style"> 
                     <p><span class="style_singer">Стилі</span></p>
-                    <ul>
+            <ul>
                         <li>Джаз</li>
                         <li>Блюз</li>
                         <li>Реп</li>
                         <li>Поп</li>
-                    </ul>
-                </div>
-		<div class="singer_description"> 
-                    <form name="myform" action="index.php" method="post">
+            </ul>
+                    </div>
+    <div class="singer_description"> 
+        <form name="myform" action="index.php" method="post">
 
-                        <textarea name="mybox"  class="description_singer">
+            <textarea name="mybox"  class="description_singer">
 Групу заснували Віктор Скуратовський, Валерій Харчишин та Олександр Барановський 1995 року. Перші репетиції групи, який отримав назву «Second River», проходили в приміщенні Житомирського педадогічного інституту, де й відбувся їх перший виступ. У 1998 році, під час підготовки до фестивалю «Червона рута—1999» назву було змінено на «Друга Ріка».
-</textarea>
-                </div>
-		<div class="singer_site"> 
-                <?php echo CHtml::TextField('Text', 'Сайт',
-    array('disabled'=>'disabled','class'=>'site_singer')); ?>
-
-                </div>
-         
+            </textarea>
     </div>
-		<div class="singer_right_block">   
+   
+        <div class="singer_site"> 
+                <?php echo CHtml::TextField('Text', 'Сайт',
+                    array('disabled'=>'disabled','class'=>'site_singer')); ?>
+
+                             </div>
+         
+                                       </div>
+    <div class="singer_right_block">   
                     <div class="singer_video">  <a href=" " >video</a> </div>
 			<div class="q1">  <iframe width="245" height="160" src="//www.youtube.com/embed/1-HHNZYIGI0" frameborder="0" allowfullscreen></iframe> </div>
 			<div class="q2">  <iframe width="245" height="160" src="//www.youtube.com/embed/1-HHNZYIGI0" frameborder="0" allowfullscreen></iframe>  </div>
@@ -72,5 +76,6 @@
                         <div class="singer_song1">  <img src="../../../images/music.png" style="max-width: 12px;"/> Вже не сам  </div>
 			<div class="singer_song2"> <img src="../../../images/music.png" style="max-width: 12px;"/> Вже не сам    </div>
 			<div class="singer_song3"> <img src="../../../images/music.png" style="max-width: 12px;"/> Вже не сам  </div>
-			</div>
-	</div>
+    </div>
+	
+</div>
