@@ -372,27 +372,43 @@ div.search-form
         line-height: 2.5em;
    
 	}
-      
+         .title1
+        {
+          display:none; 
+          height:55px; 
+          width:228px; 
+          background:#fffed2; 
+          border:1px solid #838231; 
+          padding:5px; 
+          position:absolute;
+          margin-left: -255px;
+          margin-top: 53px;
+          top:398px; 
+          
+            }
+        .index1
+        {
+          position:absolute;
+          height:5px;
+          width:228px; 
+          background:appworkspace; 
+          left:2px;
+          text-align: center;
+          line-height: 3em;
+          
+            }
+        .index1 a{
+            text-decoration: none;
+            
+            }
         .name_poster{
             width: 398px;
             height: 28px;
             background-color: azure;
             text-align: center;
+            line-height: 2.5em;
         }
-             .link_test
-        {
-          position:relative;
-            }
-        
-        .title
-        {
-          display:none; height:100px; width:200px; background:#fffed2; border:1px solid #838231; padding:5px; position:absolute;
-          margin-left:120px; top:5px; z-index:100;
-            }
-        .index1
-        {
-          position:absolute; height:5px; width:10px; background:red; left:-5px;
-            }
+         
 	.singer_name{
 	float:left;
 	margin-left:14px;
