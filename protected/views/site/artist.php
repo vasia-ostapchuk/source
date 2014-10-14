@@ -39,7 +39,7 @@
             }
         .index
         {
-          position:absolute; height:5px; width:10px; background:red; left:-5px;
+          position:absolute; height:20px; width:30px; background:red; left:-5px;
             }
     </style>
 <div class="singer_page">
