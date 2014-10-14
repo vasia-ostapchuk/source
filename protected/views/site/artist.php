@@ -11,11 +11,10 @@ array(
                         )); ?>         
                 
                 </div>
-        
     <div class="singer_name">  
 
-            <?php echo CHtml::TextField('Text', 'Друга ріка',
-                        array('class'=>'name_poster','class'=>'singer_name')); ?>
+   <?php echo CHtml::TextField('Text', 'Друга ріка',
+    array('class'=>'name_poster','class'=>'singer_name')); ?>
 
   </div>
 		<div class="singer_style"> 
