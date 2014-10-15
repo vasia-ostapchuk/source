@@ -20,19 +20,19 @@ class SiteController extends CController
                 'administration'=>'application.controllers.actions.AdministrationAction',
                 'viewtranslate'=>'application.controllers.actions.ViewTranslateAction',
                 'translate'=>'application.controllers.actions.TranslateAction',
+                'artist'=>'application.controllers.actions.ArtistAction',
             );
 	}
         
     public function actionAdministration()
-    {
-            //$this->layout ='//layouts/chapters/Administration';  
+    { 
         echo CJSON::encode($this->renderPartial('administration',array(),true));
         Yii::app()->end();
     }
     public function actionArtist()
     {
-            //$this->layout ='//layouts/chapters/Administration';  
-        echo CJSON::encode($this->renderPartial('artist',array(),true));
+        $model = new Singer;
+        echo CJSON::encode($this->renderPartial('artist',array('model'=>$model),true));
         Yii::app()->end();
     }
     public function actionEvent()

@@ -267,147 +267,145 @@ div.search-form
 	background: #80CFFF;
 }
 
-.button { 
-       position:relative;
-    left: 318px;
-    
-    padding: 12px 20px;
-    background: #474665;
-    font-size: 14px;
-    font-weight: bold;
-    color: #CBC9C9;
-    text-align: center;
-    cursor: pointer;
-    border: #2054F0;
-    border-radius: 7px;
-    font-family: Tahoma,Arial,sans-serif;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    background: 
-    -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
-    background: 
-    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+.button 
+{ 
+        position:relative;
+        left: 318px;
+        padding: 12px 20px;
+        background: #474665;
+        font-size: 14px;
+        font-weight: bold;
+        color: #CBC9C9;
+        text-align: center;
+        cursor: pointer;
+        border: #2054F0;
+        border-radius: 7px;
+        font-family: Tahoma,Arial,sans-serif;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        background: 
+        -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
+        background: 
+        -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+}
 
-    }
-    #logout{
+#logout
+{
         position:relative;
-    left: 430px;
-   top:2px;
-    padding: 12px 20px;
-    background: #474665;
-    font-size: 14px;
-    font-weight: bold;
-    color: #CBC9C9;
-    text-align: center;
-    cursor: pointer;
-    border: #2054F0;
-    border-radius: 7px;
-    font-family: Tahoma,Arial,sans-serif;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    background: 
-    -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
-    background: 
-    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
-    
-   
-    }
-    #logout{
+        left: 430px;
+        top:2px;
+        padding: 12px 20px;
+        background: #474665;
+        font-size: 14px;
+        font-weight: bold;
+        color: #CBC9C9;
+        text-align: center;
+        cursor: pointer;
+        border: #2054F0;
+        border-radius: 7px;
+        font-family: Tahoma,Arial,sans-serif;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        background: 
+        -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
+        background: 
+        -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+}
+
+#logout
+{
         text-decoration: none;
-    }
-    #profile_button{
+}
+
+#profile_button
+{
         position:relative;
-    left: 300px;
- 
-    padding: 12px 20px;
-    background: #474665;
-    font-size: 14px;
-    font-weight: bold;
-    color: #CBC9C9;
-    text-align: center;
-    cursor: pointer;
-    border: #2054F0;
-    border-radius: 7px;
-    font-family: Tahoma,Arial,sans-serif;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    background: 
-    -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
-    background: 
-    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+        left: 300px;
+        padding: 12px 20px;
+        background: #474665;
+        font-size: 14px;
+        font-weight: bold;
+        color: #CBC9C9;
+        text-align: center;
+        cursor: pointer;
+        border: #2054F0;
+        border-radius: 7px;
+        font-family: Tahoma,Arial,sans-serif;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        background: 
+        -moz-linear-gradient(0% 100% 90deg, #474665, #696892);
+        background: 
+        -webkit-gradient(linear, 0% 0%, 0% 100%, from(#696892E), to(#474665));
+}
         
-    }
-    #reg_button{
+#reg_button
+{
         top: 5px;
-    }
-    #login_button{
+}
+
+#login_button
+{
         top:5px;
-    }
-    .singer_page{
-    width:998px;    
-    display:block;
-    border: 1px solid #264409;
-    text-align: center;
-    line-height: 2.5em;
-    }
-    .singer_left_block{
-    float: left;
-    width: 500px;
-    width: 695px;
-    margin: 10px;          
-    }
-        
-    .singer_poster{
-     width:240px;
-     height: 339px;
-     margin-left:10px;
-     margin-top: 10px;
-     float: left;
-     border: 1px solid #264409;
-         text-align: center;
+}
+
+.singer_page
+{
+        width:998px;    
+        display:block;
+        border: 1px solid #264409;
+        text-align: center;
         line-height: 2.5em;
-	}
-        .poster_singer{
+}
+
+.singer_left_block
+{
+        float: left;
+        width: 500px;
+        width: 695px;
+        margin: 10px;  
+}
+
+.singer_poster
+{
+        width:240px;
+        height: 339px;
+        margin-left:10px;
+        margin-top: 10px;
+        float: left;
+        border: 1px solid #264409;
+        text-align: center;
+        line-height: 2.5em;
+}
+
+.singer_poster_image
+{
          max-width: 240px; 
-        }
-         .title1
-        {
-          display:none; 
-          height:55px; 
-          width:228px; 
-          background:#fffed2; 
-          border:1px solid #838231; 
-          padding:5px; 
-          position:absolute;
-          margin-left: -255px;
-          margin-top: 53px;
-          top:398px; 
-          
-            }
-        .index1
-        {
-          position:absolute;
-          height:5px;
-          width:228px; 
-          background:appworkspace; 
-          left:2px;
-          text-align: center;
-          line-height: 3em;
-          
-            }
-        .index1 a{
-        text-decoration: none;
-            
-            }
-        .name_poster{
+}
+        
+.singer_poster_upload
+{
+        position:relative;
+        display:none; 
+        height:30px; 
+        width:auto; 
+        background:#fffed2;
+        border:1px solid #838231;
+        bottom: 30px;
+        cursor: pointer;
+}
+       
+.name_poster
+{
         width: 398px;
         height: 28px;
         background-color: azure;
         text-align: center;
         line-height: 2.5em;
-        }
+}
          
-	.singer_name{
+.singer_name
+{
 	float:left;
 	margin-left:14px;
         margin-top: 10px;
@@ -415,182 +413,215 @@ div.search-form
 	height:30px; 
         text-align: center;
         line-height: 2.5em;
-	}
+}
         
-	.singer_style{
+.singer_style
+{
 	float:left;
 	margin-left: 30px;
 	margin-top: 35px;
 	width:400px;
 	height:272px;
-	 border: 1px solid #264409;
+	border: 1px solid #264409;
         line-height: 2.5em;
-	}
+}
         
-        .singer_style ul{
+.singer_style ul
+{
         list-style-type: square;
         float: left;
         padding-left: 20px;
         color: #D7314A;
-        }
-        .style_singer{
+}
+
+.style_singer
+{
         color:red;
         font-size: 200%;
         top:5px;
-        }
-	.singer_description{
-	width:673px;
-	height: 240px;
-	float: left;
-	margin:35px 10px 30px 10px;
-	 border: 1px solid #264409;
-         text-align: center;
+}
+
+.singer_description
+{
+        width:673px;
+        height: 240px;
+        float: left;
+        margin:35px 10px 30px 10px;
+        border: 1px solid #264409;
+        text-align: center;
         line-height: 2.5em;
-        }
-        
-        .description_singer{
+}
+
+.description_singer
+{
         width: 670px;
         height: 238px;
         font-size: 14px;
         font-weight: bold;
         color:#D7314A;
-        }
-        
-	
-	.singer_site{
-	float:left;
-	width:240px;
-	height:30px;
+}
+
+
+.singer_site
+{
+        float:left;
+        width:240px;
+        height:30px;
         margin: 10px 0 20px 10px;
         border: 1px solid #264409;
         text-align: center;
         line-height: 2.5em;
-        }
-        
-        .site_singer{
+}
+
+.site_singer
+{
         float:left;
-	width:238px;
-	height:28px;
-	border: 1px solid #264409;
+        width:238px;
+        height:28px;
+        border: 1px solid #264409;
         text-align: center;
         line-height: 2.5em;
-        }
-	
-	.singer_right_block{
-	width:250px;
-	margin-bottom: 10px;
-	margin-right:10px;
+}
+
+.singer_right_block
+{
+        width:250px;
+        margin-bottom: 10px;
+        margin-right:10px;
         margin-top: 10px;
         padding:5px 8px 5px 8px;
-	float: right;
-	 border: 1px solid #264409;
-         text-align: center;
-        line-height: 2.5em;
-        }
-        
-        textarea {
-        resize: none;;
-        }
-	.singer_video{
-	width:250px;
-	height: 40px;
-	margin-right:10px;
-	margin-bottom:20px;
-	 border: 1px solid #264409;
-         text-align: center;
-         line-height: 2.5em;
-	}
-        .singer_video a{
-            text-decoration: none;
-        }
-	.q1{
-	width:250px;
-	height: 160px;
-	margin-right:10px;
-	margin-bottom:5px;
-       
-	 border: 1px solid #264409;
+        float: right;
+        border: 1px solid #264409;
         text-align: center;
         line-height: 2.5em;
-        }
-	
-	.q2{
-	width:250px;
-	height: 160px;
-	margin-right:10px;
-	 border: 1px solid #264409;
+}
+
+textarea 
+{
+        resize: none;
+}
+
+.singer_video
+{
+        width:250px;
+        height: 40px;
+        margin-right:10px;
+        margin-bottom:20px;
+        border: 1px solid #264409;
         text-align: center;
         line-height: 2.5em;
-        }
-	
-	.singer_album{width:250px;
-	height: 40px;
-	margin-right:20px;
-	margin-bottom:20px;
-	margin-top:15px;
-	 border: 1px solid #264409;
+}
+
+.singer_video a
+{
+        text-decoration: none;
+}
+.q1
+{
+        width:250px;
+        height: 160px;
+        margin-right:10px;
+        margin-bottom:5px;
+
+        border: 1px solid #264409;
         text-align: center;
         line-height: 2.5em;
-        }
-        .singer_album a{
-         text-decoration: none;
-        }
-	.q11{
-	width:250px;
-	height: 168px;
-	margin-right:10px;
-	margin-bottom:5px;
-	 border: 1px solid #264409;
+}
+
+.q2
+{
+        width:250px;
+        height: 160px;
+        margin-right:10px;
+        border: 1px solid #264409;
         text-align: center;
         line-height: 2.5em;
-        }
-	
-	.q22{width:250px;
-	height: 168px;
-	margin-right:10px;
-	margin-bottom:10px;
-	 border: 1px solid #264409;
+}
+
+.singer_album
+{
+        width:250px;
+        height: 40px;
+        margin-right:20px;
+        margin-bottom:20px;
+        margin-top:15px;
+        border: 1px solid #264409;
         text-align: center;
-            line-height: 2.5em;
-        }
-	
-	.singer_repertyar{width:250px;
-	height: 40px;
-	margin-right:10px;
-	margin-bottom:20px;
-	 border: 1px solid #264409;
+        line-height: 2.5em;
+}
+
+.singer_album a
+{
+        text-decoration: none;
+}
+
+.q11
+{
+        width:250px;
+        height: 168px;
+        margin-right:10px;
+        margin-bottom:5px;
+        border: 1px solid #264409;
         text-align: center;
-        line-height: 2.5em;}
-        .singer_repertyar a{
-              text-decoration: none;
-        }
-	.singer_song1{width:250px;
-	height: 40px;
-	margin-right:10px;
-	margin-bottom:5px;
-	 border: 1px solid #264409;
+        line-height: 2.5em;
+}
+
+.q22
+{
+        width:250px;
+        height: 168px;
+        margin-right:10px;
+        margin-bottom:10px;
+        border: 1px solid #264409;
         text-align: center;
-        line-height: 3em;}
-	
-	.singer_song2{width:250px;
-	height: 40px;
-	margin-right:10px;
-	margin-bottom:5px;
-	 border: 1px solid #264409;
+        ine-height: 2.5em;
+}
+
+.singer_repertyar
+{
+        width:250px;
+        height: 40px;
+        margin-right:10px;
+        margin-bottom:20px;
+        border: 1px solid #264409;
+        text-align: center;
+        line-height: 2.5em;
+}
+
+.singer_repertyar a
+{
+        text-decoration: none;
+}
+
+.singer_song1
+{
+        width:250px;
+        height: 40px;
+        margin-right:10px;
+        margin-bottom:5px;
+        border: 1px solid #264409;
         text-align: center;
         line-height: 3em;
-        }
-	
-	.singer_song3{width:250px;
-	height: 40px;
-	margin-right:10px;
-	margin-bottom:5px;
+}
+
+.singer_song2
+{
+        width:250px;
+        height: 40px;
+        margin-right:10px;
+        margin-bottom:5px;
+        border: 1px solid #264409;
         text-align: center;
         line-height: 3em;
-	 border: 1px solid #264409;}
-      
-        
-        
-        
-        
-        
+}
+
+.singer_song3
+{
+        width:250px;
+        height: 40px;
+        margin-right:10px;
+        margin-bottom:5px;
+        text-align: center;
+        line-height: 3em;
+        border: 1px solid #264409;
+}

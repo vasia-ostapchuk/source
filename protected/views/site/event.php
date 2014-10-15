@@ -92,7 +92,7 @@
         <div class="singer_poster">
             <?php echo CHtml::image('../../../images/2poster.jpg','назва',
                 array(
-                'class'=>'poster_singer',
+                'class'=>'singer_poster_image',
             )); ?>           
         </div>
         <div class="singer_name">  

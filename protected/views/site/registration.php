@@ -63,25 +63,25 @@
 <?php
     echo CHtml::ajaxSubmitButton ("Реєстрація",
                 array('/site/signup'),
-                            array(
-                                'dataType'=>'json',
-                                'type' => 'post',
-                                'update' => '#RegistrationForm',
-                                'success'=>'function(data) {
-                                                if(data.status=="success") {
-                                                    $("#RegistrationForm")[0].reset();
-                                                    $("#loginModalForm").dialog("open");
-                                                    $("#loginModalForm").tabs({"selected":0});
-                                                }
-                                                 else {
-                                                     $.each(data, function(key, val) {
-                                                        $(".errorSummary, .errorMessage").hide();
-                                                        $("#RegistrationForm #"+key+"_em_").text(val);                                                    
-                                                        $("#RegistrationForm #"+key+"_em_").show();
-                                                    });
-                                                }
-                                            }',
-                            )
+                array(
+                    'dataType'=>'json',
+                    'type' => 'post',
+                    'update' => '#RegistrationForm',
+                    'success'=>'function(data) {
+                                    if(data.status=="success") {
+                                        $("#RegistrationForm")[0].reset();
+                                        $("#loginModalForm").dialog("open");
+                                        $("#loginModalForm").tabs({"selected":0});
+                                    }
+                                     else {
+                                         $.each(data, function(key, val) {
+                                            $(".errorSummary, .errorMessage").hide();
+                                            $("#RegistrationForm #"+key+"_em_").text(val);                                                    
+                                            $("#RegistrationForm #"+key+"_em_").show();
+                                        });
+                                    }
+                                }',
+                )
     );
   ?></div>
 
