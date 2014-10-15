@@ -20,7 +20,7 @@ class SiteController extends CController
                 'administration'=>'application.controllers.actions.AdministrationAction',
                 'viewtranslate'=>'application.controllers.actions.ViewTranslateAction',
                 'translate'=>'application.controllers.actions.TranslateAction',
-                'artist'=>'application.controllers.actions.ArtistAction',
+                'artist_edit'=>'application.controllers.actions.ArtistEditAction',
             );
 	}
         

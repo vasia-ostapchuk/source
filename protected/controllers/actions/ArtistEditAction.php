@@ -1,10 +1,12 @@
 <?php
-class TranslateAction extends CAction {
+class ArtistEditAction extends CAction {
     
     public function run()
     {
-        if(Yii::app()->request->getPost('poster')) { //робота з постером
-            $model = new Translation;
+        
+        if(Yii::app()->request->getPost('object') == 'poster') { //робота з постером
+            error_log(Yii::app()->request->getPost('file'));
+            /*$model = new Translation;
             $model->object = Yii::app()->request->getPost('table');
             $row = Yii::app()->request->getPost('translate');
             $subject = Yii::app()->request->getPost('column');
@@ -30,7 +32,11 @@ class TranslateAction extends CAction {
                       'tr_id' =>$lastId
                 ));
                 Yii::app()->end();
-            }
+            }*/
+            echo CJSON::encode(array(
+                      'status'=>Yii::app()->request->getPost('file'),
+                ));
+                Yii::app()->end();
         }
     }
 }

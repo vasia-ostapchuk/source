@@ -14,12 +14,37 @@
         $('.singer_poster_upload').click(function(){ // імітуєм відкриття вибору файлу
             $('#singer_poster_upload_field').trigger('click');
         });
-        
+        $('#singer_poster_upload_field').on('change', function(){
+            var file = this.files[0];
+            console.log(file);
+            /*var tdata = {
+                object:object,
+                file: file,
+            };
+            $.ajax({
+                url: 'index.php?r=site/artist_edit',
+                dataType: 'json',
+                data: tdata,
+                type: 'POST',
+                success: function(data){
+                    if(data.status == 'error') {
+                    }
+                    else {
+                        alert(data.status);
+                    }
+                },
+                error: function(xhr){
+                    alert(xhr.responseText);
+                }
+            });*/
+        });
     });
 </script>
 
 <!-- невидиме поле для загрузки постера -->
-<?php echo CHtml::activeFileField($model, 'image',array('id'=>'singer_poster_upload_field', 'style'=>'display: none;'));  // image file select when clicks on upload photo ?>
+<?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data','style'=>'display: none;')); // image file select when clicks on upload photo  ?>
+<?php echo CHtml::activeFileField($model, 'image',array('id'=>'singer_poster_upload_field'));  ?>
+<?php echo CHtml::endForm(); ?>
 
 <div class="singer_page">
     <div class="singer_left_block">
