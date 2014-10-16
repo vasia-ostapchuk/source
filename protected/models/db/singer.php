@@ -3,6 +3,8 @@
 // модель таблиці БД (singer)
 class Singer extends CActiveRecord{
     
+    public $image;
+    
     public static function model($className=__CLASS__)
     {
         return parent::model($className);
@@ -12,7 +14,13 @@ class Singer extends CActiveRecord{
         return 'singer';
     }
     
-    public function selectSinger(){
+    public function rules(){
+        return array(
+            array('image', 'file', 'types'=>'jpg, gif, png', 'maxSize' => 2560000),
+        );
+    }
+    
+   /* public function selectSinger(){
             $connect=Yii::app()->db;
             $comand=$connect->createCommand('SELECT s2.id as id, s1.name as name FROM style s1, style s2 WHERE s1.id=s2.parent_id AND s2.id='.$id);
             $dataReader=$comand->query();
@@ -42,12 +50,23 @@ class Singer extends CActiveRecord{
             $data[$genreId] = array('name'=>$styleName,'style_id'=>$styleId);
         }
         return $data;
-    }
+    }*/
     
-    public function Add($attributes=false)
+    public function Add($file=false)
     {       
-        if(!$this->save()){
-            print_r($this->getErrors());} 
-        return $this->id;
+        if($file) {
+            $time = microtime();
+            $ext = substr($this->image->name, 1 + strrpos($this->image->name, "."));
+            if($this->image->saveAs(YiiBase::getPathOfAlias('webroot').'/images/singer/'.md5($this->image->name).$time.".".$ext,true)) {
+                $this->image_id = md5($this->image->name).$time.".".$ext;
+            $image_name = $this->image_id;
+            }
+            else print_r('error loading file');
+        }
+        if(!$this->save()) {
+            print_r($this->getErrors());
+        }
+        if($image_name)
+            return $image_name;
     }
 }

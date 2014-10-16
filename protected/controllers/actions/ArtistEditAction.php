@@ -2,41 +2,42 @@
 class ArtistEditAction extends CAction {
     
     public function run()
-    {
-        
+    { 
+                CHtml::$liveEvents = false;
+        if (Yii::app()->request->isAjaxRequest) {
+		Yii::app()->getClientScript()->scriptMap = array(
+			'jquery.js' => false,
+			'jquery.min.js' => false,
+			'jquery-ui.min.js' => false,
+                        'jquery-ui.css' => false,
+			'jquery.ba-bbq.js'=>false,
+			'jquery.yiigridview.js'=>false,
+		);
+	}
         if(Yii::app()->request->getPost('object') == 'poster') { //робота з постером
-            error_log(Yii::app()->request->getPost('file'));
-            /*$model = new Translation;
-            $model->object = Yii::app()->request->getPost('table');
-            $row = Yii::app()->request->getPost('translate');
-            $subject = Yii::app()->request->getPost('column');
-            $exist = $model->findByPk(Yii::app()->request->getPost('tr_id'));
-            if($exist) {
-                $compare = $model->findByAttributes(array('translate'=>$row));
-                if ($compare) {
-                    echo CJSON::encode(array( //співпадіння стрічок
-                    'status'=>'error',
-                    ));
-                    Yii::app()->end();
-                }
-                $model = $exist;
-            }
-            $model->subject= $subject;
-            $model->row_id= Yii::app()->request->getPost('row_id');
-            $model->lan_id= Yii::app()->request->getPost('lan_id');
-            $model->translate= Yii::app()->request->getPost('translate'); 
-            if($lastId = $model->Add())
-            {
-                echo CJSON::encode(array(
-                      'status'=>'success',
-                      'tr_id' =>$lastId
-                ));
-                Yii::app()->end();
-            }*/
+            
+            $model = new Singer;
+            $exist = $model->findByAttributes(array('user_id'=>'4'));
+                if ($exist) {
+                    $model = $exist;
+                } 
+            $model->name='test';
+            $model->user_id='4';
+            $model->image=CUploadedFile::getInstance($model,'image');
+            $image_name = $model->Add(true);
+            //error_log(var_export($model->image,1));
+            //error_log($image_name);
+
+   /* echo CJSON::encode(array( //співпадіння стрічок
+    'status'=>'error',
+    ));
+    Yii::app()->end();*/
             echo CJSON::encode(array(
-                      'status'=>Yii::app()->request->getPost('file'),
-                ));
-                Yii::app()->end();
+                'status'=>CHtml::image('/images/singer/'.$image_name,'назва',
+                    array( 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка")
+                ),
+            ));
+            Yii::app()->end();
         }
     }
 }

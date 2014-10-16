@@ -9,42 +9,55 @@
                 $('.singer_poster_upload').fadeOut();
         });
         $('.singer_poster_upload').mouseout(function(){
-            $(this).fadeOut();
+            if(!$('.singer_poster_image:hover').length)
+                $(this).fadeOut();
         });
         $('.singer_poster_upload').click(function(){ // імітуєм відкриття вибору файлу
             $('#singer_poster_upload_field').trigger('click');
         });
         $('#singer_poster_upload_field').on('change', function(){
-            var file = this.files[0];
-            console.log(file);
-            /*var tdata = {
-                object:object,
-                file: file,
-            };
-            $.ajax({
-                url: 'index.php?r=site/artist_edit',
-                dataType: 'json',
-                data: tdata,
+            /*alert('1');
+            $('#singer_poster_upload_form').trigger('submit');
+        });
+        $('#singer_poster_upload_form').submit(function(e){
+           e.preventDefault();*/
+           if(!$("#singer_poster_upload_field")[0].files[0]) //no file selected
+               return;
+           var fd = new FormData();
+           fd.append('object','poster');
+           fd.append($("#singer_poster_upload_field").attr('name'), $("#singer_poster_upload_field")[0].files[0]);
+           $.ajax({
+                url: '<?php echo Yii::app()->createAbsoluteUrl('site/artist_edit'); ?>',
+                cache: false,
+                data: fd,
+                dataType: "json",
+                processData: false,
+                contentType: false,
                 type: 'POST',
                 success: function(data){
                     if(data.status == 'error') {
                     }
                     else {
-                        alert(data.status);
+                        $('.singer_poster_image').replaceWith(data.status);
                     }
                 },
                 error: function(xhr){
                     alert(xhr.responseText);
                 }
-            });*/
+            });
         });
     });
 </script>
 
 <!-- невидиме поле для загрузки постера -->
-<?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data','style'=>'display: none;')); // image file select when clicks on upload photo  ?>
-<?php echo CHtml::activeFileField($model, 'image',array('id'=>'singer_poster_upload_field'));  ?>
-<?php echo CHtml::endForm(); ?>
+<?php /*$form=$this->beginWidget('CActiveForm', array(
+	'id'=>'singer_poster_upload_form',
+        'enableAjaxValidation'=>false,
+        'htmlOptions'=>array('enctype'=>'multipart/form-data','style'=>'display: none;'),
+));
+
+$this->endWidget(); */?>
+<?php echo CHtml::activeFileField($model, 'image',array('id'=>'singer_poster_upload_field','style'=>'display: none;')); ?>
 
 <div class="singer_page">
     <div class="singer_left_block">
