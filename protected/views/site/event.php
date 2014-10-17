@@ -158,15 +158,30 @@
                         'id'=>'button',
                         'title'=>"",
                         'onclick'=>""
-                        ));
+                        ));?>
+        <div class="userProgress"><?php
+            echo CHtml::label(Yii::t('demo', '555/1500'), 'nombre');?>
+        </div>
+        <?php
+        $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
+            'name'=>'ajaxrequest',
+            // additional javascript options for the autocomplete plugin
+            'options'=>array(
+                'minLength'=>'3',
+            ),
+            'source'=>$this->createUrl("cjuiautocomplete/ajax"),
+            'htmlOptions'=>array('class'=>'price',
+            ),
+        ));
         echo '<br>'; echo CHtml::button('Інвестувати',
                     array(
                         'id'=>'button',
                         'title'=>"",
                         'onclick'=>""
-                        ));
-        
-        
-        $this->endWidget(); ?>
+                        ));?>
+        <div class="userProgress"><?php
+            echo CHtml::label(Yii::t('demo', '777/3000'), 'nombre');?>
+        </div>
+        <?php $this->endWidget(); ?>
     </div>
 </article>

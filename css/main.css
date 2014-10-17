@@ -376,6 +376,7 @@ div.search-form
         border: 1px solid #264409;
         text-align: center;
         line-height: 2.5em;
+        cursor: pointer;
 }
 
 .singer_poster_image

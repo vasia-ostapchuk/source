@@ -78,7 +78,6 @@ CREATE TABLE IF NOT EXISTS `goMusic`.`singer` (
   `name` VARCHAR(255) NOT NULL,
   `description` TEXT NULL,
   `site` VARCHAR(255) NULL,
-  `image_id` INT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_singer_user1` (`user_id` ASC),

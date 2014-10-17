@@ -29,6 +29,7 @@ class UserIdentity extends CUserIdentity
                 $this->errorCode=self::ERROR_USERNAME_INVALID;
                 return !$this->errorCode;
             }
+			$this->_id=User::model()->getId($this->username);
             $users = array($users->email=>$users->password);
             //$this->setState('user_role', User::model()->selectRole($this->_id));
             /*echo "<pre>"; var_dump($users); echo "</pre>";

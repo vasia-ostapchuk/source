@@ -107,4 +107,12 @@ class User extends CActiveRecord
             $userRole->delete();
         }
     }
+	
+	public function getId($username) {
+        $criteria = new CDbCriteria;
+        $criteria->select='id';
+        $criteria->condition='email=:email';
+        $criteria->params=array(':email'=>$username);
+        return User::model()->find($criteria)->id;
+    }
 }
