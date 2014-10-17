@@ -45,8 +45,8 @@ class SiteController extends YiiController
     }
     public function actionArtist()
     {
-        $model = new Singer;
-        echo CJSON::encode($this->renderPartial('artist',array('model'=>$model),true));
+        $model = new Image;
+        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model),true));
         Yii::app()->end();
     }
     public function actionEvent()
