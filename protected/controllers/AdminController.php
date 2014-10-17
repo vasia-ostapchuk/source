@@ -11,9 +11,14 @@
  *
  * @author Mr White
  */
-class AdminController extends CController{
+class AdminController extends YiiController{
     public $layout='//layouts/main';
     
+    public function beforeAction($action) {
+        return parent::beforeAction($action);        
+    }
+
+
     public function actions(){
         return array();
     }

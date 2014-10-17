@@ -11,11 +11,27 @@ class User extends CActiveRecord
         return 'user';
     }
     
+    public function selectRole($id){
+        /*$userRole = UserRole::model()->findAllByAttributes(array('user_id'=>$id));
+        //error_log(print_r($userRole,1));
+        $roleListId = array();
+        foreach ($userRole as $value){
+            $roleListId[] = $value->role_id;
+        }*/
+        //$role = Role::model()->findAllByAttributes(array('id'=>$roleListId));
+        $role = UserRole::model()->with('role')->findAllByAttributes(array('user_id'=>$id));
+        $data = array();
+        foreach ($role as $value){
+            $data[] = $value->role->name;
+        }
+        return $data;
+    }
+    
     public function findUserByUsername($username)
     {
         $criteria = new CDbCriteria;
         //$criteria->select='id,first_name,last_name,birthday,phone,email,password';
-        $criteria->select='email,password';
+        $criteria->select='email,password,id';
         $criteria->condition='email=:email';
         $criteria->params=array(':email'=>$username);
         return User::model()->find($criteria);

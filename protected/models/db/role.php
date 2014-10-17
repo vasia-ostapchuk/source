@@ -22,12 +22,11 @@ class Role extends CActiveRecord{
     {
         return parent::model($className);
     }
-
+    
     public function tableName() 
-        {
+    {
             return 'role';
         }
-    
     // Правила проверки входящих данных
     public function rules()
     {

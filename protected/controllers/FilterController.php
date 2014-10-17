@@ -1,7 +1,12 @@
 <?php
 //Yii::import('application.controllers.extensions.geoip.GeoIP');
-    class FilterController extends CController
+    class FilterController extends YiiController
     {
+        public function beforeAction($action) {
+            parent::beforeAction($action);
+            return true;
+        }
+        
         public  function getViewPath() {
             $newPath = "application.views.site";
             $newPath = Yii::getPathOfAlias($newPath);

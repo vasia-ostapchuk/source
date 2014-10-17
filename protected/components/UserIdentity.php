@@ -9,7 +9,8 @@ class UserIdentity extends CUserIdentity
 {
         // сіль для паролю
         private $hash = '$2a$10$dfda807d832b094184faeu1elwhtR2Xhtuvs3R9J1nfRGBCudCCzC';
-	/**
+        protected $_id;
+        /**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
 	 * are both 'demo'.
@@ -19,21 +20,17 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-            
-            /*$users=array(
-                    // username => password
-                    'demo'=>'demo',
-                    'admin'=>'admin',
-            );*/
-            //$params=User::model()->find
-           // $users = 
             $this->password = $this->hashPassword($this->password);
             $users = User::model()->findUserByUsername($this->username);
+            //$roles = 
+            $this->_id=$users->id;
+            //Yii::app()->session['user_role']=User::model()->selectRole($this->_id);
             if($users == null){
                 $this->errorCode=self::ERROR_USERNAME_INVALID;
                 return !$this->errorCode;
             }
             $users = array($users->email=>$users->password);
+            //$this->setState('user_role', User::model()->selectRole($this->_id));
             /*echo "<pre>"; var_dump($users); echo "</pre>";
             echo "<pre>"; var_dump($this); echo "</pre>";
             Yii::app()->end();*/
@@ -49,5 +46,13 @@ class UserIdentity extends CUserIdentity
         {
             $full_salt = substr($this->hash, 0, 29);
             return crypt($password, $full_salt);
+        }
+        
+        public function getId(){
+            return $this->_id;
+        }
+        
+        public function getRole(){
+            return $this->_role;
         }
 }

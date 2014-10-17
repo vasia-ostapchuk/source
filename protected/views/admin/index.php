@@ -1,7 +1,4 @@
-<head>
-        
-</head>
-<body>
+
     <div class="administration">
         <aside>
             <!--<button>Права</button>
@@ -58,6 +55,5 @@
             <?php echo $ajaxContent; ?>
         </div>
     </div>
-</body>
 
 

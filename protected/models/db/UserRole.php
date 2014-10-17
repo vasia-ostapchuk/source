@@ -21,7 +21,11 @@ class UserRole extends CActiveRecord{
     {
         return parent::model($className);
     }
-
+    public function relations(){
+        return array(
+          'role'=>array(self::BELONGS_TO, "role", "role_id"),
+        );
+      }
     public function tableName() 
         {
             return 'user_role';

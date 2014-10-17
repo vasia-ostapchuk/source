@@ -80,11 +80,13 @@
             ?>
         </div>
         <?php 
-            /*echo "<pre>";
-            var_dump($_SESSION);
-            echo "</pre>";
-            
             echo "<pre>";
+            var_dump($_SESSION);
+            echo 'id='.Yii::app()->user->id;
+            echo "<br/>";
+            //print_r(Yii::app()->user->user_role);
+            echo "</pre>";
+            /*echo "<pre>";
             var_dump($_COOKIE);
             echo "</pre>";
             
