@@ -864,3 +864,156 @@ article .buttons{
 .buttons form#ButtonForm.form .userProgress label{
     line-height: 31px;
 }
+#analitic-content-button{
+
+    width: 91px;
+    height: 40px;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    padding: 2px 6px 3px;
+    border: 2px outset buttonface;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background-color: buttonface;
+    box-sizing: border-box;
+}
+.form-search-analitic {
+    width: 350px; /* Ширина поля с кнопкой */
+}
+.form-search-analitic> input[type="submit"] {
+    vertical-align: middle; /* Выравнивание по середине */
+    width: 30px; /* Ширина кнопки */
+    height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+    background: none;
+    background-image: url(/images/search.png);
+    position: relative;
+    cursor: pointer;
+    margin: -5px 0px 0px -25px;
+    top:-30px;
+ }
+.form-search-analitic> input[type="search"] {
+    border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari*/
+    -moz-box-sizing: border-box;  
+    box-sizing: border-box; 
+    vertical-align: middle; /* Выравнивание по середине */
+    width: 350px;
+    height: 39px;
+    padding: 0px 0px 0px 10px;
+    line-height: 36px;
+    //background: #EEE;  
+    background: linear-gradient(to top, #E5E2E2, #DFDBDB);
+    font-family: Tahoma,sans-serif;
+    font-size: 16px;
+    color:#6E7074;
+    text-shadow: 0 1px 0 #FFF;
+    border-radius: 4px;
+}
+  /* Placeholder
+  -----------------------------------------------------*/
+    .form-search-analitic input::-webkit-input-placeholder {
+       font-family: Tahoma,sans-serif;
+       margin:0px -30px;
+       font-size: 16px;
+       color:#6E7074;
+       font-weight: normal;
+    }
+     
+    .form-search-analitic input:-moz-placeholder {
+        font-family: Tahoma,sans-serif;
+        margin:0px -30px;
+        font-size: 16px;
+        color:#6E7074;
+        font-weight: normal;
+    }
+     
+    .form-search-analitic input:-ms-input-placeholder {
+        font-family: Tahoma,sans-serif;
+        margin:0px -30px;
+        font-size: 16px;
+        color:#6E7074;
+        font-weight: normal;
+    } 
+    #analitic-country{
+        width: 170px;
+        height: 30px;
+        margin-left: 33px;
+        margin-top: 15px;
+        -webkit-appearance: menulist;
+        box-sizing: border-box;
+        align-items: center;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        color: black;
+        background-color: white;
+        cursor: default;
+    }
+    #analitic-citi{
+        width: 170px;
+        height: 30px;
+        margin-left: 33px;
+        margin-top: 15px;
+        -webkit-appearance: menulist;
+        box-sizing: border-box;
+        align-items: center;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        color: black;
+        background-color: white;
+        cursor: default;
+    }
+    #analitic-style{
+        width: 170px;
+        height: 30px;
+        margin-left: 33px;
+        margin-top: 15px;
+        -webkit-appearance: menulist;
+        box-sizing: border-box;
+        align-items: center;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        color: black;
+        background-color: white;
+        cursor: default;
+    }
+    #analitic-substyle{
+        width: 170px;
+        height: 30px;
+        margin-left: 33px;
+        margin-top: 15px;
+        -webkit-appearance: menulist;
+        box-sizing: border-box;
+        align-items: center;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        color: black;
+        background-color: white;
+        cursor: default;
+    }

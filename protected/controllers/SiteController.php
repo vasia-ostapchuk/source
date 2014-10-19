@@ -49,6 +49,12 @@ class SiteController extends YiiController
         echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model),true));
         Yii::app()->end();
     }
+    public function actionAnalitic()
+    {
+        $poster = new Image;
+        echo CJSON::encode($this->renderPartial('analitic',array('poster'=>$poster),true));
+        Yii::app()->end();
+    }
     public function actionEvent()
     {
         echo CJSON::encode($this->renderPartial('event',  array(),true));

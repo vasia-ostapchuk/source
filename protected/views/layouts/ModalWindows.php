@@ -93,6 +93,16 @@ echo '<br>'; echo CHtml::ajaxlink('artist',
                                     }",
                         )
                     );
+echo '<br>'; echo CHtml::ajaxlink('analitic',
+                    CController::createUrl('/site/analitic'),   
+                    array('dataType'=>'json',
+                            'type' => 'post',
+                            'success'=>"function(data) {
+                                $('#ProfileMenu').dialog('close');
+                                        $('#content').html(data);
+                                    }",
+                        )
+                    );					
 echo '<br>'; echo CHtml::ajaxlink('event',
                     CController::createUrl('/site/event'),   
                     array('dataType'=>'json',
