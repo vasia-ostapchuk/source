@@ -109,7 +109,7 @@ class YiiController extends CController{
             ),
             array(
                 'site',
-                'actions'=>array('artist','event','artist_edit'),
+                'actions'=>array('artist','event','artist_edit', 'analitic'),
                 'roles'=>array('Artist'),
             ),
             array(
