@@ -23,13 +23,13 @@
         
         </div>
          
-    <div class="calendar">
+    <div class="analitic-calendar">
 
-    <?php
+   <?php
 $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     'language'=>'uk',
     'name'=>'datepicker-month-year-menu',
-    
+    'value'=>Filter::getCalendarDate(),
     'flat'=>true,//remove to hide the datepicker
     'options'=>array(
 	    'dateFormat' => 'yy-mm-dd',
@@ -56,7 +56,10 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 )); ?>
         
     </div>
-    <?php echo CHtml::link('Звіти по параметрах',array('controller/action')); ?>
+    
+    <?php 
+    echo CHtml::link('Звіти по параметрах',array('controller/action')); 
+    ?>
     
     </div> 
  

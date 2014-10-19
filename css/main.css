@@ -828,7 +828,7 @@ textarea
             height: 200px;
             border: 1px solid #8a1f11;
 }
-.calendar{
+.analitic-calendar{
             width: 229px;
             height: 287px;
             border: 1px solid #8a1f11;
@@ -836,7 +836,7 @@ textarea
 
 .analitic-contet-left a{
             padding-left: 50px;
-            line-height: 4.5em;  
+            line-height: 3.5em;  
             color: red;
             text-decoration: none;
 }
