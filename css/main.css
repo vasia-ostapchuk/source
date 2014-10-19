@@ -830,8 +830,42 @@ textarea
 }
 .analitic-calendar{
             width: 229px;
-            height: 287px;
+            height: 160px;
             border: 1px solid #8a1f11;
+}
+#analitic-calendar {
+  width: 100%;
+  font: monospace;
+  line-height: 1.2em;
+  font-size: 15px;
+  text-align: center;
+}
+#analitic-calendar {
+  width: 100%;
+  font: monospace;
+  line-height: 1.2em;
+  font-size: 15px;
+  text-align: center;
+}
+#analitic-calendar thead tr:last-child {
+  font-size: small;
+  color: rgb(85, 85, 85);
+}
+#analitic-calendar thead tr:nth-child(1) td:nth-child(2) {
+  color: rgb(50, 50, 50);
+}
+#analitic-calendar thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+  cursor: pointer;
+}
+#analitic-calendar tbody td {
+  color: rgb(44, 86, 122);
+}
+#analitic-calendar tbody td:nth-child(n+6), #calendar2 .holiday {
+  color: rgb(231, 140, 92);
+}
+#analitic-calendar tbody td.today {
+  background: rgb(220, 0, 0);
+  color: #fff;
 }
 
 .analitic-contet-left a{
