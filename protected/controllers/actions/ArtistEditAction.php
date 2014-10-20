@@ -75,7 +75,7 @@ class ArtistEditAction extends CAction {
             }
             Yii::app()->end();
         }
-        if(Yii::app()->request->getPost('object') == 'description') { //редагуєм назву
+        if(Yii::app()->request->getPost('object') == 'description') { //редагуєм опис
             if($model->description != Yii::app()->request->getPost('description'))
                 $model->description = Yii::app()->request->getPost('description');
             if($model->Add()) {
@@ -90,10 +90,29 @@ class ArtistEditAction extends CAction {
             }
             Yii::app()->end();
         }
-        if(Yii::app()->request->getPost('object') == 'site') { //редагуєм назву
+        if(Yii::app()->request->getPost('object') == 'site') { //редагуєм сайт
             if($model->site != Yii::app()->request->getPost('site'))
                 $model->site = Yii::app()->request->getPost('site');
             if($model->Add()) {
+                echo CJSON::encode(array(
+                    'status'=>'success'
+                ));
+            }
+            else {
+                echo CJSON::encode(array(
+                    'status'=>'error'
+                ));
+            }
+            Yii::app()->end();
+        }
+        if(Yii::app()->request->getPost('object') == 'style') { //редагуєм стилі
+            $style = new Singer_style;
+            $style->name = Yii::app()->request->getPost('style');
+            if(Yii::app()->request->getPost('parent_id')) {
+                $style->name = Yii::app()->request->getPost('style');
+                $style->parent_id = Yii::app()->request->getPost('parent_id');
+            }
+            if($style->Add()) {
                 echo CJSON::encode(array(
                     'status'=>'success'
                 ));

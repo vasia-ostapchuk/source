@@ -123,13 +123,25 @@ $this->endWidget(); */?>
     </div>
     <div class="singer_style"> 
     <p><span class="style_singer">Стилі</span></p>
-    <ul>
-        <li>Блюз</li>
-        <li>Реп</li>
-        <li>Джаз</li>
-        <li>Поп</li>
-        <li>Поп</li>
-    </ul>
+    <?php $this->widget('zii.widgets.CMenu', array(
+        'id' => 'singer_style',
+        'encodeLabel'=>false,
+        'items'=>array(
+            array('label'=>'Блюз'),
+            array('label'=>'Джаз'),
+            array('label'=>'Рок'),
+            array('label'=>'Поп'),
+            array('label'=>"<img  style=' width: 20px; height: 20px;' src='../../../images/add.png' /> Додати", 'itemOptions'=>array('id' => 'style_add', 'style'=>'text-align: center; cursor: pointer; border-radius: 3px; background: #F48686;')))
+        ));
+        echo CHtml::dropDownList('singer_style', '', $style,array(
+            'onchange' => "updateSinger('style', style, $('#singer_style option:selected').text())",
+            'style'=>'display: none;'
+        )); 
+        echo CHtml::dropDownList('singer_genre', '', $genre,array(
+            'onchange' => "updateSinger('style', style, $('#singer_style option:selected').text())",
+            'style'=>'display: none;'
+        ));
+    ?>
     </div>
     <div class="singer_description"> 
         <textarea id="singer_description"  class="description_singer">
