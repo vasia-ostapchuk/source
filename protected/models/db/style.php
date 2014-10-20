@@ -88,4 +88,10 @@ class Style extends CActiveRecord{
         }
         return $data;
     }
+    
+    public function Add()
+    {       
+            if(!$this->save()){
+                print_r($this->getErrors());}
+    }
 }
