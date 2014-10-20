@@ -1,4 +1,3 @@
-﻿
 INSERT INTO `style` (`id`, `name`, `parent_id`) VALUES
 	(1, 'Рок', 0),
 	(2, 'Реп', 0),

@@ -1,4 +1,3 @@
-﻿
 INSERT INTO `user_role` (`id`, `user_id`, `role_id`) VALUES
 	(12, 2, 2),
 	(13, 1, 2),

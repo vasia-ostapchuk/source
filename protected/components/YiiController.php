@@ -99,7 +99,7 @@ class YiiController extends CController{
         return array(
             array(
                 'site',
-                'actions'=>array('index','login','signup','ajax','search','error'),
+                'actions'=>array('index','login','signup','ajax','search','error','analitic'),
                 'roles'=>array('Guest'),
             ),
             array(

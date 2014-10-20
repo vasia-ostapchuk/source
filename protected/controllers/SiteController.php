@@ -51,8 +51,7 @@ class SiteController extends YiiController
     }
     public function actionAnalitic()
     {
-        $poster = new Image;
-        echo CJSON::encode($this->renderPartial('analitic',array('poster'=>$poster),true));
+        echo CJSON::encode($this->renderPartial('analitic',array(),true));
         Yii::app()->end();
     }
     public function actionEvent()
