@@ -865,82 +865,82 @@ article .buttons{
     line-height: 31px;
 }
 #analitic-country{
-        width: 170px;
-        height: 30px;
-        margin-left: 33px;
-        margin-top: 15px;
-        -webkit-appearance: menulist;
-        box-sizing: border-box;
-        align-items: center;
-        border-image-source: initial;
-        border-image-slice: initial;
-        border-image-width: initial;
-        border-image-outset: initial;
-        border-image-repeat: initial;
-        white-space: pre;
-        -webkit-rtl-ordering: logical;
-        color: black;
-        background-color: white;
-        cursor: default;
+     width: 170px;
+     height: 30px;
+     margin-left: 33px;
+     margin-top: 15px;
+    -webkit-appearance: menulist;
+     box-sizing: border-box;
+     align-items: center;
+     border-image-source: initial;
+     border-image-slice: initial;
+     border-image-width: initial;
+     border-image-outset: initial;
+     border-image-repeat: initial;
+     white-space: pre;
+     -webkit-rtl-ordering: logical;
+     color: black;
+     background-color: white;
+     cursor: default;
     }
-    #analitic-citi{
-        width: 170px;
-        height: 30px;
-        margin-left: 33px;
-        margin-top: 15px;
-        -webkit-appearance: menulist;
-        box-sizing: border-box;
-        align-items: center;
-        border-image-source: initial;
-        border-image-slice: initial;
-        border-image-width: initial;
-        border-image-outset: initial;
-        border-image-repeat: initial;
-        white-space: pre;
-        -webkit-rtl-ordering: logical;
-        color: black;
-        background-color: white;
-        cursor: default;
-    }
-    #analitic-style{
-        width: 170px;
-        height: 30px;
-        margin-left: 33px;
-        margin-top: 15px;
-        -webkit-appearance: menulist;
-        box-sizing: border-box;
-        align-items: center;
-        border-image-source: initial;
-        border-image-slice: initial;
-        border-image-width: initial;
-        border-image-outset: initial;
-        border-image-repeat: initial;
-        white-space: pre;
-        -webkit-rtl-ordering: logical;
-        color: black;
-        background-color: white;
-        cursor: default;
-    }
-    #analitic-substyle{
-        width: 170px;
-        height: 30px;
-        margin-left: 33px;
-        margin-top: 15px;
-        -webkit-appearance: menulist;
-        box-sizing: border-box;
-        align-items: center;
-        border-image-source: initial;
-        border-image-slice: initial;
-        border-image-width: initial;
-        border-image-outset: initial;
-        border-image-repeat: initial;
-        white-space: pre;
-        -webkit-rtl-ordering: logical;
-        color: black;
-        background-color: white;
-        cursor: default;
-    }
-  .form-search-analitic {
+#analitic-citi{
+    width: 170px;
+    height: 30px;
+    margin-left: 33px;
+    margin-top: 15px;
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+}
+#analitic-style{
+    width: 170px;
+    height: 30px;
+    margin-left: 33px;
+    margin-top: 15px;
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+}
+#analitic-substyle{
+    width: 170px;
+    height: 30px;
+    margin-left: 33px;
+    margin-top: 15px;
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+ }
+.form-search-analitic {
     width: 420px; /* Ширина поля с кнопкой */
 }
 .form-search-analitic> input[type="submit"] {

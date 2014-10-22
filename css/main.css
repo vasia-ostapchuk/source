@@ -662,7 +662,7 @@ textarea
         width: 744px;
         height: 40px;
         float:right;
-        margin-top: -601px;
+        margin-top: -530px;
         border: 1px solid #8a1f11;
 }
 .analitic-navigator{
@@ -718,94 +718,92 @@ textarea
         appearance: none;
         cursor: pointer;
 }
-
-
 .analitic-content{
-            width: 725px;
-            height: 551px;
-            float: right;
-            margin:-560px 10px 10px 10px;
-            border: 1px solid #8a1f11;
+        width: 725px;
+        height: 488px;
+        float: right;
+        margin:-489px 10px 10px 10px;
+        border: 1px solid #8a1f11;
 }
 .analitic-content-description{
-            width: 605px;
-            height: 39px;
-            margin-top: 20px;
-            margin-left: 10px;
-            margin-bottom: -15px;
-            border: 1px solid ;
+        width: 605px;
+        height: 39px;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-bottom: -15px;
+        border: 1px solid ;
 }
 .analitic-singer-name{
-            float: left;
-            margin-left: 0px;
-            margin-top: 0px;
-            width: 118px;
-            height: 39px;
-            border-right: 1px solid;
-            text-align: center;
-            line-height: 2.5em;
+        float: left;
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 118px;
+        height: 39px;
+        border-right: 1px solid;
+        text-align: center;
+        line-height: 2.5em;
 }
 .analitic-style{
-           width: 120px;
-           height:39px;
-           margin-left: 121px;
-           border-right: 1px solid;
-           text-align: center;
-           line-height: 2.5em;
+        width: 120px;
+        height:39px;
+        margin-left: 121px;
+        border-right: 1px solid;
+        text-align: center;
+        line-height: 2.5em;
 }
 .analitic-jut{
-           width: 120px;
-           height:40px;
-           margin-top: -40px;
-           margin-left: 242px;
-           border-right: 1px solid;
-           text-align: center;
-           line-height: 2.5em;
+        width: 120px;
+        height:40px;
+        margin-top: -40px;
+        margin-left: 242px;
+        border-right: 1px solid;
+        text-align: center;
+        line-height: 2.5em;
 }
 .analitic-visitors{
-            width: 120px;
-            height:40px;
-            margin-top: -40px;
-            margin-left: 363px;
-            border-right: 1px solid;
-            text-align: center;
-            line-height: 2.9em;
+        width: 120px;
+        height:40px;
+        margin-top: -40px;
+        margin-left: 363px;
+        border-right: 1px solid;
+        text-align: center;
+        line-height: 2.9em;
 }
 .analitic-check{
-             width: 120px;
-             height:39px;
-             margin-top: -37px;
-             margin-left: 484px;
-             text-align: center;
-             line-height: 2.4em;
+        width: 120px;
+        height:39px;
+        margin-top: -37px;
+        margin-left: 484px;
+        text-align: center;
+        line-height: 2.4em;
 }
 .analitic-content-button{
-            width: 90px;
-            height: 39px;
-            float:left;
-            margin-left: 610px;
-            margin-top: -42px;
+        width: 90px;
+        height: 39px;
+        float:left;
+        margin-left: 610px;
+        margin-top: -42px;
 
 }
 .analitic-pagination-link{
-            height: 25px;
-            width: 280px;
-            margin:280px 0 0 10px;
-            font-size: 18px;
-            font-weight: 700;
-            float: right;
+        height: 25px;
+        width: 280px;
+        margin:225px 0 0 10px;
+        font-size: 18px;
+        font-weight: 700;
+        float: right;
 }
 .analitic-pagination-link li{
-            text-align: center;
-            padding: 10px 10px;
-            display: inline;
-            line-height: 10px;
+       text-align: center;
+       padding: 10px 10px;
+       display: inline;
+       line-height: 10px;
 }
 .analitic-pagination-link a{
-            text-decoration: none;
-            color: #FF8080;
+        text-decoration: none;
+        color: #FF8080;
 }
 .analitic-pagination-link a:hover{
-            text-decoration: underline;
-            color: #C6D880;
+        text-decoration: underline;
+        color: #C6D880;
 }
