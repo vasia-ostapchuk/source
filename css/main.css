@@ -368,6 +368,7 @@ div.search-form
 
 .singer_poster
 {
+        position:relative;
         width:240px;
         height: 339px;
         margin-left:10px;
@@ -386,13 +387,13 @@ div.search-form
         
 .singer_poster_upload
 {
-        position:relative;
+        position:absolute;
         display:none; 
         height:30px; 
-        width:auto; 
+        width: 99%;
         background:#fffed2;
         border: 1px solid #838231;
-        bottom: 32px;
+        bottom: 0px;
         cursor: pointer;
 }
        

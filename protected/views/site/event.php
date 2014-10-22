@@ -159,29 +159,13 @@
                         'title'=>"",
                         'onclick'=>""
                         ));
-        $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-        'id' => 'userProgress',
-                'options' => array(
-                    'autoOpen' => false,
-                    'modal' => false,
-                    'show'=>array(
-                        'effect'=>'blind',
-                        'duration'=>300,
-                    ),
-                    'hide'=>array(
-                        'effect'=>'blind',
-                        'duration'=>300,
-                    ),
-                    'resizable'=> false,
-                ),
-            ));
         echo '<br>'; echo CHtml::button('Прогрес',
                     array(
                         'title' => 'User Progress',
                         'onclick'=>"js:$('#eventUserProgress').dialog('open');"
                         )
                     );
-    $this->endWidget('zii.widgets.jui.CJuiDialog');?>
+        ?>
         <div class="userProgress"><?php
             echo CHtml::label(Yii::t('demo', '555/1500'), 'nombre');?>
         </div>

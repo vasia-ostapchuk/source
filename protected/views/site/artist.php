@@ -2,17 +2,12 @@
   
     $(document).ready(function(){
         $('.singer_poster_image').mouseover(function(){ //висовушка
-             if(!$('.singer_poster a:hover').length)
                 $('.singer_poster_upload').fadeIn();
         })
-        $('.singer_poster_image').mouseout(function(){
+        $('.singer_poster').children().mouseout(function(){
             if(!$('.singer_poster a:hover').length)
                 $('.singer_poster_upload').fadeOut();
         });
-        /*$('.singer_poster_upload').mouseout(function(){
-            if(!$('.singer_poster_image:hover').length)
-                $(this).fadeOut();
-        });*/
         $('.singer_poster_upload').click(function(){ // імітуєм відкриття вибору файлу
             $('#singer_poster_upload_field').trigger('click');
         });
@@ -101,28 +96,18 @@
         }
     });
 </script>
-
-
-
-
 <!-- невидиме поле для загрузки постера -->
-<?php /*$form=$this->beginWidget('CActiveForm', array(
-	'id'=>'singer_poster_upload_form',
-        'enableAjaxValidation'=>false,
-        'htmlOptions'=>array('enctype'=>'multipart/form-data','style'=>'display: none;'),
-));
-
-$this->endWidget(); */?>
 <?php echo CHtml::activeFileField($poster, 'image',array('id'=>'singer_poster_upload_field','style'=>'display: none;')); ?>
 
 <div class="singer_page">
 
     <div class="singer_left_block">
     <div class="singer_poster">
-        <?php echo CHtml::image('../../../images/2poster.jpg','назва',
+        <!--style="position: relative;"-->
+        <a><?php echo CHtml::image('../../../images/2poster.jpg','назва',
             array(
                 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка" 
-            )); ?>
+            )); ?></a>
         <a><div class='singer_poster_upload'>
             <img  src="../../../images/arrow.jpg"style="max-width: 15px; margin-right: 10px;"/>Завантажити нове фото
         </div></a>

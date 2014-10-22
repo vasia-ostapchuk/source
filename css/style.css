@@ -83,25 +83,28 @@ img {border: none;}
 .navigator-button li{
     display: inline;
 }
-.navigator-search {    
+.navigator-search {
+    width: 350px; /* Ширина поля с кнопкой */
     height: 40px;
-    margin: 5px 0 0 64px;
+    margin: 5px 0 0 0;
     float:right;
 }
 .form-search {
-    width: 350px; /* Ширина поля с кнопкой */
+    position: relative;
+    width: 100%; /* Ширина поля с кнопкой */
+    height: 100%;
 }
 .form-search> input[type="submit"] {
+    position: absolute;
     vertical-align: middle; /* Выравнивание по середине */
     width: 30px; /* Ширина кнопки */
     height: 30px; /* Высота кнопки */
     border: none; /* Убираем рамку */
     background: none;
     background-image: url(/images/search.png);
-    position: relative;
+    left: 0px; 
+    bottom: 5px;
     cursor: pointer;
-    margin: -5px 0px 0px -3px;
-    top:-30px;
  }
 .form-search> input[type="search"] {
     border: none; /* Убираем рамку */
@@ -109,12 +112,9 @@ img {border: none;}
     -webkit-appearance: none; /* Убираем рамку в Chrome и Safari*/
     -moz-box-sizing: border-box;  
     box-sizing: border-box; 
-    vertical-align: middle; /* Выравнивание по середине */
-    width: 350px;
-    height: 39px;
-    padding: 0px 0px 0px 28px;
-    line-height: 36px;
-    //background: #EEE;  
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px 0px 30px;
     background: linear-gradient(to top, #E5E2E2, #DFDBDB);
     font-family: Tahoma,sans-serif;
     font-size: 16px;
@@ -126,7 +126,6 @@ img {border: none;}
   -----------------------------------------------------*/
     .form-search input::-webkit-input-placeholder {
         font-family: Tahoma,sans-serif;
-       margin:0px -30px;
        font-size: 16px;
        color:#6E7074;
        font-weight: normal;
@@ -134,7 +133,6 @@ img {border: none;}
      
     .form-search input:-moz-placeholder {
         font-family: Tahoma,sans-serif;
-        margin:0px -30px;
         font-size: 16px;
         color:#6E7074;
         font-weight: normal;
@@ -142,16 +140,13 @@ img {border: none;}
      
     .form-search input:-ms-input-placeholder {
         font-family: Tahoma,sans-serif;
-        margin:0px -30px;
         font-size: 16px;
         color:#6E7074;
         font-weight: normal;
     } 
 .events {
     width: 750px;
-    //padding: 10px;
     float: left;
-   // display: block;
     background-color: #60BF60;
 }
 .filters-label {
@@ -160,26 +155,6 @@ img {border: none;}
     background-color: #C9E0ED;
     text-align: center;
 }
-         /*   .filter-country {
-                padding-left: 20px;
-                line-height: 30px;
-                background-color: #FF3030;
-            }
-            .filter-city {
-                padding-left: 20px;
-                line-height: 30px;
-                background-color: #FF5050;
-            }
-            .filter-style {
-                padding-left: 20px;
-                line-height: 30px;
-                background-color: #FF7070;
-            }
-            .filter-genre {
-                padding-left: 20px;
-                line-height: 30px;
-                background-color: #FFa0a0;
-            }*/
 .filter-label {
     padding-left: 20px;
     line-height: 30px;
