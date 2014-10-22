@@ -680,11 +680,6 @@ padding: 1px; width: 24px;}
     border: 1px #000 solid;
     margin: 20px 10px;
 }
-
-.userProgress{
-    width: 400px;
-    
-}
 div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable{
     width: 400px;
     outline: 0px none;
@@ -823,10 +818,6 @@ article .buttons{
     height: 35px;
     margin-top: 10px;
 }
-article .buttons #userProgress input{
-    width: 80%;
-    height: 35px;
-}
 .buttons form#ButtonForm.form input#ajaxrequest.price {
     width: 78%;
     height: 30px;
@@ -835,14 +826,20 @@ article .buttons #userProgress input{
     background: none;
     border-radius: 3px;
 }
-.buttons form#ButtonForm.form .userProgress{
+.buttons form#ButtonForm.form .price_range{
     width: 78%;
     margin: 10px auto 0;
     border: 1px solid #000;
     border-radius: 3px;
 }
-.buttons form#ButtonForm.form .userProgress label{
+.buttons form#ButtonForm.form .price_range label{
     line-height: 31px;
+}
+article .buttons form#ButtonForm .progress{
+    width: 78%;
+    margin: 10px auto 0;
+    border: 1px solid #000;
+    border-radius: 3px;
 }
 #analitic-country{
      width: 170px;

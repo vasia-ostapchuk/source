@@ -166,7 +166,7 @@
                         )
                     );
         ?>
-        <div class="userProgress"><?php
+        <div class="price_range"><?php
             echo CHtml::label(Yii::t('demo', '555/1500'), 'nombre');?>
         </div>
         <?php echo CHtml::button('Інвестувати',
@@ -175,7 +175,7 @@
                         'title'=>"",
                         'onclick'=>""
                         ));?>
-        <div class="userProgress"><?php
+        <div class="progress"><?php
             echo CHtml::label(Yii::t('demo', '777/3000'), 'nombre');?>
         </div>
         <?php $this->endWidget(); ?>
