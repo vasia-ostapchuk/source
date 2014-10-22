@@ -77,12 +77,13 @@
                       event.stopPropagation();
                     });
                 }*/
-
                 $('.form-search').submit(function(e){ //обробка форми пошуку
                 e.preventDefault();
                 var m_method=$(this).attr('method');
                 var m_action=$(this).attr('action');
                 var m_data=$(this).serialize();
+                if($('.form-search > input[type="search"]').val() == '')
+                    return;
                     $.ajax({
                         type: m_method,
                         url: m_action,

@@ -1,11 +1,9 @@
 <script type="text/javascript">
   
     $(document).ready(function(){
-        $('.singer_poster_image').mouseover(function(){ //висовушка
+        $('.singer_poster').mouseenter(function(){ //висовушка
                 $('.singer_poster_upload').fadeIn();
-        })
-        $('.singer_poster').children().mouseout(function(){
-            if(!$('.singer_poster a:hover').length)
+        }).mouseleave(function(){
                 $('.singer_poster_upload').fadeOut();
         });
         $('.singer_poster_upload').click(function(){ // імітуєм відкриття вибору файлу
@@ -103,7 +101,6 @@
 
     <div class="singer_left_block">
     <div class="singer_poster">
-        <!--style="position: relative;"-->
         <a><?php echo CHtml::image('../../../images/2poster.jpg','назва',
             array(
                 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка" 
