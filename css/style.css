@@ -625,6 +625,7 @@ padding: 1px; width: 24px;}
 }
 .translation_user article .language_buttons .navigator-search{
     margin: 0px;
+    width: 150px;
 }
 .translation_user article .language_buttons .lan a{
     border:none;
