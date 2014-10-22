@@ -223,7 +223,6 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     <?php   
     $this->endWidget(); ?>
 </div>
-
 <div class="events">
 <?php echo $ajaxContent; ?>
 </div>

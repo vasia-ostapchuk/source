@@ -6,6 +6,17 @@ class SiteController extends YiiController
     public $layout='//layouts/main';
 
     public function beforeAction($action) {
+        CHtml::$liveEvents = false;
+        if (Yii::app()->request->isAjaxRequest) {
+		Yii::app()->getClientScript()->scriptMap = array(
+			'jquery.js' => false,
+			'jquery.min.js' => false,
+			'jquery-ui.min.js' => false,
+                        'jquery-ui.css' => false,
+			'jquery.ba-bbq.js'=>false,
+			'jquery.yiigridview.js'=>false,
+		);
+	}
         return parent::beforeAction($action);
     }
 
@@ -49,17 +60,17 @@ class SiteController extends YiiController
         $style=$styles->selectStyle();
         $genre=$styles->selectGenre(Filter::getStyleId());
         $model = new Image;
-        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'style'=>$style, 'genre'=>$genre),true));
+        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'style'=>$style, 'genre'=>$genre),true, true));
         Yii::app()->end();
     }
     public function actionAnalitic()
     {
-        echo CJSON::encode($this->renderPartial('analitic',array(),true));
+        echo CJSON::encode($this->renderPartial('analitic',array(),true, true));
         Yii::app()->end();
     }
     public function actionEvent()
     {
-        echo CJSON::encode($this->renderPartial('event',  array(),true));
+        echo CJSON::encode($this->renderPartial('event',  array(),true, true));
         Yii::app()->end();
     }
     

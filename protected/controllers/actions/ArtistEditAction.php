@@ -2,18 +2,7 @@
 class ArtistEditAction extends CAction {
     
     public function run()
-    { 
-        CHtml::$liveEvents = false;
-        if (Yii::app()->request->isAjaxRequest) {
-		Yii::app()->getClientScript()->scriptMap = array(
-			'jquery.js' => false,
-			'jquery.min.js' => false,
-			'jquery-ui.min.js' => false,
-                        'jquery-ui.css' => false,
-			'jquery.ba-bbq.js'=>false,
-			'jquery.yiigridview.js'=>false,
-		);
-	}
+    {
         $model = new Singer;
         $exist = $model->findByAttributes(array('user_id'=>Yii::app()->user->getId()));
         if ($exist) {

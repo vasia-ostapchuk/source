@@ -158,22 +158,34 @@
                         'id'=>'button',
                         'title'=>"",
                         'onclick'=>""
-                        ));?>
+                        ));
+        $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+        'id' => 'userProgress',
+                'options' => array(
+                    'autoOpen' => false,
+                    'modal' => false,
+                    'show'=>array(
+                        'effect'=>'blind',
+                        'duration'=>300,
+                    ),
+                    'hide'=>array(
+                        'effect'=>'blind',
+                        'duration'=>300,
+                    ),
+                    'resizable'=> false,
+                ),
+            ));
+        echo '<br>'; echo CHtml::button('Прогрес',
+                    array(
+                        'title' => 'User Progress',
+                        'onclick'=>"js:$('#eventUserProgress').dialog('open');"
+                        )
+                    );
+    $this->endWidget('zii.widgets.jui.CJuiDialog');?>
         <div class="userProgress"><?php
             echo CHtml::label(Yii::t('demo', '555/1500'), 'nombre');?>
         </div>
-        <?php
-        $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
-            'name'=>'ajaxrequest',
-            // additional javascript options for the autocomplete plugin
-            'options'=>array(
-                'minLength'=>'3',
-            ),
-            'source'=>$this->createUrl("cjuiautocomplete/ajax"),
-            'htmlOptions'=>array('class'=>'price',
-            ),
-        ));
-        echo '<br>'; echo CHtml::button('Інвестувати',
+        <?php echo CHtml::button('Інвестувати',
                     array(
                         'id'=>'button',
                         'title'=>"",
