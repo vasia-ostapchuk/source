@@ -51,7 +51,7 @@ class SiteController extends YiiController
         
     public function actionAdministration()
     { 
-        echo CJSON::encode($this->renderPartial('administration',array(),true));
+        echo CJSON::encode($this->renderPartial('administration',array(),true, true));
         Yii::app()->end();
     }
     public function actionArtist()
