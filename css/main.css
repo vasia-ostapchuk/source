@@ -615,9 +615,7 @@ textarea
         text-align: center;
         line-height: 3em;
 }
-
-.singer_song3
-{
+.singer_song3{
         width:250px;
         height: 40px;
         margin-right:10px;
@@ -632,7 +630,7 @@ textarea
         border: 1px solid #8a1f11;
 }
 .analitic-left-block{
-        width: 250px;
+        width: 255px;
         height: 528px;
         border: 1px solid #8a1f11;
 }
@@ -640,13 +638,8 @@ textarea
         width: 229px;
         height: 200px;
 }
-.analitic-calendar{
-        width: 249px;
-        height: 270px;
-        border: 1px solid #8a1f11;
-}
 .analitic-reports{
-        width: 249px;
+        width: 254px;
         height: 55px;
         border: 1px solid #8a1f11;
         text-align: center;  
@@ -659,7 +652,7 @@ textarea
 }
 
 .analitic-top{
-        width: 744px;
+        width: 741px;
         height: 40px;
         float:right;
         margin-top: -530px;

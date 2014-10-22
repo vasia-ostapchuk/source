@@ -299,8 +299,8 @@ form .ui-widget-content {
     width: 124px;
     height: 30px;
     margin: 0 0 0 111px;
-line-height: 2em;
-     border-bottom: 1px solid #900;
+    line-height: 2em;
+    border-bottom: 1px solid #900;
      
     background: wheat;
     font-size: 14px;
@@ -315,10 +315,10 @@ line-height: 2em;
 .city{
     width: 124px;
     height: 30px;
-   margin: 0 0 0 111px;
-  border-bottom: 1px solid #900;
-     border-bottom: 1px solid #900;
-     line-height: 2em;
+    margin: 0 0 0 111px;
+    border-bottom: 1px solid #900;
+    border-bottom: 1px solid #900;
+    line-height: 2em;
     background:wheat;
     font-size: 14px;
     color: #CBC9C9;
@@ -346,29 +346,29 @@ line-height: 2em;
     color: red;
 }
 .buy {
-     width: 87px;
+    width: 87px;
     height: 30px;
-   margin: 45px 0 0 130px;
-   text-align: center;
+    margin: 45px 0 0 130px;
+    text-align: center;
     font-family: Tahoma,Arial,sans-serif;
-float: bottom;
-line-height: 2em;
-      position: relative;
-background: linear-gradient(to left, rgba(0,0,0,.3), rgba(0,0,0,.0) 50%, rgba(0,0,0,.3)), linear-gradient(#8F1528, #FE1728, #D7314A);  
-box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px, #000 0 10px 15px -10px; 
-  transition: 0.2s
+    float: bottom;
+    line-height: 2em;
+    position: relative;
+    background: linear-gradient(to left, rgba(0,0,0,.3), rgba(0,0,0,.0) 50%, rgba(0,0,0,.3)), linear-gradient(#8F1528, #FE1728, #D7314A);  
+    box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px, #000 0 10px 15px -10px; 
+    transition: 0.2s
 }
 .buy a{
     text-decoration: none;
     font-weight: bold;
-  color: white;
-  text-decoration: none;
-  text-shadow: 0 -1px 1px #cc5500;
-  user-select: none;
-  outline: none;
-  border-radius: 1px;
-  background-size: 100% 100%, auto;
-  background-position: 50% 50%;
+    color: white;
+    text-decoration: none;
+   text-shadow: 0 -1px 1px #cc5500;
+   user-select: none;
+   outline: none;
+   border-radius: 1px;
+   background-size: 100% 100%, auto;
+   background-position: 50% 50%;
 }
 .buy:hover {
   background-size: 140% 100%, auto;
@@ -431,7 +431,7 @@ box-shadow: inset #EB0012 0 -1px 1px, inset 0 1px 1px #CC1111, #CC223C 0 0 0 1px
     background: none;
     width: 250px;
     margin: -2px 0 0 -2px;
-    border-bottom: 4px #c00 dotted;
+    border-bottom: 4px #c00;
 }
 .calendar table.ui-datepicker-calendar {
     background: #fff;
