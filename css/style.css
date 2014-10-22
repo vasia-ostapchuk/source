@@ -817,7 +817,7 @@ article .buttons{
     margin: 10px;
     text-align: center;
 }
-.buttons input#button{
+.buttons input{
     width:80%;
     height: 35px;
     margin-top: 10px;
