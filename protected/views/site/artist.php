@@ -131,7 +131,7 @@ $this->endWidget(); */?>
         <?php echo CHtml::TextField('singer_name', 'Друга ріка',
             array('class'=>'singer_name')); ?>
     </div>
-    <div class="singer_style">       
+    <div class="singer_style">
     <p><span class="style_singer">Стилі</span></p>
     <?php $this->widget('zii.widgets.CMenu', array(
         'id' => 'singer_style',
