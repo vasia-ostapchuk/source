@@ -4,17 +4,6 @@ class ViewTranslateAction extends CAction {
     
     public function run()
     { 
-        CHtml::$liveEvents = false;
-        if (Yii::app()->request->isAjaxRequest) {
-		Yii::app()->getClientScript()->scriptMap = array(
-			'jquery.js' => false,
-			'jquery.min.js' => false,
-			'jquery-ui.min.js' => false,
-                        'jquery-ui.css' => false,
-			'jquery.ba-bbq.js'=>false,
-			'jquery.yiigridview.js'=>false,
-		);
-	}
         if(Yii::app()->request->getPost('table')) {
             $table = Yii::app()->request->getPost('table'); 
         }

@@ -1,20 +1,22 @@
 <script type="text/javascript">
   
     $(document).ready(function(){
-        
         $('.singer_poster_image').mouseover(function(){ //висовушка
-            $('.singer_poster_upload').fadeIn();
-        }).mouseout(function(){
-            if(!$('.singer_poster_upload:hover').length)
+             if(!$('.singer_poster a:hover').length)
+                $('.singer_poster_upload').fadeIn();
+        })
+        $('.singer_poster_image').mouseout(function(){
+            if(!$('.singer_poster a:hover').length)
                 $('.singer_poster_upload').fadeOut();
         });
-        $('.singer_poster_upload').mouseout(function(){
+        /*$('.singer_poster_upload').mouseout(function(){
             if(!$('.singer_poster_image:hover').length)
                 $(this).fadeOut();
-        });
+        });*/
         $('.singer_poster_upload').click(function(){ // імітуєм відкриття вибору файлу
             $('#singer_poster_upload_field').trigger('click');
         });
+        
         $('#singer_poster_upload_field').on('change', function(){//poster
             if(!$(this)[0].files[0]) { //no file selected
                 return;
@@ -22,6 +24,7 @@
             else 
                 updateSinger('poster',$(this).attr('name'), $(this)[0].files[0], false);
         });
+        
         $('#singer_name').on('change', function(){//singer name
             if($(this).val() == '') { //no data, error
                 addBorder($(this).attr('id'),'red');
@@ -30,6 +33,7 @@
             else
                 updateSinger('name', false, false,$(this).attr('id'));
         });
+        
         $('#singer_description').on('change', function(){//singer description
             if($(this).val() == '') { //no data, error
                 addBorder($(this).attr('id'),'red');
@@ -39,6 +43,7 @@
                 updateSinger('description', 'description', $(this).val(), $(this).attr('id'));
             }
         });
+        
         $('#singer_site').on('change', function(){//singer site
             if($(this).val() == '') { //no data, error
                 addBorder($(this).attr('id'),'red');
@@ -48,6 +53,7 @@
                 updateSinger('site', 'site', $(this).val(), $(this).attr('id'));
             }
         });
+        
         function updateSinger(object, name, field, id) {
             var fd = new FormData();
             fd.append('object',object);
@@ -96,6 +102,9 @@
     });
 </script>
 
+
+
+
 <!-- невидиме поле для загрузки постера -->
 <?php /*$form=$this->beginWidget('CActiveForm', array(
 	'id'=>'singer_poster_upload_form',
@@ -107,21 +116,22 @@ $this->endWidget(); */?>
 <?php echo CHtml::activeFileField($poster, 'image',array('id'=>'singer_poster_upload_field','style'=>'display: none;')); ?>
 
 <div class="singer_page">
+
     <div class="singer_left_block">
     <div class="singer_poster">
         <?php echo CHtml::image('../../../images/2poster.jpg','назва',
             array(
                 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка" 
             )); ?>
-        <div class='singer_poster_upload'>
+        <a><div class='singer_poster_upload'>
             <img  src="../../../images/arrow.jpg"style="max-width: 15px; margin-right: 10px;"/>Завантажити нове фото
-        </div>
+        </div></a>
     </div>
     <div class="singer_name">
         <?php echo CHtml::TextField('singer_name', 'Друга ріка',
             array('class'=>'singer_name')); ?>
     </div>
-    <div class="singer_style"> 
+    <div class="singer_style">       
     <p><span class="style_singer">Стилі</span></p>
     <?php $this->widget('zii.widgets.CMenu', array(
         'id' => 'singer_style',
