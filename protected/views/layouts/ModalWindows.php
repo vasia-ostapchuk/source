@@ -113,12 +113,6 @@ echo '<br>'; echo CHtml::ajaxlink('event',
                                     }",
                         )
                     );
-echo '<br>'; echo CHtml::button('eventUserProgress',
-                    array(
-                        'title'=>"eventUserProgress",
-                        'onclick'=>"js:$('#eventUserProgress').dialog('open');"
-                        )
-                    );
     $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
 
