@@ -633,6 +633,7 @@ textarea
 .analitic-left-block{
         width: 255px;
         height: 528px;
+        float: left;
         border: 1px solid #8a1f11;
 }
 .analitic_filters{
@@ -656,7 +657,6 @@ textarea
         width: 741px;
         height: 40px;
         float:right;
-        margin-top: -530px;
         border: 1px solid #8a1f11;
 }
 .analitic-navigator{
@@ -672,7 +672,7 @@ textarea
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: middle;
-        width: 420px;
+        width: 443px;
         height: 40px;
         margin-left: 0px;
         padding: 0px 0px 0px 28px;
@@ -720,8 +720,8 @@ textarea
         border: 1px solid #8a1f11;
 }
 .analitic-content-description{
-        width: 605px;
-        height: 39px;
+        width: 697px;
+        height: 38px;
         margin-top: 20px;
         margin-left: 10px;
         margin-bottom: -15px;
@@ -740,25 +740,23 @@ textarea
 .analitic-style{
         width: 120px;
         height:39px;
-        margin-left: 121px;
+        float: left;
         border-right: 1px solid;
         text-align: center;
         line-height: 2.5em;
 }
 .analitic-jut{
         width: 120px;
-        height:40px;
-        margin-top: -40px;
-        margin-left: 242px;
+        height:39px;
+        float: left;
         border-right: 1px solid;
         text-align: center;
         line-height: 2.5em;
 }
 .analitic-visitors{
         width: 120px;
-        height:40px;
-        margin-top: -40px;
-        margin-left: 363px;
+        height:39px;
+        float: left;
         border-right: 1px solid;
         text-align: center;
         line-height: 2.9em;
@@ -766,23 +764,19 @@ textarea
 .analitic-check{
         width: 120px;
         height:39px;
-        margin-top: -37px;
-        margin-left: 484px;
+        float:left;
         text-align: center;
-        line-height: 2.4em;
+        line-height: 2.6em;
 }
 .analitic-content-button{
         width: 90px;
-        height: 39px;
-        float:left;
-        margin-left: 610px;
-        margin-top: -42px;
-
+        height: 40px;
+        float:right;
 }
 .analitic-pagination-link{
         height: 25px;
         width: 280px;
-        margin:225px 0 0 10px;
+        margin:255px -100px 0 -180px;
         font-size: 18px;
         font-weight: 700;
         float: right;

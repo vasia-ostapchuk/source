@@ -137,16 +137,6 @@
                             <?php echo CHtml::button('Деталі', array('id'=>'analitic-content-button')); ?>
                         </div>
                 </div>
-                <div class="analitic-content-description">
-                    <div class="analitic-singer-name">Виконавець </div>
-                    <div class="analitic-style">Стиль </div>
-                    <div class="analitic-jut"> Виступи</div>
-                    <div class="analitic-visitors">Відвідувачі </div>
-                    <div class="analitic-check"> Середній чек</div>
-                        <div class="analitic-content-button">
-                            <?php echo CHtml::button('Деталі', array('id'=>'analitic-content-button')); ?>
-                        </div>
-                </div>
                 <div class="analitic-pagination-link">  
                     <ul>
                         <li><a href="">1</a></li>
