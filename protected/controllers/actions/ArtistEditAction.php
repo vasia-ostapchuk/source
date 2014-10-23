@@ -19,6 +19,19 @@ class ArtistEditAction extends CAction {
             else
                 $status='error';
         }
+                
+        switch (Yii::app()->request->getPost('object')) {//редагуєм текстові поля
+        case 'name':
+            $this->edit_element($model, 'name', Yii::app()->request->getPost('name'));
+            break;
+        case 'description':
+            $this->edit_element($model, 'description', Yii::app()->request->getPost('description'));
+            break;
+        case 'site':
+            $this->edit_element($model, 'site', Yii::app()->request->getPost('site'));
+            break;
+        }
+        
         if(Yii::app()->request->getPost('object') == 'poster') { //редагуєм постер
             $poster = new Image;
             $exist = $poster->findByAttributes(array('table'=>'singer','row_id'=>$row_id));
@@ -28,6 +41,7 @@ class ArtistEditAction extends CAction {
             }
             else
                 $new = true;
+            
             $poster->image = CUploadedFile::getInstance($poster,'image');
             $poster->table = 'singer';
             $poster->type_id = '3';
@@ -49,51 +63,7 @@ class ArtistEditAction extends CAction {
                  Yii::app()->end();
             }
         }
-        if(Yii::app()->request->getPost('object') == 'name') { //редагуєм назву
-            if($model->name != Yii::app()->request->getPost('name'))
-                $model->name = Yii::app()->request->getPost('name');
-            if($model->Add()) {
-                echo CJSON::encode(array(
-                    'status'=>'success'
-                ));
-            }
-            else {
-                echo CJSON::encode(array(
-                    'status'=>'error'
-                ));
-            }
-            Yii::app()->end();
-        }
-        if(Yii::app()->request->getPost('object') == 'description') { //редагуєм опис
-            if($model->description != Yii::app()->request->getPost('description'))
-                $model->description = Yii::app()->request->getPost('description');
-            if($model->Add()) {
-                echo CJSON::encode(array(
-                    'status'=>'success'
-                ));
-            }
-            else {
-                echo CJSON::encode(array(
-                    'status'=>'error'
-                ));
-            }
-            Yii::app()->end();
-        }
-        if(Yii::app()->request->getPost('object') == 'site') { //редагуєм сайт
-            if($model->site != Yii::app()->request->getPost('site'))
-                $model->site = Yii::app()->request->getPost('site');
-            if($model->Add()) {
-                echo CJSON::encode(array(
-                    'status'=>'success'
-                ));
-            }
-            else {
-                echo CJSON::encode(array(
-                    'status'=>'error'
-                ));
-            }
-            Yii::app()->end();
-        }
+        
         if(Yii::app()->request->getPost('object') == 'style') { //редагуєм стилі
             $style = new Singer_style;
             $style->name = Yii::app()->request->getPost('style');
@@ -113,5 +83,21 @@ class ArtistEditAction extends CAction {
             }
             Yii::app()->end();
         }
+    }
+    
+    public function edit_element($model, $field, $value) {
+            if($model->$field != $value)
+                $model->$field = $value;
+            if($model->Add()) {
+                echo CJSON::encode(array(
+                    'status'=>'success'
+                ));
+            }
+            else {
+                echo CJSON::encode(array(
+                    'status'=>'error'
+                ));
+            }
+            Yii::app()->end();
     }
 }

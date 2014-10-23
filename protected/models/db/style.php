@@ -13,7 +13,7 @@
  */
 
 // модель таблиці БД (style) "стилі музики"
-class Style extends CActiveRecord{ 
+class Style extends CActiveRecord { 
     
     public static function model($className=__CLASS__)
     {
@@ -89,6 +89,22 @@ class Style extends CActiveRecord{
         return $data;
     }
     
+     public function findStyleWeights($limit = 20) {
+        $tags = array();
+        $models = $this->findAll(array(
+            'limit' => $limit,
+            'order'=>'name'
+        ));
+        $sizeRange = 20;
+        $size =rand(1,12);
+        $minCount = 2; //log(Yii::app()->db->createCommand("SELECT MIN(frequency) FROM " . $this->tableName())->queryScalar() + 1);
+        $maxCount = $size;//log(Yii::app()->db->createCommand("SELECT MAX(frequency) FROM " . $this->tableName())->queryScalar() + 1);
+        $countRange = $maxCount - $minCount;
+        foreach ($models as $model)
+            $tags[$model->name] = round(14 + (log($size + 1) - $minCount) * ($sizeRange / $countRange));
+        return $tags;
+    }
+   
     public function Add()
     {       
             if(!$this->save()){

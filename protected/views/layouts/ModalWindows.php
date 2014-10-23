@@ -15,7 +15,9 @@
                     'duration'=>500,
                 ),
                 'resizable'=> false,
-                'position'=> "{ my=>'right top', at=>'left bottom', of=> '#login_button' }",
+                //'position'=>array('my'=>'right top','at'=>'left bottom', 'of' => '#reg_button')
+                'position'=>array(610, 56),
+                //'position'=> "{ my=>'right top', at=>'left bottom', of=> '#login_button' }",
             ),
         ));
 ?>
@@ -168,4 +170,20 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
         </div>
     </div>
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog');
+?>
+
+
+<!-- модель модального вікна стилів -->
+
+<?php
+$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+    'id'=>'TagCloud',
+    'options'=>array(
+        'title'=>'Dialog box',
+        'autoOpen'=>false,
+    ),
+    'htmlOptions'=>array('class'=>'TagCloud')
+)); 
+    $this->widget('TagCloud', array('limit' => 50));
+$this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>

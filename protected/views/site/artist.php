@@ -46,7 +46,9 @@
                 updateSinger('site', 'site', $(this).val(), $(this).attr('id'));
             }
         });
-        
+        $('#style_add').on('click', function(){//add style
+            $('#TagCloud').dialog('open');
+        });
         function updateSinger(object, name, field, id) {
             var fd = new FormData();
             fd.append('object',object);

@@ -1,5 +1,3 @@
-
-
 <?php if(Yii::app()->session['userdata']){ ?>
 <label id="profile_label">  
 <input class="button" id="profile_button" type="button" value="<?php echo Yii::app()->user->name; ?>" onclick="$('#ProfileMenu').dialog('open');" />   
@@ -8,4 +6,4 @@
 <?php } else {?>
     <input class="button" id="login_button" type="button" value="Вхід" title="Вхід" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:0});" />
     <input class="button" id="reg_button" type="button" value="Реєстрація" title="Реєстрація" onclick="$('#loginModalForm').dialog('open');$('#loginModalForm').tabs({selected:1});" />
-<?php }
+<?php } ?>
