@@ -44,7 +44,22 @@ class Permission extends CActiveRecord{
             'alias' => 'Alias',
         );
     }
-    
+    public function selectByRole($list){
+        $connect=Yii::app()->db;
+        $comand=$connect->createCommand('SELECT id,module,action FROM permission WHERE id IN ('.$list.')');
+        $dataReader=$comand->query();
+        $dataReader->bindColumn(1, $id);
+        $dataReader->bindColumn(2, $module);
+        $dataReader->bindColumn(3, $action);
+        $data=array();
+        $count = 0;
+        while ($dataReader->read()!==FALSE)
+        {
+            //$data[$count]['id'] = $id;
+            $data[$module][$id] = $action;
+        }
+        return $data;
+    }
     public function selectAll(){
         $criteria = new CDbCriteria;
         $criteria->order = 'id';

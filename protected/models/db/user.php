@@ -11,7 +11,7 @@ class User extends CActiveRecord
         return 'user';
     }
     
-    public function selectRole($id){
+    public function selectPermissions($id){
         /*$userRole = UserRole::model()->findAllByAttributes(array('user_id'=>$id));
         //error_log(print_r($userRole,1));
         $roleListId = array();
@@ -22,11 +22,37 @@ class User extends CActiveRecord
         $role = UserRole::model()->with('role')->findAllByAttributes(array('user_id'=>$id));
         $data = array();
         foreach ($role as $value){
-            $data[] = $value->role->name;
+            //$data[$id]['role'][] = $value->role->name;
+            if($value->role->permission_list[0] != ',' && $value->role->permission_list != ''){
+                $pr['permission'] = Permission::model()->selectByRole($value->role->permission_list);
+                $data = array_merge_recursive($data,$pr);
+                //break;
+            }elseif($value->role->permission_list != ''){
+                $list = substr($value->role->permission_list, 1);
+                $pr['permission'] = Permission::model()->selectByRole($list);
+                $data = array_merge_recursive($data,$pr);
+            }
+            //error_log('permission = '. $value->role->permission_list);
+            /*error_log('permission = '. $value->role->permission_list[0]);*/
         }
-        return $data;
+        //error_log(print_r($data,1));
+        return $data['permission'];
     }
     
+    public function selectPermissionsByName($name='Guest'){ // пошук прав за назвою ролі
+        $permissionList = Role::model()->findByAttributes(array('name'=>$name));
+        $data = array(array());
+        if($permissionList->permission_list[0] != ',' && $permissionList->permission_list != ''){
+            $data = Permission::model()->selectByRole($permissionList->permission_list);
+        }elseif($permissionList->permission_list != ''){
+            $list = substr($permissionList->permission_list, 1);
+            $data = Permission::model()->selectByRole($list);
+        }
+        /*error_log(print_r($data,1));*/
+        return $data;
+    }
+
+
     public function findUserByUsername($username)
     {
         $criteria = new CDbCriteria;

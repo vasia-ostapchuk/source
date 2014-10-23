@@ -7,7 +7,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/administration.css" />
-        <link href="../../../css/style.css" rel="stylesheet" type="text/css"></link>
+        <!--<link href="../../../css/style.css" rel="stylesheet" type="text/css"></link>-->
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"/>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
      
@@ -86,11 +87,11 @@
             echo "<br/>";
             //print_r(Yii::app()->user->user_role);
             echo "</pre>";
-            /*echo "<pre>";
+            echo "<pre>";
             var_dump($_COOKIE);
             echo "</pre>";
             
-            echo "<pre>";
+            /*echo "<pre>";
             var_export(Yii::app()->user);
             echo "</pre>";
             

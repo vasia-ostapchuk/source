@@ -29,18 +29,16 @@ class UserIdentity extends CUserIdentity
                 $this->errorCode=self::ERROR_USERNAME_INVALID;
                 return !$this->errorCode;
             }
-            /*$this->_id=User::model()->getId($this->username);*/
             $users = array($users->email=>$users->password);
-            $this->setState('user_role', User::model()->selectRole($this->_id));
-            /*echo "<pre>"; var_dump($users); echo "</pre>";
-            echo "<pre>"; var_dump($this); echo "</pre>";
-            Yii::app()->end();*/
+            /*$this->setState('user_role', User::model()->selectRole($this->_id));*/ // нахуй не потрібна
             if(!isset($users[$this->username]))
                     $this->errorCode=self::ERROR_USERNAME_INVALID;
             elseif($users[$this->username]!==$this->password)
                     $this->errorCode=self::ERROR_PASSWORD_INVALID;
-            else
+            else{
                     $this->errorCode=self::ERROR_NONE;
+                    $this->setState('user_permission',User::model()->selectPermissions($this->_id));
+            }
             return !$this->errorCode;
 	}
         public function hashPassword($password) //hash with salt and Blowfish encryption method

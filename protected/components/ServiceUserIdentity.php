@@ -27,6 +27,7 @@ class ServiceUserIdentity extends UserIdentity {
             $this->setState('name', $this->username);
             $this->setState('service', $this->service->serviceName);
             $this->errorCode = self::ERROR_NONE;
+            $this->setState('user_permission',User::model()->selectPermissionsByName('Social_user'));
         }
         else {
             $this->errorCode = self::ERROR_NOT_AUTHENTICATED;

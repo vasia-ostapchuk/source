@@ -1,6 +1,4 @@
-﻿
-
-INSERT INTO `location` (`id`, `name`, `parent_id`) VALUES
+﻿INSERT INTO `location` (`id`, `name`, `parent_id`) VALUES
 	(1, 'Украіна', 0),
 	(2, 'Львів', 1),
 	(3, 'Київ', 1),

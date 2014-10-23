@@ -63,6 +63,10 @@ class SiteController extends YiiController
         echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'style'=>$style, 'genre'=>$genre),true, true));
         Yii::app()->end();
     }
+    public function actionAccessdeny()
+    {
+        $this->render('accessdeny');
+    }
     public function actionAnalitic()
     {
         echo CJSON::encode($this->renderPartial('analitic',array(),true, true));
