@@ -183,8 +183,8 @@
                 submitTranslate(id, field);
             }
         });*/
-        $( ".field input:text" ).change(function(e) {
-            var full_id = $(e.target).attr("id");
+        $('.field input:text').change(function(e) {
+            var full_id = $(e.target).attr('id');
             var id = full_id;
             var field = 'translate';
             if(full_id.search('row') != -1) {

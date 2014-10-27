@@ -2,12 +2,26 @@
   
     $(document).ready(function(){
         $('.singer_poster').mouseenter(function(){ //висовушка
-                $('.singer_poster_upload').fadeIn();
+            $('.singer_poster_upload').fadeIn();
         }).mouseleave(function(){
-                $('.singer_poster_upload').fadeOut();
+            $('.singer_poster_upload').fadeOut();
         });
+        
+        $('#TagCloud span').on('click', function(){ //виділяєм стиль
+            $(this).toggleClass('styleSelected');
+        });
+        
         $('.singer_poster_upload').click(function(){ // імітуєм відкриття вибору файлу
             $('#singer_poster_upload_field').trigger('click');
+        });
+        
+        $('#styleOK').on('click', function(){ //відправляєм стилі
+            var styles = '';
+            $('#TagCloud span').each(function() {
+                if ($(this).hasClass('styleSelected'))
+                    styles += $(this).attr('id') + ',';
+            });
+            updateSinger('style','id', styles.slice(0,-1), false);
         });
         
         $('#singer_poster_upload_field').on('change', function(){//poster
@@ -17,14 +31,14 @@
             else 
                 updateSinger('poster',$(this).attr('name'), $(this)[0].files[0], false);
         });
-        
-        $('#singer_name').on('change', function(){//singer name
+       
+        $('.singer_name').on('change', function(){//singer name
             if($(this).val() == '') { //no data, error
                 addBorder($(this).attr('id'),'red');
                 return;
             }
             else
-                updateSinger('name', false, false,$(this).attr('id'));
+                updateSinger('name', 'name', $(this).val(), $(this).attr('id'));
         });
         
         $('#singer_description').on('change', function(){//singer description
@@ -46,15 +60,18 @@
                 updateSinger('site', 'site', $(this).val(), $(this).attr('id'));
             }
         });
+        
         $('#style_add').on('click', function(){//add style
             $('#TagCloud').dialog('open');
         });
+        
         function updateSinger(object, name, field, id) {
             var fd = new FormData();
             fd.append('object',object);
             if(name)
                 fd.append(name,field);
-            fd.append('name',$('#singer_name').val());
+            fd.append('user_id','<?php echo $user_id; ?>');
+            
             $.ajax({
                 url: '<?php echo Yii::app()->createAbsoluteUrl('site/artist_edit'); ?>',
                 cache: false,
@@ -81,6 +98,7 @@
                 }
             });
         }
+        
         function addBorder(selector, color) {
             switch (color) {
                 case (color = 'red'):
@@ -103,13 +121,13 @@
 
     <div class="singer_left_block">
     <div class="singer_poster">
-        <a><?php echo CHtml::image('../../../images/2poster.jpg','назва',
+        <?php echo CHtml::image('../../../images/2poster.jpg','назва',
             array(
                 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка" 
-            )); ?></a>
-        <a><div class='singer_poster_upload'>
+            )); ?>
+        <div class='singer_poster_upload'>
             <img  src="../../../images/arrow.jpg"style="max-width: 15px; margin-right: 10px;"/>Завантажити нове фото
-        </div></a>
+        </div>
     </div>
     <div class="singer_name">
         <?php echo CHtml::TextField('singer_name', 'Друга ріка',
@@ -126,14 +144,6 @@
             array('label'=>'Рок'),
             array('label'=>'Поп'),
             array('label'=>"<img  style=' width: 20px; height: 20px;' src='../../../images/add.png' /> Додати", 'itemOptions'=>array('id' => 'style_add', 'style'=>'text-align: center; cursor: pointer; border-radius: 3px; background: #F48686;')))
-        ));
-        echo CHtml::dropDownList('singer_style', '', $style,array(
-            'onchange' => "updateSinger('style', style, $('#singer_style option:selected').text())",
-            'style'=>'display: none;'
-        )); 
-        echo CHtml::dropDownList('singer_genre', '', $genre,array(
-            'onchange' => "updateSinger('style', style, $('#singer_style option:selected').text())",
-            'style'=>'display: none;'
         ));
     ?>
     </div>

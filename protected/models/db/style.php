@@ -95,13 +95,13 @@ class Style extends CActiveRecord {
             'limit' => $limit,
             'order'=>'name'
         ));
-        $sizeRange = 20;
-        $size =rand(1,12);
-        $minCount = 2; //log(Yii::app()->db->createCommand("SELECT MIN(frequency) FROM " . $this->tableName())->queryScalar() + 1);
-        $maxCount = $size;//log(Yii::app()->db->createCommand("SELECT MAX(frequency) FROM " . $this->tableName())->queryScalar() + 1);
+        $sizeRange = 8;
+        $minCount = log(3 + 1); //log(Yii::app()->db->createCommand("SELECT MIN(frequency) FROM " . $this->tableName())->queryScalar() + 1);
+        $maxCount = log(0 + 1);//log(Yii::app()->db->createCommand("SELECT MAX(frequency) FROM " . $this->tableName())->queryScalar() + 1);
         $countRange = $maxCount - $minCount;
-        foreach ($models as $model)
-            $tags[$model->name] = round(14 + (log($size + 1) - $minCount) * ($sizeRange / $countRange));
+        foreach ($models as $model) {
+            $tags[$model->name] = array('weight' => round(12 + (log($model->parent_id + 1) - $minCount) * ($sizeRange / $countRange)), 'id' => $model->id);
+        }
         return $tags;
     }
    

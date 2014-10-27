@@ -3,9 +3,9 @@
 <?php $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     'id' => 'loginModalForm',
             'options' => array(
+                'modal'=>false,
                 'title' => 'Вхід на сайт',
-                'autoOpen' => false,
-                'modal' => false,
+                'autoOpen' => false,  
                 'show'=>array(
                     'effect'=>'blind',
                     'duration'=>500,
@@ -14,9 +14,13 @@
                     'effect'=>'blind',
                     'duration'=>500,
                 ),
-                'resizable'=> false,
-                //'position'=>array('my'=>'right top','at'=>'left bottom', 'of' => '#reg_button')
-                'position'=>array(610, 56),
+                'resizable'=>false,
+                /*'overlay'=>array(
+                    'backgroundColor'=>'#000',
+                    'opacity'=>'0.5'
+                ),*/
+                'position'=>array('my'=>'top','at'=>'bottom', 'of' => '#reg_button')
+                //'position'=>array(610, 56),
                 //'position'=> "{ my=>'right top', at=>'left bottom', of=> '#login_button' }",
             ),
         ));
@@ -179,8 +183,19 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
 $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
     'id'=>'TagCloud',
     'options'=>array(
-        'title'=>'Dialog box',
+        'title'=>'Виберіть стиль',
         'autoOpen'=>false,
+        'buttons'=>array(
+             array(
+                'text' => 'OK',
+                'click' => 'js:function(){$(this).dialog("close");}',
+                'id' => 'styleOK',
+            ),
+             array(
+                'text' => 'Cancel',
+                'click' => 'js:function(){$(this).dialog("close");}'
+            ),
+        ),
     ),
     'htmlOptions'=>array('class'=>'TagCloud')
 )); 

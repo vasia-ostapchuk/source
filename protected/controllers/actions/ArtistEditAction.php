@@ -4,15 +4,15 @@ class ArtistEditAction extends CAction {
     public function run()
     {
         $model = new Singer;
-        $exist = $model->findByAttributes(array('user_id'=>Yii::app()->user->getId()));
+        $exist = $model->findByAttributes(array('user_id'=>Yii::app()->request->getPost('user_id')));
         if ($exist) {
             $model = $exist;
             $row_id = $model->id;
             $status='success';
         }
         else {
-            $model->name=Yii::app()->request->getPost('name');
-            $model->user_id=Yii::app()->user->getId();
+            $model->name= (Yii::app()->request->getPost('name')) ? Yii::app()->request->getPost('name') : 'noname';
+            $model->user_id=Yii::app()->request->getPost('user_id');
             if($row_id = $model->Add()) {
                 $status='success';
             }
@@ -65,22 +65,36 @@ class ArtistEditAction extends CAction {
         }
         
         if(Yii::app()->request->getPost('object') == 'style') { //редагуєм стилі
-            $style = new Singer_style;
-            $style->name = Yii::app()->request->getPost('style');
-            if(Yii::app()->request->getPost('parent_id')) {
-                $style->name = Yii::app()->request->getPost('style');
-                $style->parent_id = Yii::app()->request->getPost('parent_id');
+            $style_id = explode(',', Yii::app()->request->getPost('id'));
+            $exist = Singer_style::model()->selectBySingerId($model->id);
+            $style = array();
+            foreach ($style_id as $key => $id)
+                if (in_array($id, $exist)) {
+                unset($style_id[$key]);
+                }
+            foreach ($style_id as $i=>$id) {
+                $style[$i] = new Singer_style();
+                $style[$i]->singer_id = $model->id;
+                $style[$i]->style_id = $id;
             }
-            if($style->Add()) {
-                echo CJSON::encode(array(
+            if($style) {
+                $transaction = Yii::app()->db->beginTransaction();
+                try {
+                    foreach ($style as $i=>$item)
+                        $item->save(false);
+                    $transaction->commit();
+                }
+                catch (Exception $e) {
+                    $transaction->rollback();
+                    echo CJSON::encode(array(
+                        'status'=>'error'
+                    ));
+                    Yii::app()->end();
+                }
+            }
+            echo CJSON::encode(array(
                     'status'=>'success'
                 ));
-            }
-            else {
-                echo CJSON::encode(array(
-                    'status'=>'error'
-                ));
-            }
             Yii::app()->end();
         }
     }

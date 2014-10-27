@@ -56,11 +56,9 @@ class SiteController extends YiiController
     }
     public function actionArtist()
     {
-        $styles=new Style;
-        $style=$styles->selectStyle();
-        $genre=$styles->selectGenre(Filter::getStyleId());
         $model = new Image;
-        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'style'=>$style, 'genre'=>$genre),true, true));
+        $user_id = Yii::app()->user->getId();
+        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'user_id'=>$user_id),true, true));
         Yii::app()->end();
     }
     public function actionAccessdeny()

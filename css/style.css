@@ -994,3 +994,11 @@ article .buttons form#ButtonForm .progress{
     background-color: buttonface;
     box-sizing: border-box;
 }
+
+#TagCloud span:hover {
+    background: #ffffcc;
+}
+
+.styleSelected {
+    background: #F0DD75;
+}

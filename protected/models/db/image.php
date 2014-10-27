@@ -21,7 +21,7 @@ class Image extends CActiveRecord{
     }
     
     public function Add($file)
-    {       
+    {
         if(!$file) {
             unlink(YiiBase::getPathOfAlias('webroot').'/images/singer/'.$this->path);
             $file = true;

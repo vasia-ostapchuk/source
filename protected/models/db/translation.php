@@ -59,6 +59,7 @@ class Translation extends CActiveRecord
         //error_log(var_dump($data,1));
         return $data;
     }
+    
     public function Add()
     {       
             if(!$this->save()){

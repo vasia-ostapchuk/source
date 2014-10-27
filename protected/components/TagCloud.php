@@ -6,14 +6,16 @@ class TagCloud extends CWidget {
     
     public function run() {
         $tags = Style::model()->findStyleWeights($this->limit);
-        foreach($tags as $tag=>$weight)
+        foreach($tags as $tag=>$options)
         {
-            $color = '#'.dechex(rand(100, 255)).dechex(rand(0, 200)).dechex(rand(50, 100));
-            $link=CHtml::link(CHtml::encode($tag), array('post/index','tag'=>$tag),array("style"=>"text-decoration: none; color:".$color));
+            //$color = '#'.dechex(rand(100, 255)).dechex(rand(0, 200)).dechex(rand(50, 100));
+            $text = CHtml::encode($tag);
+            //$id_hidden = CHtml::hiddenField('style_'.$options['id'], $options['id']);
+            //$content = $link.$id_hidden;
             echo CHtml::tag('span', array(
-                'class'=>'tag',
-                'style'=>"font-size:{$weight}pt; ",
-            ), $link)."\n";
+                'id'=>$options['id'],
+                'style'=>"font-size:{$options['weight']}pt; color: #2E3CA3; cursor: pointer;",
+            ), $text)."\n";
         }
     }
 }
