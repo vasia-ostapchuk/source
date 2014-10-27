@@ -99,7 +99,7 @@ class Style extends CActiveRecord {
         $size =rand(1,12);
         $minCount = 2; //log(Yii::app()->db->createCommand("SELECT MIN(frequency) FROM " . $this->tableName())->queryScalar() + 1);
         $maxCount = $size;//log(Yii::app()->db->createCommand("SELECT MAX(frequency) FROM " . $this->tableName())->queryScalar() + 1);
-        $countRange = $maxCount - $minCount;
+        $countRange = ($maxCount - $minCount == 0) ? 1 : $maxCount - $minCount;
         foreach ($models as $model)
             $tags[$model->name] = round(14 + (log($size + 1) - $minCount) * ($sizeRange / $countRange));
         return $tags;
