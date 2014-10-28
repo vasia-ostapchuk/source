@@ -20,22 +20,16 @@ class Image extends CActiveRecord{
         );
     }
     
-    /*public function selectBySingerId($singer_id=false)
-    {
+    public function selectByRow($table, $row_id)
+    {        
         $criteria = new CDbCriteria;
-        $criteria->select='*';
-        $criteria->condition='object=:object AND subject=:subject AND lan_id=:lan_id';
-        $criteria->params=array(':object'=>$table, ':subject'=>$column, ':lan_id'=>$lan_id);
-        $result = Translation::model()->findAll($criteria);
-        $data = array();
-        foreach ($result as $value)
-        {
-            $data[$value->row_id]['translate'] = $value->translate;
-            $data[$value->row_id]['id'] = $value->id;
-        }
+        $criteria->select='path';
+        $criteria->condition='row_id=:row_id AND `table`=:table';
+        $criteria->params=array(':row_id'=>$row_id, ':table'=>$table);
+        $result = Image::model()->find($criteria);
         //error_log(var_dump($data,1));
-        return $data;
-    }*/
+        return $result;
+    }
     
     public function Add($file)
     {

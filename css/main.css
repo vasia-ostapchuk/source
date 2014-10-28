@@ -375,14 +375,14 @@ div.search-form
         margin-top: 10px;
         float: left;
         border: 1px solid #264409;
-        text-align: center;
-        line-height: 2.5em;
         cursor: pointer;
+        text-align: center;
 }
 
-.singer_poster_image
+.singer_poster img
 {
-         max-width: 240px; 
+        height:auto;
+        max-width: 100%;
 }
         
 .singer_poster_upload

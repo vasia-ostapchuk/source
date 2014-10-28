@@ -71,7 +71,6 @@
             fd.append('object',object);
             if(name)
                 fd.append(name,field);
-            fd.append('user_id','<?php echo $user_id; ?>');
             fd.append('singer_id',singer_id);
             
             $.ajax({
@@ -145,22 +144,30 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
 
 <!-- невидиме поле для загрузки постера -->
-<?php echo CHtml::activeFileField($poster, 'image',array('id'=>'singer_poster_upload_field','style'=>'display: none;')); ?>
+<?php echo CHtml::activeFileField($poster, 'image',array('id'=>'singer_poster_upload_field','style'=>'display: none;')); 
+if(!isset($exist['path']))
+    echo "<script type='text/javascript'>
+        $('.singer_poster').click(function(){ // імітуєм відкриття вибору файлу
+            $('#singer_poster_upload_field').trigger('click');
+        });
+        </script>";
+?>
 
 <div class="singer_page">
 
     <div class="singer_left_block">
     <div class="singer_poster">
-        <?php echo CHtml::image('../../../images/2poster.jpg','назва',
+        <?php $path = (isset($exist['path'])) ? $exist['path'] : 'empty.png';
+            echo CHtml::image('/images/singer/'.$path,'постер',
             array(
                 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка" 
             )); ?>
         <div class='singer_poster_upload'>
-            <img  src="../../../images/arrow.jpg"style="max-width: 15px; margin-right: 10px;"/>Завантажити нове фото
+            <img  src="/images/arrow.jpg"style="max-width: 15px; margin-right: 10px;"/>Завантажити нове фото
         </div>
     </div>
     <div class="singer_name">
-        <?php echo CHtml::TextField('singer_name', 'Друга ріка',
+        <?php echo CHtml::TextField('singer_name', (isset($exist['name'])) ? $exist['name'] : 'noname',
             array('class'=>'singer_name')); ?>
     </div>
     <div class="singer_style">
@@ -179,11 +186,11 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
     </div>
     <div class="singer_description"> 
         <textarea id="singer_description"  class="description_singer">
-            Групу заснували Віктор Скуратовський, Валерій Харчишин та Олександр Барановський 1995 року. Перші репетиції групи, який отримав назву «Second River», проходили в приміщенні Житомирського педадогічного інституту, де й відбувся їх перший виступ. У 1998 році, під час підготовки до фестивалю «Червона рута—1999» назву було змінено на «Друга Ріка».
+            <?php echo (isset($exist['description'])) ? $exist['description'] : ''; ?>
         </textarea>
     </div>
     <div class="singer_site"> 
-        <?php echo CHtml::TextField('singer_site', 'Сайт',
+        <?php echo CHtml::TextField('singer_site', (isset($exist['site'])) ? $exist['site'] : 'noname',
             array('class'=>'site_singer')); ?>
     </div>  
     </div>

@@ -35,7 +35,7 @@
                 'selected' => 2,
             ),
         ));
-            echo "<tt style ='font-size: 16px; font-weight: bold; float: left; text-align: center; margin: 0.5em 0 0;'>Соціальні <br> мережі</tt>";
+            echo "<figcaption style ='font-size: 16px; font-weight: bold; float: left; text-align: center; margin: 0.5em 0 0;'>Соціальні <br> мережі</figcaption>";
             $this->widget('ext.eauth.EAuthWidget', array('action' => 'site/login'));
         $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
@@ -60,7 +60,7 @@
                 ),
             ));
 echo '<br>'; echo CHtml::ajaxlink('Translation',
-                    CController::createUrl('/site/viewtranslate'),   
+                    CController::createUrl('/translation/viewtranslate'),   
                     array('dataType'=>'json',
                             'type' => 'post',
                             'success'=>"function(data) {

@@ -35,17 +35,15 @@ class SiteController extends YiiController
     public function actions()
     {
         return array(
-            'index'=>'application.controllers.actions.IndexAction',
-            'error'=>'application.controllers.actions.ErrorAction',
-            'login'=>'application.controllers.actions.LoginAction',
-            'logout'=>'application.controllers.actions.LogoutAction',
-            'signup'=>'application.controllers.actions.SignUpAction',
-            'ajax'=>'application.controllers.actions.AjaxAction',
-            'search'=>'application.controllers.actions.SearchAction',
-            'administration'=>'application.controllers.actions.AdministrationAction',
-            'viewtranslate'=>'application.controllers.actions.ViewTranslateAction',
-            'translate'=>'application.controllers.actions.TranslateAction',
-            'artist_edit'=>'application.controllers.actions.ArtistEditAction',
+            'index'=>'application.controllers.site.IndexAction',
+            'error'=>'application.controllers.site.ErrorAction',
+            'login'=>'application.controllers.site.LoginAction',
+            'logout'=>'application.controllers.site.LogoutAction',
+            'signup'=>'application.controllers.site.SignUpAction',
+            'ajax'=>'application.controllers.site.AjaxAction',
+            'search'=>'application.controllers.site.SearchAction',
+            'administration'=>'application.controllers.site.AdministrationAction',
+            'artist_edit'=>'application.controllers.site.ArtistEditAction',
         );
     }
         
@@ -57,12 +55,14 @@ class SiteController extends YiiController
     public function actionArtist()
     {
         $singer_id = 1;//сюди передати id виконавця
+        $exist = false;
         if($singer_id) {
-            $singer = Singer::model()->selectBySingerId($singer_id);
+            $exist = Singer::model()->selectBySingerId($singer_id);
+            //error_log(var_export($singer,1));
         }
         $model = new Image;
-        $user_id = Yii::app()->user->getId();        
-        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'user_id'=>$user_id, 'singer_id'=>$singer_id),true, true));
+        //$user_id = Yii::app()->user->getId();        
+        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, /*'user_id'=>$user_id, */'singer_id'=>$singer_id, 'exist'=>$exist),true, true));
         Yii::app()->end();
     }
     public function actionAccessdeny()

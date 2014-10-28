@@ -3,7 +3,7 @@
     <p>Сутності</p>
     <?php
         echo CHtml::ajaxButton('Локейшени',
-            CController::createUrl('/site/viewtranslate'),   
+            CController::createUrl('/translation/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('table'=>'location'),
@@ -17,7 +17,7 @@
                  )
         );
         echo CHtml::ajaxButton('Типи',
-            CController::createUrl('/site/viewtranslate'),
+            CController::createUrl('/translation/viewtranslate'),
             array('dataType'=>'json',
                     'type' => 'post', 
                     'data' => array ('table'=>'type'),
@@ -36,7 +36,7 @@
     <div class="language_buttons">
             <?php
         echo CHtml::ajaxlink('EN',
-            CController::createUrl('/site/viewtranslate'),   
+            CController::createUrl('/translation/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array (
@@ -52,7 +52,7 @@
                  )
         );
         echo CHtml::ajaxlink('UA',
-            CController::createUrl('/site/viewtranslate'),   
+            CController::createUrl('/translation/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('lan_id'=>'1',
@@ -67,7 +67,7 @@
                  )
         );
         echo CHtml::ajaxlink('PL',
-            CController::createUrl('/site/viewtranslate'),   
+            CController::createUrl('/translation/viewtranslate'),   
             array('dataType'=>'json',
                     'type' => 'post',
                     'data' => array ('lan_id'=>'3',
@@ -220,7 +220,7 @@
             if($('#'+field+'_'+id).attr('style'))
                 $('#'+field+'_'+id).removeAttr('style');
             $.ajax({
-                url: 'index.php?r=site/translate',
+                url: 'index.php?r=translation/translate',
                 dataType: 'json',
                 data: tdata,
                 type: 'POST',

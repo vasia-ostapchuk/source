@@ -8,11 +8,10 @@ class ArtistEditAction extends CAction {
         if ($exist) {
             $model = $exist;
             $row_id = $model->id;
-            //$status='success';
         }
         else {
             $model->name= (Yii::app()->request->getPost('name')) ? Yii::app()->request->getPost('name') : 'noname';
-            $model->user_id=Yii::app()->request->getPost('user_id');
+            $model->user_id = Yii::app()->user->getId();
             if(!$row_id = $model->Add()) {
                 echo CJSON::encode(array(
                         'status'=>'error'
@@ -49,7 +48,7 @@ class ArtistEditAction extends CAction {
             $poster->row_id = $row_id;
             if($image_name = $poster->Add($new)) {
                 echo CJSON::encode(array(
-                    'part'=>CHtml::image('/images/singer/'.$image_name,'назва',
+                    'part'=>CHtml::image('/images/singer/'.$image_name,'постер',
                     array( 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка")
                     ),
                     'status'=>'success',
