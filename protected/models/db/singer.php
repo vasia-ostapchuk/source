@@ -12,37 +12,15 @@ class Singer extends CActiveRecord{
         return 'singer';
     }
     
-   /* public function selectSinger(){
-            $connect=Yii::app()->db;
-            $comand=$connect->createCommand('SELECT s2.id as id, s1.name as name FROM style s1, style s2 WHERE s1.id=s2.parent_id AND s2.id='.$id);
-            $dataReader=$comand->query();
-            $dataReader->bindColumn(1, $styleId);
-            $dataReader->bindColumn(2, $styleName);
-            $data=array();
-            $data[0]='All style';
-            while ($dataReader->read()!==FALSE)
-            {
-                $data[$styleId] = $styleName;
-            }
-            return $data;
+    public function selectBySingerId($singer_id) {
+        $criteria = new CDbCriteria;
+        $criteria->select='*';
+        $criteria->condition='id=:singer_id';
+        $criteria->params=array(':singer_id'=>$singer_id);
+        $result = Singer::model()->find($criteria);
+        //error_log($result->user_id);
+        return $result;
     }
-    
-    public function selectAll(){
-        
-        $connect=Yii::app()->db;
-        $comand=$connect->createCommand('SELECT s2.id as id, s1.name as name, s1.id as style_id  FROM style s1, style s2 WHERE s1.id=s2.parent_id ORDER BY name');
-        $dataReader=$comand->query();
-        $dataReader->bindColumn(1, $genreId);
-        $dataReader->bindColumn(2, $styleName);
-        $dataReader->bindColumn(3, $styleId);
-        $data=array();
-        $data[0]=array('name'=>'All style', 'style_id'=>0);
-        while ($dataReader->read()!==FALSE)
-        {
-            $data[$genreId] = array('name'=>$styleName,'style_id'=>$styleId);
-        }
-        return $data;
-    }*/
     
     public function Add($attributes=false)
     {       

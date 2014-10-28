@@ -65,12 +65,14 @@
             $('#TagCloud').dialog('open');
         });
         
+        var singer_id = '<?php echo (isset($singer_id)) ? $singer_id : 'false'; ?>'; //глобальна змінна
         function updateSinger(object, name, field, id) {
             var fd = new FormData();
             fd.append('object',object);
             if(name)
                 fd.append(name,field);
             fd.append('user_id','<?php echo $user_id; ?>');
+            fd.append('singer_id',singer_id);
             
             $.ajax({
                 url: '<?php echo Yii::app()->createAbsoluteUrl('site/artist_edit'); ?>',
@@ -86,6 +88,7 @@
                             addBorder('#'+id,'red');
                     }
                     else {
+                        singer_id = data.singer_id;
                         if(name == 'Image[image]') {
                             $('.singer_poster_image').replaceWith(data.part);
                         }
@@ -114,6 +117,33 @@
         }
     });
 </script>
+
+<!-- модель модального вікна стилів -->
+
+<?php
+$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+    'id'=>'TagCloud',
+    'options'=>array(
+        'title'=>'Виберіть стиль',
+        'autoOpen'=>false,
+        'buttons'=>array(
+             array(
+                'text' => 'OK',
+                'click' => 'js:function(){$(this).dialog("close");}',
+                'id' => 'styleOK',
+            ),
+             array(
+                'text' => 'Cancel',
+                'click' => 'js:function(){$(this).dialog("close");}'
+            ),
+        ),
+    ),
+    'htmlOptions'=>array('class'=>'TagCloud')
+));
+    $this->widget('TagCloud', array('limit' => 50, 'singer_id' => (isset($singer_id)) ? $singer_id : 'false'));
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+?>
+
 <!-- невидиме поле для загрузки постера -->
 <?php echo CHtml::activeFileField($poster, 'image',array('id'=>'singer_poster_upload_field','style'=>'display: none;')); ?>
 

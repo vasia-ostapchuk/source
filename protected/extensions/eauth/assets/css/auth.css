@@ -68,29 +68,28 @@
     background-position: 0 -472px;
 }
 
-.auth-link:hover .auth-icon i,
-.auth-link:focus .auth-icon i {
-	display: block;
-	width: 32px;
-	height: 32px;
-	background: url("../images/auth.png") 0 0 no-repeat;
+.auth-link:hover,
+.auth-link:focus{
+        filter:alpha(opacity=80); 
+        -moz-opacity: 0.8; 
+        opacity: 0.8;
 }
 
 .auth-services {
-	margin: 0 0 1em;
+	margin: 0.7em 0 0;
 	list-style: none;
 	/* Height hack for float wrappers */
 	overflow: auto;
 }
 
 .auth-service {
-	float: left;
-	margin: 0 1em 0 0;
+	float: right;
+	//margin: 0 1em 0 0;
 }
 
 .auth-services .auth-service .auth-link {
 	display: block;
-	width: 58px;
+	width: 45px;
 	/*padding: 0 0.4em;*/
 }
 

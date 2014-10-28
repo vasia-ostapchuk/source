@@ -4,20 +4,21 @@ class ArtistEditAction extends CAction {
     public function run()
     {
         $model = new Singer;
-        $exist = $model->findByAttributes(array('user_id'=>Yii::app()->request->getPost('user_id')));
+        $exist = $model->findByAttributes(array('id'=>Yii::app()->request->getPost('singer_id')));
         if ($exist) {
             $model = $exist;
             $row_id = $model->id;
-            $status='success';
+            //$status='success';
         }
         else {
             $model->name= (Yii::app()->request->getPost('name')) ? Yii::app()->request->getPost('name') : 'noname';
             $model->user_id=Yii::app()->request->getPost('user_id');
-            if($row_id = $model->Add()) {
-                $status='success';
+            if(!$row_id = $model->Add()) {
+                echo CJSON::encode(array(
+                        'status'=>'error'
+                ));
+            Yii::app()->end();
             }
-            else
-                $status='error';
         }
                 
         switch (Yii::app()->request->getPost('object')) {//редагуєм текстові поля
@@ -51,7 +52,8 @@ class ArtistEditAction extends CAction {
                     'part'=>CHtml::image('/images/singer/'.$image_name,'назва',
                     array( 'class'=>'singer_poster_image', 'title'=>"Постер Друга ріка")
                     ),
-                    'status'=>$status
+                    'status'=>'success',
+                    'singer_id'=>$row_id,
                 ));
                 Yii::app()->end();
             }
@@ -66,12 +68,12 @@ class ArtistEditAction extends CAction {
         
         if(Yii::app()->request->getPost('object') == 'style') { //редагуєм стилі
             $style_id = explode(',', Yii::app()->request->getPost('id'));
-            $exist = Singer_style::model()->selectBySingerId($model->id);
+            //$exist = Singer_style::model()->selectBySingerId($model->id);
             $style = array();
-            foreach ($style_id as $key => $id)
+            /*foreach ($style_id as $key => $id)
                 if (in_array($id, $exist)) {
                 unset($style_id[$key]);
-                }
+                }*/
             foreach ($style_id as $i=>$id) {
                 $style[$i] = new Singer_style();
                 $style[$i]->singer_id = $model->id;
@@ -93,7 +95,8 @@ class ArtistEditAction extends CAction {
                 }
             }
             echo CJSON::encode(array(
-                    'status'=>'success'
+                    'status'=>'success',
+                    'singer_id'=>$row_id,
                 ));
             Yii::app()->end();
         }
@@ -104,7 +107,8 @@ class ArtistEditAction extends CAction {
                 $model->$field = $value;
             if($model->Add()) {
                 echo CJSON::encode(array(
-                    'status'=>'success'
+                    'status'=>'success',
+                    'singer_id'=>$model->id,
                 ));
             }
             else {

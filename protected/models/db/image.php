@@ -20,6 +20,23 @@ class Image extends CActiveRecord{
         );
     }
     
+    /*public function selectBySingerId($singer_id=false)
+    {
+        $criteria = new CDbCriteria;
+        $criteria->select='*';
+        $criteria->condition='object=:object AND subject=:subject AND lan_id=:lan_id';
+        $criteria->params=array(':object'=>$table, ':subject'=>$column, ':lan_id'=>$lan_id);
+        $result = Translation::model()->findAll($criteria);
+        $data = array();
+        foreach ($result as $value)
+        {
+            $data[$value->row_id]['translate'] = $value->translate;
+            $data[$value->row_id]['id'] = $value->id;
+        }
+        //error_log(var_dump($data,1));
+        return $data;
+    }*/
+    
     public function Add($file)
     {
         if(!$file) {

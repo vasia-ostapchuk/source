@@ -56,9 +56,13 @@ class SiteController extends YiiController
     }
     public function actionArtist()
     {
+        $singer_id = 1;//сюди передати id виконавця
+        if($singer_id) {
+            $singer = Singer::model()->selectBySingerId($singer_id);
+        }
         $model = new Image;
-        $user_id = Yii::app()->user->getId();
-        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'user_id'=>$user_id),true, true));
+        $user_id = Yii::app()->user->getId();        
+        echo CJSON::encode($this->renderPartial('artist',array('poster'=>$model, 'user_id'=>$user_id, 'singer_id'=>$singer_id),true, true));
         Yii::app()->end();
     }
     public function actionAccessdeny()

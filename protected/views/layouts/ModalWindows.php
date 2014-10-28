@@ -5,7 +5,7 @@
             'options' => array(
                 'modal'=>false,
                 'title' => 'Вхід на сайт',
-                'autoOpen' => false,  
+                'autoOpen' => false,
                 'show'=>array(
                     'effect'=>'blind',
                     'duration'=>500,
@@ -19,16 +19,11 @@
                     'backgroundColor'=>'#000',
                     'opacity'=>'0.5'
                 ),*/
-                'position'=>array('my'=>'top','at'=>'bottom', 'of' => '#reg_button')
-                //'position'=>array(610, 56),
-                //'position'=> "{ my=>'right top', at=>'left bottom', of=> '#login_button' }",
+                'position'=>array('my'=>'top','at'=>'left bottom+10', 'of' => '#reg_button'),
             ),
         ));
-?>
-    <div class="modal-body">
-        <?php
-            $login = new LoginForm;
-            $reg = new RegistrationForm;
+        $login = new LoginForm;
+        $reg = new RegistrationForm;
 
         $this->widget('zii.widgets.jui.CJuiTabs', array(
             'tabs'=>array(
@@ -40,13 +35,9 @@
                 'selected' => 2,
             ),
         ));
-        echo "<br> Аутентифікація через соціальні мережі <br>";
-        $this->widget('ext.eauth.EAuthWidget', array('action' => 'site/login'));
-        echo "<br>";
-        ?>
-    </div>
-<?php   
-    $this->endWidget('zii.widgets.jui.CJuiDialog');
+            echo "<tt style ='font-size: 16px; font-weight: bold; float: left; text-align: center; margin: 0.5em 0 0;'>Соціальні <br> мережі</tt>";
+            $this->widget('ext.eauth.EAuthWidget', array('action' => 'site/login'));
+        $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
 
 <!-- макет модального вікна форми профайлу -->
@@ -173,32 +164,4 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
             </span>
         </div>
     </div>
-<?php $this->endWidget('zii.widgets.jui.CJuiDialog');
-?>
-
-
-<!-- модель модального вікна стилів -->
-
-<?php
-$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
-    'id'=>'TagCloud',
-    'options'=>array(
-        'title'=>'Виберіть стиль',
-        'autoOpen'=>false,
-        'buttons'=>array(
-             array(
-                'text' => 'OK',
-                'click' => 'js:function(){$(this).dialog("close");}',
-                'id' => 'styleOK',
-            ),
-             array(
-                'text' => 'Cancel',
-                'click' => 'js:function(){$(this).dialog("close");}'
-            ),
-        ),
-    ),
-    'htmlOptions'=>array('class'=>'TagCloud')
-)); 
-    $this->widget('TagCloud', array('limit' => 50));
-$this->endWidget('zii.widgets.jui.CJuiDialog');
-?>
+<?php $this->endWidget('zii.widgets.jui.CJuiDialog');?>

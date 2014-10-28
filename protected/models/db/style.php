@@ -89,12 +89,19 @@ class Style extends CActiveRecord {
         return $data;
     }
     
-     public function findStyleWeights($limit = 20) {
+     public function findStyleWeights($limit = 50, $singer_id=false) {
         $tags = array();
-        $models = $this->findAll(array(
-            'limit' => $limit,
-            'order'=>'name'
-        ));
+        $id = array('0');
+        $style = Singer_style::model()->selectBySingerId($singer_id);
+        foreach ($style as $i=>$value)
+            $id[] = $value;
+        $criteria = new CDbCriteria;
+        $criteria->select='*';
+        $criteria->addNotInCondition('id', $id);
+        $criteria->order='name';
+        $criteria->limit=$limit;
+        $models = Style::model()->findAll($criteria);
+        
         $sizeRange = 8;
         $minCount = log(3 + 1); //log(Yii::app()->db->createCommand("SELECT MIN(frequency) FROM " . $this->tableName())->queryScalar() + 1);
         $maxCount = log(0 + 1);//log(Yii::app()->db->createCommand("SELECT MAX(frequency) FROM " . $this->tableName())->queryScalar() + 1);

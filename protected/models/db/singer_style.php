@@ -12,12 +12,12 @@ class Singer_style extends CActiveRecord{
         return 'singer_style';
     }
     
-    public function selectBySingerId($user_id)
+    public function selectBySingerId($singer_id)
     {
         $criteria = new CDbCriteria;
         $criteria->select='style_id';
         $criteria->condition='singer_id=:singer_id';
-        $criteria->params=array(':singer_id'=>$user_id);
+        $criteria->params=array(':singer_id'=>$singer_id);
         $result = Singer_style::model()->findAll($criteria);
         $data = array();
         foreach ($result as $i=>$value)

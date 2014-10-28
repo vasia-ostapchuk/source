@@ -3,9 +3,10 @@
 class TagCloud extends CWidget {
     
     public $limit = 20;
+    public $singer_id = false;
     
     public function run() {
-        $tags = Style::model()->findStyleWeights($this->limit);
+        $tags = Style::model()->findStyleWeights($this->limit, $this->singer_id);
         foreach($tags as $tag=>$options)
         {
             //$color = '#'.dechex(rand(100, 255)).dechex(rand(0, 200)).dechex(rand(50, 100));
