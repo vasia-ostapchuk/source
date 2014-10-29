@@ -66,16 +66,6 @@
             }
         });
         
-        function collectStyle() {
-            alert('123');
-            var styles = '';
-            $('#TagCloud span').each(function() {
-                if ($(this).hasClass('styleSelected'))
-                    styles += $(this).attr('id') + ',';
-            });
-            updateSinger('style','id', styles.slice(0,-1), false);
-        }
-        
         var singer_id = '<?php echo (isset($singer_id)) ? $singer_id : 'false'; ?>'; //глобальна змінна
         function updateSinger(object, name, field, id) {
             var fd = new FormData();
