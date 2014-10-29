@@ -7,15 +7,20 @@
             $('.singer_poster_upload').fadeOut();
         });
         
-        $('#TagCloud span').on('click', function(){ //виділяєм стиль
-            $(this).toggleClass('styleSelected');
-        });
-        
         $('.singer_poster_upload').click(function(){ // імітуєм відкриття вибору файлу
             $('#singer_poster_upload_field').trigger('click');
         });
         
-        $('#styleOK').on('click', function(){ //відправляєм стилі
+        $('#style_add').on('click', function(){//add style window
+            $('#TagCloud').dialog('open');
+        });
+        
+         $('#TagCloud span').on('click', function(){ //виділяєм стиль
+            $(this).toggleClass('styleSelected');
+        });
+        
+        $('#TagCloud > .ui-dialog-buttonset').on('click', function(){ //відправляєм стилі
+            alert('123');
             var styles = '';
             $('#TagCloud span').each(function() {
                 if ($(this).hasClass('styleSelected'))
@@ -61,9 +66,15 @@
             }
         });
         
-        $('#style_add').on('click', function(){//add style
-            $('#TagCloud').dialog('open');
-        });
+        function collectStyle() {
+            alert('123');
+            var styles = '';
+            $('#TagCloud span').each(function() {
+                if ($(this).hasClass('styleSelected'))
+                    styles += $(this).attr('id') + ',';
+            });
+            updateSinger('style','id', styles.slice(0,-1), false);
+        }
         
         var singer_id = '<?php echo (isset($singer_id)) ? $singer_id : 'false'; ?>'; //глобальна змінна
         function updateSinger(object, name, field, id) {
@@ -128,7 +139,7 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
         'buttons'=>array(
              array(
                 'text' => 'OK',
-                'click' => 'js:function(){$(this).dialog("close");}',
+                'click' => 'js:function(){$(this).dialog("close"); $("#TagCloud > .ui-dialog-buttonset").trigger("click");}',
                 'id' => 'styleOK',
             ),
              array(
@@ -137,9 +148,8 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
             ),
         ),
     ),
-    'htmlOptions'=>array('class'=>'TagCloud')
 ));
-    $this->widget('TagCloud', array('limit' => 50, 'singer_id' => (isset($singer_id)) ? $singer_id : 'false'));
+    $this->widget('StyleCloud', array('limit' => 50, 'singer_id' => (isset($singer_id)) ? $singer_id : 'false'));
 $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
 
