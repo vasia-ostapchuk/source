@@ -89,12 +89,53 @@ class Style extends CActiveRecord {
         return $data;
     }
     
+    public function selectBySingerId($singer_id) {
+        $style_id = Singer_style::model()->selectBySingerId($singer_id);
+        $id = (isset($style_id)) ? $style_id : array('0');
+        $criteria = new CDbCriteria;
+        $criteria->select='*';
+        $criteria->addInCondition('id', $id);
+        $criteria->order='name';
+        $result = Style::model()->findAll($criteria);
+        foreach ($result as $i=>$value) {
+            if($value->parent_id != 0)
+                $children[$value->parent_id][]= array('text'=>$value->name);
+            else
+                $parents[$value->id]= array('id'=>'style'.$value->id, 'text'=>$value->name);
+        }
+        if(isset($parents))
+            foreach ($parents as $id=>$array) {
+                if(isset($children[$id]))
+                    $parents[$id]['children'] = $children[$id];
+                $prepared[] = $parents[$id];
+            }
+        //error_log(var_export($prepared,1));
+        return (isset($prepared)) ? $prepared : false;
+    }
+    
+    public function getNewParent($style_id, $exist) {
+        $criteria = new CDbCriteria;
+        $criteria->distinct = true;
+        $criteria->select='parent_id';
+        $criteria->condition='parent_id!=:parent_id';
+        $criteria->params=array(':parent_id'=>0);
+        $criteria->addInCondition('id', $style_id);
+        $result = Style::model()->findAll($criteria);
+        //error_log(var_export($result,1));
+        foreach ($result as $i=>$value) {
+            if(!in_array($value->parent_id, $exist))
+                $parent[$value->parent_id] = $value->parent_id; 
+        }
+        return (isset($parent)) ? $parent : false;
+    }
+    
      public function findStyleWeights($limit = 50, $singer_id=false) {
         $tags = array();
-        $id = array('0');
+        //$id = array('0');
         $style = Singer_style::model()->selectBySingerId($singer_id);
-        foreach ($style as $i=>$value)
-            $id[] = $value;
+        $id = (isset($style)) ? $style : array('0');
+        /*foreach ($style as $i=>$value)
+            $id[] = $value;*/
         $criteria = new CDbCriteria;
         $criteria->select='*';
         $criteria->addNotInCondition('id', $id);

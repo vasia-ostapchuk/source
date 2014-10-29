@@ -67,18 +67,23 @@ class ArtistEditAction extends CAction {
         
         if(Yii::app()->request->getPost('object') == 'style') { //редагуєм стилі
             $style_id = explode(',', Yii::app()->request->getPost('id'));
-            //$exist = Singer_style::model()->selectBySingerId($model->id);
-            $style = array();
-            /*foreach ($style_id as $key => $id)
-                if (in_array($id, $exist)) {
-                unset($style_id[$key]);
-                }*/
+            $exist = Singer_style::model()->selectBySingerId($model->id);
+            $parent = Style::model()->getNewParent($style_id, $exist);   
+            //error_log(var_export($parent,1));
+            if($parent)
+                foreach ($parent as $key => $id)
+                    if (!in_array($id, $style_id))
+                        $style_id[] = $id;
             foreach ($style_id as $i=>$id) {
+                if (in_array($id, $exist)) {
+                    unset($style_id[$id]);
+                    continue;
+                }
                 $style[$i] = new Singer_style();
                 $style[$i]->singer_id = $model->id;
                 $style[$i]->style_id = $id;
             }
-            if($style) {
+            if(isset($style)) {
                 $transaction = Yii::app()->db->beginTransaction();
                 try {
                     foreach ($style as $i=>$item)
@@ -96,6 +101,15 @@ class ArtistEditAction extends CAction {
             echo CJSON::encode(array(
                     'status'=>'success',
                     'singer_id'=>$row_id,
+                    /*'part'=>$this->controller->widget('CTreeView',array(
+                                'id'=>'styleTree',
+                                'data'=>Style::model()->selectBySingerId($model->id),
+                                'animated'=>'fast',
+                                'collapsed'=>'false',
+                                'htmlOptions'=>array(
+                                        'class'=>'treeview-famfamfam',
+                                ),
+                            ))*/
                 ));
             Yii::app()->end();
         }

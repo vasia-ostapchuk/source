@@ -58,7 +58,7 @@ class SiteController extends YiiController
         $exist = false;
         if($singer_id) {
             $exist = Singer::model()->selectBySingerId($singer_id);
-            //error_log(var_export($singer,1));
+            //error_log(var_export($exist,1));
         }
         $model = new Image;
         //$user_id = Yii::app()->user->getId();        

@@ -19,9 +19,12 @@ class Singer extends CActiveRecord{
         $criteria->params=array(':singer_id'=>$singer_id);
         $result = Singer::model()->find($criteria);
         $image = Image::model()->selectByRow('singer', $singer_id);
+        $style = Style::model()->selectBySingerId($singer_id);
         $result = $result['attributes'];
         if($image)
            $result['path'] = $image->path;
+        if($style)
+           $result['style'] = $style;
         return $result;
     }
     

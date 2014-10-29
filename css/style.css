@@ -995,10 +995,17 @@ article .buttons form#ButtonForm .progress{
     box-sizing: border-box;
 }
 
-#TagCloud span:hover {
+#TagCloud span:hover 
+{
     background: #ffffcc;
 }
 
-.styleSelected {
+.styleSelected 
+{
     background: #F0DD75;
+}
+
+#styleTree > li
+{
+    cursor: pointer;
 }

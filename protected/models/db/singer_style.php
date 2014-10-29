@@ -22,7 +22,7 @@ class Singer_style extends CActiveRecord{
         $data = array();
         foreach ($result as $i=>$value)
         {
-            $data[$i] = $value->style_id;
+            $data[$value->style_id] = $value->style_id;
         }
         return $data;
     }

@@ -19,8 +19,7 @@
             $(this).toggleClass('styleSelected');
         });
         
-        $('#TagCloud > .ui-dialog-buttonset').on('click', function(){ //відправляєм стилі
-            alert('123');
+        $('#styleOK').live('click', function(){ //відправляєм стилі
             var styles = '';
             $('#TagCloud span').each(function() {
                 if ($(this).hasClass('styleSelected'))
@@ -89,8 +88,11 @@
                     }
                     else {
                         singer_id = data.singer_id;
-                        if(name == 'Image[image]') {
+                        if(object == 'poster') {
                             $('.singer_poster_image').replaceWith(data.part);
+                        }
+                        if(object == 'style') {
+                            $('.singer_style_tree').html(data.part);
                         }
                         if(id)
                             addBorder('#'+id,'green');
@@ -101,6 +103,10 @@
                 }
             });
         }
+        
+        /*$('#styleTree li').on('click', function () {
+            $('#'+$(this).attr('id')+' > div').trigger('click');
+        });*/
         
         function addBorder(selector, color) {
             switch (color) {
@@ -119,7 +125,6 @@
 </script>
 
 <!-- модель модального вікна стилів -->
-
 <?php
 $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
     'id'=>'TagCloud',
@@ -171,18 +176,20 @@ if(!isset($exist['path']))
             array('class'=>'singer_name')); ?>
     </div>
     <div class="singer_style">
-    <p><span class="style_singer">Стилі</span></p>
-    <?php $this->widget('zii.widgets.CMenu', array(
-        'id' => 'singer_style',
-        'encodeLabel'=>false,
-        'items'=>array(
-            array('label'=>'Блюз'),
-            array('label'=>'Джаз'),
-            array('label'=>'Рок'),
-            array('label'=>'Поп'),
-            array('label'=>"<img  style=' width: 20px; height: 20px;' src='../../../images/add.png' /> Додати", 'itemOptions'=>array('id' => 'style_add', 'style'=>'text-align: center; cursor: pointer; border-radius: 3px; background: #F48686;')))
-        ));
-    ?>
+    <p><span class="style_singer">Стилі <img id="style_add" style="cursor: pointer; width: 20px; height: 20px;" src='../../../images/plus.png' /></span></p>
+        <div class="singer_style_tree">
+            <?php
+                $this->widget('CTreeView',array(
+                'id'=>'styleTree',
+                'data'=>(isset($exist['style'])) ? $exist['style'] : '',
+                'animated'=>'fast',
+                'collapsed'=>'false',
+                'htmlOptions'=>array(
+                        'class'=>'treeview-famfamfam',
+                ),
+            ));
+            ?>
+        </div>
     </div>
     <div class="singer_description"> 
         <textarea id="singer_description"  class="description_singer">

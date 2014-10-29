@@ -351,11 +351,11 @@ div.search-form
 
 .singer_page
 {
-        width:998px;    
-        display:block;
-        border: 1px solid #264409;
-        text-align: center;
-        line-height: 2.5em;
+        //width:998px;    
+        //display:block;
+        //border: 1px solid #264409;
+        //text-align: center;
+        //line-height: 2.5em;
 }
 
 .singer_left_block
@@ -425,15 +425,13 @@ div.search-form
 	width:400px;
 	height:272px;
 	border: 1px solid #264409;
-        line-height: 2.5em;
+        overflow-y: scroll;
+        //line-height: 2.5em;
 }
-        
-.singer_style ul
+
+.singer_style p
 {
-        list-style-type: square;
-        float: left;
-        padding-left: 20px;
-        color: #D7314A;
+        text-align: center;
 }
 
 .style_singer
